@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silverado Marketing - Video Produkcija & Upravljanje Društvenim Mrežama</title>
+    <title>Besplatna Analiza Društvenih Mreža - Silverado Marketing</title>
     <style>
         * {
             margin: 0;
@@ -12,374 +12,316 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
+            background: #f4f4f4;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
         
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
-            text-align: center;
             padding: 60px 20px;
+            text-align: center;
         }
         
-        header h1 {
+        h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
         
-        header h2 {
+        .subtitle {
             font-size: 1.3em;
-            font-weight: 300;
             margin-bottom: 30px;
+            opacity: 0.9;
         }
         
-        .cta-button-large {
+        .cta-button {
             display: inline-block;
-            background-color: #00C853;
+            background: #6a11cb;
             color: white;
-            padding: 20px 40px;
-            font-size: 20px;
-            font-weight: bold;
+            padding: 18px 40px;
             text-decoration: none;
             border-radius: 8px;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button-large:hover {
-            background-color: #00A043;
-        }
-        
-        .cta-button-small {
-            display: inline-block;
-            background-color: #00C853;
-            color: white;
-            padding: 12px 24px;
-            font-size: 16px;
+            font-size: 1.2em;
             font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            margin: 20px 0;
+            margin: 20px auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
         }
         
-        .cta-button-small:hover {
-            background-color: #00A043;
+        .cta-button:hover {
+            background: #5a0fb8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.6);
         }
         
         section {
             background: white;
-            margin: 40px 0;
-            padding: 60px 40px;
-            border-radius: 10px;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        section h2 {
-            font-size: 2.2em;
+        h2 {
+            color: #1a1a1a;
+            font-size: 2em;
             margin-bottom: 20px;
-            color: #667eea;
+            border-bottom: 3px solid #6a11cb;
+            padding-bottom: 10px;
         }
         
-        section h3 {
-            font-size: 1.8em;
-            margin: 30px 0 15px 0;
-            color: #333;
-        }
-        
-        ul {
-            margin: 20px 0 20px 40px;
-        }
-        
-        ul li {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .highlight {
-            background-color: #fff3cd;
-            padding: 20px;
-            border-left: 4px solid #ffc107;
+        .problem-list {
+            list-style: none;
             margin: 20px 0;
         }
         
-        footer {
-            background-color: #333;
+        .problem-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #dc3545;
+            border-radius: 4px;
+        }
+        
+        .solution-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .solution-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #6a11cb;
+            border-radius: 4px;
+        }
+        
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .benefit-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #6a11cb;
+        }
+        
+        .benefit-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .process-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .process-steps li {
+            counter-increment: step-counter;
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 80px;
+        }
+        
+        .process-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #6a11cb;
             color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .credentials {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .credentials h3 {
+            color: #6a11cb;
+            margin-bottom: 15px;
+        }
+        
+        footer {
             text-align: center;
             padding: 40px 20px;
-            margin-top: 60px;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .center-cta {
+            text-align: center;
+            margin: 30px 0;
         }
         
         @media (max-width: 768px) {
-            header h1 {
+            h1 {
                 font-size: 1.8em;
             }
             
-            header h2 {
+            .subtitle {
                 font-size: 1.1em;
             }
             
-            .cta-button-large {
-                padding: 15px 30px;
-                font-size: 18px;
-            }
-            
-            .cta-button-small {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-            
             section {
-                padding: 40px 20px;
+                padding: 25px;
             }
             
-            section h2 {
-                font-size: 1.8em;
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.1em;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Besplatna Analiza Vaših Društvenih Mreža</h1>
+            <p class="subtitle">Otkrijte Zašto Vaša Facebook i Instagram Stranica Ne Donosi Rezultate</p>
+            <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
+        </div>
+    </header>
 
-<header>
     <div class="container">
-        <h1>SILVERADO MARKETING</h1>
-        <h2>Profesionalna Video Produkcija + Upravljanje Društvenim Mrežama</h2>
-        <h1 style="margin-top: 40px;">Vaša Facebook stranica ne radi? Mi je pretvaramo u sistem koji prodaje.</h1>
-        <p style="font-size: 1.2em; margin: 20px 0;">Profesionalna video produkcija + potpuno upravljanje društvenim mrežama za mala i srednja preduzeća u Srbiji.</p>
-        <a href="#contact" class="cta-button-large">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</header>
+        <section>
+            <h2>Zašto Vaša Facebook Stranica Ne Donosi Rezultate?</h2>
+            <p>Većina malih biznisa u Srbiji ima isti problem:</p>
+            <ul class="problem-list">
+                <li><strong>Objavljujete sadržaj, ali niko ne reaguje</strong></li>
+                <li><strong>Imate pratioce, ali nema prodaje</strong></li>
+                <li><strong>Vaša stranica izgleda kao katalog, ne kao živ biznis</strong></li>
+                <li><strong>Ne znate šta radi konkurencija bolje od vas</strong></li>
+                <li><strong>Gubite vreme i novac na strategije koje ne funkcionišu</strong></li>
+            </ul>
+            <p><strong>Problem nije u Facebook-u. Problem je u pristupu.</strong></p>
+            
+            <div class="center-cta">
+                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
+            </div>
+        </section>
 
-<div class="container">
+        <section>
+            <h2>Šta Je Silverado Marketing?</h2>
+            <p>Silverado Marketing je <strong>profesionalna usluga optimizacije društvenih mreža</strong> za male biznise u Srbiji.</p>
+            <p>Mi ne prodajemo teoriju. Mi vam pokazujemo:</p>
+            <ul class="solution-list">
+                <li><strong>Tačno šta ne radi</strong> na vašoj stranici</li>
+                <li><strong>Kako konkurencija dobija bolje rezultate</strong></li>
+                <li><strong>Koje promene će doneti više angažmana i prodaje</strong></li>
+                <li><strong>Kako da vaša stranica postane sistem koji radi za vas</strong></li>
+            </ul>
+            <p><strong>Bez floskula. Samo rezultati.</strong></p>
+            
+            <div class="center-cta">
+                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
+            </div>
+        </section>
 
-<section id="problem">
-    <h2>Većina preduzeća koristi Facebook na pogrešan način</h2>
-    <p style="font-size: 1.2em;">Da li vam je ovo poznato?</p>
-    <ul>
-        <li>Objavljujete povremeno, bez sistema</li>
-        <li>Booštujete nasumične objave i rezultati izostaju</li>
-        <li>Vaša stranica izgleda kao statički katalog</li>
-        <li>Prestanete da objavljujete kada ne vidite rezultate</li>
-        <li>Kažete: <strong>"Facebook ne radi"</strong></li>
-    </ul>
-    <div class="highlight">
-        <p><strong>Istina je:</strong> Facebook radi savršeno.</p>
-        <p>Ono što ne radi je <strong>haos</strong>.</p>
-        <p>Facebook nagrađuje <strong>konzistentnost, strukturu i interakciju</strong> — ne kataloge, ne tišinu, ne nasumične kampanje.</p>
-    </div>
-    <div class="text-center">
-        <a href="#contact" class="cta-button-small">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</section>
+        <section>
+            <h2>Ko Je Ovo Za?</h2>
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <h3>✅ Male Biznise</h3>
+                    <p>Koji žele da povećaju vidljivost i prodaju preko društvenih mreža</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✅ Preduzetnike</h3>
+                    <p>Koji nemaju vremena da se bave marketingom, ali znaju da je važan</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✅ Vlasnike Stranica</h3>
+                    <p>Koji objavljuju redovno, ali ne vide rezultate</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✅ Biznise Sa Lošim Angažmanom</h3>
+                    <p>Koji imaju pratioce, ali nema interakcije ni prodaje</p>
+                </div>
+            </div>
+            
+            <div class="center-cta">
+                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
+            </div>
+        </section>
 
-<section id="solution">
-    <h2>Silverado Marketing pretvara Facebook nalog u sistem koji radi svaki dan</h2>
-    <p style="font-size: 1.1em;">Umesto ručnog objavljivanja, pogađanja šta da objavite ili jurenja lajkova, <strong>Silverado Marketing gradi kontinuiran tok sadržaja</strong> dizajniran da:</p>
-    <ul>
-        <li>✅ Održava nalog aktivnim</li>
-        <li>✅ Pokreće interakciju</li>
-        <li>✅ Započinje razgovore</li>
-        <li>✅ Pravilno trenira Facebook algoritam</li>
-    </ul>
-    <p style="font-size: 1.1em; margin-top: 20px;">Vaša stranica prestaje da izgleda kao statički katalog i počinje da se ponaša kao <strong>živi digitalni magazin</strong> — interesantan, dinamičan, vredan ponovnog posećivanja.</p>
-    
-    <h3>Najveća razlika?</h3>
-    <p style="font-size: 1.3em; font-weight: bold;">Vi ne morate ništa da radite.</p>
-    <ul>
-        <li>Bez objavljivanja</li>
-        <li>Bez planiranja</li>
-        <li>Bez dnevnog upravljanja</li>
-    </ul>
-    <p style="font-size: 1.1em; margin-top: 20px;">Silverado Marketing automatski upravlja distribucijom sadržaja, logikom angažovanja i okidačima za razgovor.</p>
-    <p style="font-size: 1.1em;"><strong>Vi se uključujete samo kada je neko spreman da razgovara o poslu.</strong></p>
-    
-    <div class="text-center">
-        <a href="#contact" class="cta-button-small">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</section>
+        <section>
+            <h2>Kako Funkcioniše?</h2>
+            <ol class="process-steps">
+                <li><strong>Pošaljete link vaše Facebook/Instagram stranice</strong><br>Samo link. Ništa više.</li>
+                <li><strong>Mi radimo profesionalnu analizu</strong><br>Koristimo AI alate + 30 godina iskustva u oglašavanju</li>
+                <li><strong>Dobijate detaljan izveštaj za 2-3 dana</strong><br>Konkretne preporuke, ne teorija</li>
+                <li><strong>Vi odlučujete šta dalje</strong><br>Možete sami da primenite savete ili da radimo zajedno</li>
+            </ol>
+            <p><strong>Besplatno. Bez obaveza. Bez skrivenih troškova.</strong></p>
+            
+            <div class="center-cta">
+                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
+            </div>
+        </section>
 
-<section id="proof">
-    <h2>30 godina iskustva u marketingu i oglašavanju</h2>
-    <p style="font-size: 1.2em;">Tokom karijere smo proizveli <strong>hiljade video klipova</strong> za preduzeća širom Srbije.</p>
-    <p style="font-size: 1.2em;">Samo u poslednja tri meseca: <strong>80–100 profesionalnih video klipova</strong> za mala i srednja preduzeća.</p>
-    
-    <h3>Zato što znamo:</h3>
-    <ul>
-        <li>Kako napraviti efektne video reklame — čak i kada klijent nema ideje</li>
-        <li>Kako pravilno postaviti video sadržaj na društvenim mrežama</li>
-        <li>Kako pretvoriti pažnju u angažovanje, poruke i prihod</li>
-    </ul>
-    
-    <div class="text-center">
-        <a href="#contact" class="cta-button-small">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</section>
+        <section>
+            <h2>Zašto Raditi Sa Nama?</h2>
+            <div class="credentials">
+                <h3>Dokazana Ekspertiza</h3>
+                <ul>
+                    <li>✅ <strong>30 godina iskustva u oglašavanju</strong></li>
+                    <li>✅ <strong>Hiljade video klipova, reklama i komercijala</strong></li>
+                    <li>✅ <strong>100% zadovoljnih klijenata</strong> u video produkciji</li>
+                    <li>✅ <strong>Brza isporuka</strong> – analiza za 2-3 dana</li>
+                    <li>✅ <strong>Hands-off pristup</strong> – vi ne gubite vreme, mi radimo sve</li>
+                </ul>
+            </div>
+            <p>Mi ne prodajemo kurseve. Mi radimo posao umesto vas.</p>
+            
+            <div class="center-cta">
+                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
+            </div>
+        </section>
 
-<section id="audit">
-    <h2>Besplatna profesionalna analiza vaše Facebook ili Instagram stranice</h2>
-    
-    <h3>Šta dobijate:</h3>
-    <p style="font-size: 1.1em;">📊 <strong>Detaljnu analizu</strong> koja pokriva:</p>
-    <ul>
-        <li>Kvalitet sadržaja i efikasnost video materijala</li>
-        <li>Konzistentnost brendiranja</li>
-        <li>Ponašanje pri objavljivanju</li>
-        <li>Signale angažovanja</li>
-        <li>Upotrebu poziva na akciju (CTA)</li>
-        <li>Potencijal za monetizaciju</li>
-        <li>Propuštene prilike</li>
-    </ul>
-    
-    <h3>Kako funkcioniše:</h3>
-    <ol style="font-size: 1.1em; margin-left: 40px;">
-        <li>Pošaljite link vaše Facebook ili Instagram stranice</li>
-        <li>Dobijate profesionalnu analizu za <strong>nekoliko dana</strong></li>
-        <li>Saznajete <strong>tačno šta je pokvareno, zašto je pokvareno i kako to popraviti</strong></li>
-    </ol>
-    
-    <div class="highlight">
-        <p style="font-size: 1.2em;"><strong>Bez dugih teorijskih strategija. Samo jasna, praktična rešenja.</strong></p>
+        <section style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white;">
+            <h2 style="color: white; border-bottom: 3px solid white;">Spremni Za Promenu?</h2>
+            <p style="font-size: 1.2em; margin: 20px 0;">Pošaljite link vaše Facebook ili Instagram stranice i dobijte besplatnu profesionalnu analizu.</p>
+            <p style="font-size: 1.1em;"><strong>Email:</strong> <a href="mailto:emileros1971@gmail.com" style="color: white; text-decoration: underline;">emileros1971@gmail.com</a></p>
+            <p style="font-size: 1.1em;"><strong>Telefon:</strong> <a href="tel:+381691508197" style="color: white; text-decoration: underline;">069 1508 197</a></p>
+            
+            <div class="center-cta">
+                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button" style="background: white; color: #6a11cb;">Zatražite Besplatnu Analizu</a>
+            </div>
+        </section>
     </div>
-    
-    <div class="text-center">
-        <a href="#contact" class="cta-button-small">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</section>
 
-<section id="services">
-    <h2>NAŠE USLUGE</h2>
-    
-    <h3>1. Profesionalna Video Produkcija</h3>
-    <ul>
-        <li>Video reklame i kratki spotovi za društvene mreže</li>
-        <li>Brza isporuka — čak i ako nemate ideje za sadržaj</li>
-        <li>Dinamični, efektni video klipovi koji privlače pažnju</li>
-    </ul>
-    <p><strong>Idealno za:</strong> Lokalne usluge, maloprodaju, restorane, zanatske poslove, profesionalne usluge</p>
-    
-    <h3>2. Potpuno Upravljanje Društvenim Mrežama (Silverado Marketing Sistem)</h3>
-    <ul>
-        <li>Dnevno objavljivanje i upravljanje sadržajem</li>
-        <li>Strategija angažovanja i interakcije</li>
-        <li>Praćenje performansi i optimizacija</li>
-        <li>Pretvaranje dosadne stranice u živu, aktivnu zajednicu</li>
-    </ul>
-    <p><strong>Cena:</strong> Niska mesečna naknada — pristupačno za mala i srednja preduzeća</p>
-    <p><strong>Rezultati:</strong></p>
-    <ul>
-        <li>Stabilizacija naloga za <strong>14 dana</strong></li>
-        <li>Predvidljivi obrasci za <strong>prvi mesec</strong></li>
-        <li>Rezultati se <strong>uvećavaju</strong> tokom vremena</li>
-    </ul>
-    
-    <h3>3. Kombinovani Paket: Video + Upravljanje</h3>
-    <p style="font-size: 1.1em;">Najbolja vrednost za preduzeća koja žele <strong>kompletan sistem</strong>:</p>
-    <ul>
-        <li>✅ Profesionalna video produkcija</li>
-        <li>✅ Potpuno upravljanje Facebook/Instagram naloga</li>
-        <li>✅ Strategija sadržaja i distribucija</li>
-        <li>✅ Kontinuirano praćenje i optimizacija</li>
-    </ul>
-    <p style="font-size: 1.2em; font-weight: bold;">Vaš nalog postaje imovina umesto tereta.</p>
-    
-    <div class="text-center">
-        <a href="#contact" class="cta-button-small">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</section>
-
-<section id="why">
-    <h2>ZAŠTO SILVERADO MARKETING?</h2>
-    <h3>Ne obećavamo čuda preko noći. Gradimo momentum.</h3>
-    
-    <p style="font-size: 1.1em;"><strong>Naš pristup:</strong></p>
-    <ol style="font-size: 1.1em; margin-left: 40px;">
-        <li><strong>Sistem umesto haosa</strong> — Vaš Facebook nalog radi kao prodajni sistem, ne kao katalog</li>
-        <li><strong>Konzistentnost pobjeđuje</strong> — Algoritam nagrađuje redovnost, ne nasumičnost</li>
-        <li><strong>Fokus na angažovanje</strong> — Ne samo lajkovi, već razgovori koji vode do prodaje</li>
-        <li><strong>Dugotrajni rezultati</strong> — Rezultati se uvećavaju mesec za mesec</li>
-    </ol>
-    
-    <div class="highlight">
-        <p style="font-size: 1.2em;"><strong>U 2026. godini, nalozi bez sistema će nestati u buci.</strong></p>
-        <p style="font-size: 1.2em;"><strong>Nalozi sa strukturom će pobediti.</strong></p>
-    </div>
-    
-    <div class="text-center">
-        <a href="#contact" class="cta-button-small">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</section>
-
-<section id="faq">
-    <h2>Često Postavljana Pitanja (FAQ)</h2>
-    
-    <h3>P: Koliko dugo traje da vidim rezultate?</h3>
-    <p>O: Stabilizacija naloga počinje za 14 dana. Predvidljivi obrasci se uspostavljaju za prvi mesec. Rezultati se uvećavaju tokom vremena.</p>
-    
-    <h3>P: Da li moram da imam video sadržaj?</h3>
-    <p>O: Ne. Mi proizvodimo profesionalne video klipove za vas — čak i ako nemate ideje.</p>
-    
-    <h3>P: Koliko košta usluga?</h3>
-    <p>O: Kontaktirajte nas za personalizovanu ponudu. Naše cene su pristupačne za mala i srednja preduzeća.</p>
-    
-    <h3>P: Da li radite sa preduzećima van Srbije?</h3>
-    <p>O: Trenutno se fokusiramo na tržište Srbije gde najbolje razumemo lokalne potrebe i ponašanje kupaca.</p>
-    
-    <div class="text-center">
-        <a href="#contact" class="cta-button-small">ZATRAŽITE BESPLATNU ANALIZU →</a>
-    </div>
-</section>
-
-<section id="contact" class="text-center">
-    <h2>Spremni da pretvorite vašu Facebook stranicu u sistem koji radi?</h2>
-    <p style="font-size: 1.3em; margin: 20px 0;">Počnite sa besplatnom analizom.</p>
-    <p style="font-size: 1.1em;">Pošaljite link vaše Facebook ili Instagram stranice i saznajete tačno šta treba popraviti.</p>
-    <a href="mailto:your-email@example.com" class="cta-button-large">ZATRAŽITE BESPLATNU ANALIZU SADA →</a>
-    
-    <div style="margin-top: 60px;">
-        <h3>SILVERADO MARKETING</h3>
-        <p style="font-size: 1.1em;">Video Production & Social Media Management</p>
-        <p>📧 Email: <strong>emileros1971@gmail.com</strong></p>
-        <p>📱 Telefon: <strong>+381 691508197</strong></p>
-        <p>🌐 Lokacija: <strong>Srbija</strong></p>
-        <p style="margin-top: 20px;"><strong>Radimo sa malim i srednjim preduzećima širom Srbije.</strong></p>
-    </div>
-</section>
-
-</div>
-
-<footer>
-    <p>&copy; 2025 Silverado Marketing. Sva prava zadržana.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Silverado Marketing. Sva prava zadržana.</p>
+        <p style="margin-top: 10px;">Email: <a href="mailto:emileros1971@gmail.com" style="color: #6a11cb;">emileros1971@gmail.com</a> | Telefon: <a href="tel:+381691508197" style="color: #6a11cb;">069 1508 197</a></p>
+    </footer>
 </body>
 </html>
-
-
-
-IMPORTANT: Replace These Before Uploading
-
-
-
-
-
-Line 285: Change your-email@example.com to your real email (appears twice)
-
-
-
-Line 291: Change +381 XX XXX XXXX to your real phone number
-
-Save and upload!
