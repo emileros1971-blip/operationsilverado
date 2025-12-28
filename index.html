@@ -172,24 +172,6 @@
       background:rgba(255,255,255,.02);
     }
 
-    /* NEW: Bank card reassurance block (keeps design consistent) */
-    .reassure{
-      margin-top:14px;
-      padding:14px;
-      border-radius:var(--radius);
-      border:1px solid rgba(34,197,94,.25);
-      background: linear-gradient(180deg, rgba(34,197,94,.10), rgba(255,255,255,.02));
-      color: var(--muted);
-      font-size:14px;
-      line-height:1.55;
-    }
-    .reassure b{color:var(--text)}
-    .reassure .line{
-      height:1px;
-      background: rgba(255,255,255,.10);
-      margin:10px 0;
-    }
-
     .hero-right{padding:18px; display:flex; flex-direction:column; gap:12px;}
     .stat{
       padding:16px;
@@ -398,19 +380,23 @@
     <div class="container">
       <div class="hero-grid">
         <div class="card hero-left">
+          <!-- NEW SECTION (beginning): Card-payment reassurance -->
+          <div class="pill" style="margin-bottom:12px;">
+            <span class="dot"></span>
+            Ne koristiš svoju karticu na Facebook-u — mi plaćamo kampanje za tebe
+          </div>
+          <p class="lead" style="margin:0 0 12px;">
+            Mnogi mali biznisi u Srbiji ne vole da ubacuju svoju bankovnu karticu u Meta Ads.
+            Kod nas to nije potrebno: <b>mi preuzimamo plaćanje oglasa</b> i vodimo kampanje, a ti dobijaš rezultate i izveštaj.
+          </p>
+          <!-- /NEW SECTION -->
+
           <div class="pill"><span class="dot"></span> Za male biznise u Srbiji • Brzo i konkretno</div>
           <h1>Pretvori Facebook i Instagram u mašinu koja donosi poruke, upite i prodaju.</h1>
           <p class="lead">
             Radimo <b>video reklame</b>, <b>vođenje društvenih mreža</b> i <b>Meta oglase</b> —
             da ljudi stvarno reaguju, a ne samo gledaju.
           </p>
-
-          <!-- NEW: Visible reassurance on homepage (keeps layout/style consistent) -->
-          <div class="reassure" role="note" aria-label="Plaćanje oglasa bez kartice klijenta">
-            <b>Bez kartice, bez rizika:</b> naši klijenti <b>ne moraju</b> da ubacuju svoju bankovnu karticu na Facebook/Meta.
-            <div class="line"></div>
-            <b>Mi plaćamo oglase za sve</b> — ti dobijaš rezultate, a mi vodimo ceo proces.
-          </div>
 
           <div class="hero-actions">
             <a class="btn primary" href="#paketi">Pogledaj pakete</a>
@@ -552,8 +538,6 @@
         Idealne su za brze testove — nekoliko varijanti, pa guramo onu koja daje najviše poruka za najmanju cenu.
       </div>
 
-      <p class="small-muted">
-        Napomena: Meta oglašavanje u paketima je usluga podešavanja/vođenja kampanja. Budžet za oglase (npr. 5–10€ dnevno) se plaća posebno direktno Meti.
       </p>
     </div>
   </section>
@@ -690,9 +674,6 @@
 
           <div class="divider"></div>
 
-          <div class="note" style="margin-top:0;">
-            <b>Važno:</b> U footeru i formi ispod zameni: <b>your@email.com</b> i <b>+38160000000</b>.
-          </div>
         </div>
 
         <div class="contact-card">
