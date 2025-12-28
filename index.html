@@ -172,6 +172,24 @@
       background:rgba(255,255,255,.02);
     }
 
+    /* NEW: Bank card reassurance block (keeps design consistent) */
+    .reassure{
+      margin-top:14px;
+      padding:14px;
+      border-radius:var(--radius);
+      border:1px solid rgba(34,197,94,.25);
+      background: linear-gradient(180deg, rgba(34,197,94,.10), rgba(255,255,255,.02));
+      color: var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .reassure b{color:var(--text)}
+    .reassure .line{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin:10px 0;
+    }
+
     .hero-right{padding:18px; display:flex; flex-direction:column; gap:12px;}
     .stat{
       padding:16px;
@@ -387,6 +405,13 @@
             da ljudi stvarno reaguju, a ne samo gledaju.
           </p>
 
+          <!-- NEW: Visible reassurance on homepage (keeps layout/style consistent) -->
+          <div class="reassure" role="note" aria-label="Plaćanje oglasa bez kartice klijenta">
+            <b>Bez kartice, bez rizika:</b> naši klijenti <b>ne moraju</b> da ubacuju svoju bankovnu karticu na Facebook/Meta.
+            <div class="line"></div>
+            <b>Mi plaćamo oglase za sve</b> — ti dobijaš rezultate, a mi vodimo ceo proces.
+          </div>
+
           <div class="hero-actions">
             <a class="btn primary" href="#paketi">Pogledaj pakete</a>
             <a class="btn" href="#kako-radi">Kako radimo</a>
@@ -394,9 +419,9 @@
           </div>
 
           <div class="mini">
-            <span class="tag">  Bez komplikovanja</span>
-            <span class="tag">  Brzi klipovi + objave</span>
-            <span class="tag">  Jasna ponuda i plan</span>
+            <span class="tag">✅ Bez komplikovanja</span>
+            <span class="tag">✅ Brzi klipovi + objave</span>
+            <span class="tag">✅ Jasna ponuda i plan</span>
           </div>
         </div>
 
@@ -433,17 +458,17 @@
 
       <div class="grid-3">
         <div class="feature">
-          <div class="icon"> </div>
+          <div class="icon">🎬</div>
           <h3>Video reklame</h3>
           <p>Kratki klipovi koji hvataju pažnju i vode ka poruci/pozivu.</p>
         </div>
         <div class="feature">
-          <div class="icon"> </div>
+          <div class="icon">📲</div>
           <h3>Vođenje profila</h3>
           <p>Dnevne objave + ritam sadržaja. Profil izgleda živ i prodajno.</p>
         </div>
         <div class="feature">
-          <div class="icon"> </div>
+          <div class="icon">📈</div>
           <h3>Meta oglasi</h3>
           <p>Testiramo varijante i prebacujemo budžet na ono što radi najbolje.</p>
         </div>
@@ -467,7 +492,7 @@
 
       <div class="pricing">
         <div class="plan">
-          <h3>  Paket A – Osnovni</h3>
+          <h3>📦 Paket A – Osnovni</h3>
           <p class="price">1.750 din</p>
           <p class="per">mesečno</p>
 
@@ -485,7 +510,7 @@
 
         <div class="plan popular">
           <div class="badge">Najtraženiji</div>
-          <h3>  Paket B – Standard</h3>
+          <h3>📦 Paket B – Standard</h3>
           <p class="price">3.500 din</p>
           <p class="per">mesečno</p>
 
@@ -503,7 +528,7 @@
         </div>
 
         <div class="plan">
-          <h3>  Paket C – Premium</h3>
+          <h3>📦 Paket C – Premium</h3>
           <p class="price">9.000 din</p>
           <p class="per">mesečno</p>
 
@@ -526,6 +551,12 @@
         Hook klipovi su kratke Meta reklame (obično 6–10 sekundi) koje su napravljene da odmah privuku pažnju i dovedu ljude na profil ili u poruke.
         Idealne su za brze testove — nekoliko varijanti, pa guramo onu koja daje najviše poruka za najmanju cenu.
       </div>
+
+      <p class="small-muted">
+        Napomena: Meta oglašavanje u paketima je usluga podešavanja/vođenja kampanja. Budžet za oglase (npr. 5–10€ dnevno) se plaća posebno direktno Meti.
+      </p>
+    </div>
+  </section>
 
   <section id="kako-radi">
     <div class="container">
@@ -580,22 +611,22 @@
 
           <div class="grid-2">
             <div class="feature" style="min-height:auto;">
-              <div class="icon"> </div>
+              <div class="icon">🕒</div>
               <h3>Ušteda vremena</h3>
               <p>Ti ne smišljaš šta da objaviš — dobiješ gotov sistem.</p>
             </div>
             <div class="feature" style="min-height:auto;">
-              <div class="icon"> </div>
+              <div class="icon">💬</div>
               <h3>Više poruka</h3>
               <p>Od “niko ne reaguje” do upita koji imaju smisla.</p>
             </div>
             <div class="feature" style="min-height:auto;">
-              <div class="icon"> </div>
+              <div class="icon">🎯</div>
               <h3>Jasna ponuda</h3>
               <p>Ljudi odmah razumeju: šta radiš i kako da naruče.</p>
             </div>
             <div class="feature" style="min-height:auto;">
-              <div class="icon"> </div>
+              <div class="icon">📊</div>
               <h3>Merljivo</h3>
               <p>Gledamo poruke/dan i cenu po poruci — bez nagađanja.</p>
             </div>
@@ -659,6 +690,9 @@
 
           <div class="divider"></div>
 
+          <div class="note" style="margin-top:0;">
+            <b>Važno:</b> U footeru i formi ispod zameni: <b>your@email.com</b> i <b>+38160000000</b>.
+          </div>
         </div>
 
         <div class="contact-card">
@@ -736,7 +770,7 @@
         <div class="tiny">
           <b>Kontakt</b><br/>
           Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a><br/>
-          Telefon: <a href="tel:+381 69 150 8197">+381 69 150 8197</a>
+          Telefon: <a href="tel:+381691508197">+381 69 150 8197</a>
         </div>
       </div>
     </div>
@@ -756,7 +790,7 @@
       const profile = document.getElementById("profile").value.trim();
       const message = document.getElementById("message").value.trim();
 
-      const toEmail = "emileros1971@gmail.com"; // 
+      const toEmail = "your@email.com"; // <-- change this to your email
       const subject = encodeURIComponent("Upit sa Silverado.pro landing strane");
       const body = encodeURIComponent(
         "IME: " + name + "\n" +
@@ -772,4 +806,3 @@
   </script>
 </body>
 </html>
-
