@@ -1,39 +1,947 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Silverado.pro — Video reklame + vođenje društvenih mreža + Meta oglasi. Jednostavno, brzo i efikasno za male biznise u Srbiji." />
+  <meta name="theme-color" content="#0b0f1a" />
 
-  <title>Silverado Marketing — Video reklame 120 din/sek</title>
-  <meta name="description" content="Video reklame 120 din/sek + paketi za vođenje društvenih mreža. Pozovi 069 1508 197 ili pošalji upit emailom." />
-
-  <meta property="og:title" content="Silverado Marketing — Video reklame 120 din/sek" />
-  <meta property="og:description" content="Video reklame + vođenje društvenih mreža. Jasno, jednostavno i bez komplikacija." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.silverado.pro/" />
+  <title>Silverado.pro — Video reklame + Društvene mreže + Meta oglasi</title>
 
   <style>
     :root{
-      --bg:#0b0f17;
-      --panel: rgba(15,23,42,.72);
-      --panel2: rgba(255,255,255,.03);
-      --text:#e5e7eb;
-      --muted:#a1a1aa;
-      --line:rgba(255,255,255,.12);
-      --brand:#22c55e;
-      --brand2:#60a5fa;
-      --shadow: 0 18px 50px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1020px;
+      --bg:#0b0f1a;
+      --panel:#11182a;
+      --panel2:#0f1524;
+      --text:#e8eefc;
+      --muted:#b8c2dd;
+      --brand:#7c5cff;
+      --brand2:#23c4ff;
+      --ok:#39d98a;
+      --warn:#ffcc66;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max: 1120px;
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.18), transparent 55%),
-        radial-gradient(900px 520px at 80% 0%, rgba(34,197,94,.14), transparent 50%),
-        var(--bg);
+        radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 700px at 80% 0%, rgba(35,196,255,.20), transparent 55%),
+        linear-gradient(180deg, #070a12, var(--bg) 35%, #070a12);
+      min-height:100vh;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 14px; border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      backdrop-filter: blur(10px);
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,var(--brand),var(--brand2))}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background:rgba(7,10,18,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 14px 40px rgba(124,92,255,.35);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 50%);
+      transform: rotate(25deg);
+    }
+    .brand small{display:block; font-weight:600; color:var(--muted); letter-spacing:0}
+    .nav-links{
+      display:flex; gap:16px; flex-wrap:wrap;
+      align-items:center; justify-content:flex-end;
+    }
+    .nav-links a{
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      font-size:14px;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:700;
+      box-shadow:none;
+      transition:.18s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.05)}
+    .btn.primary{
+      border-color: rgba(124,92,255,.35);
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(35,196,255,.75));
+      box-shadow: 0 18px 45px rgba(124,92,255,.22);
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
+    .btn.ghost{background:transparent}
+
+    header.hero{
+      padding:54px 0 22px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(900px 500px at 30% 20%, rgba(124,92,255,.25), transparent 60%),
+                  radial-gradient(700px 520px at 80% 20%, rgba(35,196,255,.18), transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .hero-left > *{position:relative}
+    h1{
+      margin:14px 0 10px;
+      font-size: 44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width: 62ch;
+      margin:0 0 16px;
+    }
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .mini{
+      margin-top:16px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .tag{
+      border:1px solid var(--line);
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.02);
+    }
+
+    .hero-right{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .stat{
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(17,24,42,.8), rgba(15,21,36,.65));
+    }
+    .stat b{display:block; font-size:24px; margin-bottom:6px}
+    .stat span{color:var(--muted); font-size:14px; line-height:1.45}
+
+    section{padding:38px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+      margin-bottom:14px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-.2px;
+    }
+    .section-title p{
+      margin:0;
+      color:var(--muted);
+      max-width: 60ch;
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+    }
+    .feature{
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(17,24,42,.7), rgba(15,21,36,.55));
+      min-height: 130px;
+    }
+    .feature h3{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .icon{
+      width:38px; height:38px; border-radius:14px;
+      border:1px solid var(--line);
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(255,255,255,.02);
+      margin-bottom:10px;
+      color:var(--text);
+      font-weight:800;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    .plan{
+      padding:18px;
+      border-radius:var(--radius2);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(17,24,42,.75), rgba(15,21,36,.55));
+      position:relative;
+      overflow:hidden;
+    }
+    .plan.popular{
+      border-color: rgba(124,92,255,.35);
+      box-shadow: 0 20px 60px rgba(124,92,255,.15);
+    }
+    .plan .badge{
+      position:absolute; top:14px; right:14px;
+      font-size:12px; font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(124,92,255,.18);
+      border: 1px solid rgba(124,92,255,.35);
+      color: var(--text);
+    }
+    .plan h3{margin:2px 0 8px; font-size:18px}
+    .price{
+      font-size:30px;
+      font-weight:900;
+      margin:0 0 6px;
+    }
+    .per{color:var(--muted); font-size:13px; margin:0 0 10px}
+    .ul{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.4;
+    }
+    .ul li{
+      display:flex; gap:10px; align-items:flex-start;
+      border-top:1px dashed rgba(255,255,255,.10);
+      padding-top:10px;
+    }
+    .check{
+      width:20px; height:20px; border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(57,217,138,.35);
+      background: rgba(57,217,138,.10);
+      color: var(--ok);
+      font-weight:900;
+      flex:0 0 20px;
+      margin-top:1px;
+    }
+    .plan .cta{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .note{
+      margin-top:14px;
+      padding:14px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .timeline{
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      background:linear-gradient(180deg, rgba(17,24,42,.75), rgba(15,21,36,.55));
+      padding:18px;
+      display:grid;
+      gap:10px;
+    }
+    .step{
+      display:flex; gap:12px;
+      padding:12px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.02);
+    }
+    .num{
+      width:34px; height:34px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(124,92,255,.18);
+      border:1px solid rgba(124,92,255,.35);
+      font-weight:900;
+      flex:0 0 34px;
+    }
+    .step b{display:block; margin-bottom:4px}
+    .step span{color:var(--muted); font-size:14px; line-height:1.5}
+
+    details{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:14px 14px;
+      background:rgba(255,255,255,.02);
+    }
+    details + details{margin-top:10px}
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted); margin:10px 0 0; line-height:1.55; font-size:14px}
+
+    .contact{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .contact-card{
+      padding:18px;
+      border-radius:var(--radius2);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(17,24,42,.75), rgba(15,21,36,.55));
+    }
+    form{
+      display:grid; gap:10px;
+    }
+    label{font-size:13px; color:var(--muted)}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(124,92,255,.45);
+      box-shadow: 0 0 0 4px rgba(124,92,255,.12);
+    }
+    .form-row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+
+    footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:30px;
+    }
+    .footer-inner{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap:16px; flex-wrap:wrap;
+    }
+    .tiny{font-size:13px; line-height:1.55}
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin:18px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr; }
+      .pricing{grid-template-columns:1fr; }
+      .grid-3{grid-template-columns:1fr; }
+      .grid-2{grid-template-columns:1fr; }
+      .contact{grid-template-columns:1fr;}
+      h1{font-size:38px;}
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px;}
+      .form-row{grid-template-columns: 1fr;}
+      .nav-links{display:none;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Silverado.pro">
+          <span class="logo" aria-hidden="true"></span>
+          <span>
+            Silverado.pro
+            <small>Video reklame • Društvene mreže • Meta oglasi</small>
+          </span>
+        </a>
+
+        <div class="nav-links" aria-label="Navigacija">
+          <a href="#usluge">Usluge</a>
+          <a href="#paketi">Paketi</a>
+          <a href="#kako-radi">Kako radi</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <a class="btn primary" href="#kontakt">Besplatna procena</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="card hero-left">
+          <div class="pill"><span class="dot"></span> Za male biznise u Srbiji • Brzo i konkretno</div>
+          <h1>
+            Pretvori Facebook i Instagram u mašinu koja donosi poruke, upite i prodaju.
+          </h1>
+          <p class="lead">
+            Radimo <b>video reklame</b>, <b>vođenje društvenih mreža</b> i <b>Meta oglase</b> —
+            da ljudi stvarno reaguju, a ne samo gledaju.
+            Cilj: više poruka, više upita, bolji rezultat.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#paketi">Pogledaj pakete</a>
+            <a class="btn" href="#kako-radi">Kako radimo</a>
+            <a class="btn ghost" href="#kontakt">Piši na Viber / WhatsApp</a>
+          </div>
+
+          <div class="mini">
+            <span class="tag">✅ Bez komplikovanja</span>
+            <span class="tag">✅ Brzi klipovi + objave</span>
+            <span class="tag">✅ Jasna ponuda i plan</span>
+          </div>
+        </div>
+
+        <div class="card hero-right">
+          <div class="stat">
+            <b>14 dana</b>
+            <span>Prvi vidljivi pomaci kada ubacimo ritam objava + kratke “hook” klipove.</span>
+          </div>
+          <div class="stat">
+            <b>3 stvari</b>
+            <span>Gledamo ključne metrike: <b>poruke dnevno</b>, <b>cena po poruci</b>, <b>ušteda vremena</b>.</span>
+          </div>
+          <div class="stat">
+            <b>50 klipova?</b>
+            <span>Ako već imaš klipove — pretvaramo ih u sistem: test, optimizacija, najbolji rade dalje.</span>
+          </div>
+          <div class="stat">
+            <b>Besplatna procena</b>
+            <span>Pošalji link ka profilu + šta prodaješ — vraćamo konkretne korake za poboljšanje.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="usluge">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Šta radimo</h2>
+          <p>Jedna ekipa, jedan plan — da sve izgleda profesionalno i da donosi rezultate.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature">
+          <div class="icon">🎬</div>
+          <h3>Video reklame</h3>
+          <p>Kratki, moderni klipovi koji odmah hvataju pažnju i vode ka poruci/pozivu/ponudi.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📲</div>
+          <h3>Vođenje profila</h3>
+          <p>Dnevne objave + ritam sadržaja. Profil više ne izgleda kao katalog, nego kao živa firma.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📈</div>
+          <h3>Meta oglasi</h3>
+          <p>Testiramo više varijanti, pratimo rezultate i prebacujemo budžet na ono što radi najbolje.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Bitno:</b> Ne radimo “da se nešto objavi”. Radimo da se dobije reakcija:
+        poruke, upiti, pozivi, rezervacije, prodaja.
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="paketi">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Paketi za vođenje društvenih mreža</h2>
+          <p>Fiksna, jasna ponuda. Može uz tvoje klipove ili mi radimo sve od nule.</p>
+        </div>
+      </div>
+
+      <div class="pricing">
+        <!-- PLAN A -->
+        <div class="plan">
+          <h3>📦 Paket A – Osnovni</h3>
+          <p class="price">1.750 din</p>
+          <p class="per">mesečno • (osnova za redovnost)</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span> <span>2 objave dnevno</span></li>
+            <li><span class="check">✓</span> <span>1 video nedeljno</span></li>
+            <li><span class="check">✓</span> <span>Meta oglašavanje: nije uključeno</span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Uzimam Paket A</a>
+            <a class="btn" href="#kako-radi">Kako ide proces</a>
+          </div>
+        </div>
+
+        <!-- PLAN B -->
+        <div class="plan popular">
+          <div class="badge">Najtraženiji</div>
+          <h3>📦 Paket B – Standard</h3>
+          <p class="price">1.200 din</p>
+          <p class="per">mesečno • + vođenje koje “gura” profil</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span> <span>2 objave dnevno</span></li>
+            <li><span class="check">✓</span> <span>2 videa nedeljno</span></li>
+            <li><span class="check">✓</span> <span>1 hook video mesečno</span></li>
+            <li><span class="check">✓</span> <span>Meta oglašavanje: <b>1.200 din / mesečno</b></span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Uzimam Paket B</a>
+            <a class="btn" href="#faq">Pitanja</a>
+          </div>
+        </div>
+
+        <!-- PLAN C -->
+        <div class="plan">
+          <h3>📦 Paket C – Pro</h3>
+          <p class="price">2.500 din</p>
+          <p class="per">mesečno • (maksimalan tempo)</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span> <span>2 objave dnevno</span></li>
+            <li><span class="check">✓</span> <span>3 videa nedeljno</span></li>
+            <li><span class="check">✓</span> <span>2 hook videa mesečno</span></li>
+            <li><span class="check">✓</span> <span>Meta oglašavanje: <b>2.400 din / mesečno</b></span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Uzimam Paket C</a>
+            <a class="btn" href="#kako-radi">Plan u 14 dana</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Šta je “hook” video?</b><br/>
+        Hook klipovi su kratke Meta reklame (obično 6–10 sekundi) koje su napravljene da odmah privuku pažnju i dovedu ljude na profil ili u poruke.
+        Idealne su za brze testove — nekoliko varijanti, pa guramo onu koja daje najviše poruka za najmanju cenu.
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="kako-radi">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Kako radimo</h2>
+          <p>Brzo, jasno i bez gubljenja vremena. Ti šalješ informacije — mi pravimo sistem.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="timeline">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Brza procena profila (besplatno)</b>
+              <span>Pošalji link profila + šta prodaješ + grad. Kažemo šta prvo treba srediti.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Plan sadržaja</b>
+              <span>Dogovorimo ponudu, stil, “što jednostavnije” poruke i tempo objava.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <b>Produkcija</b>
+              <span>Pravimo klipove i objave (ili koristimo tvoje postojeće). Sve ide u ritmu.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <b>Oglasi + optimizacija</b>
+              <span>Testiramo varijante, pratimo metrike, pojačavamo ono što daje poruke.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hero-left" style="padding:18px;">
+          <div class="pill"><span class="dot"></span> Cilj: poruke, upiti, pozivi</div>
+          <h3 style="margin:12px 0 8px; font-size:20px;">U 14 dana pravimo “pre i posle” promenu</h3>
+          <p class="lead" style="margin:0;">
+            Profil prestaje da bude katalog i počinje da radi kao sistem:
+            <b>ritam objava</b> + <b>kratki klipovi</b> + <b>Meta testovi</b>.
+            Ti dobijaš jasne brojke i sledeće korake.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="grid-2">
+            <div class="feature" style="min-height:auto;">
+              <div class="icon">🕒</div>
+              <h3>Ušteda vremena</h3>
+              <p>Ti ne razmišljaš šta da objaviš — dobiješ gotov sistem.</p>
+            </div>
+            <div class="feature" style="min-height:auto;">
+              <div class="icon">💬</div>
+              <h3>Više poruka</h3>
+              <p>Od “niko ne reaguje” do upita koji imaju smisla.</p>
+            </div>
+            <div class="feature" style="min-height:auto;">
+              <div class="icon">🎯</div>
+              <h3>Jasna ponuda</h3>
+              <p>Ljudi odmah razumeju: šta radiš, za koga, koliko košta.</p>
+            </div>
+            <div class="feature" style="min-height:auto;">
+              <div class="icon">📊</div>
+              <h3>Merljivo</h3>
+              <p>Gledamo poruke/dan i cenu po poruci — bez nagađanja.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS / PROOF -->
+  <section id="rezultati">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Šta dobijaš (konkretno)</h2>
+          <p>Ne obećavamo magiju — obećavamo sistem i rad koji vodi do reakcije.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h3>Uređen profil</h3>
+          <p>Bio, istaknuto, vizuelni stil, ritam — da izgleda ozbiljno i prodajno.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">⚡</div>
+          <h3>Brzi “hook” klipovi</h3>
+          <p>Kratko, jasno, dinamično — da ljudi stanu, pogledaju i pošalju poruku.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📌</div>
+          <h3>Plan objava</h3>
+          <p>Zna se šta ide danas, sutra i sledeće nedelje. Bez praznih dana.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🧪</div>
+          <h3>Testiranje oglasa</h3>
+          <p>Više varijanti — pa pobednik dobija budžet. Jednostavno.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">💡</div>
+          <h3>Ideje za sadržaj</h3>
+          <p>Ne moraš da smišljaš “šta da kažeš” — mi postavljamo temu i formu.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <h3>Jedna kontakt tačka</h3>
+          <p>Ne juriš 3 osobe — imaš jednu ekipu koja radi sve.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        Ako već imaš video klipove (npr. 50 kom), mi ih pretvaramo u sistem:
+        <b>testiramo, sečemo, ubrzavamo, pravimo varijante</b> i guramo ono što donosi najbolji rezultat.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>FAQ — najčešća pitanja</h2>
+          <p>Odgovori na stvari koje ljudi najčešće pitaju pre nego što krenu.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Da li ovo radi u Srbiji i manjim gradovima?</summary>
+          <p>Da. Bitno je da ponuda bude jasna i da reklama vodi na poruku/poziv. Ne “šminka”, nego konkretna komunikacija.</p>
+        </details>
+
+        <details>
+          <summary>Da li moram da imam Instagram?</summary>
+          <p>Ne moraš. Ali preporuka je da bude povezan jer Meta bolje optimizuje kada imaš oba kanala.</p>
+        </details>
+
+        <details>
+          <summary>Koliko brzo mogu da vidim rezultat?</summary>
+          <p>Najčešće u prvih 7–14 dana se vidi pomak kada ubacimo ritam objava + hook klipove i testiranje oglasa.</p>
+        </details>
+
+        <details>
+          <summary>Da li radite i samo video reklame (bez vođenja profila)?</summary>
+          <p>Da. Ali najbolji rezultat je kada klipovi imaju gde da “slete” — uredan profil sa objavama i jasnom ponudom.</p>
+        </details>
+
+        <details>
+          <summary>Kako šaljem materijal i informacije?</summary>
+          <p>Najlakše: poruka na Viber/WhatsApp. Pošalješ slike, tekst, cene, adresu, broj telefona — mi složimo sve u sistem.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Kontakt</h2>
+          <p>Pošalji link profila + kratko šta prodaješ. Vraćamo konkretne korake i predlog paketa.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-card">
+          <h3 style="margin:0 0 10px;">Brz dogovor (Viber / WhatsApp)</h3>
+          <p class="lead" style="margin:0 0 14px;">
+            Najbrže: pošalji poruku sa:<br/>
+            <b>1)</b> link profila<br/>
+            <b>2)</b> šta prodaješ + grad<br/>
+            <b>3)</b> da li želiš Paket A/B/C
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="grid-2">
+            <a class="btn primary" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp (unesi broj)</a>
+            <a class="btn" href="#" onclick="alert('U ovaj link ubaci svoj Viber broj ili Viber link.'); return false;">Viber (ubaci link)</a>
+          </div>
+
+          <div class="note" style="margin-top:14px;">
+            <b>Napomena:</b> U linkove gore ubaci svoj broj (WhatsApp) i Viber link.
+            Ako želiš, pošalji mi tvoj broj/link i ja ću ti vratiti tačno popunjene linkove u HTML-u.
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3 style="margin:0 0 10px;">Kontakt forma</h3>
+          <p class="tiny" style="margin:0 0 14px;">
+            Forma ispod radi preko e-mail aplikacije (mailto). Ako želiš da forma šalje direktno na tvoj email bez mailto,
+            treba mali backend (npr. Formspree/Netlify Forms). Reći ću ti najjednostavniju varijantu.
+          </p>
+
+          <form id="leadForm">
+            <div class="form-row">
+              <div>
+                <label for="name">Ime i prezime</label>
+                <input id="name" name="name" type="text" placeholder="npr. Emil" required />
+              </div>
+              <div>
+                <label for="phone">Telefon</label>
+                <input id="phone" name="phone" type="tel" placeholder="npr. 06x xxx xxxx" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="city">Grad</label>
+                <input id="city" name="city" type="text" placeholder="npr. Subotica" />
+              </div>
+              <div>
+                <label for="package">Paket</label>
+                <select id="package" name="package">
+                  <option value="Nisam siguran">Nisam siguran</option>
+                  <option value="Paket A">Paket A</option>
+                  <option value="Paket B">Paket B</option>
+                  <option value="Paket C">Paket C</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="profile">Link ka Facebook/Instagram profilu</label>
+              <input id="profile" name="profile" type="url" placeholder="https://facebook.com/..." />
+            </div>
+
+            <div>
+              <label for="message">Šta prodaješ / šta ti treba?</label>
+              <textarea id="message" name="message" placeholder="npr. Treba mi više poruka za rezervacije + 2 videa nedeljno..."></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Pošalji upit</button>
+
+            <div class="tiny" style="color:var(--muted);">
+              Klikom na “Pošalji” otvara se tvoja e-mail aplikacija sa pripremljenom porukom.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="brand" style="margin-bottom:10px;">
+            <span class="logo" aria-hidden="true"></span>
+            <span>Silverado.pro<small>Video reklame • Društvene mreže • Meta oglasi</small></span>
+          </div>
+          <div class="tiny">
+            © <span id="year"></span> Silverado.pro — Sva prava zadržana.
+          </div>
+        </div>
+
+        <div class="tiny">
+          <b>Brzi linkovi</b><br/>
+          <a href="#paketi">Paketi</a> •
+          <a href="#kako-radi">Kako radimo</a> •
+          <a href="#faq">FAQ</a> •
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="tiny">
+          <b>Kontakt</b><br/>
+          Email: <a href="mailto:your@email.com">your@email.com</a><br/>
+          Telefon: <a href="tel:+38160000000">+381 60 000 000</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple mailto form handler (no backend needed)
+    const form = document.getElementById("leadForm");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const pkg = document.getElementById("package").value;
+      const profile = document.getElementById("profile").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const toEmail = "your@email.com"; // <-- change this to your email
+      const subject = encodeURIComponent("Upit sa Silverado.pro landing strane");
+      const body = encodeURIComponent(
+        "IME: " + name + "\n" +
+        "TELEFON: " + phone + "\n" +
+        "GRAD: " + (city || "-") + "\n" +
+        "PAKET: " + pkg + "\n" +
+        "PROFIL LINK: " + (profile || "-") + "\n\n" +
+        "PORUKA:\n" + (message || "-")
+      );
+
+      window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
+    });
+  </script>
+
+</body>
+</html>
       color: var(--text);
       line-height: 1.55;
       padding-bottom: 74px;
