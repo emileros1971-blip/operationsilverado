@@ -4,1073 +4,232 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Silverado Marketing — Besplatna analiza + Video reklame 120 din/sek</title>
-  <meta name="description" content="Besplatna analiza vaših društvenih mreža + stunning video reklame za 120 din/sekund. Pozovite 069 1508 197 ili pošaljite upit direktno na email." />
+  <title>Silverado Marketing — Video reklame 120 din/sek</title>
+  <meta name="description" content="Video reklame 120 din/sek + paketi za vođenje društvenih mreža. Pozovi 069 1508 197 ili pošalji upit emailom." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Silverado Marketing — Besplatna analiza + Video reklame 120 din/sek" />
-  <meta property="og:description" content="Besplatna analiza + video reklame 120 din/sekund. Pozovite 069 1508 197 ili pošaljite upit direktno na email." />
+  <meta property="og:title" content="Silverado Marketing — Video reklame 120 din/sek" />
+  <meta property="og:description" content="Video reklame + vođenje društvenih mreža. Jasno, jednostavno i bez komplikacija." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.silverado.pro/" />
-  <!-- Optional: add image in repo and enable below -->
-  <!-- <meta property="og:image" content="https://www.silverado.pro/og.jpg" /> -->
 
   <style>
     :root{
       --bg:#0b0f17;
+      --panel: rgba(15,23,42,.72);
+      --panel2: rgba(255,255,255,.03);
       --text:#e5e7eb;
       --muted:#a1a1aa;
-      --line:rgba(255,255,255,.10);
+      --line:rgba(255,255,255,.12);
       --brand:#22c55e;
       --brand2:#60a5fa;
       --shadow: 0 18px 50px rgba(0,0,0,.35);
       --radius: 18px;
-      --max: 980px;
+      --max: 1020px;
     }
     *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
         radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.18), transparent 55%),
         radial-gradient(900px 520px at 80% 0%, rgba(34,197,94,.14), transparent 50%),
         var(--bg);
-      color:var(--text);
-      line-height:1.55;
-      padding-bottom: 74px; /* space for mobile bottom bar */
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.72);
-      border-bottom:1px solid var(--line);
-    }
-    .topbar .inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0; gap:12px;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
-    .dot{
-      width:12px; height:12px; border-radius:999px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 0 0 4px rgba(34,197,94,.12);
-    }
-    .top-cta{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end}
-    .phone-inline{
-      font-weight:800;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.04);
-      text-decoration:none;
-      white-space:nowrap;
-    }
-    .phone-inline:hover{border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.06)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:999px; text-decoration:none;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      font-weight:750; white-space:nowrap;
-      cursor:pointer;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18)}
-    .btn.primary{
-      border-color: rgba(34,197,94,.35);
-      background: linear-gradient(135deg, rgba(34,197,94,.22), rgba(96,165,250,.16));
-    }
-
-    .hero{padding:42px 0 18px}
-    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; align-items:start}
-    @media (max-width: 860px){ .hero-grid{grid-template-columns:1fr} .topbar .inner{align-items:flex-start} }
-
-    .h1{font-size: clamp(28px, 4vw, 46px); line-height:1.1; margin:10px 0 12px; letter-spacing:-.6px}
-    .sub{color:var(--muted); font-size: clamp(15px, 1.5vw, 18px); margin:0 0 18px}
-
-    .card{background: rgba(15,23,42,.72); border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow)}
-    .pad{padding:18px}
-    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .mini{color:var(--muted); font-size:13px; margin-top:10px}
-    .section{padding:18px 0}
-    h2{font-size: 20px; margin: 0 0 12px; letter-spacing:-.2px}
-    .list{margin:0; padding-left:18px}
-    .list li{margin:8px 0}
-    .muted{color:var(--muted)}
-    .grid2{display:grid; gap:12px; grid-template-columns: repeat(2, minmax(0,1fr))}
-    @media (max-width: 720px){ .grid2{grid-template-columns:1fr} }
-
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color:var(--muted); font-size:13px;
-    }
-    .steps ol{margin:0; padding-left:18px}
-    .steps li{margin:10px 0}
-    .divider{height:1px; background: var(--line); margin: 14px 0}
-
-    .footer{
-      padding:28px 0 34px;
-      border-top:1px solid var(--line);
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .contact a{color:var(--text); text-decoration:none; border-bottom:1px dashed rgba(255,255,255,.25)}
-    .contact a:hover{border-bottom-color: rgba(255,255,255,.55)}
-
-    details{border:1px solid var(--line); border-radius: 14px; padding: 12px 14px; background: rgba(255,255,255,.02)}
-    summary{cursor:pointer; font-weight:800}
-
-    /* Form inputs */
-    label{display:block; font-weight:700; margin-top:10px}
-    input, textarea{
-      width:100%;
-      padding:12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
       color: var(--text);
-      outline:none;
-      margin-top:6px;
+      line-height: 1.55;
+      padding-bottom: 74px;
     }
-    input::placeholder, textarea::placeholder{color: rgba(229,231,235,.55)}
-    input:focus, textarea:focus{border-color: rgba(96,165,250,.35)}
-    textarea{resize: vertical}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 
-    /* Mobile sticky bottom bar */
-    .bottom-bar{
-      position:fixed; left:0; right:0; bottom:0; z-index:60;
-      background: rgba(11,15,23,.82);
-      backdrop-filter: blur(10px);
-      border-top:1px solid var(--line);
-    }
-    .bottom-inner{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:10px 18px;
-      display:flex; gap:10px;
-    }
-    .bottom-inner a{
-      flex:1; text-align:center;
-      padding:12px 12px;
-      border-radius: 14px;
-      text-decoration:none;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      font-weight:850;
-    }
-    .bottom-inner a.primary{
-      border-color: rgba(34,197,94,.35);
-      background: linear-gradient(135deg, rgba(34,197,94,.22), rgba(96,165,250,.16));
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Sticky Top Bar -->
-  <header class="topbar">
-    <div class="wrap">
-      <div class="inner">
-        <div class="brand">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Silverado Marketing</span>
-        </div>
-        <div class="top-cta">
-          <a class="phone-inline" href="tel:+381691508197">📞 069 1508 197</a>
-          <a class="btn primary" href="#kontakt">Pošalji upit</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="pill">✅ Brzo • ✅ Jednostavno • ✅ Fokus na rezultate</div>
-          <h1 class="h1">Besplatna Analiza Vaših Društvenih Mreža</h1>
-          <p class="sub">Otkrijte zašto vaša Facebook/Instagram stranica ne donosi rezultate — i šta tačno da promenite.</p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="#kontakt">Pošalji upit</a>
-            <a class="btn" href="tel:+381691508197">Pozovi: 069 1508 197</a>
-            <a class="btn" href="#video">Video reklame 120 din/sek</a>
-          </div>
-
-          <p class="mini muted">Bez aplikacija i komplikacija — direktno kontaktiranje putem emaila ili poziva.</p>
-        </div>
-
-        <aside class="card pad">
-          <h2>Zašto stranica ne donosi rezultate?</h2>
-          <ul class="list">
-            <li>Objavljujete sadržaj, ali nema reakcije</li>
-            <li>Ima pratilaca, ali nema upita ni prodaje</li>
-            <li>Stranica izgleda kao katalog</li>
-            <li>Ne znate šta konkurencija radi bolje</li>
-            <li>Gubite vreme i novac na pogrešne objave/oglase</li>
-          </ul>
-          <div class="divider"></div>
-          <p class="muted" style="margin:0"><strong>Problem nije u Facebook-u.</strong> Problem je u pristupu.</p>
-          <div class="cta-row" style="margin-top:14px">
-            <a class="btn primary" href="tel:+381691508197">Pozovi odmah</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="section" id="video">
-      <div class="card pad">
-        <h2>Radimo stunning video reklame — 120 din/sekund</h2>
-        <p class="muted" style="margin-top:0">
-          Ako želite da vaš biznis izgleda moderno, ozbiljno i “skupo” na društvenim mrežama — video reklama je najbrži put do rezultata.
-        </p>
-
-        <div class="grid2" style="margin-top:12px">
-          <div class="card pad" style="background: rgba(255,255,255,.02)">
-            <h2 style="margin-bottom:8px">Šta dobijate</h2>
-            <ul class="list">
-              <li>Brze, moderne reklame za Facebook/Instagram</li>
-              <li>Format 9:16 (Reels/Story) + po potrebi 1:1 ili 16:9</li>
-              <li>Jasan CTA: poziv, poruka ili poseta sajtu</li>
-              <li>Vizuelni stil prilagođen vašoj branši</li>
-            </ul>
-          </div>
-
-          <div class="card pad" style="background: rgba(255,255,255,.02)">
-            <h2 style="margin-bottom:8px">Cena</h2>
-            <p style="margin:0 0 8px; font-size:18px; font-weight:900">
-              120 din / sekund videa
-            </p>
-            <p class="muted" style="margin:0 0 10px">
-              Primer: reklama od 15 sekundi = 1.800 din
-            </p>
-            <div class="cta-row">
-              <a class="btn primary" href="#kontakt">Pošalji upit</a>
-              <a class="btn" href="tel:+381691508197">Pozovi 069 1508 197</a>
-            </div>
-            <p class="mini muted">Pošaljite: branšu + lokaciju + šta nudite + 1–2 slike (ako imate).</p>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-        <p class="muted" style="margin:0">
-          Želite prvo besplatnu analizu profila? Pošaljite link i reći ćemo šta da popravite.
-        </p>
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn primary" href="#kontakt">Pošalji upit</a>
-          <a class="btn" href="tel:+381691508197">📞 069 1508 197</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section" id="kako">
-      <div class="grid2">
-        <div class="card pad">
-          <h2>Ko je ovo za?</h2>
-          <ul class="list">
-            <li><strong>Male biznise</strong> koji žele više upita i prodaje</li>
-            <li><strong>Preduzetnike</strong> koji nemaju vremena za marketing</li>
-            <li><strong>Vlasnike stranica</strong> koji objavljuju, ali nemaju rezultate</li>
-            <li><strong>Biznise</strong> koji žele bolji sadržaj i bolje oglase</li>
-          </ul>
-          <div class="divider"></div>
-          <div class="cta-row">
-            <a class="btn primary" href="#kontakt">Pošalji upit</a>
-            <a class="btn" href="tel:+381691508197">Pozovi</a>
-          </div>
-        </div>
-
-        <div class="card pad steps">
-          <h2>Kako funkcioniše?</h2>
-          <ol>
-            <li><strong>Pošaljete poruku</strong> i link vaše Facebook/Instagram stranice.</li>
-            <li><strong>Mi radimo analizu</strong> i vraćamo konkretne preporuke.</li>
-            <li><strong>Vi birate dalje</strong> — sami primenite ili radimo zajedno.</li>
-          </ol>
-          <div class="divider"></div>
-          <p class="muted" style="margin:0">Najbrže: poziv na <strong>069 1508 197</strong>.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section">
-      <div class="card pad">
-        <h2>Česta pitanja</h2>
-        <div style="display:grid; gap:10px">
-          <details>
-            <summary>Šta treba da pošaljem?</summary>
-            <div class="muted" style="margin-top:8px">Link vaše Facebook/Instagram stranice + kratko šta prodajete i gde radite.</div>
-          </details>
-          <details>
-            <summary>Da li je analiza besplatna?</summary>
-            <div class="muted" style="margin-top:8px">Da — dobijate konkretne preporuke. Vi odlučujete šta dalje.</div>
-          </details>
-          <details>
-            <summary>Kako poručujem video reklamu?</summary>
-            <div class="muted" style="margin-top:8px">Pošaljite upit ispod ili pozovite <strong>069 1508 197</strong>. Predlažemo koncept i krećemo u izradu.</div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT (direct to email) -->
-    <section class="section" id="kontakt">
-      <div class="card pad">
-        <h2>Pošaljite upit direktno</h2>
-        <p class="muted" style="margin-top:0">
-          Popunite formu i poruka ide direktno na naš email. (Otvoriće se vaš email klijent sa popunjenom porukom.)
-        </p>
-
-        <form action="mailto:emileros1971@gmail.com" method="POST" enctype="text/plain">
-          <div class="grid2">
-            <div>
-              <label for="ime">Ime i prezime</label>
-              <input id="ime" required type="text" name="Ime" placeholder="Npr. Marko Marković">
-            </div>
-            <div>
-              <label for="tel">Telefon</label>
-              <input id="tel" required type="tel" name="Telefon" placeholder="Npr. 06x xxx xxxx">
-            </div>
-          </div>
-
-          <div>
-            <label for="email">Email (opciono)</label>
-            <input id="email" type="email" name="Email" placeholder="Npr. email@domen.rs">
-          </div>
-
-          <div>
-            <label for="poruka">Poruka</label>
-            <textarea id="poruka" required name="Poruka" rows="5" placeholder="Napišite: branša, lokacija, šta nudite + link ka Facebook/Instagram stranici"></textarea>
-          </div>
-
-          <div class="cta-row" style="margin-top:14px">
-            <button type="submit" class="btn primary">Pošalji upit emailom</button>
-            <a class="btn" href="tel:+381691508197">📞 Pozovi 069 1508 197</a>
-            <a class="btn" href="mailto:emileros1971@gmail.com?subject=Upit%20-%20Silverado%20Marketing">Pošalji email direktno</a>
-          </div>
-
-          <p class="mini muted">
-            Ako nemate podešen email na telefonu, kliknite “Pošalji email direktno” ili nas pozovite.
-          </p>
-        </form>
-
-        <div class="divider"></div>
-        <p class="contact" style="margin:0">
-          Telefon: <a href="tel:+381691508197">069 1508 197</a><br/>
-          Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a>
-        </p>
-      </div>
-    </section>
-
-    <footer class="footer">
-      © 2025 Silverado Marketing. Sva prava zadržana.<br/>
-      Telefon: <a href="tel:+381691508197">069 1508 197</a> | Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a>
-    </footer>
-  </main>
-
-  <!-- Mobile bottom bar -->
-  <div class="bottom-bar" role="navigation" aria-label="Brze akcije">
-    <div class="bottom-inner">
-      <a class="primary" href="tel:+381691508197">Pozovi 069 1508 197</a>
-      <a href="#kontakt">Pošalji upit</a>
-    </div>
-  </div>
-</body>
-</html>
-                  var(--bg);
-      color:var(--text);
-      line-height:1.55;
-      padding-bottom: 74px; /* space for mobile bottom bar */
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
     .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.72);
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,15,23,.75);
+      backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
     }
     .topbar .inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0;
-      gap:12px;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 0;gap:12px;flex-wrap:wrap;
     }
-    .brand{
-      display:flex; align-items:center; gap:10px; font-weight:750;
-      letter-spacing:.2px;
-    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900}
     .dot{
-      width:12px; height:12px; border-radius:999px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 0 0 4px rgba(34,197,94,.12);
+      width:12px;height:12px;border-radius:50%;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      box-shadow:0 0 0 4px rgba(34,197,94,.12);
     }
-    .top-cta{
-      display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .phone-inline{
-      font-weight:750;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.04);
-      text-decoration:none;
-      white-space:nowrap;
-    }
-    .phone-inline:hover{border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.06)}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:999px; text-decoration:none;
+      padding:12px 16px;border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      font-weight:700;
-      white-space:nowrap;
+      background:rgba(255,255,255,.04);
+      font-weight:800;
+      transition:.15s;
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18)}
     .btn.primary{
-      border-color: rgba(34,197,94,.35);
-      background: linear-gradient(135deg, rgba(34,197,94,.22), rgba(96,165,250,.16));
+      border-color:rgba(34,197,94,.35);
+      background:linear-gradient(135deg,rgba(34,197,94,.22),rgba(96,165,250,.16));
     }
-    .hero{padding:42px 0 18px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:start;
-    }
-    @media (max-width: 860px){
-      .hero-grid{grid-template-columns:1fr}
-      .topbar .inner{align-items:flex-start}
-    }
-    .h1{
-      font-size: clamp(28px, 4vw, 46px);
-      line-height:1.1;
-      margin:10px 0 12px;
-      letter-spacing:-.6px;
-    }
-    .sub{
-      color:var(--muted);
-      font-size: clamp(15px, 1.5vw, 18px);
-      margin:0 0 18px;
-    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.07)}
+
+    .section{padding:20px 0}
     .card{
-      background: rgba(15,23,42,.72);
+      background:var(--panel);
       border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
     .pad{padding:18px}
-    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .mini{color:var(--muted); font-size:13px; margin-top:10px}
-    .section{padding:18px 0}
-    h2{font-size: 20px; margin: 0 0 12px; letter-spacing:-.2px}
-    .list{margin:0; padding-left:18px; color:var(--text)}
+    h1{font-size:clamp(28px,4vw,46px);margin:10px 0}
+    h2{font-size:20px;margin:0 0 12px}
+    .sub{color:var(--muted)}
+    .list{padding-left:18px}
     .list li{margin:8px 0}
-    .muted{color:var(--muted)}
-    .grid2{
-      display:grid; gap:12px;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-    @media (max-width: 720px){
-      .grid2{grid-template-columns:1fr}
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:13px;
-    }
-    .steps ol{margin:0; padding-left:18px}
-    .steps li{margin:10px 0}
-    .divider{height:1px; background: var(--line); margin: 14px 0}
-    .footer{
-      padding:28px 0 34px;
-      border-top:1px solid var(--line);
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .contact a{color:var(--text); text-decoration:none; border-bottom:1px dashed rgba(255,255,255,.25)}
-    .contact a:hover{border-bottom-color: rgba(255,255,255,.55)}
-    details{
-      border:1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
-      background: rgba(255,255,255,.02);
-    }
-    summary{cursor:pointer; font-weight:750}
+    .grid3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    @media(max-width:900px){.grid3{grid-template-columns:1fr}}
 
-    /* Mobile sticky bottom bar */
+    .pkg{
+      background:var(--panel2);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+    }
+    .pkg .title{display:flex;justify-content:space-between;font-weight:900}
+    .pkg ul{padding-left:18px}
+    .pkg li{margin:8px 0}
+
+    .divider{height:1px;background:var(--line);margin:14px 0}
+    .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+
     .bottom-bar{
-      position:fixed; left:0; right:0; bottom:0;
-      z-index:60;
-      background: rgba(11,15,23,.82);
-      backdrop-filter: blur(10px);
+      position:fixed;bottom:0;left:0;right:0;
+      background:rgba(11,15,23,.85);
+      backdrop-filter:blur(10px);
       border-top:1px solid var(--line);
     }
     .bottom-inner{
       max-width:var(--max);
-      margin:0 auto;
+      margin:auto;
       padding:10px 18px;
       display:flex;
       gap:10px;
     }
     .bottom-inner a{
-      flex:1;
-      text-align:center;
-      padding:12px 12px;
-      border-radius: 14px;
-      text-decoration:none;
+      flex:1;text-align:center;padding:12px;
+      border-radius:14px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      font-weight:800;
+      font-weight:900;
     }
     .bottom-inner a.primary{
-      border-color: rgba(34,197,94,.35);
-      background: linear-gradient(135deg, rgba(34,197,94,.22), rgba(96,165,250,.16));
+      border-color:rgba(34,197,94,.35);
+      background:linear-gradient(135deg,rgba(34,197,94,.22),rgba(96,165,250,.16));
     }
   </style>
 </head>
 
 <body>
-  <!-- Sticky Top Bar (phone visible everywhere) -->
-  <header class="topbar">
-    <div class="wrap">
-      <div class="inner">
-        <div class="brand">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Silverado Marketing</span>
-        </div>
 
-        <div class="top-cta">
-          <a class="phone-inline" href="tel:+381691508197">📞 069 1508 197</a>
-          <a class="btn primary" href="https://forms.gle/" target="_blank" rel="noopener">Zatražite Besplatnu Analizu</a>
-        </div>
+<header class="topbar">
+  <div class="wrap">
+    <div class="inner">
+      <div class="brand"><span class="dot"></span>Silverado Marketing</div>
+      <div>
+        <a class="btn" href="tel:+381691508197">📞 069 1508 197</a>
+        <a class="btn primary" href="mailto:emileros1971@gmail.com">Pošalji upit</a>
       </div>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="pill">✅ Besplatno • ✅ Bez obaveza • ✅ Izveštaj za 2–3 dana</div>
-          <h1 class="h1">Besplatna Analiza Vaših Društvenih Mreža</h1>
-          <p class="sub">Otkrijte zašto vaša Facebook i Instagram stranica ne donosi rezultate — i šta tačno da promenite.</p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="https://forms.gle/" target="_blank" rel="noopener">Zatražite Besplatnu Analizu</a>
-            <a class="btn" href="tel:+381691508197">Pozovite: 069 1508 197</a>
-            <a class="btn" href="#video">Video reklame 120 din/sek</a>
-          </div>
-
-          <p class="mini muted">Pošaljite samo link vaše Facebook/Instagram stranice. Ništa više.</p>
-        </div>
-
-        <aside class="card pad">
-          <h2>Zašto stranica ne donosi rezultate?</h2>
-          <ul class="list">
-            <li>Objavljujete sadržaj, ali niko ne reaguje</li>
-            <li>Imate pratioce, ali nema upita ni prodaje</li>
-            <li>Stranica izgleda kao katalog, ne kao živ biznis</li>
-            <li>Ne znate šta konkurencija radi bolje</li>
-            <li>Gubite vreme i novac na pogrešne objave i oglase</li>
-          </ul>
-          <div class="divider"></div>
-          <p class="muted" style="margin:0"><strong>Problem nije u Facebook-u.</strong> Problem je u pristupu.</p>
-          <div class="cta-row" style="margin-top:14px">
-            <a class="btn" href="tel:+381691508197">📞 069 1508 197</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- New Section: Video Ads 120 din/second -->
-    <section class="section" id="video">
-      <div class="card pad">
-        <h2>Radimo stunning video reklame — 120 din/sekund</h2>
-        <p class="muted" style="margin-top:0">
-          Ako želite da vaš biznis izgleda moderno, ozbiljno i “skupo” na društvenim mrežama — video reklama je najbrži put do rezultata.
-        </p>
-
-        <div class="grid2" style="margin-top:12px">
-          <div class="card pad" style="background: rgba(255,255,255,.02)">
-            <h2 style="margin-bottom:8px">Šta dobijate</h2>
-            <ul class="list">
-              <li>Brze, moderne reklame za Facebook/Instagram</li>
-              <li>Format 9:16 (Reels/Story) + po potrebi 1:1 ili 16:9</li>
-              <li>Jasan CTA: poziv, poruka ili poseta sajtu</li>
-              <li>Vizuelni stil prilagođen vašoj branši</li>
-            </ul>
-          </div>
-
-          <div class="card pad" style="background: rgba(255,255,255,.02)">
-            <h2 style="margin-bottom:8px">Cena</h2>
-            <p style="margin:0 0 8px; font-size:18px; font-weight:800">
-              120 din / sekund videa
-            </p>
-            <p class="muted" style="margin:0 0 10px">
-              Primer: reklama od 15 sekundi = 1.800 din
-            </p>
-            <div class="cta-row">
-              <a class="btn primary" href="tel:+381691508197">Pozovite odmah: 069 1508 197</a>
-              <a class="btn" href="mailto:emileros1971@gmail.com">Pošaljite upit emailom</a>
-            </div>
-            <p class="mini muted">Pošaljite: branšu + lokaciju + šta prodajete + 1–2 slike (ako imate).</p>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-        <p class="muted" style="margin:0">
-          Želite da mi prvo pogledamo vaše društvene mreže? Krenite sa besplatnom analizom.
-        </p>
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn primary" href="https://forms.gle/" target="_blank" rel="noopener">Zatražite Besplatnu Analizu</a>
-          <a class="btn" href="tel:+381691508197">📞 069 1508 197</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- What is it -->
-    <section class="section">
-      <div class="card pad">
-        <h2>Šta je Silverado Marketing?</h2>
-        <p class="muted" style="margin-top:0">
-          Silverado Marketing je profesionalna usluga optimizacije društvenih mreža za male biznise u Srbiji.
-        </p>
-        <p style="margin:0 0 10px">Mi vam pokažemo:</p>
-        <ul class="list">
-          <li>Tačno šta ne radi na vašoj stranici</li>
-          <li>Kako konkurencija dobija bolje rezultate</li>
-          <li>Koje promene donose više upita i prodaje</li>
-          <li>Kako da vaša stranica postane sistem koji radi za vas</li>
-        </ul>
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn primary" href="https://forms.gle/" target="_blank" rel="noopener">Zatražite Besplatnu Analizu</a>
-          <a class="btn" href="tel:+381691508197">Pozovite: 069 1508 197</a>
-        </div>
-        <p class="mini muted">Bez floskula. Samo konkretne preporuke.</p>
-      </div>
-    </section>
-
-    <!-- Who is this for -->
-    <section class="section">
-      <div class="grid2">
-        <div class="card pad">
-          <h2>Ko je ovo za?</h2>
-          <ul class="list">
-            <li><strong>Male biznise</strong> koji žele više vidljivosti i prodaje</li>
-            <li><strong>Preduzetnike</strong> koji nemaju vremena za marketing</li>
-            <li><strong>Vlasnike stranica</strong> koji objavljuju, ali nemaju reakcije</li>
-            <li><strong>Biznise sa lošim angažmanom</strong> — ima pratilaca, ali nema upita</li>
-          </ul>
-        </div>
-
-        <div class="card pad steps" id="kako">
-          <h2>Kako funkcioniše?</h2>
-          <ol>
-            <li><strong>Pošaljete link</strong> vaše Facebook/Instagram stranice.</li>
-            <li><strong>Mi radimo analizu</strong> (AI alati + iskustvo u oglašavanju).</li>
-            <li><strong>Dobićete izveštaj</strong> za 2–3 dana (konkretne preporuke).</li>
-            <li><strong>Vi birate dalje</strong> — sami primenite ili radimo zajedno.</li>
-          </ol>
-          <div class="divider"></div>
-          <p class="muted" style="margin:0">Besplatno. Bez obaveza. Bez skrivenih troškova.</p>
-          <div class="cta-row" style="margin-top:14px">
-            <a class="btn primary" href="https://forms.gle/" target="_blank" rel="noopener">Pošaljite link za analizu</a>
-            <a class="btn" href="tel:+381691508197">📞 069 1508 197</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why work with us -->
-    <section class="section">
-      <div class="card pad">
-        <h2>Zašto raditi sa nama?</h2>
-        <ul class="list">
-          <li>✅ Iskustvo u oglašavanju i video produkciji</li>
-          <li>✅ Brza isporuka – analiza za 2–3 dana</li>
-          <li>✅ Hands-off pristup – vi ne gubite vreme</li>
-          <li>✅ Fokus na rezultate: više upita, više prodaje</li>
-        </ul>
-        <div class="divider"></div>
-        <div class="cta-row">
-          <a class="btn primary" href="tel:+381691508197">Pozovite: 069 1508 197</a>
-          <a class="btn" href="https://forms.gle/" target="_blank" rel="noopener">Besplatna analiza</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section">
-      <div class="card pad">
-        <h2>Česta pitanja</h2>
-        <div style="display:grid; gap:10px">
-          <details>
-            <summary>Šta treba da pošaljem?</summary>
-            <div class="muted" style="margin-top:8px">Samo link vaše Facebook ili Instagram stranice.</div>
-          </details>
-          <details>
-            <summary>Da li je besplatno?</summary>
-            <div class="muted" style="margin-top:8px">Da. Bez obaveza. Vi odlučujete šta dalje.</div>
-          </details>
-          <details>
-            <summary>Koliko traje analiza?</summary>
-            <div class="muted" style="margin-top:8px">Obično 2–3 dana, u zavisnosti od obima stranice.</div>
-          </details>
-          <details>
-            <summary>Kako poručujem video reklamu?</summary>
-            <div class="muted" style="margin-top:8px">
-              Najbrže: pozovite <strong>069 1508 197</strong> ili pošaljite email. Pošaljite branšu, lokaciju i šta nudite — mi predlažemo koncept.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="kontakt">
-      <div class="card pad">
-        <h2>Kontakt</h2>
-        <p class="muted" style="margin-top:0">
-          Pozovite ili pošaljite poruku — odgovaramo brzo.
-        </p>
-
-        <div class="cta-row">
-          <a class="btn primary" href="tel:+381691508197">📞 069 1508 197</a>
-          <a class="btn" href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a>
-          <a class="btn" href="https://forms.gle/" target="_blank" rel="noopener">Besplatna analiza (forma)</a>
-        </div>
-
-        <div class="divider"></div>
-
-        <p class="contact" style="margin:0">
-          Telefon: <a href="tel:+381691508197">069 1508 197</a><br/>
-          Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a>
-        </p>
-      </div>
-    </section>
-
-    <footer class="footer">
-      © 2025 Silverado Marketing. Sva prava zadržana.<br/>
-      Telefon: <a href="tel:+381691508197">069 1508 197</a> | Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a>
-    </footer>
-  </main>
-
-  <!-- Mobile bottom bar (phone visible everywhere) -->
-  <div class="bottom-bar" role="navigation" aria-label="Brze akcije">
-    <div class="bottom-inner">
-      <a class="primary" href="tel:+381691508197">Pozovi 069 1508 197</a>
-      <a href="https://forms.gle/" target="_blank" rel="noopener">Besplatna analiza</a>
     </div>
   </div>
+</header>
 
-  <!-- NOTE:
-    Replace ALL occurrences of https://forms.gle/ with your real Google Forms link.
-  -->
-</body>
-</html>
-            line-height: 1.2;
-        }
-        
-        .subtitle {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #6a11cb;
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 20px auto;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
-        }
-        
-        .cta-button:hover {
-            background: #5a0fb8;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.6);
-        }
-        
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: #1a1a1a;
-            font-size: 2em;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #6a11cb;
-            padding-bottom: 10px;
-        }
-        
-        .problem-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .problem-list li {
-            padding: 15px;
-            margin: 10px 0;
-            background: #f8f9fa;
-            border-left: 4px solid #dc3545;
-            border-radius: 4px;
-        }
-        
-        .solution-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .solution-list li {
-            padding: 15px;
-            margin: 10px 0;
-            background: #f8f9fa;
-            border-left: 4px solid #6a11cb;
-            border-radius: 4px;
-        }
-        
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .benefit-card {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-            border-top: 4px solid #6a11cb;
-        }
-        
-        .benefit-card h3 {
-            color: #1a1a1a;
-            margin-bottom: 10px;
-        }
-        
-        .process-steps {
-            counter-reset: step-counter;
-            list-style: none;
-            margin: 30px 0;
-        }
-        
-        .process-steps li {
-            counter-increment: step-counter;
-            padding: 20px;
-            margin: 15px 0;
-            background: #f8f9fa;
-            border-radius: 8px;
-            position: relative;
-            padding-left: 80px;
-        }
-        
-        .process-steps li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #6a11cb;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        
-        .credentials {
-            background: #1a1a1a;
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-        
-        .credentials h3 {
-            color: #6a11cb;
-            margin-bottom: 15px;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: #1a1a1a;
-            color: white;
-        }
-        
-        .center-cta {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            .subtitle {
-                font-size: 1.1em;
-            }
-            
-            section {
-                padding: 25px;
-            }
-            
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1.1em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Besplatna Analiza Vaših Društvenih Mreža</h1>
-            <p class="subtitle">Otkrijte Zašto Vaša Facebook i Instagram Stranica Ne Donosi Rezultate</p>
-            <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
-        </div>
-    </header>
+<main class="wrap">
 
-    <div class="container">
-        <section>
-            <h2>Zašto Vaša Facebook Stranica Ne Donosi Rezultate?</h2>
-            <p>Većina malih biznisa u Srbiji ima isti problem:</p>
-            <ul class="problem-list">
-                <li><strong>Objavljujete sadržaj, ali niko ne reaguje</strong></li>
-                <li><strong>Imate pratioce, ali nema prodaje</strong></li>
-                <li><strong>Vaša stranica izgleda kao katalog, ne kao živ biznis</strong></li>
-                <li><strong>Ne znate šta radi konkurencija bolje od vas</strong></li>
-                <li><strong>Gubite vreme i novac na strategije koje ne funkcionišu</strong></li>
-            </ul>
-            <p><strong>Problem nije u Facebook-u. Problem je u pristupu.</strong></p>
-            
-            <div class="center-cta">
-                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
-            </div>
-        </section>
+<section class="section">
+  <h1>Video reklame koje privlače pažnju i donose upite</h1>
+  <p class="sub">
+    Radimo kratke, moderne video reklame za Facebook i Instagram — jednostavno, jasno i bez komplikacija.
+  </p>
+</section>
 
-        <section>
-            <h2>Šta Je Silverado Marketing?</h2>
-            <p>Silverado Marketing je <strong>profesionalna usluga optimizacije društvenih mreža</strong> za male biznise u Srbiji.</p>
-            <p>Mi ne prodajemo teoriju. Mi vam pokazujemo:</p>
-            <ul class="solution-list">
-                <li><strong>Tačno šta ne radi</strong> na vašoj stranici</li>
-                <li><strong>Kako konkurencija dobija bolje rezultate</strong></li>
-                <li><strong>Koje promene će doneti više angažmana i prodaje</strong></li>
-                <li><strong>Kako da vaša stranica postane sistem koji radi za vas</strong></li>
-            </ul>
-            <p><strong>Bez floskula. Samo rezultati.</strong></p>
-            
-            <div class="center-cta">
-                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
-            </div>
-        </section>
+<section class="section">
+  <div class="card pad">
+    <h2>🎬 Video reklame — 120 din / sekund</h2>
+    <ul class="list">
+      <li>Reels / Story format (9:16)</li>
+      <li>Moderan stil, jasan CTA</li>
+      <li>Spremno za Meta oglase</li>
+    </ul>
+    <div class="divider"></div>
+    <p class="sub">Primer: reklama od 15 sekundi = 1.800 din</p>
+  </div>
+</section>
 
-        <section>
-            <h2>Ko Je Ovo Za?</h2>
-            <div class="benefit-grid">
-                <div class="benefit-card">
-                    <h3>✅ Male Biznise</h3>
-                    <p>Koji žele da povećaju vidljivost i prodaju preko društvenih mreža</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>✅ Preduzetnike</h3>
-                    <p>Koji nemaju vremena da se bave marketingom, ali znaju da je važan</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>✅ Vlasnike Stranica</h3>
-                    <p>Koji objavljuju redovno, ali ne vide rezultate</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>✅ Biznise Sa Lošim Angažmanom</h3>
-                    <p>Koji imaju pratioce, ali nema interakcije ni prodaje</p>
-                </div>
-            </div>
-            
-            <div class="center-cta">
-                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
-            </div>
-        </section>
+<section class="section">
+  <div class="card pad">
+    <h2>Paketi za vođenje društvenih mreža</h2>
+    <p class="sub">
+      U nastavku su naši paketi za vođenje društvenih mreža, kao dodatak uz video reklamne klipove koje već radimo:
+    </p>
 
-        <section>
-            <h2>Kako Funkcioniše?</h2>
-            <ol class="process-steps">
-                <li><strong>Pošaljete link vaše Facebook/Instagram stranice</strong><br>Samo link. Ništa više.</li>
-                <li><strong>Mi radimo profesionalnu analizu</strong><br>Koristimo AI alate + 30 godina iskustva u oglašavanju</li>
-                <li><strong>Dobijate detaljan izveštaj za 2-3 dana</strong><br>Konkretne preporuke, ne teorija</li>
-                <li><strong>Vi odlučujete šta dalje</strong><br>Možete sami da primenite savete ili da radimo zajedno</li>
-            </ol>
-            <p><strong>Besplatno. Bez obaveza. Bez skrivenih troškova.</strong></p>
-            
-            <div class="center-cta">
-                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
-            </div>
-        </section>
+    <div class="grid3">
 
-        <section>
-            <h2>Zašto Raditi Sa Nama?</h2>
-            <div class="credentials">
-                <h3>Dokazana Ekspertiza</h3>
-                <ul>
-                    <li>✅ <strong>30 godina iskustva u oglašavanju</strong></li>
-                    <li>✅ <strong>Hiljade video klipova, reklama i komercijala</strong></li>
-                    <li>✅ <strong>100% zadovoljnih klijenata</strong> u video produkciji</li>
-                    <li>✅ <strong>Brza isporuka</strong> – analiza za 2-3 dana</li>
-                    <li>✅ <strong>Hands-off pristup</strong> – vi ne gubite vreme, mi radimo sve</li>
-                </ul>
-            </div>
-            <p>Mi ne prodajemo kurseve. Mi radimo posao umesto vas.</p>
-            
-            <div class="center-cta">
-                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button">Zatražite Besplatnu Analizu</a>
-            </div>
-        </section>
+      <div class="pkg">
+        <div class="title"><span>📦 Paket A – Osnovni</span><span>1.750 din</span></div>
+        <ul>
+          <li>2 objave dnevno</li>
+          <li>1 video nedeljno</li>
+          <li>Meta oglašavanje: nije uključeno</li>
+        </ul>
+      </div>
 
-        <section style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white;">
-            <h2 style="color: white; border-bottom: 3px solid white;">Spremni Za Promenu?</h2>
-            <p style="font-size: 1.2em; margin: 20px 0;">Pošaljite link vaše Facebook ili Instagram stranice i dobijte besplatnu profesionalnu analizu.</p>
-            <p style="font-size: 1.1em;"><strong>Email:</strong> <a href="mailto:emileros1971@gmail.com" style="color: white; text-decoration: underline;">emileros1971@gmail.com</a></p>
-            <p style="font-size: 1.1em;"><strong>Telefon:</strong> <a href="tel:+381691508197" style="color: white; text-decoration: underline;">069 1508 197</a></p>
-            
-            <div class="center-cta">
-                <a href="https://forms.gle/CRjXSs8sEoDiTsu48" target="_blank" class="cta-button" style="background: white; color: #6a11cb;">Zatražite Besplatnu Analizu</a>
-            </div>
-        </section>
+      <div class="pkg">
+        <div class="title"><span>📦 Paket B – Standard</span><span>3.500 din</span></div>
+        <ul>
+          <li>2 objave dnevno</li>
+          <li>2 videa nedeljno</li>
+          <li>1 hook video mesečno</li>
+          <li>Meta oglašavanje: 1.200 din / mesečno</li>
+        </ul>
+      </div>
+
+      <div class="pkg">
+        <div class="title"><span>📦 Paket C – Premium</span><span>9.000 din</span></div>
+        <ul>
+          <li>3 objave dnevno</li>
+          <li>5 videa nedeljno</li>
+          <li>2 hook videa mesečno</li>
+          <li>Meta oglašavanje: 2.500 din / mesečno</li>
+        </ul>
+      </div>
+
     </div>
 
-    <footer>
-        <p>&copy; 2025 Silverado Marketing. Sva prava zadržana.</p>
-        <p style="margin-top: 10px;">Email: <a href="mailto:emileros1971@gmail.com" style="color: #6a11cb;">emileros1971@gmail.com</a> | Telefon: <a href="tel:+381691508197" style="color: #6a11cb;">069 1508 197</a></p>
-    </footer>
+    <div class="divider"></div>
+
+    <p class="sub">
+      <strong>Napomena:</strong><br>
+      Hook video klipovi su posebni kratki oglasi koji se <strong>plaćaju na Meta platformama (Facebook i Instagram)</strong>.
+      Namenjeni su da privuku pažnju, zaustave skrolovanje i dovedu novu publiku i poruke na vašu stranicu,
+      zbog čega se razlikuju od klasičnih postova.
+    </p>
+
+    <p class="sub">
+      Ako želiš, slobodno mi javi koji paket ti je najzanimljiviji ili ako želiš da ti preporučim najbolju opciju za tvoj biznis.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2025 Silverado Marketing •
+  <a href="tel:+381691508197">069 1508 197</a> •
+  <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a>
+</footer>
+
+</main>
+
+<div class="bottom-bar">
+  <div class="bottom-inner">
+    <a class="primary" href="tel:+381691508197">Pozovi</a>
+    <a href="mailto:emileros1971@gmail.com">Pošalji upit</a>
+  </div>
+</div>
+
 </body>
 </html>
