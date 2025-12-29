@@ -416,10 +416,23 @@
             <b>14 dana</b>
             <span>Prvi vidljivi pomaci kada ubacimo ritam objava + kratke “hook” klipove.</span>
           </div>
+
+          <!-- REPLACED: "3 metrike" -> FB + Call -->
           <div class="stat">
-            <b>3 metrike</b>
-            <span>Gledamo: <b>poruke/dan</b>, <b>cena/poruci</b>, <b>ušteda vremena</b>.</span>
+            <b>Pogledaj primere</b>
+            <span>Pogledaj sample video klipove koje pravim (Facebook: Emil Eros) ili me pozovi direktno.</span>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <!-- NOTE: if you have an exact FB page link, replace the href below with it -->
+              <a class="btn" href="https://www.facebook.com/search/top/?q=Emil%20Eros" target="_blank" rel="noopener">
+                Facebook: Emil Eros
+              </a>
+              <a class="btn primary" href="tel:+381691508197">
+                Pozovi: 069 1508 197
+              </a>
+            </div>
           </div>
+          <!-- /REPLACED -->
+
           <div class="stat">
             <b>50 klipova?</b>
             <span>Ako već imaš klipove — pretvaramo ih u sistem: test, optimizacija, najbolji rade dalje.</span>
@@ -538,7 +551,6 @@
         Idealne su za brze testove — nekoliko varijanti, pa guramo onu koja daje najviše poruka za najmanju cenu.
       </div>
 
-      </p>
     </div>
   </section>
 
@@ -674,6 +686,15 @@
 
           <div class="divider"></div>
 
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <!-- NOTE: if you have an exact FB page link, replace the href below with it -->
+            <a class="btn" href="https://www.facebook.com/search/top/?q=Emil%20Eros" target="_blank" rel="noopener">Facebook: Emil Eros</a>
+            <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
+          </div>
+
+          <p class="small-muted" style="margin-top:10px;">
+            Najbrže: klikni “Pozovi” ili mi pošalji link profila — vraćam konkretan predlog.
+          </p>
         </div>
 
         <div class="contact-card">
@@ -771,7 +792,7 @@
       const profile = document.getElementById("profile").value.trim();
       const message = document.getElementById("message").value.trim();
 
-      const toEmail = "your@email.com"; // <-- change this to your email
+      const toEmail = "emileros1971@gmail.com";
       const subject = encodeURIComponent("Upit sa Silverado.pro landing strane");
       const body = encodeURIComponent(
         "IME: " + name + "\n" +
