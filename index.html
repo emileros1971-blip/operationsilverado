@@ -147,22 +147,13 @@
     }
     .hero-left > *{position:relative}
 
-    .pill{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:10px 14px; border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:999px;
-      color:var(--muted);
-      font-size:14px;
-      backdrop-filter: blur(10px);
-    }
-    .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,var(--green),var(--green2))}
     h1{
       margin:14px 0 10px;
       font-size: 44px;
       line-height:1.05;
       letter-spacing:-.6px;
     }
+
     .lead{
       color:var(--muted);
       font-size:16px;
@@ -170,14 +161,8 @@
       max-width: 62ch;
       margin:0 0 16px;
     }
+
     .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
-    .mini{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:14px;}
-    .tag{
-      border:1px solid var(--line);
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.02);
-    }
 
     .hero-right{padding:18px; display:flex; flex-direction:column; gap:12px;}
     .stat{
@@ -189,590 +174,59 @@
     .stat b{display:block; font-size:22px; margin-bottom:6px}
     .stat span{color:var(--muted); font-size:14px; line-height:1.45}
 
-    section{padding:38px 0}
-    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px;}
-    .section-title h2{margin:0; font-size:28px; letter-spacing:-.2px;}
-    .section-title p{margin:0; color:var(--muted); max-width: 60ch; line-height:1.5; font-size:14px;}
-
-    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
-    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px;}
-
-    .feature{
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(11,31,22,.75), rgba(10,26,19,.55));
-      min-height: 130px;
-    }
-    .feature h3{margin:0 0 6px; font-size:16px}
-    .feature p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
-    .icon{
-      width:38px; height:38px; border-radius:14px;
-      border:1px solid var(--line);
-      display:flex; align-items:center; justify-content:center;
-      background:rgba(255,255,255,.02);
-      margin-bottom:10px;
-      font-weight:900;
-    }
-
-    /* Repurpose pricing layout to show ONE offer (still uses same card styling) */
-    .pricing{display:grid; grid-template-columns: 1fr; gap:14px; align-items:stretch;}
-    .plan{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      position:relative;
-      overflow:hidden;
-    }
-    .plan.popular{
-      border-color: rgba(34,197,94,.35);
-      box-shadow: 0 20px 60px rgba(34,197,94,.12);
-    }
-    .plan .badge{
-      position:absolute; top:14px; right:14px;
-      font-size:12px; font-weight:900;
-      padding:6px 10px;
-      border-radius:999px;
-      background: rgba(34,197,94,.16);
-      border: 1px solid rgba(34,197,94,.35);
-      color: var(--text);
-    }
-    .plan h3{margin:2px 0 8px; font-size:18px}
-    .price{font-size:34px; font-weight:950; margin:0 0 6px;}
-    .per{color:var(--muted); font-size:13px; margin:0 0 10px}
-    .ul{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--muted); font-size:14px; line-height:1.4;}
-    .ul li{display:flex; gap:10px; align-items:flex-start; border-top:1px dashed rgba(255,255,255,.10); padding-top:10px;}
-    .check{
-      width:20px; height:20px; border-radius:8px;
-      display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(34,197,94,.35);
-      background: rgba(34,197,94,.10);
-      color: var(--green2);
-      font-weight:950;
-      flex:0 0 20px;
-      margin-top:1px;
-    }
-    .plan .cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
-    .note{
-      margin-top:14px;
-      padding:14px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-    }
-    .small-muted{color:var(--muted); font-size:13px; line-height:1.5; margin:8px 0 0;}
-
-    .timeline{
-      border:1px solid var(--line);
-      border-radius:var(--radius2);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      padding:18px;
-      display:grid;
-      gap:10px;
-    }
-    .step{
-      display:flex; gap:12px;
-      padding:12px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.06);
-      background:rgba(255,255,255,.02);
-    }
-    .num{
-      width:34px; height:34px; border-radius:14px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(34,197,94,.16);
-      border:1px solid rgba(34,197,94,.35);
-      font-weight:950;
-      flex:0 0 34px;
-    }
-    .step b{display:block; margin-bottom:4px}
-    .step span{color:var(--muted); font-size:14px; line-height:1.5}
-
-    details{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:14px 14px;
-      background:rgba(255,255,255,.02);
-    }
-    details + details{margin-top:10px}
-    summary{cursor:pointer; font-weight:900; list-style:none;}
-    summary::-webkit-details-marker{display:none}
-    .faq p{color:var(--muted); margin:10px 0 0; line-height:1.55; font-size:14px}
-
-    .contact{
-      display:grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .contact-card{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-    }
-    form{display:grid; gap:10px;}
-    label{font-size:13px; color:var(--muted)}
-    input, textarea, select{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      color: var(--text);
-      outline:none;
-    }
-    textarea{min-height:120px; resize:vertical}
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(34,197,94,.45);
-      box-shadow: 0 0 0 4px rgba(34,197,94,.14);
-    }
-    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
-    .divider{height:1px; background:var(--line); margin:18px 0;}
-
     footer{
       padding:26px 0 40px;
       color:var(--muted);
       border-top:1px solid var(--line);
       margin-top:30px;
     }
-    .footer-inner{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
-    .tiny{font-size:13px; line-height:1.55}
-
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr;}
-      .pricing{grid-template-columns:1fr;}
-      .grid-3{grid-template-columns:1fr;}
-      .grid-2{grid-template-columns:1fr;}
-      .contact{grid-template-columns:1fr;}
-      h1{font-size:38px;}
-    }
-    @media (max-width: 520px){
-      h1{font-size:34px;}
-      .form-row{grid-template-columns: 1fr;}
-      .nav-links{display:none;}
-    }
   </style>
 </head>
 
 <body>
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="Silverado.pro">
-          <span class="logo" aria-hidden="true"></span>
-          <span>
-            Silverado.pro
-            <small>Vođenje društvenih mreža • Sadržaj bez lozinki</small>
-          </span>
-        </a>
 
-        <div class="nav-links" aria-label="Navigacija">
-          <a href="#usluge">Usluga</a>
-          <a href="#ponuda">Ponuda</a>
-          <a href="#kako-radi">Kako radi</a>
-          <a href="#faq">FAQ</a>
-          <a href="#kontakt">Kontakt</a>
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="card hero-left">
+
+        <!-- ✅ ONLY TEXT CHANGE HERE -->
+        <h1>Vođenje Facebook i Instagram stranice — jedna ponuda, jedna cena.</h1>
+
+        <p class="lead">
+          Za <b>3.500 din / mesečno</b> održavamo vašu stranicu aktivnom uz lagan, zabavan i prirodan sadržaj.
+          <b>Vi i dalje objavljujete šta želite</b>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#ponuda">Ponuda 3.500 din</a>
+          <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">
+            🎥 Video primeri (Google)
+          </a>
+          <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
         </div>
 
-        <a class="btn primary" href="#kontakt">Besplatna analiza</a>
+      </div>
+
+      <div class="card hero-right">
+        <div class="stat">
+          <b>Besplatna analiza</b>
+          <span>Pošaljite link profila i dobijate konkretne savete.</span>
+        </div>
       </div>
     </div>
   </div>
+</header>
 
-  <header class="hero" id="top">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="card hero-left">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            Bez lozinki • Bez rizika • Vi zadržavate kontrolu
-          </div>
+<footer>
+  <div class="container">
+    © <span id="year"></span> Silverado.pro
+  </div>
+</footer>
 
-          <div class="pill"><span class="dot"></span> Za male biznise u Srbiji • Jednostavno i jasno</div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-          <h1>Vođenje Facebook i Instagram stranice — jedna ponuda, jedna cena.</h1>
-
-          <p class="lead">
-            Za <b>3.500 din / mesečno</b> održavamo vaše profile aktivnim uz lagan, zabavan i prirodan sadržaj.
-            <b>Vi i dalje objavljujete šta želite</b> — mi dodajemo “meki” sadržaj koji pravi ritam i čuva vidljivost.
-          </p>
-
-          <div class="mini" style="margin-top:8px;">
-            <span class="tag">✅ Bez lozinki (nikad ne tražimo šifre)</span>
-            <span class="tag">✅ Kratko, zabavno, nenametljivo</span>
-            <span class="tag">✅ Besplatna analiza profila</span>
-          </div>
-
-          <!-- ✅ CHANGE: Facebook + Instagram side-by-side in the beginning -->
-          <div class="hero-actions">
-            <a class="btn primary" href="#ponuda">Ponuda 3.500 din</a>
-
-            <!-- Replace the links below with your real pages -->
-            <a class="btn" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">Facebook</a>
-            <a class="btn" href="https://www.instagram.com/YOUR_INSTAGRAM_PROFILE" target="_blank" rel="noopener">Instagram</a>
-
-            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-          </div>
-
-          <p class="small-muted">
-            <b>Važno:</b> Ne treba nam lozinka za Facebook/Instagram. Ne tražimo pristup nalogu. Sve ide kroz dogovor i odobrenje.
-          </p>
-        </div>
-
-        <div class="card hero-right">
-          <div class="stat">
-            <b>Šta dobijate</b>
-            <span>Ritam objava + “živa” stranica koja izgleda aktivno i profesionalno — bez opterećenja za vas.</span>
-          </div>
-
-          <div class="stat">
-            <b>Besplatna analiza</b>
-            <span>Pošaljete link stranice i napišete šta prodajete — vraćamo konkretne pro savete kako da se popravi profil.</span>
-          </div>
-
-          <div class="stat">
-            <b>Pogledaj primere</b>
-            <span>Kliknite i vidite naše profile:</span>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-              <!-- Replace the links below with your real pages -->
-              <a class="btn" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">Facebook</a>
-              <a class="btn" href="https://www.instagram.com/YOUR_INSTAGRAM_PROFILE" target="_blank" rel="noopener">Instagram</a>
-              <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
-            </div>
-          </div>
-
-          <div class="stat">
-            <b>Brz početak</b>
-            <span>Dogovorimo tempo, ton i ideje. Vi šaljete osnovne info — mi pripremamo sadržaj.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section id="usluge">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Šta radimo (kratko)</h2>
-          <p>Jedan cilj: da stranica izgleda aktivno, prirodno i poverljivo — i da ne “zamre”.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="feature">
-          <div class="icon">📲</div>
-          <h3>Ritam sadržaja</h3>
-          <p>Dodajemo lagane objave koje “omekšaju” profil i daju kontinuitet.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🧠</div>
-          <h3>Profesionalni saveti</h3>
-          <p>Besplatna analiza + pro tips: šta da se popravi da profil izgleda jače.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🤝</div>
-          <h3>Bez lozinki</h3>
-          <p>Ne tražimo šifre niti pristup nalogu. Vi zadržavate kontrolu.</p>
-        </div>
-      </div>
-
-      <div class="note">
-        <b>Ključ:</b> Vi i dalje objavljujete svoje objave normalno. Mi dodajemo sadržaj koji pravi atmosferu, ritam i bolji utisak.
-      </div>
-    </div>
-  </section>
-
-  <section id="ponuda">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Jedna ponuda</h2>
-          <p>Jasno, fiksno, bez komplikovanja. Idealno za male biznise u Srbiji.</p>
-        </div>
-      </div>
-
-      <div class="pricing">
-        <div class="plan popular">
-          <div class="badge">3.500 din / mesec</div>
-          <h3>Vođenje stranice + lagan sadržaj</h3>
-          <p class="price">3.500 din</p>
-          <p class="per">mesečno</p>
-
-          <ul class="ul">
-            <li><span class="check">✓</span><span>Kontinuirano dodavanje “mekog” sadržaja (prirodno, nenametljivo)</span></li>
-            <li><span class="check">✓</span><span>Vaše objave ostaju vaše — objavljujete kada hoćete</span></li>
-            <li><span class="check">✓</span><span>Predlozi tema i ideja (šta da se objavi da profil deluje živ)</span></li>
-            <li><span class="check">✓</span><span><b>Bez lozinki</b> — nikad ne tražimo šifre ili pristup nalogu</span></li>
-            <li><span class="check">✓</span><span><b>Besplatna analiza profila</b> + profesionalni pro tips</span></li>
-          </ul>
-
-          <div class="cta">
-            <a class="btn primary" href="#kontakt">Želim besplatnu analizu</a>
-
-            <!-- Replace the links below with your real pages -->
-            <a class="btn" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">Facebook</a>
-            <a class="btn" href="https://www.instagram.com/YOUR_INSTAGRAM_PROFILE" target="_blank" rel="noopener">Instagram</a>
-
-            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-          </div>
-
-          <div class="note">
-            <b>Napomena:</b> Na ovoj ponudi nema vođenja plaćenih kampanja, Meta Ads menadžmenta, niti priče o karticama.
-            Fokus je na sadržaju, ritmu i profesionalnom utisku.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kako-radi">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Kako radimo</h2>
-          <p>4 kratka koraka. Brzo, jednostavno, bez stresiranja.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="timeline">
-          <div class="step">
-            <div class="num">1</div>
-            <div>
-              <b>Besplatna analiza</b>
-              <span>Pošaljete link profila + šta prodajete + grad. Dobijate konkretne pro savete.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div>
-              <b>Dogovor tona i ideja</b>
-              <span>Odredimo stil objava (soft, prijateljski, prirodan), i šta vam najviše odgovara.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div>
-              <b>Priprema sadržaja</b>
-              <span>Mi pripremamo predloge/objave. Vi zadržavate nalog i kontrolu (bez lozinki).</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">4</div>
-            <div>
-              <b>Kontinuitet</b>
-              <span>Održavamo ritam kroz mesec, da stranica ne zamre i izgleda aktivno.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card hero-left" style="padding:18px;">
-          <div class="pill"><span class="dot"></span> Brzo proverite primere</div>
-          <h3 style="margin:12px 0 8px; font-size:20px;">Pogledaj primere na društvenim mrežama</h3>
-          <p class="lead" style="margin:0;">
-            Kliknite da vidite javne primere rada.
-          </p>
-
-          <div class="divider"></div>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <!-- Replace the links below with your real pages -->
-            <a class="btn" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">Facebook</a>
-            <a class="btn" href="https://www.instagram.com/YOUR_INSTAGRAM_PROFILE" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
-          </div>
-
-          <p class="small-muted" style="margin-top:10px;">
-            <b>Bez lozinki:</b> Ne tražimo šifre. Ne tražimo pristup nalogu. Vi odlučujete šta ide online.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>FAQ — najčešća pitanja</h2>
-          <p>Kratko i jasno.</p>
-        </div>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Da li moram da vam dam lozinku?</summary>
-          <p>Ne. Nikad ne tražimo šifre niti pristup nalogu. Sve ide kroz dogovor i vašu kontrolu.</p>
-        </details>
-
-        <details>
-          <summary>Da li ja i dalje mogu da objavljujem svoje objave?</summary>
-          <p>Da. Vi objavljujete normalno. Mi dodajemo lagan sadržaj koji pravi ritam i bolji utisak.</p>
-        </details>
-
-        <details>
-          <summary>Šta dobijam u besplatnoj analizi?</summary>
-          <p>Dobićete profesionalne pro tips: šta da se popravi na profilu, kako da izgleda jače i šta da objavljujete da bude prirodno i aktivno.</p>
-        </details>
-
-        <details>
-          <summary>Da li ovo uključuje Meta Ads kampanje?</summary>
-          <p>Ne. Ova ponuda je fokusirana na sadržaj i kontinuitet. Nema vođenja plaćenih kampanja niti priče o karticama.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Kontakt</h2>
-          <p>Pošalji link profila + kratko šta prodaješ. Dobijaš besplatnu analizu i konkretne sledeće korake.</p>
-        </div>
-      </div>
-
-      <div class="contact">
-        <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Brz dogovor</h3>
-          <p class="lead" style="margin:0 0 14px;">
-            Pošalji poruku sa:<br/>
-            <b>1)</b> link profila<br/>
-            <b>2)</b> šta prodaješ + grad<br/>
-            <b>3)</b> “Želim besplatnu analizu”
-          </p>
-
-          <div class="divider"></div>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <!-- Replace the links below with your real pages -->
-            <a class="btn" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">Facebook</a>
-            <a class="btn" href="https://www.instagram.com/YOUR_INSTAGRAM_PROFILE" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
-          </div>
-
-          <p class="small-muted" style="margin-top:10px;">
-            Najbrže: klikni “Pozovi” ili pošalji link profila. <b>Bez lozinki.</b>
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Kontakt forma</h3>
-          <p class="tiny" style="margin:0 0 14px;">
-            Forma radi preko e-mail aplikacije (mailto). Najjednostavnije za GitHub Pages.
-          </p>
-
-          <form id="leadForm">
-            <div class="form-row">
-              <div>
-                <label for="name">Ime i prezime</label>
-                <input id="name" name="name" type="text" placeholder="npr. Emil" required />
-              </div>
-              <div>
-                <label for="phone">Telefon</label>
-                <input id="phone" name="phone" type="tel" placeholder="npr. 06x xxx xxxx" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div>
-                <label for="city">Grad</label>
-                <input id="city" name="city" type="text" placeholder="npr. Subotica" />
-              </div>
-              <div>
-                <label for="package">Usluga</label>
-                <select id="package" name="package">
-                  <option value="Besplatna analiza (nisam siguran)">Besplatna analiza (nisam siguran)</option>
-                  <option value="Ponuda 3.500 din / mesec">Ponuda 3.500 din / mesec</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="profile">Link profila (FB/IG)</label>
-              <input id="profile" name="profile" type="url" placeholder="https://facebook.com/..." />
-            </div>
-
-            <div>
-              <label for="message">Poruka</label>
-              <textarea id="message" name="message" placeholder="npr. Želim besplatnu analizu profila + predlog sadržaja..."></textarea>
-            </div>
-
-            <button class="btn primary" type="submit">Pošalji upit</button>
-            <div class="tiny">Klikom na “Pošalji” otvara se tvoja e-mail aplikacija sa pripremljenom porukom.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div style="display:flex; gap:12px; align-items:flex-start;">
-          <span class="logo" aria-hidden="true"></span>
-          <div>
-            <div style="font-weight:950;">Silverado.pro</div>
-            <div class="tiny">Vođenje društvenih mreža • Sadržaj bez lozinki</div>
-            <div class="tiny">© <span id="year"></span> Sva prava zadržana.</div>
-          </div>
-        </div>
-
-        <div class="tiny">
-          <b>Brzi linkovi</b><br/>
-          <a href="#ponuda">Ponuda</a> •
-          <a href="#kako-radi">Kako radimo</a> •
-          <a href="#faq">FAQ</a> •
-          <a href="#kontakt">Kontakt</a>
-        </div>
-
-        <div class="tiny">
-          <b>Kontakt</b><br/>
-          Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a><br/>
-          Telefon: <a href="tel:+381691508197">+381 69 150 8197</a><br/>
-          <!-- Optional: social links in footer as well -->
-          <span style="display:inline-block; margin-top:6px;">
-            <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">Facebook</a> •
-            <a href="https://www.instagram.com/YOUR_INSTAGRAM_PROFILE" target="_blank" rel="noopener">Instagram</a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const form = document.getElementById("leadForm");
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const city = document.getElementById("city").value.trim();
-      const pkg = document.getElementById("package").value;
-      const profile = document.getElementById("profile").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const toEmail = "emileros1971@gmail.com";
-      const subject = encodeURIComponent("Upit sa Silverado.pro landing strane");
-      const body = encodeURIComponent(
-        "IME: " + name + "\n" +
-        "TELEFON: " + phone + "\n" +
-        "GRAD: " + (city || "-") + "\n" +
-        "USLUGA: " + pkg + "\n" +
-        "PROFIL LINK: " + (profile || "-") + "\n\n" +
-        "PORUKA:\n" + (message || "-")
-      );
-
-      window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + body;
-    });
-  </script>
 </body>
 </html>
