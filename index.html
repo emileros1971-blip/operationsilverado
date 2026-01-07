@@ -429,15 +429,10 @@
       height:100%;
       border:0;
     }
-    .video-caption{
-      padding:10px 12px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.35;
-      border-top:1px solid rgba(255,255,255,.06);
-      background: linear-gradient(180deg, rgba(255,255,255,.01), rgba(207,215,227,.04));
-    }
-    /* ============================= */
+
+    /* === captions removed: keep class harmless (no visual) === */
+    .video-caption{display:none;}
+    /* ================================= */
 
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr;}
@@ -484,6 +479,96 @@
   <header class="hero" id="top">
     <div class="container">
       <div class="hero-grid">
+
+        <!-- ✅ CHANGED: VIDEO BLOCK MOVED TO LEFT -->
+        <div class="card hero-right">
+          <div class="stat">
+            <b>Video reklame 120 din / sekundi</b>
+            <span>6 kratkih reklama odmah vidljivo (desktop).</span>
+          </div>
+
+          <div class="video-grid">
+            <div class="video-cell">
+              <div class="video-wrap">
+                <iframe loading="lazy"
+                  src="https://www.youtube-nocookie.com/embed/jHblUDsOqyg?rel=0&modestbranding=1"
+                  title="Silverado video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-caption"></div>
+            </div>
+
+            <div class="video-cell">
+              <div class="video-wrap">
+                <iframe loading="lazy"
+                  src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
+                  title="Silverado video 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-caption"></div>
+            </div>
+
+            <div class="video-cell">
+              <div class="video-wrap">
+                <iframe loading="lazy"
+                  src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1"
+                  title="Silverado video 3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-caption"></div>
+            </div>
+
+            <div class="video-cell">
+              <div class="video-wrap">
+                <iframe loading="lazy"
+                  src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1"
+                  title="Silverado video 4"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-caption"></div>
+            </div>
+
+            <div class="video-cell">
+              <div class="video-wrap">
+                <iframe loading="lazy"
+                  src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
+                  title="Silverado video 5"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-caption"></div>
+            </div>
+
+            <div class="video-cell">
+              <div class="video-wrap">
+                <iframe loading="lazy"
+                  src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1"
+                  title="Silverado video 6"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-caption"></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <b>Kreiram video reklame za bilo koju delatnost.</b>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">
+                Google: Emil Eros
+              </a>
+              <a class="btn primary" href="tel:+381691508197">
+                Pozovi: 069 1508 197
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ CHANGED: SOCIAL / OFFER BLOCK MOVED TO RIGHT -->
         <div class="card hero-left">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
@@ -514,93 +599,6 @@
           <p class="small-muted">
             <b>Važno:</b> Ne treba nam lozinka za Facebook/Instagram. Ne tražimo pristup nalogu. Sve ide kroz dogovor i odobrenje.
           </p>
-        </div>
-
-        <div class="card hero-right">
-          <div class="stat">
-            <b>Video reklame 120 din / sekundi</b>
-            <span>6 kratkih reklama odmah vidljivo (desktop).</span>
-          </div>
-
-          <div class="video-grid">
-            <div class="video-cell">
-              <div class="video-wrap">
-                <iframe loading="lazy"
-                  src="https://www.youtube-nocookie.com/embed/jHblUDsOqyg?rel=0&modestbranding=1"
-                  title="Silverado video 1"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="video-caption">Primer 1 — (kratak opis po želji)</div>
-            </div>
-
-            <div class="video-cell">
-              <div class="video-wrap">
-                <iframe loading="lazy"
-                  src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
-                  title="Silverado video 2"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="video-caption">Primer 2 — (kratak opis po želji)</div>
-            </div>
-
-            <div class="video-cell">
-              <div class="video-wrap">
-                <iframe loading="lazy"
-                  src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1"
-                  title="Silverado video 3"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="video-caption">Primer 3 — (kratak opis po želji)</div>
-            </div>
-
-            <div class="video-cell">
-              <div class="video-wrap">
-                <iframe loading="lazy"
-                  src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1"
-                  title="Silverado video 4"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="video-caption">Primer 4 — (kratak opis po želji)</div>
-            </div>
-
-            <div class="video-cell">
-              <div class="video-wrap">
-                <iframe loading="lazy"
-                  src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
-                  title="Silverado video 5"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="video-caption">Primer 5 — (kratak opis po želji)</div>
-            </div>
-
-            <div class="video-cell">
-              <div class="video-wrap">
-                <iframe loading="lazy"
-                  src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1"
-                  title="Silverado video 6"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="video-caption">Primer 6 — (kratak opis po želji)</div>
-            </div>
-          </div>
-
-          <div class="stat">
-            <b>Kreiram video reklame za bilo koju delatnost.</b>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-              <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">
-                Google: Emil Eros
-              </a>
-              <a class="btn primary" href="tel:+381691508197">
-                Pozovi: 069 1508 197
-              </a>
-            </div>
-          </div>
         </div>
 
       </div>
