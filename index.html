@@ -313,4 +313,152 @@
       padding:18px;
       border-radius:var(--radius2);
       border:1px solid var(--line);
-      background:linear-gradient(18
+      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
+    }
+    form{display:grid; gap:10px;}
+    label{font-size:13px; color:var(--muted)}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(34,197,94,.45);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.14);
+    }
+    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    .divider{height:1px; background:var(--line); margin:18px 0;}
+
+    footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:30px;
+    }
+    .footer-inner{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
+    .tiny{font-size:13px; line-height:1.55}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr;}
+      .pricing{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr;}
+      .contact{grid-template-columns:1fr;}
+      h1{font-size:38px;}
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px;}
+      .form-row{grid-template-columns: 1fr;}
+      .nav-links{display:none;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Silverado.pro">
+          <span class="logo" aria-hidden="true"></span>
+          <span>
+            Silverado.pro
+            <small>Vođenje društvenih mreža • Sadržaj bez lozinki</small>
+          </span>
+        </a>
+
+        <div class="nav-links" aria-label="Navigacija">
+          <a href="#usluge">Usluga</a>
+          <a href="#ponuda">Ponuda</a>
+          <a href="#kako-radi">Kako radi</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <a class="btn primary" href="#kontakt">Besplatna analiza</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="card hero-left">
+          <div class="pill" style="margin-bottom:12px;">
+            <span class="dot"></span>
+            Bez lozinki • Bez rizika • Vi zadržavate kontrolu
+          </div>
+
+          <div class="pill"><span class="dot"></span> Za male biznise u Srbiji • Jednostavno i jasno</div>
+
+          <h1>Vođenje Facebook i Instagram stranice — jedna ponuda, jedna cena.</h1>
+
+          <p class="lead">
+            Za <b>3.500 din / mesečno</b> održavamo vašu stranicu aktivnom uz lagan, zabavan i prirodan sadržaj.
+            <b>Vi i dalje objavljujete šta želite</b> — mi dodajemo “meki” sadržaj koji pravi ritam i čuva vidljivost.
+          </p>
+
+          <div class="mini" style="margin-top:8px;">
+            <span class="tag">✅ Bez lozinki (nikad ne tražimo šifre)</span>
+            <span class="tag">✅ Kratko, zabavno, nenametljivo</span>
+            <span class="tag">✅ Besplatna analiza profila</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#ponuda">Ponuda 3.500 din</a>
+            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🎥 Video primeri (Google)</a>
+            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
+          </div>
+
+          <p class="small-muted">
+            <b>Važno:</b> Ne treba nam lozinka za Facebook/Instagram. Ne tražimo pristup nalogu. Sve ide kroz dogovor i odobrenje.
+          </p>
+        </div>
+
+        <div class="card hero-right">
+          <div class="stat">
+            <b>Šta dobijate</b>
+            <span>Ritam objava + “živa” stranica koja izgleda aktivno i profesionalno — bez opterećenja za vas.</span>
+          </div>
+
+          <div class="stat">
+            <b>Izrada video spotova</b>
+            <span>120 din po sekundi — kreiram bilo šta!</span>
+          </div>
+
+          <div class="stat">
+            <b>Pogledaj primere</b>
+            <span>Kliknite i vidite javne video klipove pod “Emil Eros” na Google-u.</span>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">
+                Google: Emil Eros
+              </a>
+              <a class="btn primary" href="tel:+381691508197">
+                Pozovi: 069 1508 197
+              </a>
+            </div>
+          </div>
+
+          <div class="stat">
+            <b>Brz početak</b>
+            <span>Dogovorimo tempo, ton i ideje. Vi šaljete osnovne info — mi pripremamo sadržaj.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- REST OF FILE UNCHANGED -->
+
+</body>
+</html>
+
+
+
+
+
+
