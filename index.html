@@ -32,7 +32,6 @@
       --viber:#7360f2;         /* primary */
       --viber2:#8b5cf6;        /* secondary */
       --viberDark:#5b46f0;     /* hover/deeper */
-      --viberGlow: rgba(115,96,242,.22);
       /* ======================= */
 
       /* ===== SILVER ACCENT ===== */
@@ -149,10 +148,7 @@
         0 0 0 4px rgba(207,215,227,.06);
     }
 
-    /* ===== VIBER BUTTON (USES YOUR LOGO IMAGE) =====
-       Put this file next to index.html in GitHub Pages:
-       viber-logo-png_seeklogo-248447.png
-    */
+    /* ===== VIBER BUTTON (INLINE SVG ICON — NO EXTERNAL FILES) ===== */
     .btn.viber{
       border-color: rgba(139,92,246,.55);
       background: linear-gradient(135deg, var(--viber), var(--viber2));
@@ -170,16 +166,23 @@
         0 18px 45px rgba(139,92,246,.22),
         0 0 0 4px rgba(115,96,242,.12);
     }
-    .btn.viber:active{
-      transform: translateY(0px);
-    }
-    .viber-logo{
+    .btn.viber:active{ transform: translateY(0px); }
+
+    .viber-icon{
+      width:22px;
       height:22px;
-      width:auto;
       display:block;
+      color:#fff;
       filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
+      flex: 0 0 auto;
     }
-    /* ============================================= */
+    .viber-text{
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:14px;
+      line-height:1;
+    }
+    /* ============================================================= */
 
     header.hero{padding:54px 0 22px;}
     .hero-grid{
@@ -590,7 +593,7 @@
             <span class="tag">✅ Efektno i motivišuće</span>
           </div>
 
-          <!-- HERO BUTTONS: Price / Call / Viber (PURPLE + YOUR LOGO) -->
+          <!-- HERO BUTTONS: Price / Call / Viber -->
           <div class="hero-actions">
             <a class="btn primary" href="#ponuda">Cena</a>
             <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
@@ -600,7 +603,11 @@
                href="viber://chat?number=%2B381691508197"
                aria-label="Pošalji poruku na Viber"
                onclick="return openViberChat(event);">
-              <img class="viber-logo" src="viber-logo-png_seeklogo-248447.png" alt="Viber" />
+              <!-- Inline SVG icon (renders correctly everywhere) -->
+              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+              </svg>
+              <span class="viber-text">Viber</span>
             </a>
           </div>
 
@@ -909,9 +916,7 @@
 
     // Viber deep-link with fallback (helps on desktop / browsers that block direct app open)
     function openViberChat(e){
-      try{
-        e.preventDefault();
-      }catch(_){}
+      try{ e.preventDefault(); }catch(_){}
 
       const deepLink = "viber://chat?number=%2B381691508197";
       const fallbackWeb = "https://viber.me/+381691508197";
@@ -919,13 +924,9 @@
       // Attempt to open the Viber app
       window.location.href = deepLink;
 
-      // If it fails (no app / blocked), send them to Viber web profile after a moment
+      // If it fails (no app / blocked), go to viber.me after a moment
       setTimeout(function(){
-        // If the page is still visible, likely the app didn't open
-        // (this is a simple, safe heuristic)
-        if (!document.hidden) {
-          window.location.href = fallbackWeb;
-        }
+        if (!document.hidden) window.location.href = fallbackWeb;
       }, 900);
 
       return false;
