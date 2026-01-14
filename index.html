@@ -185,12 +185,7 @@
     /* ============================================================= */
 
     header.hero{padding:54px 0 22px;}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      align-items:stretch;
-    }
+
     .card{
       border:1px solid rgba(255,255,255,.09);
       background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
@@ -207,23 +202,6 @@
       pointer-events:none;
     }
     .card > *{position:relative}
-
-    .hero-left{
-      padding:26px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-left:before{
-      content:"";
-      position:absolute; inset:-1px;
-      background:
-        radial-gradient(900px 520px at 30% 20%, rgba(34,197,94,.18), transparent 60%),
-        radial-gradient(700px 520px at 80% 20%, rgba(52,211,153,.12), transparent 60%),
-        radial-gradient(1100px 680px at 60% 30%, var(--silverSoft), transparent 62%);
-      opacity:.95;
-      pointer-events:none;
-    }
-    .hero-left > *{position:relative}
 
     .pill{
       display:inline-flex; gap:10px; align-items:center;
@@ -247,7 +225,7 @@
       color:var(--muted);
       font-size:16px;
       line-height:1.6;
-      max-width: 62ch;
+      max-width: 70ch;
       margin:0 0 16px;
     }
     .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
@@ -260,7 +238,6 @@
       box-shadow: 0 0 0 3px rgba(207,215,227,.05);
     }
 
-    .hero-right{padding:18px; display:flex; flex-direction:column; gap:12px;}
     .stat{
       padding:16px;
       border-radius:var(--radius);
@@ -473,13 +450,36 @@
     }
     .video-caption{display:none;}
 
+    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
+    .hero-stack{
+      display:grid;
+      gap:16px;
+    }
+    .hero-block{padding:22px;}
+    .offers-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .offer{
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.78), rgba(10,26,19,.55));
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+      min-height: 150px;
+    }
+    .offer h3{margin:0 0 6px; font-size:16px}
+    .offer p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .offer .icon{margin-bottom:10px;}
+
     @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr;}
-      .pricing{grid-template-columns:1fr;}
+      h1{font-size:38px;}
       .grid-3{grid-template-columns:1fr;}
       .grid-2{grid-template-columns:1fr;}
       .contact{grid-template-columns:1fr;}
-      h1{font-size:38px;}
+      .offers-grid{grid-template-columns:1fr;}
     }
     @media (max-width: 520px){
       h1{font-size:34px;}
@@ -503,32 +503,101 @@
         </a>
 
         <div class="nav-links" aria-label="Navigacija">
-          <a href="#radovi">Radovi</a>
           <a href="#usluge">Usluge</a>
+          <a href="#radovi">Radovi</a>
+          <a href="#paketi">Paketi</a>
           <a href="#ponuda">Cena</a>
           <a href="#kako-radi">Proces</a>
           <a href="#faq">FAQ</a>
           <a href="#kontakt">Kontakt</a>
         </div>
 
-        <a class="btn primary" href="#kontakt">Poruči reklamu</a>
+        <a class="btn primary" href="#kontakt">Poruči</a>
       </div>
     </div>
   </div>
 
   <header class="hero" id="top">
     <div class="container">
-      <div class="hero-grid">
+      <div class="hero-stack">
 
-        <!-- LEFT: 6 VIDEO TRAYS -->
-        <div class="card hero-right" id="radovi">
-          <div class="stat">
-            <b>Video reklame — 120 din / sekundi</b>
-            <div class="small-muted">Primeri ispod (6 klipova).</div>
+        <!-- 1) TOP: 3 OFFERS (FIRST THING USER SEES) -->
+        <div class="card hero-block" id="usluge">
+          <div class="pill" style="margin-bottom:12px;">
+            <span class="dot"></span>
+            3 usluge • Brzo • Spremno za Meta/IG oglase
           </div>
 
-          <div class="video-grid">
-            <!-- ✅ CHANGED: FIRST VIDEO replaced with https://youtube.com/shorts/aKAWeFg6Aak -->
+          <h1 style="margin-top:10px;">Pravimo reklame koje zaustavljaju scroll.</h1>
+
+          <p class="lead" style="margin-top:8px;">
+            Na početku — jasno šta radimo. Izaberite uslugu i šaljite materijal. Mi vraćamo gotove klipove i sadržaj spreman za objavu/oglase.
+          </p>
+
+          <div class="offers-grid">
+            <div class="offer">
+              <div class="icon">🤖</div>
+              <h3>1) AI “Hook” reklame</h3>
+              <p>Kratki, “scroll-stopping” klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija (nije obavezno).</p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">9:16</span>
+                <span class="tag">Hook</span>
+                <span class="tag">Brend</span>
+              </div>
+            </div>
+
+            <div class="offer">
+              <div class="icon">✂️</div>
+              <h3>2) Reklama od vašeg materijala</h3>
+              <p>Pošaljete snimke telefonom (rad, prostor, proizvod) — mi montiramo dinamičnu reklamu sa efektima, titlovima i tempom za mreže.</p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">Montaža</span>
+                <span class="tag">Titl</span>
+                <span class="tag">Efekti</span>
+              </div>
+            </div>
+
+            <div class="offer">
+              <div class="icon">📅</div>
+              <h3>3) Mesečni sadržaj za mreže</h3>
+              <p>Svaki mesec dobijate <b>30 gotovih postova</b> sa slikama + <b>4 video klipa</b> (re-edit) od materijala koji nam šaljete.</p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">30 postova</span>
+                <span class="tag">4 klipa</span>
+                <span class="tag">Spremno</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:16px;">
+            <a class="btn primary" href="#kontakt">Poruči / Pitaj</a>
+            <a class="btn" href="#radovi">🎥 Pogledaj radove</a>
+            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
+
+            <a class="btn viber"
+               href="viber://chat?number=%2B381691508197"
+               aria-label="Pošalji poruku na Viber"
+               onclick="return openViberChat(event);">
+              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+              </svg>
+              <span class="viber-text">Viber</span>
+            </a>
+          </div>
+
+          <p class="small-muted">
+            <b>Cena AI reklama:</b> 120 din / sekundi • 10s = 1.200 din • 15s = 1.800 din • 30s = 3.600 din
+          </p>
+        </div>
+
+        <!-- 2) THEN: VIDEO CLIPS -->
+        <div class="card hero-block" id="radovi">
+          <div class="stat">
+            <b>Radovi (primeri) — 6 klipova</b>
+            <div class="small-muted">Kliknite i pogledajte. Ovo je stil koji dobijate.</div>
+          </div>
+
+          <div class="video-grid" style="margin-top:12px;">
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1"
                 title="Silverado video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -560,7 +629,7 @@
             </div><div class="video-caption"></div></div>
           </div>
 
-          <div class="stat">
+          <div class="stat" style="margin-top:12px;">
             <b>Kreiram video reklame za bilo koju delatnost.</b>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
               <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">Google: Emil Eros</a>
@@ -569,14 +638,16 @@
           </div>
         </div>
 
-        <!-- RIGHT: TEXT NEXT TO TRAYS -->
-        <div class="card hero-left">
+        <!-- 3) THEN: THE “RIGHT SIDE” TEXT (kept, just moved below videos) -->
+        <div class="card hero-block">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
             Brzo • Moderno • Spremno za Meta/IG oglase
           </div>
 
-          <h1 style="margin-top:10px;">Reklamni klipovi su Extra efektivni na mrežama!!!</h1>
+          <h2 style="margin:10px 0 10px; font-size:28px; letter-spacing:-.2px;">
+            Reklamni klipovi su Extra efektivni na mrežama!!!
+          </h2>
 
           <p class="lead">
             Dovoljna je čak i samo jedna fotografija prodavnice ili proizvoda (ali nije obavezno) da napravim efektan,
@@ -594,17 +665,13 @@
             <span class="tag">✅ Efektno i motivišuće</span>
           </div>
 
-          <!-- HERO BUTTONS: Price / Call / Viber -->
-          <div class="hero-actions">
+          <div class="hero-actions" style="margin-top:14px;">
             <a class="btn primary" href="#ponuda">Cena</a>
             <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-
-            <!-- VIBER: opens Viber app and opens chat with your number -->
             <a class="btn viber"
                href="viber://chat?number=%2B381691508197"
                aria-label="Pošalji poruku na Viber"
                onclick="return openViberChat(event);">
-              <!-- Inline SVG icon (renders correctly everywhere) -->
               <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
               </svg>
@@ -621,32 +688,33 @@
     </div>
   </header>
 
-  <section id="usluge">
+  <!-- SHORT “WHAT WE DO” (kept, but now includes all 3) -->
+  <section>
     <div class="container">
       <div class="section-title">
         <div>
           <h2>Šta radimo (kratko)</h2>
-          <p>Jedan cilj: da dobijete video koji izgleda moderno i donosi upite/pozive.</p>
+          <p>Tri jasne usluge: AI reklame, reklame od vašeg materijala, i mesečni sadržaj za mreže.</p>
         </div>
       </div>
 
       <div class="grid-3">
         <div class="feature">
-          <div class="icon">🎬</div>
-          <h3>Reklame za bilo koju delatnost</h3>
-          <p>Usluge, proizvodi, lokali, turizam, događaji — prilagođeno vašoj ponudi.</p>
+          <div class="icon">🤖</div>
+          <h3>AI “Hook” reklame</h3>
+          <p>Kratki klipovi (8–15s) koji “hvataju” pažnju i vode ka poruci/pozivu.</p>
         </div>
 
         <div class="feature">
-          <div class="icon">⚡</div>
-          <h3>Hook + jasna poruka</h3>
-          <p>Kratko, direktno, “scroll-stopping” format — idealno za oglase i Reels.</p>
+          <div class="icon">✂️</div>
+          <h3>Montaža od vaših snimaka</h3>
+          <p>Vi snimite telefonom — mi napravimo reklamu sa tempom, efektima, titlovima i brendingom.</p>
         </div>
 
         <div class="feature">
-          <div class="icon">📱</div>
-          <h3>Formati za mreže</h3>
-          <p>Vertikalno 9:16, spremno za Instagram/Facebook/TikTok + varijante po potrebi.</p>
+          <div class="icon">📅</div>
+          <h3>Mesečni sadržaj (30+4)</h3>
+          <p>30 gotovih postova sa slikama + 4 video klipa mesečno (re-edit) za vaš IG/FB.</p>
         </div>
 
         <div class="feature">
@@ -657,7 +725,78 @@
       </div>
 
       <div class="note">
-        <b>Rezultat:</b> Dobijate gotov klip koji možete odmah da objavite ili da pustite kao reklamu.
+        <b>Rezultat:</b> Dobijate gotov video i/ili sadržaj koji možete odmah da objavite ili pustite kao reklamu.
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: SECTIONS EXPLAINING #2 and #3 in more detail -->
+  <section id="paketi">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Paketi i dodatne usluge</h2>
+          <p>Za one koji već imaju snimke — ili žele da im društvene mreže “rade same od sebe”.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="timeline">
+          <div class="step">
+            <div class="num">A</div>
+            <div>
+              <b>Reklama od vašeg materijala (montaža)</b>
+              <span>
+                Pošaljete snimke (telefon) — mi pravimo dinamičnu reklamu: rezovi, tempo, titlovi, efekti, muzika (po dogovoru),
+                logo i poziv na akciju.
+              </span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Šta šaljete</b>
+              <span>10–40 kratkih klipova: rad, prostor, proizvod, tim, detalji (može i raw iz galerije).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Šta dobijate</b>
+              <span>Gotovu reklamu (9:16) spremnu za Reels/Ads + varijante po potrebi (kraća/duža).</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="step">
+            <div class="num">B</div>
+            <div>
+              <b>Mesečni sadržaj za društvene mreže (30 postova + 4 klipa)</b>
+              <span>
+                Svaki mesec dobijate 30 gotovih postova sa relevantnim slikama + 4 video klipa (re-edit) od materijala koji nam šaljete.
+              </span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>30 postova</b>
+              <span>Profesionalno napisano + slike pripremljene za vaš profil (nema “random” stock osećaj).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>4 video klipa</b>
+              <span>Svake nedelje po 1 klip (15–30s) od vašeg materijala — moderni rezovi, titlovi, efekti.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Savet:</b> Ako niste sigurni šta je najbolje za vas — pošaljite link profila + cilj (više poruka, više poziva, više poseta) i predložiću format.
       </div>
     </div>
   </section>
@@ -667,14 +806,14 @@
       <div class="section-title">
         <div>
           <h2>Cena (jasno)</h2>
-          <p>Fiksno po dužini: 120 din / sekundi. Bez komplikovanja.</p>
+          <p>AI reklame: fiksno po dužini — 120 din / sekundi. Za montažu od vašeg materijala i mesečne pakete: dogovor po obimu.</p>
         </div>
       </div>
 
       <div class="pricing">
         <div class="plan popular">
           <div class="badge">120 din / sekundi</div>
-          <h3>Video reklama (po meri)</h3>
+          <h3>AI video reklama (po meri)</h3>
           <p class="price">120 din</p>
           <p class="per">po sekundi finalnog videa</p>
 
@@ -686,7 +825,7 @@
           </ul>
 
           <div class="cta">
-            <a class="btn primary" href="#kontakt">Poruči reklamu</a>
+            <a class="btn primary" href="#kontakt">Poruči</a>
             <a class="btn" href="#radovi">🎥 Pogledaj radove</a>
             <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
           </div>
@@ -694,6 +833,10 @@
           <div class="note">
             <b>Primer:</b> 10 sekundi = <b>1.200 din</b> • 15 sekundi = <b>1.800 din</b> • 30 sekundi = <b>3.600 din</b>
           </div>
+
+          <p class="small-muted" style="margin-top:12px;">
+            Za <b>montažu od vašeg materijala</b> i <b>mesečni sadržaj</b>: cena zavisi od obima (količina snimaka, broj klipova, kompleksnost).
+          </p>
         </div>
       </div>
     </div>
@@ -714,7 +857,7 @@
             <div class="num">1</div>
             <div>
               <b>Pošaljete materijal</b>
-              <span>Fotografija (opciono), opis ponude, lokacija, kontakt i poruke koje želite.</span>
+              <span>Fotografija (opciono), ili snimci (ako radimo montažu), opis ponude, lokacija, kontakt i poruke koje želite.</span>
             </div>
           </div>
           <div class="step">
@@ -727,8 +870,8 @@
           <div class="step">
             <div class="num">3</div>
             <div>
-              <b>Izrada klipa</b>
-              <span>Kombinujem AI + klasični video, dinamiku i brending. Dobijate gotov video fajl.</span>
+              <b>Izrada klipa / sadržaja</b>
+              <span>AI ili montaža (po izboru) + brending. Za mesečni paket dobijate 30 postova + 4 klipa.</span>
             </div>
           </div>
           <div class="step">
@@ -740,7 +883,7 @@
           </div>
         </div>
 
-        <div class="card hero-left" style="padding:18px;">
+        <div class="card hero-block">
           <div class="pill"><span class="dot"></span> Brzo proverite stil</div>
           <h3 style="margin:12px 0 8px; font-size:20px;">Još video primera</h3>
           <p class="lead" style="margin:0;">
@@ -784,13 +927,18 @@
         </details>
 
         <details>
-          <summary>Kako se računa cena?</summary>
-          <p>120 din po sekundi finalnog videa. Primer: 15 sekundi = 1.800 din.</p>
+          <summary>Da li mogu reklamu od svojih snimaka?</summary>
+          <p>Da. Pošaljete snimke telefonom, mi montiramo reklamu (tempo, titlovi, efekti, brending).</p>
         </details>
 
         <details>
-          <summary>Da li radite za bilo koju delatnost?</summary>
-          <p>Da. Usluge, proizvodi, turizam, događaji, lokalni biznisi — prilagodimo poruku vašoj publici.</p>
+          <summary>Šta je “mesečni sadržaj”?</summary>
+          <p>30 gotovih postova sa slikama + 4 video klipa mesečno od vašeg materijala (re-edit), spremno za IG/FB.</p>
+        </details>
+
+        <details>
+          <summary>Kako se računa cena AI reklama?</summary>
+          <p>120 din po sekundi finalnog videa. Primer: 15 sekundi = 1.800 din.</p>
         </details>
       </div>
     </div>
@@ -801,7 +949,7 @@
       <div class="section-title">
         <div>
           <h2>Kontakt</h2>
-          <p>Pošalji: delatnost + grad + željena dužina (npr. 10s / 15s) + poruke koje želiš u reklami.</p>
+          <p>Pošalji: delatnost + grad + cilj + usluga (AI / montaža / mesečni paket) + materijal (ako imaš).</p>
         </div>
       </div>
 
@@ -810,10 +958,10 @@
           <h3 style="margin:0 0 10px;">Brz dogovor</h3>
           <p class="lead" style="margin:0 0 14px;">
             Pošalji poruku sa:<br/>
-            <b>1)</b> šta prodaješ + cilj reklame<br/>
+            <b>1)</b> šta prodaješ + cilj (poruke/pozivi/posete)<br/>
             <b>2)</b> grad + kontakt<br/>
-            <b>3)</b> dužina (npr. 10s / 15s / 30s)<br/>
-            <b>4)</b> poruke/informacije koje želiš da ubacim
+            <b>3)</b> usluga: AI / montaža / mesečni sadržaj<br/>
+            <b>4)</b> dužina (npr. 10s / 15s / 30s) ili “predloži”
           </p>
 
           <div class="divider"></div>
@@ -825,7 +973,7 @@
           </div>
 
           <p class="small-muted" style="margin-top:10px;">
-            Najbrže: klikni “Pozovi” i reci delatnost + željenu dužinu reklame.
+            Najbrže: klikni “Pozovi” i reci delatnost + cilj + uslugu koju želiš.
           </p>
         </div>
 
@@ -855,10 +1003,9 @@
               <div>
                 <label for="package">Usluga</label>
                 <select id="package" name="package">
-                  <option value="Video reklama (120 din/sek)">Video reklama (120 din/sek)</option>
-                  <option value="Kratka reklama 8–10s">Kratka reklama 8–10s</option>
-                  <option value="Reklama 15s (Reels/Ads)">Reklama 15s (Reels/Ads)</option>
-                  <option value="Reklama 30s (duža verzija)">Reklama 30s (duža verzija)</option>
+                  <option value="AI Hook reklama (120 din/sek)">AI Hook reklama (120 din/sek)</option>
+                  <option value="Montaža reklame od vašeg materijala">Montaža reklame od vašeg materijala</option>
+                  <option value="Mesečni sadržaj: 30 postova + 4 klipa">Mesečni sadržaj: 30 postova + 4 klipa</option>
                   <option value="Nisam siguran — predloži">Nisam siguran — predloži</option>
                 </select>
               </div>
@@ -870,8 +1017,8 @@
             </div>
 
             <div>
-              <label for="message">Poruka (šta prodaješ + dužina + poruke koje želiš)</label>
-              <textarea id="message" name="message" placeholder="npr. Treba mi 15s reklama za auto-perionicu u Novom Sadu. Poruke: lokacija, radno vreme, akcija, poziv na poruku/poziv."></textarea>
+              <label for="message">Poruka (cilj + usluga + materijal + željena dužina)</label>
+              <textarea id="message" name="message" placeholder="npr. Treba mi reklama za auto-perionicu u Novom Sadu. Cilj: više poruka. Usluga: montaža od mog materijala. Imam 25 snimaka iz telefona + logo. Želim 15–20s."></textarea>
             </div>
 
             <button class="btn primary" type="submit">Pošalji upit</button>
@@ -896,7 +1043,9 @@
 
         <div class="tiny">
           <b>Brzi linkovi</b><br/>
+          <a href="#usluge">Usluge</a> •
           <a href="#radovi">Radovi</a> •
+          <a href="#paketi">Paketi</a> •
           <a href="#ponuda">Cena</a> •
           <a href="#kako-radi">Proces</a> •
           <a href="#faq">FAQ</a> •
@@ -922,10 +1071,8 @@
       const deepLink = "viber://chat?number=%2B381691508197";
       const fallbackWeb = "https://viber.me/+381691508197";
 
-      // Attempt to open the Viber app
       window.location.href = deepLink;
 
-      // If it fails (no app / blocked), go to viber.me after a moment
       setTimeout(function(){
         if (!document.hidden) window.location.href = fallbackWeb;
       }, 900);
@@ -945,7 +1092,7 @@
       const message = document.getElementById("message").value.trim();
 
       const toEmail = "emileros1971@gmail.com";
-      const subject = encodeURIComponent("Upit za video reklamu — Silverado.pro");
+      const subject = encodeURIComponent("Upit — Silverado.pro (AI / montaža / mesečni sadržaj)");
       const body = encodeURIComponent(
         "IME: " + name + "\n" +
         "TELEFON: " + phone + "\n" +
