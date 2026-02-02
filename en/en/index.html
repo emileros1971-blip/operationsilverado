@@ -1,38 +1,1188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q7W1SB4F5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8Q7W1SB4F5');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index,follow" />
-  <title>Silverado.pro — English</title>
+  <meta name="description" content="Silverado.pro — Video reklame, snimanje na lokaciji i moderne landing page stranice. Brzo, moderno, spremno za oglase." />
+  <meta name="theme-color" content="#07140f" />
+  <title>Silverado.pro — Video reklame + Landing Page (2026)</title>
+
+  <style>
+    :root{
+      --bg:#07140f;
+      --bg2:#06110d;
+      --panel:#0b1f16;
+      --panel2:#0a1a13;
+      --text:#eafff3;
+      --muted:#bde7d1;
+      --line:rgba(255,255,255,.09);
+      --green:#22c55e;
+      --green2:#34d399;
+
+      /* ===== VIBER PURPLE ===== */
+      --viber:#7360f2;
+      --viber2:#8b5cf6;
+      --viberDark:#5b46f0;
+      /* ======================= */
+
+      /* ===== SILVER ACCENT ===== */
+      --silver:#cfd7e3;
+      --silverSoft: rgba(207,215,227,.12);
+      --silverGlow: rgba(207,215,227,.18);
+      --silverLine: rgba(207,215,227,.16);
+      /* ========================= */
+
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 760px at 18% 8%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 700px at 85% 0%, rgba(52,211,153,.14), transparent 55%),
+        radial-gradient(1200px 820px at 55% 10%, var(--silverSoft), transparent 62%),
+        linear-gradient(180deg, #030a07, var(--bg) 35%, #030a07);
+      min-height:100vh;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background:rgba(3,10,7,.55);
+      border-bottom:1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow:
+        0 14px 40px rgba(34,197,94,.25),
+        0 10px 30px var(--silverGlow);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 50%),
+        radial-gradient(circle at 70% 70%, var(--silverGlow), transparent 55%);
+      transform: rotate(25deg);
+    }
+    .brand small{
+      display:block;
+      font-weight:700;
+      color:var(--muted);
+      letter-spacing:0;
+      margin-top:2px;
+    }
+    .nav-links{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center; justify-content:flex-end;
+    }
+    .nav-links a{
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      font-size:14px;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      border-color:rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.06);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:800;
+      transition:.18s ease;
+      cursor:pointer;
+      box-shadow: 0 0 0 0 rgba(207,215,227,.0);
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.05);
+      border-color: rgba(207,215,227,.18);
+      box-shadow: 0 0 0 4px rgba(207,215,227,.06);
+    }
+    .btn.primary{
+      border-color: rgba(34,197,94,.35);
+      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(52,211,153,.75));
+      box-shadow:
+        0 18px 45px rgba(34,197,94,.18),
+        0 0 0 4px rgba(207,215,227,.06);
+    }
+
+    /* ===== VIBER BUTTON (INLINE SVG ICON — NO EXTERNAL FILES) ===== */
+    .btn.viber{
+      border-color: rgba(139,92,246,.55);
+      background: linear-gradient(135deg, var(--viber), var(--viber2));
+      color:#ffffff;
+      box-shadow:
+        0 18px 45px rgba(139,92,246,.18),
+        0 0 0 4px rgba(207,215,227,.05);
+      padding:10px 14px;
+      min-width: 56px;
+    }
+    .btn.viber:hover{
+      background: linear-gradient(135deg, var(--viberDark), var(--viber2));
+      border-color: rgba(139,92,246,.70);
+      box-shadow:
+        0 18px 45px rgba(139,92,246,.22),
+        0 0 0 4px rgba(115,96,242,.12);
+    }
+    .btn.viber:active{ transform: translateY(0px); }
+
+    .viber-icon{
+      width:22px;
+      height:22px;
+      display:block;
+      color:#fff;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
+      flex: 0 0 auto;
+    }
+    .viber-text{
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:14px;
+      line-height:1;
+    }
+    /* ============================================================= */
+
+    header.hero{padding:54px 0 22px;}
+
+    .card{
+      border:1px solid rgba(255,255,255,.09);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 40% 30%, rgba(207,215,227,.10), transparent 55%);
+      transform: rotate(14deg);
+      pointer-events:none;
+    }
+    .card > *{position:relative}
+
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,var(--green),var(--green2))}
+    h1{
+      margin:14px 0 10px;
+      font-size: 44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width: 70ch;
+      margin:0 0 16px;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
+    .mini{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:14px;}
+    .tag{
+      border:1px solid rgba(255,255,255,.10);
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.02);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+
+    .stat{
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.85), rgba(10,26,19,.60));
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .stat:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 40% 30%, var(--silverSoft), transparent 55%);
+      transform: rotate(18deg);
+      pointer-events:none;
+    }
+    .stat > *{position:relative}
+    .stat b{display:block; font-size:22px; margin-bottom:0}
+
+    section{padding:38px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px;}
+    .section-title h2{margin:0; font-size:28px; letter-spacing:-.2px;}
+    .section-title p{margin:0; color:var(--muted); max-width: 60ch; line-height:1.5; font-size:14px;}
+
+    .grid-4{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px;}
+    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px;}
+
+    .feature{
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.75), rgba(10,26,19,.55));
+      min-height: 130px;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .feature h3{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .icon{
+      width:38px; height:38px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(255,255,255,.02);
+      margin-bottom:10px;
+      font-weight:900;
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+
+    .pricing{display:grid; grid-template-columns: 1fr; gap:14px; align-items:stretch;}
+    .plan{
+      padding:18px;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
+      position:relative;
+      overflow:hidden;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.30),
+        0 0 0 4px rgba(207,215,227,.05);
+    }
+    .plan.popular{
+      border-color: rgba(34,197,94,.35);
+      box-shadow:
+        0 20px 60px rgba(34,197,94,.12),
+        0 0 0 4px rgba(207,215,227,.06);
+    }
+    .plan .badge{
+      position:absolute; top:14px; right:14px;
+      font-size:12px; font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(34,197,94,.16);
+      border: 1px solid rgba(34,197,94,.35);
+      color: var(--text);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+    .plan h3{margin:2px 0 8px; font-size:18px}
+    .price{font-size:34px; font-weight:950; margin:0 0 6px;}
+    .per{color:var(--muted); font-size:13px; margin:0 0 10px}
+    .ul{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--muted); font-size:14px; line-height:1.4;}
+    .ul li{display:flex; gap:10px; align-items:flex-start; border-top:1px dashed rgba(255,255,255,.10); padding-top:10px;}
+    .check{
+      width:20px; height:20px; border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(34,197,94,.35);
+      background: rgba(34,197,94,.10);
+      color: var(--green2);
+      font-weight:950;
+      flex:0 0 20px;
+      margin-top:1px;
+    }
+    .plan .cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
+    .note{
+      margin-top:14px;
+      padding:14px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .small-muted{color:var(--muted); font-size:13px; line-height:1.5; margin:8px 0 0;}
+
+    .timeline{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius2);
+      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
+      padding:18px;
+      display:grid;
+      gap:10px;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .step{
+      display:flex; gap:12px;
+      padding:12px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.02);
+    }
+    .num{
+      width:34px; height:34px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(34,197,94,.16);
+      border:1px solid rgba(34,197,94,.35);
+      font-weight:950;
+      flex:0 0 34px;
+    }
+    .step b{display:block; margin-bottom:4px}
+    .step span{color:var(--muted); font-size:14px; line-height:1.5}
+
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      padding:14px 14px;
+      background:rgba(255,255,255,.02);
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:900; list-style:none;}
+    summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted); margin:10px 0 0; line-height:1.55; font-size:14px}
+
+    .contact{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .contact-card{
+      padding:18px;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    form{display:grid; gap:10px;}
+    label{font-size:13px; color:var(--muted)}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      outline:none;
+      box-shadow: 0 0 0 3px rgba(207,215,227,.04);
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(34,197,94,.45);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.14), 0 0 0 7px rgba(207,215,227,.06);
+    }
+    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    .divider{height:1px; background:var(--line); margin:18px 0;}
+
+    footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:30px;
+    }
+    .footer-inner{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
+    .tiny{font-size:13px; line-height:1.55}
+
+    /* ========= VIDEO GRID ========= */
+    .video-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+    .video-cell{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .video-wrap{
+      position:relative;
+      padding-top:56.25%;
+      background: rgba(0,0,0,.28);
+    }
+    .video-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
+    .hero-stack{
+      display:grid;
+      gap:16px;
+    }
+    .hero-block{padding:22px;}
+
+    .offers-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .offer{
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.78), rgba(10,26,19,.55));
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+      min-height: 160px;
+    }
+    .offer h3{margin:0 0 6px; font-size:16px}
+    .offer p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .offer .icon{margin-bottom:10px;}
+
+    @media (max-width: 980px){
+      h1{font-size:38px;}
+      .grid-4{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr;}
+      .contact{grid-template-columns:1fr;}
+      .offers-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px;}
+      .form-row{grid-template-columns: 1fr;}
+      .nav-links{display:none;}
+      .video-grid{grid-template-columns: 1fr;}
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; padding: 24px;">
+<body>
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/en/en/" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">English</a>
 
-  <!-- Language switch: EN -> SR -->
-  <a href="/" style="
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 9999;
-    background: rgba(0,0,0,0.7);
-    color: #ffffff;
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 13px;
-    text-decoration: none;
-  ">SR</a>
+        <a class="brand" href="#top" aria-label="Silverado.pro">
+          <span class="logo" aria-hidden="true"></span>
+          <span>
+            Silverado.pro
+            <small>Video reklame • Snimanje • Landing page • Spremno za oglase</small>
+          </span>
+        </a>
 
-  <h1>Silverado.pro</h1>
-  <p>This is the English version of the website.</p>
+        <div class="nav-links" aria-label="Navigacija">
+          <a href="#usluge">Usluge</a>
+          <a href="#radovi">Radovi</a>
+          <a href="#paketi">Usluge</a>
+          <a href="#ponuda">Cena</a>
+          <a href="#kako-radi">Proces</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
 
-  <p><strong>Next:</strong> Replace this placeholder content with your full English landing page HTML.</p>
+        <a class="btn primary" href="#kontakt">Poruči</a>
+      </div>
+    </div>
+  </div>
 
-  <hr style="margin: 24px 0;" />
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-stack">
 
-  <p style="opacity:0.75; font-size: 13px;">
-    Tip: If you copy your Serbian layout here, make sure all CSS/JS/image paths start with <code>/</code> (example: <code>/style.css</code>, <code>/images/...</code>).
-  </p>
+        <!-- 1) TOP: 4 OFFERS -->
+        <div class="card hero-block" id="usluge">
+          <div class="pill" style="margin-bottom:12px;">
+            <span class="dot"></span>
+            4 usluge • Brzo • Spremno za 2026
+          </div>
 
+          <h1 style="margin-top:10px;">Pravimo reklame koje zaustavljaju scroll.</h1>
+
+          <p class="lead" style="margin-top:8px;">
+            Na početku — jasno šta radimo. Izaberite uslugu: AI, montaža od vaših snimaka, snimanje kod vas na lokaciji,
+            ili izrada moderne landing stranice za vaš biznis.
+          </p>
+
+          <div class="offers-grid">
+            <div class="offer">
+              <div class="icon">🤖</div>
+              <h3>1) AI “Hook” reklame</h3>
+              <p>Kratki, “scroll-stopping” klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija (nije obavezno).</p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">9:16</span>
+                <span class="tag">Hook</span>
+                <span class="tag">Brend</span>
+              </div>
+            </div>
+
+            <div class="offer">
+              <div class="icon">✂️</div>
+              <h3>2) Reklama od vašeg materijala</h3>
+              <p>Pošaljete snimke telefonom — mi montiramo dinamičnu reklamu sa efektima, titlovima i tempom za mreže.</p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">Montaža</span>
+                <span class="tag">Titl</span>
+                <span class="tag">Efekti</span>
+              </div>
+            </div>
+
+            <div class="offer">
+              <div class="icon">🎥</div>
+              <h3>3) Video snimanje kod vas (na lokaciji)</h3>
+              <p>Dolazimo u vaš lokal/prostor i snimamo realan materijal (bez AI). Od toga pravimo klipove za oglase i mreže.</p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">Realno snimanje</span>
+                <span class="tag">Spremno za oglase</span>
+                <span class="tag"><b>3.500 din</b></span>
+              </div>
+            </div>
+
+            <div class="offer">
+              <div class="icon">🌐</div>
+              <h3>4) Web stranica / Landing page dizajn</h3>
+              <p>Super moderna, up-to-date landing stranica spremna za biznis u 2026. Brza, čista, mobilna, sa jasnim pozivom na akciju.</p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">Mobile-first</span>
+                <span class="tag">2026 izgled</span>
+                <span class="tag"><b>6.000 din</b></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:16px;">
+            <a class="btn primary" href="#kontakt">Poruči / Pitaj</a>
+            <a class="btn" href="#radovi">🎥 Pogledaj radove</a>
+            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
+
+            <a class="btn viber"
+               href="viber://chat?number=%2B381691508197"
+               aria-label="Pošalji poruku na Viber"
+               onclick="return openViberChat(event);">
+              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+              </svg>
+              <span class="viber-text">Viber</span>
+            </a>
+          </div>
+
+          <p class="small-muted">
+            <b>Cena AI reklama:</b> 120 din / sekundi • 10s = 1.200 din • 15s = 1.800 din • 30s = 3.600 din
+          </p>
+          <p class="small-muted" style="margin-top:6px;">
+            <b>Snimanje na lokaciji:</b> fiksno <b>3.500 din</b> • <b>Landing page:</b> <b>6.000 din</b> po stranici
+          </p>
+        </div>
+
+        <!-- 2) VIDEO CLIPS -->
+        <div class="card hero-block" id="radovi">
+          <div class="stat">
+            <b>Radovi (primeri) — 10 klipova</b>
+            <div class="small-muted">Kliknite i pogledajte. Ovo je stil koji dobijate.</div>
+          </div>
+
+          <div class="video-grid" style="margin-top:12px;">
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1"
+                title="Silverado video 1 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/Wh70EgGjtRI?rel=0&modestbranding=1"
+                title="Silverado video 2 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1"
+                title="Silverado video 3 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1"
+                title="Silverado video 4 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1"
+                title="Silverado video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
+                title="Silverado video 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1"
+                title="Silverado video 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1"
+                title="Silverado video 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1"
+                title="Silverado video 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1"
+                title="Silverado video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+          </div>
+
+          <div class="stat" style="margin-top:12px;">
+            <b>Radim video i dizajn za bilo koju delatnost.</b>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">Google: Emil Eros</a>
+              <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) TEXT BLOCK -->
+        <div class="card hero-block">
+          <div class="pill" style="margin-bottom:12px;">
+            <span class="dot"></span>
+            Brzo • Moderno • Spremno za Meta/IG oglase
+          </div>
+
+          <h2 style="margin:10px 0 10px; font-size:28px; letter-spacing:-.2px;">
+            Reklamni klipovi su Extra efektivni na mrežama!!!
+          </h2>
+
+          <p class="lead">
+            Dovoljna je čak i samo jedna fotografija prodavnice ili proizvoda (ali nije obavezno) da napravim efektan,
+            informativan i motivišući reklamni spot za tebe.
+          </p>
+
+          <p class="lead" style="margin-top:-6px;">
+            Ako ne želite AI, možemo uraditi <b>montažu od vašeg materijala</b> ili <b>snimanje kod vas na lokaciji</b> (realni kadrovi).
+            Ako hoćete kompletno “spremno za 2026”, radimo i <b>landing page / web stranicu</b> koja pretvara posete u pozive i poruke.
+          </p>
+
+          <div class="mini" style="margin-top:8px;">
+            <span class="tag">✅ AI ili realno snimanje</span>
+            <span class="tag">✅ Spremno za oglase</span>
+            <span class="tag">✅ Landing stranica (2026)</span>
+          </div>
+
+          <div class="hero-actions" style="margin-top:14px;">
+            <a class="btn primary" href="#ponuda">Cena</a>
+            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
+            <a class="btn viber"
+               href="viber://chat?number=%2B381691508197"
+               aria-label="Pošalji poruku na Viber"
+               onclick="return openViberChat(event);">
+              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+              </svg>
+              <span class="viber-text">Viber</span>
+            </a>
+          </div>
+
+          <p class="small-muted">
+            <b>AI:</b> 120 din / sekundi • <b>Snimanje:</b> 3.500 din • <b>Landing page:</b> 6.000 din
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Šta radimo (kratko)</h2>
+          <p>Četiri jasne usluge: AI reklame, reklame od vašeg materijala, snimanje na lokaciji i landing stranice.</p>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="feature">
+          <div class="icon">🤖</div>
+          <h3>AI “Hook” reklame</h3>
+          <p>Kratki klipovi (8–15s) koji “hvataju” pažnju i vode ka poruci/pozivu.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">✂️</div>
+          <h3>Montaža od vaših snimaka</h3>
+          <p>Vi snimite telefonom — mi napravimo reklamu sa tempom, efektima, titlovima i brendingom.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🎥</div>
+          <h3>Snimanje na lokaciji</h3>
+          <p>Dolazimo, snimamo realan materijal (bez AI). <b>Fiksno: 3.500 din</b>.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🌐</div>
+          <h3>Landing page / Web stranica</h3>
+          <p>Moderna stranica spremna za 2026: mobilna, brza, jasna ponuda i CTA. <b>6.000 din</b> po stranici.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Bonus (uključeno):</b> Usklađivanje sa vašim brendom (logo/boje/stil) da sve izgleda “premium”.
+      </div>
+    </div>
+  </section>
+
+  <section id="paketi">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Usluge i kako to radimo</h2>
+          <p>Jednostavno: izaberete uslugu, kažete cilj, i mi isporučimo rezultat.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="timeline">
+          <div class="step">
+            <div class="num">A</div>
+            <div>
+              <b>Reklama od vašeg materijala (montaža)</b>
+              <span>Pošaljete snimke (telefon) — mi pravimo reklamu: rezovi, tempo, titlovi, efekti, logo i CTA.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Šta šaljete</b>
+              <span>10–40 kratkih klipova: prostor, proizvod, rad, detalji (može i raw iz galerije).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Šta dobijate</b>
+              <span>Gotovu reklamu (9:16) spremnu za Reels/Ads + varijante po potrebi.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="step">
+            <div class="num">B</div>
+            <div>
+              <b>Video snimanje kod vas (na lokaciji)</b>
+              <span>Dolazimo i snimamo realan materijal (bez AI). <b>Cena: fiksno 3.500 din.</b></span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Šta snimamo</b>
+              <span>Prostor, proizvode, rad, detalje, tim, atmosferu (kadrovi za Reels/Ads).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Šta dobijate</b>
+              <span>Materijal za reklame + po dogovoru gotov klip spreman za objavu i oglase.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top:14px;">
+        <div class="step">
+          <div class="num">C</div>
+          <div>
+            <b>Landing page / Web stranica (2026)</b>
+            <span>Super moderna landing stranica: jasna ponuda, CTA (poziv/Viber), mobilna, brza. <b>Cena: 6.000 din po stranici.</b></span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <b>Šta šaljete</b>
+            <span>Ime biznisa, usluge/proizvodi, kontakt, grad, linkovi (FB/IG), logo (ako imate), slike (opciono).</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <b>Šta dobijate</b>
+            <span>Landing stranicu spremnu za deljenje i oglase (GitHub Pages), sa jasnim “pozovi / Viber / upit” dugmetom.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Savet:</b> Ako niste sigurni šta je najbolje — pošaljite link profila + cilj (više poruka, više poziva, više poseta) i predložiću format.
+      </div>
+    </div>
+  </section>
+
+  <section id="ponuda">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Cena (jasno)</h2>
+          <p>AI reklame: 120 din/sek. Snimanje: 3.500 din fiksno. Landing page: 6.000 din po stranici. Montaža: dogovor po obimu.</p>
+        </div>
+      </div>
+
+      <div class="pricing">
+        <div class="plan popular">
+          <div class="badge">120 din / sekundi</div>
+          <h3>AI video reklama (po meri)</h3>
+          <p class="price">120 din</p>
+          <p class="per">po sekundi finalnog videa</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span><span>Format spreman za Reels/Ads (9:16)</span></li>
+            <li><span class="check">✓</span><span>Hook + jasna prodajna poruka</span></li>
+            <li><span class="check">✓</span><span>Moderna dinamika + čist vizuelni utisak</span></li>
+            <li><span class="check">✓</span><span>Usklađivanje sa brendom (logo/boje/stil)</span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Poruči</a>
+            <a class="btn" href="#radovi">🎥 Pogledaj radove</a>
+            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
+          </div>
+
+          <div class="note">
+            <b>Primer:</b> 10 sekundi = <b>1.200 din</b> • 15 sekundi = <b>1.800 din</b> • 30 sekundi = <b>3.600 din</b>
+          </div>
+        </div>
+
+        <div class="plan">
+          <div class="badge">Fiksne cene</div>
+          <h3>Snimanje + Landing page</h3>
+          <p class="price">3.500 / 6.000</p>
+          <p class="per">snimanje / landing stranica</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span><span><b>Snimanje na lokaciji:</b> fiksno <b>3.500 din</b></span></li>
+            <li><span class="check">✓</span><span><b>Landing page:</b> <b>6.000 din</b> po stranici</span></li>
+            <li><span class="check">✓</span><span>Spremno za deljenje i oglase (poziv/Viber/forma)</span></li>
+            <li><span class="check">✓</span><span>Moderan izgled, brzo učitavanje, mobile-first</span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Poruči</a>
+            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
+          </div>
+
+          <p class="small-muted" style="margin-top:12px;">
+            Montaža od vašeg materijala: cena zavisi od obima (količina snimaka, broj klipova, kompleksnost).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kako-radi">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Proces izrade</h2>
+          <p>4 kratka koraka. Brzo i jasno.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="timeline">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Dogovor usluge</b>
+              <span>AI, montaža, snimanje na lokaciji ili landing page. Kažete delatnost + cilj.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Materijal</b>
+              <span>AI: info + (opciono) fotka. Montaža: snimci. Snimanje: dolazimo mi. Landing: tekst + kontakt + logo (ako imate).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <b>Izrada</b>
+              <span>Pravimo reklamu ili stranicu, usklađeno sa brendom i ciljem.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <b>Predaja + objava</b>
+              <span>Dobijate final spreman za objavu/oglase (ili live landing link).</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hero-block">
+          <div class="pill"><span class="dot"></span> Brzo proverite stil</div>
+          <h3 style="margin:12px 0 8px; font-size:20px;">Još primera</h3>
+          <p class="lead" style="margin:0;">
+            Pogledajte radove iznad ili ukucajte <b>Emil Eros</b> na Google-u za dodatne primere.
+          </p>
+
+          <div class="divider"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#radovi">🎥 Otvori radove</a>
+            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
+            <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
+          </div>
+
+          <p class="small-muted" style="margin-top:10px;">
+            Ako imate samo ideju — dovoljno je da napišete šta prodajete i koji je cilj (poruke/pozivi/posete).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>FAQ — najčešća pitanja</h2>
+          <p>Kratko i jasno.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Da li mora fotografija?</summary>
+          <p>Ne mora. Ako imate jednu fotku prodavnice/proizvoda — super. Ako nemate, može i bez toga (po dogovoru).</p>
+        </details>
+
+        <details>
+          <summary>Koji format dobijam?</summary>
+          <p>Najčešće 9:16 (Reels/Ads). Po potrebi radimo i 1:1 ili 16:9.</p>
+        </details>
+
+        <details>
+          <summary>Da li mogu reklamu od svojih snimaka?</summary>
+          <p>Da. Pošaljete snimke telefonom, mi montiramo reklamu (tempo, titlovi, efekti, brending).</p>
+        </details>
+
+        <details>
+          <summary>Šta je “snimanje na lokaciji”?</summary>
+          <p>Dolazimo kod vas i snimamo realan materijal (bez AI) koji koristimo za reklamu i klipove spremne za mreže/oglase.</p>
+        </details>
+
+        <details>
+          <summary>Koliko košta snimanje na lokaciji?</summary>
+          <p>Fiksno <b>3.500 din</b>.</p>
+        </details>
+
+        <details>
+          <summary>Koliko košta landing page?</summary>
+          <p><b>6.000 din</b> po landing stranici (web stranica dizajn, moderna, mobilna, spremna za 2026).</p>
+        </details>
+
+        <details>
+          <summary>Kako se računa cena AI reklama?</summary>
+          <p>120 din po sekundi finalnog videa. Primer: 15 sekundi = 1.800 din.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Kontakt</h2>
+          <p>Pošalji: delatnost + grad + cilj + usluga (AI / montaža / snimanje / landing page) + materijal (ako imaš).</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-card">
+          <h3 style="margin:0 0 10px;">Brz dogovor</h3>
+          <p class="lead" style="margin:0 0 14px;">
+            Pošalji poruku sa:<br/>
+            <b>1)</b> šta prodaješ + cilj (poruke/pozivi/posete)<br/>
+            <b>2)</b> grad + kontakt<br/>
+            <b>3)</b> usluga: AI / montaža / snimanje / landing page<br/>
+            <b>4)</b> dužina (za video) ili “predloži”
+          </p>
+
+          <div class="divider"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#radovi">🎥 Radovi</a>
+            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
+            <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
+          </div>
+
+          <p class="small-muted" style="margin-top:10px;">
+            Najbrže: klikni “Pozovi” i reci delatnost + cilj + uslugu koju želiš.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3 style="margin:0 0 10px;">Kontakt forma</h3>
+          <p class="tiny" style="margin:0 0 14px;">
+            Forma radi preko e-mail aplikacije (mailto). Najjednostavnije za GitHub Pages.
+          </p>
+
+          <form id="leadForm">
+            <div class="form-row">
+              <div>
+                <label for="name">Ime i prezime</label>
+                <input id="name" name="name" type="text" placeholder="npr. Emil" required />
+              </div>
+              <div>
+                <label for="phone">Telefon</label>
+                <input id="phone" name="phone" type="tel" placeholder="npr. 06x xxx xxxx" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="city">Grad</label>
+                <input id="city" name="city" type="text" placeholder="npr. Subotica" />
+              </div>
+              <div>
+                <label for="package">Usluga</label>
+                <select id="package" name="package">
+                  <option value="AI Hook reklama (120 din/sek)">AI Hook reklama (120 din/sek)</option>
+                  <option value="Montaža reklame od vašeg materijala">Montaža reklame od vašeg materijala</option>
+                  <option value="Video snimanje na lokaciji (3.500 din)">Video snimanje na lokaciji (3.500 din)</option>
+                  <option value="Landing page / Web stranica (6.000 din)">Landing page / Web stranica (6.000 din)</option>
+                  <option value="Nisam siguran — predloži">Nisam siguran — predloži</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="profile">Link (opciono: sajt / IG / FB / proizvod)</label>
+              <input id="profile" name="profile" type="url" placeholder="https://..." />
+            </div>
+
+            <div>
+              <label for="message">Poruka (cilj + usluga + materijal + željena dužina)</label>
+              <textarea id="message" name="message" placeholder="npr. Treba mi landing page za auto-perionicu u Novom Sadu. Cilj: više poziva. Imam logo i FB/IG."></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Pošalji upit</button>
+            <div class="tiny">Klikom na “Pošalji” otvara se tvoja e-mail aplikacija sa pripremljenom porukom.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <span class="logo" aria-hidden="true"></span>
+          <div>
+            <div style="font-weight:950;">Silverado.pro</div>
+            <div class="tiny">Video reklame • Snimanje • Landing page • Spremno za oglase</div>
+            <div class="tiny">© <span id="year"></span> Sva prava zadržana.</div>
+          </div>
+        </div>
+
+        <div class="tiny">
+          <b>Brzi linkovi</b><br/>
+          <a href="#usluge">Usluge</a> •
+          <a href="#radovi">Radovi</a> •
+          <a href="#paketi">Usluge</a> •
+          <a href="#ponuda">Cena</a> •
+          <a href="#kako-radi">Proces</a> •
+          <a href="#faq">FAQ</a> •
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="tiny">
+          <b>Kontakt</b><br/>
+          Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a><br/>
+          Telefon: <a href="tel:+381691508197">+381 69 150 8197</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function openViberChat(e){
+      try{ e.preventDefault(); }catch(_){}
+      const deepLink = "viber://chat?number=%2B381691508197";
+      const fallbackWeb = "https://viber.me/+381691508197";
+      window.location.href = deepLink;
+      setTimeout(function(){
+        if (!document.hidden) window.location.href = fallbackWeb;
+      }, 900);
+      return false;
+    }
+
+    const form = document.getElementById("leadForm");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const pkg = document.getElementById("package").value;
+      const profile = document.getElementById("profile").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const toEmail = "emileros1971@gmail.com";
+      const subject = encodeURIComponent("Upit — Silverado.pro (AI / montaža / snimanje / landing page)");
+      const body = encodeURIComponent(
+        "IME: " + name + "\n" +
+        "TELEFON: " + phone + "\n" +
+        "GRAD: " + (city || "-") + "\n" +
+        "USLUGA: " + pkg + "\n" +
+        "LINK (opciono): " + (profile || "-") + "\n\n" +
+        "PORUKA:\n" + (message || "-")
+      );
+
+      window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + body;
+    });
+  </script>
 </body>
 </html>
