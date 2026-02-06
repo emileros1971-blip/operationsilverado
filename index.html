@@ -148,7 +148,7 @@
         0 0 0 4px rgba(207,215,227,.06);
     }
 
-    /* ===== VIBER BUTTON ===== */
+    /* ===== VIBER BUTTON (INLINE SVG ICON — NO EXTERNAL FILES) ===== */
     .btn.viber{
       border-color: rgba(139,92,246,.55);
       background: linear-gradient(135deg, var(--viber), var(--viber2));
@@ -182,6 +182,7 @@
       font-size:14px;
       line-height:1;
     }
+    /* ============================================================= */
 
     header.hero{padding:54px 0 22px;}
 
@@ -448,7 +449,7 @@
       border:0;
     }
 
-    /* ===== HERO ORDER ===== */
+    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
     .hero-stack{
       display:grid;
       gap:16px;
@@ -490,10 +491,11 @@
 </head>
 
 <body>
+  <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-06 -->
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
-        <!-- LANGUAGE BUTTON (Serbian page -> English folder) -->
+        <!-- Language switch (Serbian -> English). If your English is /en/ -->
         <a href="en/" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">English</a>
 
         <a class="brand" href="#top" aria-label="Silverado.pro">
@@ -542,8 +544,8 @@
               <div class="icon">🤖</div>
               <h3>1) AI “Hook” reklame</h3>
               <p>
-                Kratki, “scroll-stopping” klipovi (8–15s) za oglase i Reels.
-                Dovoljna je i 1 fotografija <b>ili opis proizvoda/usluga</b> (nije obavezno).
+                Kratki, “scroll-stopping” klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija (nije obavezno),
+                a možete poslati i kratak opis proizvoda ili usluge.
               </p>
               <div class="mini" style="margin-top:10px;">
                 <span class="tag">9:16</span>
@@ -567,13 +569,13 @@
               <div class="icon">🎥</div>
               <h3>3) Video snimanje kod vas (na lokaciji)</h3>
               <p>
-                Dolazimo u vaš lokal/prostor i snimamo realan materijal (bez AI) <b>1 sat</b>.
-                Od tog materijala pravimo <b>3 različita formata</b> za Instagram/Facebook/TikTok:
-                <b>reklamni (Reels)</b>, <b>feed klip</b> i <b>doku klip</b>.
+                Dolazimo u vaš lokal/prostor i snimamo realan materijal (bez AI). Snimanje traje oko <b>1 sat</b>.
+                Od tog materijala pravimo 3 različita formata za Instagram/Facebook/TikTok:
+                <b>reklamni (Reels)</b>, <b>feed</b> i <b>doku</b> klip.
               </p>
               <div class="mini" style="margin-top:10px;">
-                <span class="tag">1 sat snimanja</span>
-                <span class="tag">3 gotova klipa</span>
+                <span class="tag">Realno snimanje</span>
+                <span class="tag">3 formata</span>
                 <span class="tag"><b>3.500 din</b></span>
               </div>
             </div>
@@ -581,7 +583,10 @@
             <div class="offer">
               <div class="icon">🌐</div>
               <h3>4) Web stranica / Landing page dizajn</h3>
-              <p>Super moderna <b>kompletna up-to-date</b> landing stranica spremna za biznis u 2026. Brza, čista, mobilna, sa jasnim pozivom na akciju.</p>
+              <p>
+                Super moderna, <b>kompletna up-to-date</b> landing stranica spremna za biznis u 2026.
+                Brza, čista, mobilna, sa jasnim pozivom na akciju.
+              </p>
               <div class="mini" style="margin-top:10px;">
                 <span class="tag">Mobile-first</span>
                 <span class="tag">2026 izgled</span>
@@ -690,7 +695,7 @@
           </div>
 
           <h2 style="margin:10px 0 10px; font-size:28px; letter-spacing:-.2px;">
-            Reklamni klipovi su Extra efektivni na mrežama!!!
+            Reklamni klipovi su extra efektivni na mrežama.
           </h2>
 
           <p class="lead">
@@ -757,13 +762,13 @@
         <div class="feature">
           <div class="icon">🎥</div>
           <h3>Snimanje na lokaciji</h3>
-          <p>Dolazimo, snimamo realan materijal (bez AI) <b>1 sat</b> i isporučujemo <b>3 formata</b>: <b>Reels</b>, <b>Feed</b> i <b>Doku</b>. <b>Fiksno: 3.500 din</b>.</p>
+          <p>Dolazimo, snimamo realan materijal (bez AI). <b>1 sat</b> snimanja + 3 formata (<b>reklamni</b>, <b>feed</b>, <b>doku</b>). <b>Fiksno: 3.500 din</b>.</p>
         </div>
 
         <div class="feature">
           <div class="icon">🌐</div>
           <h3>Landing page / Web stranica</h3>
-          <p>Super moderna <b>kompletna up-to-date</b> landing stranica spremna za 2026: mobilna, brza, jasna ponuda i CTA. <b>6.000 din</b> po stranici.</p>
+          <p>Moderna stranica spremna za 2026: mobilna, brza, jasna ponuda i CTA. <b>6.000 din</b> po stranici.</p>
         </div>
       </div>
 
@@ -812,10 +817,8 @@
             <div class="num">B</div>
             <div>
               <b>Video snimanje kod vas (na lokaciji)</b>
-              <!-- FIXED: No weird bullets, no lonely colon, no punctuation falling onto new lines -->
-              <span>
-                Dolazimo i snimamo realan materijal (bez AI) <b>1 sat</b>. Dobijate <b>3 formata</b>: <b>reklamni (Reels)</b>, <b>feed</b> i <b>doku</b>. <b>Cena: fiksno 3.500 din.</b>
-              </span>
+              <!-- FIX: no stacked dots/colon/period lines -->
+              <span>Dolazimo i snimamo realan materijal (bez AI) <b>1 sat</b>. Dobijate <b>3 formata</b>: <b>reklamni (Reels)</b>, <b>feed</b> i <b>doku</b>. <b>Cena: fiksno 3.500 din.</b></span>
             </div>
           </div>
           <div class="step">
@@ -829,7 +832,7 @@
             <div class="num">2</div>
             <div>
               <b>Šta dobijate</b>
-              <span>3 gotova klipa spremna za objavu: reklamni (Reels), feed i doku + po dogovoru dodatne varijante.</span>
+              <span>3 gotova klipa spremna za objavu: <b>reklamni (Reels)</b>, <b>feed</b> i <b>doku</b> + po dogovoru dodatne varijante.</span>
             </div>
           </div>
         </div>
@@ -840,7 +843,7 @@
           <div class="num">C</div>
           <div>
             <b>Landing page / Web stranica (2026)</b>
-            <span>Super moderna kompletna up-to-date landing stranica: jasna ponuda, CTA (poziv/Viber), mobilna, brza. <b>Cena: 6.000 din po stranici.</b></span>
+            <span>Super moderna landing stranica: jasna ponuda, CTA (poziv/Viber), mobilna, brza. <b>Cena: 6.000 din po stranici.</b></span>
           </div>
         </div>
         <div class="step">
@@ -854,6 +857,7 @@
           <div class="num">2</div>
           <div>
             <b>Šta dobijate</b>
+            <!-- FIX: removed "GitHub Pages" mention -->
             <span>Landing stranicu spremnu za deljenje i oglase, sa jasnim “pozovi / Viber / upit” dugmetom.</span>
           </div>
         </div>
@@ -899,17 +903,18 @@
           </div>
         </div>
 
+        <!-- FIX: Snimanje as its own plan card -->
         <div class="plan">
-          <div class="badge">Landing page</div>
-          <h3>Landing page / Web stranica (2026)</h3>
-          <p class="price">6.000 din</p>
-          <p class="per">po stranici</p>
+          <div class="badge">Fiksno: 3.500 din</div>
+          <h3>Video snimanje na lokaciji</h3>
+          <p class="price">3.500 din</p>
+          <p class="per">1 sat snimanja + 3 formata klipova</p>
 
           <ul class="ul">
-            <li><span class="check">✓</span><span>Super moderna kompletna up-to-date landing stranica</span></li>
-            <li><span class="check">✓</span><span>Mobile-first, brzo učitavanje, čist dizajn</span></li>
-            <li><span class="check">✓</span><span>CTA dugmad: poziv / Viber / upit</span></li>
-            <li><span class="check">✓</span><span>Struktura koja vodi posetioca ka poruci ili pozivu</span></li>
+            <li><span class="check">✓</span><span><b>1 sat</b> realnog snimanja (bez AI)</span></li>
+            <li><span class="check">✓</span><span>3 formata: <b>reklamni (Reels)</b>, <b>feed</b>, <b>doku</b></span></li>
+            <li><span class="check">✓</span><span>Spremno za Instagram/Facebook/TikTok</span></li>
+            <li><span class="check">✓</span><span>Po dogovoru dodatne varijante</span></li>
           </ul>
 
           <div class="cta">
@@ -918,17 +923,18 @@
           </div>
         </div>
 
+        <!-- FIX: Landing as its own plan card -->
         <div class="plan">
-          <div class="badge">Snimanje</div>
-          <h3>Video snimanje na lokaciji</h3>
-          <p class="price">3.500 din</p>
-          <p class="per">fiksno</p>
+          <div class="badge">6.000 din / stranica</div>
+          <h3>Landing page / Web stranica (2026)</h3>
+          <p class="price">6.000 din</p>
+          <p class="per">po stranici</p>
 
           <ul class="ul">
-            <li><span class="check">✓</span><span><b>1 sat</b> snimanja kod vas (realan materijal, bez AI)</span></li>
-            <li><span class="check">✓</span><span><b>3 formata</b>: reklamni (Reels), feed i doku</span></li>
-            <li><span class="check">✓</span><span>Spremno za Instagram/Facebook/TikTok</span></li>
-            <li><span class="check">✓</span><span>Po dogovoru: dodatne varijante / korekcije</span></li>
+            <li><span class="check">✓</span><span>Super moderna, kompletna up-to-date stranica</span></li>
+            <li><span class="check">✓</span><span>Mobile-first + brzo učitavanje</span></li>
+            <li><span class="check">✓</span><span>Jasna ponuda + CTA (poziv/Viber/forma)</span></li>
+            <li><span class="check">✓</span><span>Usklađivanje sa brendom (logo/boje/stil)</span></li>
           </ul>
 
           <div class="cta">
@@ -980,7 +986,7 @@
             <div class="num">4</div>
             <div>
               <b>Predaja + objava</b>
-              <span>Dobijate final spreman za objavu/oglase (ili live landing link).</span>
+              <span>Dobijate final spreman za objavu/oglase (ili live link za landing).</span>
             </div>
           </div>
         </div>
@@ -1020,7 +1026,7 @@
       <div class="faq">
         <details>
           <summary>Da li mora fotografija?</summary>
-          <p>Ne mora. Može fotografija, a može i samo opis proizvoda/usluga. Ako imate jednu fotku prodavnice/proizvoda — super. Ako nemate, može i bez toga.</p>
+          <p>Ne mora. Ako imate jednu fotku prodavnice/proizvoda — super. Ako nemate, može i bez toga (po dogovoru).</p>
         </details>
 
         <details>
@@ -1035,17 +1041,17 @@
 
         <details>
           <summary>Šta je “snimanje na lokaciji”?</summary>
-          <p>Dolazimo kod vas i snimamo realan materijal (bez AI) <b>1 sat</b>, i isporučujemo <b>3 formata</b>: <b>Reels</b>, <b>Feed</b> i <b>Doku</b>.</p>
+          <p>Dolazimo kod vas i snimamo realan materijal (bez AI) koji koristimo za reklame i klipove spremne za objavu.</p>
         </details>
 
         <details>
           <summary>Koliko košta snimanje na lokaciji?</summary>
-          <p>Fiksno <b>3.500 din</b>.</p>
+          <p>Fiksno <b>3.500 din</b> (oko 1 sat snimanja + 3 formata: reklamni, feed i doku).</p>
         </details>
 
         <details>
           <summary>Koliko košta landing page?</summary>
-          <p><b>6.000 din</b> po landing stranici (super moderna kompletna up-to-date web stranica, mobilna i brza).</p>
+          <p><b>6.000 din</b> po landing stranici (moderna, mobilna, spremna za 2026).</p>
         </details>
 
         <details>
@@ -1092,7 +1098,7 @@
         <div class="contact-card">
           <h3 style="margin:0 0 10px;">Kontakt forma</h3>
           <p class="tiny" style="margin:0 0 14px;">
-            Forma radi preko e-mail aplikacije (mailto). Najjednostavnije za GitHub Pages.
+            Forma radi preko e-mail aplikacije (mailto). Najjednostavnije za statičan sajt.
           </p>
 
           <form id="leadForm">
