@@ -1,93 +1,1217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silverado.pro – Video Advertising</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q7W1SB4F5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8Q7W1SB4F5');
+  </script>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#07140f;
-  color:#eafff3;
-}
-header{
-  padding:40px 20px;
-  text-align:center;
-}
-a.lang{
-  position:fixed;
-  top:15px;
-  right:15px;
-  background:#22c55e;
-  color:#04130b;
-  padding:8px 14px;
-  border-radius:999px;
-  font-weight:bold;
-  text-decoration:none;
-}
-.section{
-  max-width:900px;
-  margin:auto;
-  padding:40px 20px;
-}
-.box{
-  background:#0b1f16;
-  padding:20px;
-  border-radius:16px;
-  margin-bottom:20px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Silverado.pro — Video ads, on-site filming and modern landing pages. Fast, clean, ready for ads." />
+  <meta name="theme-color" content="#07140f" />
+  <title>Silverado.pro — Video Ads + Landing Page (2026)</title>
+
+  <style>
+    :root{
+      --bg:#07140f;
+      --bg2:#06110d;
+      --panel:#0b1f16;
+      --panel2:#0a1a13;
+      --text:#eafff3;
+      --muted:#bde7d1;
+      --line:rgba(255,255,255,.09);
+      --green:#22c55e;
+      --green2:#34d399;
+
+      /* ===== VIBER PURPLE ===== */
+      --viber:#7360f2;
+      --viber2:#8b5cf6;
+      --viberDark:#5b46f0;
+      /* ======================= */
+
+      /* ===== SILVER ACCENT ===== */
+      --silver:#cfd7e3;
+      --silverSoft: rgba(207,215,227,.12);
+      --silverGlow: rgba(207,215,227,.18);
+      --silverLine: rgba(207,215,227,.16);
+      /* ========================= */
+
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 760px at 18% 8%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 700px at 85% 0%, rgba(52,211,153,.14), transparent 55%),
+        radial-gradient(1200px 820px at 55% 10%, var(--silverSoft), transparent 62%),
+        linear-gradient(180deg, #030a07, var(--bg) 35%, #030a07);
+      min-height:100vh;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background:rgba(3,10,7,.55);
+      border-bottom:1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow:
+        0 14px 40px rgba(34,197,94,.25),
+        0 10px 30px var(--silverGlow);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 50%),
+        radial-gradient(circle at 70% 70%, var(--silverGlow), transparent 55%);
+      transform: rotate(25deg);
+    }
+    .brand small{
+      display:block;
+      font-weight:700;
+      color:var(--muted);
+      letter-spacing:0;
+      margin-top:2px;
+    }
+    .nav-links{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center; justify-content:flex-end;
+    }
+    .nav-links a{
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      font-size:14px;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      border-color:rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.06);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:800;
+      transition:.18s ease;
+      cursor:pointer;
+      box-shadow: 0 0 0 0 rgba(207,215,227,.0);
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.05);
+      border-color: rgba(207,215,227,.18);
+      box-shadow: 0 0 0 4px rgba(207,215,227,.06);
+    }
+    .btn.primary{
+      border-color: rgba(34,197,94,.35);
+      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(52,211,153,.75));
+      box-shadow:
+        0 18px 45px rgba(34,197,94,.18),
+        0 0 0 4px rgba(207,215,227,.06);
+    }
+
+    /* ===== VIBER BUTTON (INLINE SVG ICON — NO EXTERNAL FILES) ===== */
+    .btn.viber{
+      border-color: rgba(139,92,246,.55);
+      background: linear-gradient(135deg, var(--viber), var(--viber2));
+      color:#ffffff;
+      box-shadow:
+        0 18px 45px rgba(139,92,246,.18),
+        0 0 0 4px rgba(207,215,227,.05);
+      padding:10px 14px;
+      min-width: 56px;
+    }
+    .btn.viber:hover{
+      background: linear-gradient(135deg, var(--viberDark), var(--viber2));
+      border-color: rgba(139,92,246,.70);
+      box-shadow:
+        0 18px 45px rgba(139,92,246,.22),
+        0 0 0 4px rgba(115,96,242,.12);
+    }
+    .btn.viber:active{ transform: translateY(0px); }
+
+    .viber-icon{
+      width:22px;
+      height:22px;
+      display:block;
+      color:#fff;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
+      flex: 0 0 auto;
+    }
+    .viber-text{
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:14px;
+      line-height:1;
+    }
+    /* ============================================================= */
+
+    header.hero{padding:54px 0 22px;}
+
+    .card{
+      border:1px solid rgba(255,255,255,.09);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 40% 30%, rgba(207,215,227,.10), transparent 55%);
+      transform: rotate(14deg);
+      pointer-events:none;
+    }
+    .card > *{position:relative}
+
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,var(--green),var(--green2))}
+    h1{
+      margin:14px 0 10px;
+      font-size: 44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width: 70ch;
+      margin:0 0 16px;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
+    .mini{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:14px;}
+    .tag{
+      border:1px solid rgba(255,255,255,.10);
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.02);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+
+    .stat{
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.85), rgba(10,26,19,.60));
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .stat:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 40% 30%, var(--silverSoft), transparent 55%);
+      transform: rotate(18deg);
+      pointer-events:none;
+    }
+    .stat > *{position:relative}
+    .stat b{display:block; font-size:22px; margin-bottom:0}
+
+    section{padding:38px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px;}
+    .section-title h2{margin:0; font-size:28px; letter-spacing:-.2px;}
+    .section-title p{margin:0; color:var(--muted); max-width: 60ch; line-height:1.5; font-size:14px;}
+
+    .grid-4{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px;}
+    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px;}
+
+    .feature{
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.75), rgba(10,26,19,.55));
+      min-height: 130px;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .feature h3{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .icon{
+      width:38px; height:38px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(255,255,255,.02);
+      margin-bottom:10px;
+      font-weight:900;
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+
+    .pricing{display:grid; grid-template-columns: 1fr; gap:14px; align-items:stretch;}
+    .plan{
+      padding:18px;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
+      position:relative;
+      overflow:hidden;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.30),
+        0 0 0 4px rgba(207,215,227,.05);
+    }
+    .plan.popular{
+      border-color: rgba(34,197,94,.35);
+      box-shadow:
+        0 20px 60px rgba(34,197,94,.12),
+        0 0 0 4px rgba(207,215,227,.06);
+    }
+    .plan .badge{
+      position:absolute; top:14px; right:14px;
+      font-size:12px; font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(34,197,94,.16);
+      border: 1px solid rgba(34,197,94,.35);
+      color: var(--text);
+      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    }
+    .plan h3{margin:2px 0 8px; font-size:18px}
+    .price{font-size:34px; font-weight:950; margin:0 0 6px;}
+    .per{color:var(--muted); font-size:13px; margin:0 0 10px}
+    .ul{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--muted); font-size:14px; line-height:1.4;}
+    .ul li{display:flex; gap:10px; align-items:flex-start; border-top:1px dashed rgba(255,255,255,.10); padding-top:10px;}
+    .check{
+      width:20px; height:20px; border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(34,197,94,.35);
+      background: rgba(34,197,94,.10);
+      color: var(--green2);
+      font-weight:950;
+      flex:0 0 20px;
+      margin-top:1px;
+    }
+    .plan .cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
+    .note{
+      margin-top:14px;
+      padding:14px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .small-muted{color:var(--muted); font-size:13px; line-height:1.5; margin:8px 0 0;}
+
+    .timeline{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius2);
+      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
+      padding:18px;
+      display:grid;
+      gap:10px;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .step{
+      display:flex; gap:12px;
+      padding:12px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.02);
+    }
+    .num{
+      width:34px; height:34px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(34,197,94,.16);
+      border:1px solid rgba(34,197,94,.35);
+      font-weight:950;
+      flex:0 0 34px;
+    }
+    .step b{display:block; margin-bottom:4px}
+    .step span{color:var(--muted); font-size:14px; line-height:1.5}
+
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      padding:14px 14px;
+      background:rgba(255,255,255,.02);
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:900; list-style:none;}
+    summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted); margin:10px 0 0; line-height:1.55; font-size:14px}
+
+    .contact{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .contact-card{
+      padding:18px;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    form{display:grid; gap:10px;}
+    label{font-size:13px; color:var(--muted)}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      outline:none;
+      box-shadow: 0 0 0 3px rgba(207,215,227,.04);
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(34,197,94,.45);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.14), 0 0 0 7px rgba(207,215,227,.06);
+    }
+    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    .divider{height:1px; background:var(--line); margin:18px 0;}
+
+    footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:30px;
+    }
+    .footer-inner{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
+    .tiny{font-size:13px; line-height:1.55}
+
+    /* ========= VIDEO GRID ========= */
+    .video-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+    .video-cell{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    }
+    .video-wrap{
+      position:relative;
+      padding-top:56.25%;
+      background: rgba(0,0,0,.28);
+    }
+    .video-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
+    .hero-stack{
+      display:grid;
+      gap:16px;
+    }
+    .hero-block{padding:22px;}
+
+    .offers-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .offer{
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(11,31,22,.78), rgba(10,26,19,.55));
+      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+      min-height: 160px;
+    }
+    .offer h3{margin:0 0 6px; font-size:16px}
+    .offer p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .offer .icon{margin-bottom:10px;}
+
+    @media (max-width: 980px){
+      h1{font-size:38px;}
+      .grid-4{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr;}
+      .contact{grid-template-columns:1fr;}
+      .offers-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px;}
+      .form-row{grid-template-columns: 1fr;}
+      .nav-links{display:none;}
+      .video-grid{grid-template-columns: 1fr;}
+    }
+  </style>
 </head>
 
 <body>
+  <!-- DEPLOY MARKER: EN-FULL-FIX-2026-02-06 -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Language switch (English -> Serbian root) -->
+        <a href="../" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">Srpski</a>
 
-<a class="lang" href="../">Srpski</a>
+        <a class="brand" href="#top" aria-label="Silverado.pro">
+          <span class="logo" aria-hidden="true"></span>
+          <span>
+            Silverado.pro
+            <small>Video ads • On-site filming • Landing page • Ready for ads</small>
+          </span>
+        </a>
 
-<header>
-<h1>Silverado.pro</h1>
-<p>AI video ads • editing • on-location filming • modern websites</p>
-</header>
+        <div class="nav-links" aria-label="Navigation">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#details">Details</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-<div class="section">
+        <a class="btn primary" href="#contact">Order</a>
+      </div>
+    </div>
+  </div>
 
-<div class="box">
-<h2>We create video ads that sell</h2>
-<p>
-Short clips for Instagram, Facebook and TikTok.  
-AI generated or real filming at your location.
-</p>
-</div>
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-stack">
 
-<div class="box">
-<h2>Services</h2>
-<ul>
-<li>AI “hook” video ads</li>
-<li>Editing from your footage</li>
-<li>On-location filming</li>
-<li>Landing pages & websites</li>
-</ul>
-</div>
+        <!-- 1) TOP: 4 OFFERS -->
+        <div class="card hero-block" id="services">
+          <div class="pill" style="margin-bottom:12px;">
+            <span class="dot"></span>
+            4 services • Fast • Ready for 2026
+          </div>
 
-<div class="box">
-<h2>Pricing</h2>
-<p>
-AI video: 120 RSD per second<br>
-Filming on location: 3,500 RSD<br>
-Website / landing page: 6,000 RSD
-</p>
-</div>
+          <h1 style="margin-top:10px;">We make ads that stop the scroll.</h1>
 
-<div class="box">
-<h2>Contact</h2>
-<p>
-Phone: +381 69 150 8197<br>
-Email: emileros1971@gmail.com
-</p>
-</div>
+          <p class="lead" style="margin-top:8px;">
+            Straight to the point: choose a service. AI hook ads, editing from your clips, on-site filming,
+            or a modern landing page for your business.
+          </p>
 
-</div>
+          <div class="offers-grid">
+            <div class="offer">
+              <div class="icon">🤖</div>
+              <h3>1) AI “Hook” ads</h3>
+              <p>
+                Short “scroll-stopping” clips (8–15s) for ads and Reels. One photo can be enough (not required),
+                and you can also send a short description of your product or service.
+              </p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">9:16</span>
+                <span class="tag">Hook</span>
+                <span class="tag">Brand</span>
+              </div>
+            </div>
 
+            <div class="offer">
+              <div class="icon">✂️</div>
+              <h3>2) Ad from your footage</h3>
+              <p>
+                You send phone clips. We edit a punchy ad with rhythm, captions, effects, branding and a clear call-to-action.
+              </p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">Editing</span>
+                <span class="tag">Captions</span>
+                <span class="tag">Effects</span>
+              </div>
+            </div>
+
+            <div class="offer">
+              <div class="icon">🎥</div>
+              <h3>3) On-site filming (at your location)</h3>
+              <p>
+                We come to your place and film real footage (no AI). Filming lasts about <b>1 hour</b>.
+                From that material we produce 3 formats for Instagram/Facebook/TikTok:
+                <b>ad (Reels)</b>, <b>feed</b>, and <b>doku</b> clip.
+              </p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">Real filming</span>
+                <span class="tag">3 formats</span>
+                <span class="tag"><b>3,500 RSD</b></span>
+              </div>
+            </div>
+
+            <div class="offer">
+              <div class="icon">🌐</div>
+              <h3>4) Website / Landing page design</h3>
+              <p>
+                A super modern, <b>complete up-to-date</b> landing page ready for business in 2026.
+                Fast, clean, mobile-friendly, with clear CTA buttons.
+              </p>
+              <div class="mini" style="margin-top:10px;">
+                <span class="tag">Mobile-first</span>
+                <span class="tag">2026 look</span>
+                <span class="tag"><b>6,000 RSD</b></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:16px;">
+            <a class="btn primary" href="#contact">Order / Ask</a>
+            <a class="btn" href="#work">🎥 View work</a>
+            <a class="btn" href="tel:+381691508197">📞 Call</a>
+
+            <a class="btn viber"
+               href="viber://chat?number=%2B381691508197"
+               aria-label="Message on Viber"
+               onclick="return openViberChat(event);">
+              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+              </svg>
+              <span class="viber-text">Viber</span>
+            </a>
+          </div>
+
+          <p class="small-muted">
+            <b>AI ad price:</b> 120 RSD / second • 10s = 1,200 RSD • 15s = 1,800 RSD • 30s = 3,600 RSD
+          </p>
+          <p class="small-muted" style="margin-top:6px;">
+            <b>On-site filming:</b> fixed <b>3,500 RSD</b> • <b>Landing page:</b> <b>6,000 RSD</b> per page
+          </p>
+        </div>
+
+        <!-- 2) VIDEO CLIPS -->
+        <div class="card hero-block" id="work">
+          <div class="stat">
+            <b>Work (examples) — 10 clips</b>
+            <div class="small-muted">Click and watch. This is the style you get.</div>
+          </div>
+
+          <div class="video-grid" style="margin-top:12px;">
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1"
+                title="Silverado video 1 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/Wh70EgGjtRI?rel=0&modestbranding=1"
+                title="Silverado video 2 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1"
+                title="Silverado video 3 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1"
+                title="Silverado video 4 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1"
+                title="Silverado video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
+                title="Silverado video 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1"
+                title="Silverado video 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1"
+                title="Silverado video 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1"
+                title="Silverado video 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+
+            <div class="video-cell"><div class="video-wrap">
+              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1"
+                title="Silverado video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div></div>
+          </div>
+
+          <div class="stat" style="margin-top:12px;">
+            <b>I do video + design for any business.</b>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">Google: Emil Eros</a>
+              <a class="btn primary" href="tel:+381691508197">Call: 069 1508 197</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) TEXT BLOCK -->
+        <div class="card hero-block">
+          <div class="pill"><span class="dot"></span> Fast • Modern • Ready for IG/FB ads</div>
+          <h2 style="margin:10px 0 10px; font-size:28px; letter-spacing:-.2px;">
+            Short ads are insanely effective on social media.
+          </h2>
+
+          <p class="lead">
+            Sometimes a single photo of your shop or product is enough (but not required) to create a clean,
+            informative and motivating video ad.
+          </p>
+
+          <p class="lead" style="margin-top:-6px;">
+            If you don’t want AI, we can do <b>editing from your footage</b> or <b>on-site filming</b> (real shots).
+            If you want a full “ready for 2026” setup, we also build a <b>landing page / website</b> that converts visits into calls and messages.
+          </p>
+
+          <div class="mini" style="margin-top:8px;">
+            <span class="tag">✅ AI or real filming</span>
+            <span class="tag">✅ Ready for ads</span>
+            <span class="tag">✅ Landing page (2026)</span>
+          </div>
+
+          <div class="hero-actions" style="margin-top:14px;">
+            <a class="btn primary" href="#pricing">Pricing</a>
+            <a class="btn" href="tel:+381691508197">📞 Call</a>
+            <a class="btn viber"
+               href="viber://chat?number=%2B381691508197"
+               aria-label="Message on Viber"
+               onclick="return openViberChat(event);">
+              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+              </svg>
+              <span class="viber-text">Viber</span>
+            </a>
+          </div>
+
+          <p class="small-muted">
+            <b>AI:</b> 120 RSD / second • <b>Filming:</b> 3,500 RSD • <b>Landing page:</b> 6,000 RSD
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>What we do (quick)</h2>
+          <p>Four clear services: AI ads, ads from your footage, on-site filming, and landing pages.</p>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="feature">
+          <div class="icon">🤖</div>
+          <h3>AI “Hook” ads</h3>
+          <p>Short clips (8–15s) built to grab attention and push viewers to message or call.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">✂️</div>
+          <h3>Editing from your footage</h3>
+          <p>You shoot on your phone. We cut it into a proper ad: pace, captions, effects, logo and CTA.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🎥</div>
+          <h3>On-site filming</h3>
+          <p>We come and film real footage (no AI). <b>1 hour</b> filming + 3 formats (<b>ad</b>, <b>feed</b>, <b>doku</b>). <b>Fixed: 3,500 RSD</b>.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🌐</div>
+          <h3>Landing page / Website</h3>
+          <p>Modern 2026-ready page: mobile, fast, clean offer and CTA. <b>6,000 RSD</b> per page.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Included:</b> Basic brand matching (logo/colors/style) so everything looks consistent and “premium”.
+      </div>
+    </div>
+  </section>
+
+  <section id="details">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Details: how it works</h2>
+          <p>Simple: you choose the service, tell the goal, we deliver the result.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="timeline">
+          <div class="step">
+            <div class="num">A</div>
+            <div>
+              <b>Ad from your footage (editing)</b>
+              <span>You send clips (phone) and we create the ad: cuts, rhythm, captions, effects, logo and CTA.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>What you send</b>
+              <span>10–40 short clips: space, product, work, details (raw footage is fine).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>What you get</b>
+              <span>A finished 9:16 ad ready for Reels/Ads + extra variants if needed.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="step">
+            <div class="num">B</div>
+            <div>
+              <b>On-site filming (at your location)</b>
+              <span>We film real footage (no AI) for about <b>1 hour</b>. You get <b>3 formats</b>: <b>ad (Reels)</b>, <b>feed</b>, and <b>doku</b>. <b>Price: fixed 3,500 RSD.</b></span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>What we film</b>
+              <span>Space, products, work process, details, team, atmosphere (shots for Reels/Ads).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>What you get</b>
+              <span>3 ready-to-post clips: <b>ad (Reels)</b>, <b>feed</b>, and <b>doku</b> + optional extra variants.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top:14px;">
+        <div class="step">
+          <div class="num">C</div>
+          <div>
+            <b>Landing page / Website (2026)</b>
+            <span>A super modern landing page: clear offer, CTA (call/Viber), mobile-friendly, fast. <b>Price: 6,000 RSD per page.</b></span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <b>What you send</b>
+            <span>Business name, services/products, contact, city, links (FB/IG), logo (if you have it), images (optional).</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <b>What you get</b>
+            <span>A landing page ready to share and advertise, with clear “call / Viber / inquiry” buttons.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Tip:</b> If you’re not sure what’s best, send your profile link + goal (more messages, calls, visits) and I’ll suggest the best format.
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Pricing (simple)</h2>
+          <p>AI ads: 120 RSD/sec. Filming: 3,500 RSD fixed. Landing page: 6,000 RSD per page. Editing: depends on scope.</p>
+        </div>
+      </div>
+
+      <div class="pricing">
+        <div class="plan popular">
+          <div class="badge">120 RSD / second</div>
+          <h3>AI video ad (custom)</h3>
+          <p class="price">120 RSD</p>
+          <p class="per">per second of final video</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span><span>Ready for Reels/Ads (9:16)</span></li>
+            <li><span class="check">✓</span><span>Hook + clear sales message</span></li>
+            <li><span class="check">✓</span><span>Modern pacing + clean look</span></li>
+            <li><span class="check">✓</span><span>Brand matching (logo/colors/style)</span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#contact">Order</a>
+            <a class="btn" href="#work">🎥 View work</a>
+            <a class="btn" href="tel:+381691508197">📞 Call</a>
+          </div>
+
+          <div class="note">
+            <b>Example:</b> 10 seconds = <b>1,200 RSD</b> • 15 seconds = <b>1,800 RSD</b> • 30 seconds = <b>3,600 RSD</b>
+          </div>
+        </div>
+
+        <div class="plan">
+          <div class="badge">Fixed: 3,500 RSD</div>
+          <h3>On-site filming</h3>
+          <p class="price">3,500 RSD</p>
+          <p class="per">~1 hour filming + 3 clip formats</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span><span><b>~1 hour</b> of real filming (no AI)</span></li>
+            <li><span class="check">✓</span><span>3 formats: <b>ad (Reels)</b>, <b>feed</b>, <b>doku</b></span></li>
+            <li><span class="check">✓</span><span>Ready for Instagram/Facebook/TikTok</span></li>
+            <li><span class="check">✓</span><span>Optional extra variants by agreement</span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#contact">Order</a>
+            <a class="btn" href="tel:+381691508197">📞 Call</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <div class="badge">6,000 RSD / page</div>
+          <h3>Landing page / Website (2026)</h3>
+          <p class="price">6,000 RSD</p>
+          <p class="per">per landing page</p>
+
+          <ul class="ul">
+            <li><span class="check">✓</span><span>Super modern, complete up-to-date page</span></li>
+            <li><span class="check">✓</span><span>Mobile-first + fast loading</span></li>
+            <li><span class="check">✓</span><span>Clear offer + CTA (call/Viber/form)</span></li>
+            <li><span class="check">✓</span><span>Brand matching (logo/colors/style)</span></li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#contact">Order</a>
+            <a class="btn" href="tel:+381691508197">📞 Call</a>
+          </div>
+
+          <p class="small-muted" style="margin-top:12px;">
+            Editing from your footage: price depends on scope (amount of clips, number of deliverables, complexity).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Process</h2>
+          <p>4 quick steps. Simple and fast.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="timeline">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Choose the service</b>
+              <span>AI, editing, on-site filming, or landing page. Tell me your business and your goal.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Send material</b>
+              <span>AI: info + (optional) photo/description. Editing: your clips. Filming: we come to you. Landing: text + contact + logo (if any).</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <b>Production</b>
+              <span>I create the ad or the page, aligned with your brand and the goal.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <b>Delivery</b>
+              <span>You receive the final files ready to post/advertise (or a live link for the landing page).</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hero-block">
+          <div class="pill"><span class="dot"></span> Quick style check</div>
+          <h3 style="margin:12px 0 8px; font-size:20px;">More examples</h3>
+          <p class="lead" style="margin:0;">
+            Check the videos above or search <b>Emil Eros</b> on Google for more samples.
+          </p>
+
+          <div class="divider"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#work">🎥 Open work</a>
+            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
+            <a class="btn primary" href="tel:+381691508197">Call: 069 1508 197</a>
+          </div>
+
+          <p class="small-muted" style="margin-top:10px;">
+            If you only have an idea, that’s enough. Tell me what you sell and the goal (messages, calls, visits).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>FAQ</h2>
+          <p>Short and clear answers.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Do I need a photo?</summary>
+          <p>No. One photo can help, but it’s not required. We can also work with text and descriptions.</p>
+        </details>
+
+        <details>
+          <summary>What format do I get?</summary>
+          <p>Most often 9:16 (Reels/Ads). If needed, we also deliver 1:1 or 16:9.</p>
+        </details>
+
+        <details>
+          <summary>Can you make an ad from my clips?</summary>
+          <p>Yes. You send phone clips, we edit a proper ad (pace, captions, effects, branding).</p>
+        </details>
+
+        <details>
+          <summary>What is “on-site filming”?</summary>
+          <p>We come to your location and film real footage (no AI), then turn it into ready-to-post clips.</p>
+        </details>
+
+        <details>
+          <summary>How much is on-site filming?</summary>
+          <p>Fixed <b>3,500 RSD</b> (~1 hour filming + 3 formats: ad, feed and doku).</p>
+        </details>
+
+        <details>
+          <summary>How much is a landing page?</summary>
+          <p><b>6,000 RSD</b> per landing page (modern, mobile-friendly, 2026-ready).</p>
+        </details>
+
+        <details>
+          <summary>How is AI ad pricing calculated?</summary>
+          <p>120 RSD per second of final video. Example: 15 seconds = 1,800 RSD.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Contact</h2>
+          <p>Send: business type + city + goal + service (AI / editing / filming / landing) + any materials you have.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-card">
+          <h3 style="margin:0 0 10px;">Fast order</h3>
+          <p class="lead" style="margin:0 0 14px;">
+            Message me with:<br/>
+            <b>1)</b> what you sell + goal (messages/calls/visits)<br/>
+            <b>2)</b> city + contact<br/>
+            <b>3)</b> service: AI / editing / filming / landing page<br/>
+            <b>4)</b> video length (for ads) or “suggest”
+          </p>
+
+          <div class="divider"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#work">🎥 Work</a>
+            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
+            <a class="btn primary" href="tel:+381691508197">Call: 069 1508 197</a>
+          </div>
+
+          <p class="small-muted" style="margin-top:10px;">
+            Fastest: tap “Call” and tell me your business + goal + which service you want.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3 style="margin:0 0 10px;">Contact form</h3>
+          <p class="tiny" style="margin:0 0 14px;">
+            This form uses your email app (mailto). Simple and reliable for a static website.
+          </p>
+
+          <form id="leadForm">
+            <div class="form-row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="e.g. Emil" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="e.g. 06x xxx xxxx" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="city">City</label>
+                <input id="city" name="city" type="text" placeholder="e.g. Subotica" />
+              </div>
+              <div>
+                <label for="package">Service</label>
+                <select id="package" name="package">
+                  <option value="AI Hook ad (120 RSD/sec)">AI Hook ad (120 RSD/sec)</option>
+                  <option value="Ad editing from your footage">Ad editing from your footage</option>
+                  <option value="On-site filming (3,500 RSD)">On-site filming (3,500 RSD)</option>
+                  <option value="Landing page / Website (6,000 RSD)">Landing page / Website (6,000 RSD)</option>
+                  <option value="Not sure — suggest">Not sure — suggest</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="profile">Link (optional: website / IG / FB / product)</label>
+              <input id="profile" name="profile" type="url" placeholder="https://..." />
+            </div>
+
+            <div>
+              <label for="message">Message (goal + service + materials + preferred length)</label>
+              <textarea id="message" name="message" placeholder="Example: I need a landing page for a car wash in Novi Sad. Goal: more calls. I have a logo and FB/IG links."></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Send inquiry</button>
+            <div class="tiny">Clicking “Send inquiry” opens your email app with a prepared message.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <span class="logo" aria-hidden="true"></span>
+          <div>
+            <div style="font-weight:950;">Silverado.pro</div>
+            <div class="tiny">Video ads • Filming • Landing page • Ready for ads</div>
+            <div class="tiny">© <span id="year"></span> All rights reserved.</div>
+          </div>
+        </div>
+
+        <div class="tiny">
+          <b>Quick links</b><br/>
+          <a href="#services">Services</a> •
+          <a href="#work">Work</a> •
+          <a href="#details">Details</a> •
+          <a href="#pricing">Pricing</a> •
+          <a href="#process">Process</a> •
+          <a href="#faq">FAQ</a> •
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="tiny">
+          <b>Contact</b><br/>
+          Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a><br/>
+          Phone: <a href="tel:+381691508197">+381 69 150 8197</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function openViberChat(e){
+      try{ e.preventDefault(); }catch(_){}
+      const deepLink = "viber://chat?number=%2B381691508197";
+      const fallbackWeb = "https://viber.me/+381691508197";
+      window.location.href = deepLink;
+      setTimeout(function(){
+        if (!document.hidden) window.location.href = fallbackWeb;
+      }, 900);
+      return false;
+    }
+
+    const form = document.getElementById("leadForm");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const pkg = document.getElementById("package").value;
+      const profile = document.getElementById("profile").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const toEmail = "emileros1971@gmail.com";
+      const subject = encodeURIComponent("Inquiry — Silverado.pro (AI / editing / filming / landing page)");
+      const body = encodeURIComponent(
+        "NAME: " + name + "\n" +
+        "PHONE: " + phone + "\n" +
+        "CITY: " + (city || "-") + "\n" +
+        "SERVICE: " + pkg + "\n" +
+        "LINK (optional): " + (profile || "-") + "\n\n" +
+        "MESSAGE:\n" + (message || "-")
+      );
+
+      window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + body;
+    });
+  </script>
 </body>
 </html>
