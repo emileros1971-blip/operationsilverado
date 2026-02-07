@@ -369,16 +369,32 @@
     .step b{display:block; margin-bottom:4px}
     .step span{color:var(--muted); font-size:14px; line-height:1.5}
 
-    /* ===== FIX: clean list for the “B” block (prevents weird dots/colons wrapping) ===== */
+    /* ===== FIX: remove REAL bullets completely; draw “dots” via CSS so nothing can wrap weirdly ===== */
     .clean-list{
+      list-style:none;
+      padding:0;
       margin:8px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
+      display:grid;
+      gap:6px;
     }
-    .clean-list li{margin:4px 0;}
-    /* =============================================================================== */
+    .clean-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin:0;
+      padding:0;
+    }
+    .clean-list li::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow: 0 0 0 3px rgba(34,197,94,.10);
+      flex:0 0 8px;
+      margin-top:7px;
+    }
+    /* ================================================================================================= */
 
     details{
       border:1px solid rgba(255,255,255,.10);
@@ -502,11 +518,10 @@
 </head>
 
 <body>
-  <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-07 -->
+  <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-07-BULLET-KILL -->
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
-        <!-- Language switch (Serbian -> English). If your English is /en/ -->
         <a href="en/" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">English</a>
 
         <a class="brand" href="#top" aria-label="Silverado.pro">
@@ -536,7 +551,6 @@
     <div class="container">
       <div class="hero-stack">
 
-        <!-- 1) TOP: 4 OFFERS -->
         <div class="card hero-block" id="usluge">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
@@ -630,7 +644,6 @@
           </p>
         </div>
 
-        <!-- 2) VIDEO CLIPS -->
         <div class="card hero-block" id="radovi">
           <div class="stat">
             <b>Radovi (primeri) — 10 klipova</b>
@@ -698,7 +711,6 @@
           </div>
         </div>
 
-        <!-- 3) TEXT BLOCK -->
         <div class="card hero-block">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
@@ -829,16 +841,16 @@
             <div>
               <b>Video snimanje kod vas (na lokaciji)</b>
 
-              <!-- FIX: real list instead of “dot/colon pseudo bullets” -->
               <span>Dolazimo i snimamo realan materijal (bez AI). Snimanje traje oko <b>1 sat</b>.</span>
-              <span style="margin-top:6px; display:block;">Dobijate <b>3 formata</b>:</span>
+              <span style="display:block; margin-top:6px;">Dobijate <b>3 formata</b>:</span>
+
               <ul class="clean-list">
-                <li><b>Reklamni (Reels)</b></li>
-                <li><b>Feed</b></li>
-                <li><b>Doku</b></li>
+                <li><span><b>Reklamni (Reels)</b></span></li>
+                <li><span><b>Feed</b></span></li>
+                <li><span><b>Doku</b></span></li>
               </ul>
-              <span style="margin-top:6px; display:block;"><b>Cena:</b> fiksno <b>3.500 din</b>.</span>
-              <!-- END FIX -->
+
+              <span style="display:block; margin-top:8px;"><b>Cena:</b> fiksno <b>3.500 din</b>.</span>
             </div>
           </div>
           <div class="step">
@@ -888,6 +900,7 @@
     </div>
   </section>
 
+  <!-- EVERYTHING BELOW IS UNCHANGED FROM YOUR VERSION -->
   <section id="ponuda">
     <div class="container">
       <div class="section-title">
