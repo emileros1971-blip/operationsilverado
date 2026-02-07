@@ -369,6 +369,17 @@
     .step b{display:block; margin-bottom:4px}
     .step span{color:var(--muted); font-size:14px; line-height:1.5}
 
+    /* ===== FIX: clean list for the “B” block (prevents weird dots/colons wrapping) ===== */
+    .clean-list{
+      margin:8px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .clean-list li{margin:4px 0;}
+    /* =============================================================================== */
+
     details{
       border:1px solid rgba(255,255,255,.10);
       border-radius:var(--radius);
@@ -491,7 +502,7 @@
 </head>
 
 <body>
-  <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-06 -->
+  <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-07 -->
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
@@ -722,7 +733,7 @@
                aria-label="Pošalji poruku na Viber"
                onclick="return openViberChat(event);">
               <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1 .5-.1 .7l-.9 .9z"/>
               </svg>
               <span class="viber-text">Viber</span>
             </a>
@@ -817,8 +828,17 @@
             <div class="num">B</div>
             <div>
               <b>Video snimanje kod vas (na lokaciji)</b>
-              <!-- FIX: no stacked dots/colon/period lines -->
-              <span>Dolazimo i snimamo realan materijal (bez AI) <b>1 sat</b>. Dobijate <b>3 formata</b>: <b>reklamni (Reels)</b>, <b>feed</b> i <b>doku</b>. <b>Cena: fiksno 3.500 din.</b></span>
+
+              <!-- FIX: real list instead of “dot/colon pseudo bullets” -->
+              <span>Dolazimo i snimamo realan materijal (bez AI). Snimanje traje oko <b>1 sat</b>.</span>
+              <span style="margin-top:6px; display:block;">Dobijate <b>3 formata</b>:</span>
+              <ul class="clean-list">
+                <li><b>Reklamni (Reels)</b></li>
+                <li><b>Feed</b></li>
+                <li><b>Doku</b></li>
+              </ul>
+              <span style="margin-top:6px; display:block;"><b>Cena:</b> fiksno <b>3.500 din</b>.</span>
+              <!-- END FIX -->
             </div>
           </div>
           <div class="step">
@@ -857,7 +877,6 @@
           <div class="num">2</div>
           <div>
             <b>Šta dobijate</b>
-            <!-- FIX: removed "GitHub Pages" mention -->
             <span>Landing stranicu spremnu za deljenje i oglase, sa jasnim “pozovi / Viber / upit” dugmetom.</span>
           </div>
         </div>
@@ -903,7 +922,6 @@
           </div>
         </div>
 
-        <!-- FIX: Snimanje as its own plan card -->
         <div class="plan">
           <div class="badge">Fiksno: 3.500 din</div>
           <h3>Video snimanje na lokaciji</h3>
@@ -923,7 +941,6 @@
           </div>
         </div>
 
-        <!-- FIX: Landing as its own plan card -->
         <div class="plan">
           <div class="badge">6.000 din / stranica</div>
           <h3>Landing page / Web stranica (2026)</h3>
