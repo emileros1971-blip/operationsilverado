@@ -507,7 +507,7 @@
       border:0;
     }
 
-    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
+    /* ===== HERO ORDER ===== */
     .hero-stack{
       display:grid;
       gap:16px;
@@ -550,7 +550,7 @@
 </head>
 
 <body>
-  <!-- DEPLOY MARKER: EN-FULL-FIX-2026-02-13-REORDER-VIDEOS-FIRST -->
+  <!-- DEPLOY MARKER: EN-FULL-FIX-2026-02-21-ON-SITE-LOCATIONS-BANNER -->
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
@@ -584,7 +584,47 @@
     <div class="container">
       <div class="hero-stack">
 
-        <!-- 1) FIRST: WORK + THANK YOU + CLIPS -->
+        <!-- NEW: LOCATION + ENGLISH SERVICE BANNER (BEFORE CLIPS) -->
+        <div class="card hero-block" id="start">
+          <div class="pill" style="margin-bottom:12px;">
+            <span class="dot"></span>
+            On-site filming • Serbia + Canary Islands • Fluent English support
+          </div>
+
+          <h1 style="margin-top:10px;">On-site filming available in Serbia and the Canary Islands.</h1>
+
+          <p class="lead" style="margin-top:8px;">
+            We film on location in <b>Subotica</b> and across <b>Serbia</b>, and also on the <b>Canary Islands</b>.
+            You can count on <b>fluent English customer service</b> and clear communication to bring your ideas to life.
+          </p>
+
+          <div class="mini" style="margin-top:8px;">
+            <span class="tag">✅ Subotica / Serbia</span>
+            <span class="tag">✅ Canary Islands</span>
+            <span class="tag">✅ Fluent English</span>
+          </div>
+
+          <div class="hero-actions" style="margin-top:14px;">
+            <a class="btn primary" href="#contact">Request a quote</a>
+            <a class="btn" href="#work">🎥 See work</a>
+            <a class="btn" href="tel:+381691508197">📞 Call</a>
+            <a class="btn viber"
+               href="viber://chat?number=%2B381691508197"
+               aria-label="Send a message on Viber"
+               onclick="return openViberChat(event);">
+              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+              </svg>
+              <span class="viber-text">Viber</span>
+            </a>
+          </div>
+
+          <p class="small-muted" style="margin-top:10px;">
+            If you already have footage, we can also edit your material into high-converting ads with captions, effects and pacing.
+          </p>
+        </div>
+
+        <!-- 1) FIRST (AFTER BANNER): WORK + CLIPS -->
         <div class="card hero-block" id="work">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
@@ -667,7 +707,7 @@
           </div>
         </div>
 
-        <!-- 2) AFTER CLIPS: 4 OFFERS -->
+        <!-- 2) SERVICES -->
         <div class="card hero-block" id="services">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
@@ -810,6 +850,8 @@
       </div>
     </div>
   </header>
+
+  <!-- The rest of the page stays the same structure as your existing English version. -->
 
   <section>
     <div class="container">
