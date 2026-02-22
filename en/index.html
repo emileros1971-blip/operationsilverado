@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Silverado.pro — Video ads, on-site filming, and modern landing pages. Fast, modern, ready for ads." />
+  <meta name="description" content="Silverado.pro — Video ads, on-site filming, and modern landing pages. Fast, modern, ad-ready." />
   <meta name="theme-color" content="#07140f" />
   <title>Silverado.pro — Video Ads + Landing Page (2026)</title>
 
@@ -369,7 +369,7 @@
     .step b{display:block; margin-bottom:4px}
     .step span{color:var(--muted); font-size:14px; line-height:1.5}
 
-    /* ========= NEW A/B REBUILD ========= */
+    /* ========= NEW A/B REBUILD (no lists, no bullets, no floating dots) ========= */
     .ab-grid{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -425,7 +425,7 @@
       font-weight:900;
       line-height:1.4;
     }
-    /* ============================== */
+    /* ========================================================================== */
 
     details{
       border:1px solid rgba(255,255,255,.10);
@@ -507,7 +507,7 @@
       border:0;
     }
 
-    /* ===== HERO ORDER ===== */
+    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
     .hero-stack{
       display:grid;
       gap:16px;
@@ -550,32 +550,32 @@
 </head>
 
 <body>
-  <!-- DEPLOY MARKER: EN-FULL-FIX-2026-02-21-AVAILABILITY-LANG-PLUS-CLIP-UPDATE -->
+  <!-- DEPLOY MARKER: EN-FULL-PRICES-2026-02-22 -->
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
-        <!-- Language switch (English -> Serbian root) -->
+        <!-- Language switch (English -> Serbian). If your Serbian is / -->
         <a href="../" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">Srpski</a>
 
         <a class="brand" href="#top" aria-label="Silverado.pro">
           <span class="logo" aria-hidden="true"></span>
           <span>
             Silverado.pro
-            <small>Video ads • On-site filming • Landing pages • Ready for ads</small>
+            <small>Video ads • On-site filming • Landing pages • Ad-ready</small>
           </span>
         </a>
 
         <div class="nav-links" aria-label="Navigation">
-          <a href="#usluge">Services</a>
-          <a href="#radovi">Work</a>
-          <a href="#paketi">Details</a>
-          <a href="#ponuda">Pricing</a>
-          <a href="#kako-radi">Process</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#details">Details</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#process">Process</a>
           <a href="#faq">FAQ</a>
-          <a href="#kontakt">Contact</a>
+          <a href="#contact">Contact</a>
         </div>
 
-        <a class="btn primary" href="#kontakt">Order</a>
+        <a class="btn primary" href="#contact">Order</a>
       </div>
     </div>
   </div>
@@ -584,37 +584,8 @@
     <div class="container">
       <div class="hero-stack">
 
-        <!-- 0) FRONT INTRO (BEFORE CLIPS) -->
-        <div class="card hero-block" id="intro">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            On-site filming • English support • Any language ads
-          </div>
-
-          <div class="stat">
-            <b>On-site filming in Subotica (Serbia) and the Canary Islands.</b>
-            <div class="small-muted" style="margin-top:6px;">
-              We create <b>professional video ads in any language</b>. Fluent English customer service — from idea to finished video.
-            </div>
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-              <a class="btn primary" href="tel:+381691508197">Call: +381 69 150 8197</a>
-              <a class="btn viber"
-                 href="viber://chat?number=%2B381691508197"
-                 aria-label="Message on Viber"
-                 onclick="return openViberChat(event);">
-                <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
-                </svg>
-                <span class="viber-text">Viber</span>
-              </a>
-              <a class="btn" href="#kontakt">Send inquiry</a>
-            </div>
-          </div>
-        </div>
-
         <!-- 1) FIRST: WORK + THANK YOU + CLIPS -->
-        <div class="card hero-block" id="radovi">
+        <div class="card hero-block" id="work">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
             Work (examples) • Thanks for stopping by
@@ -622,14 +593,14 @@
 
           <div class="stat">
             <b>Work (examples) — 10 clips</b>
-            <div class="small-muted">Different styles for different businesses and products.</div>
+            <div class="small-muted">Different styles for different industries and products.</div>
           </div>
 
           <div class="video-grid" style="margin-top:12px;">
             <!-- 1 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1"
-                title="Silverado video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                title="Silverado video 1 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
 
             <!-- 10 moved here to be 2nd on mobile -->
@@ -641,19 +612,19 @@
             <!-- 2 (UPDATED) -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1"
-                title="Silverado video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                title="Silverado video 2 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
 
             <!-- 3 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1"
-                title="Silverado video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                title="Silverado video 3 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
 
             <!-- 4 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1"
-                title="Silverado video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                title="Silverado video 4 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
 
             <!-- 5 -->
@@ -688,7 +659,7 @@
           </div>
 
           <div class="stat" style="margin-top:12px;">
-            <b>I create video and design for any industry.</b>
+            <b>I do video and design for any industry.</b>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
               <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">Google: Emil Eros</a>
               <a class="btn primary" href="tel:+381691508197">Call: +381 69 150 8197</a>
@@ -696,27 +667,27 @@
           </div>
         </div>
 
-        <!-- 2) AFTER CLIPS: 4 SERVICES -->
-        <div class="card hero-block" id="usluge">
+        <!-- 2) AFTER CLIPS: 4 OFFERS -->
+        <div class="card hero-block" id="services">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
             4 services • Fast • Ready for 2026
           </div>
 
-          <h1 style="margin-top:10px;">We create ads that stop the scroll.</h1>
+          <h1 style="margin-top:10px;">We make ads that stop the scroll.</h1>
 
           <p class="lead" style="margin-top:8px;">
-            First you see the work. Then it’s clear what we do.
-            Choose a service: AI ads, editing from your footage, on-site filming, or a modern landing page for your business.
+            First you see the work. Now here’s what we do. Pick a service: AI ads, editing from your footage, on-site filming,
+            or a modern landing page for your business.
           </p>
 
           <div class="offers-grid">
             <div class="offer">
               <div class="icon">🤖</div>
-              <h3>1) AI “Hook” Ads</h3>
+              <h3>1) AI “Hook” ads</h3>
               <p>
-                Short “scroll-stopping” clips (8–15s) for ads and Reels.
-                One photo can help (not required). You can also send a short description of your product or service.
+                Short “scroll-stopping” clips (8–15s) for ads and Reels. One photo can help (not required),
+                and you can also send a short description of your product or service.
               </p>
               <div class="mini" style="margin-top:10px;">
                 <span class="tag">9:16</span>
@@ -727,8 +698,8 @@
 
             <div class="offer">
               <div class="icon">✂️</div>
-              <h3>2) Ads from Your Footage</h3>
-              <p>Send phone videos — we edit a dynamic ad with effects, captions, rhythm, and a clean premium feel.</p>
+              <h3>2) Ad made from your footage</h3>
+              <p>You send phone clips, we edit a dynamic ad with effects, captions, and pacing for social media.</p>
               <div class="mini" style="margin-top:10px;">
                 <span class="tag">Editing</span>
                 <span class="tag">Captions</span>
@@ -738,42 +709,42 @@
 
             <div class="offer">
               <div class="icon">🎥</div>
-              <h3>3) On-Site Filming</h3>
+              <h3>3) On-site filming (at your location)</h3>
               <p>
-                We come to your location and film real footage (no AI). Filming takes about <b>1 hour</b>.
-                From that material we produce 3 formats for Instagram/Facebook/TikTok:
-                <b>ad (Reels)</b>, <b>feed</b>, and a <b>docu-style</b> clip.
+                We come to your place and film real footage (no AI). Filming takes about <b>1 hour</b>.
+                From that material we deliver 3 formats for Instagram/Facebook/TikTok:
+                <b>ad (Reels)</b>, <b>feed</b>, and <b>docu</b> clip.
               </p>
               <div class="mini" style="margin-top:10px;">
                 <span class="tag">Real filming</span>
                 <span class="tag">3 formats</span>
-                <span class="tag"><b>3,500 RSD</b></span>
+                <span class="tag"><b>30 €</b></span>
               </div>
             </div>
 
             <div class="offer">
               <div class="icon">🌐</div>
-              <h3>4) Website / Landing Page</h3>
+              <h3>4) Website / Landing page design</h3>
               <p>
-                A modern, <b>fully up-to-date</b> landing page ready for business in 2026.
-                Fast, clean, mobile-first, with clear calls to action.
+                A super modern, <b>fully up-to-date</b> landing page ready for business in 2026.
+                Fast, clean, mobile-first, with a clear call to action.
               </p>
               <div class="mini" style="margin-top:10px;">
                 <span class="tag">Mobile-first</span>
                 <span class="tag">2026 look</span>
-                <span class="tag"><b>6,000 RSD</b></span>
+                <span class="tag"><b>50 €</b></span>
               </div>
             </div>
           </div>
 
           <div class="hero-actions" style="margin-top:16px;">
-            <a class="btn primary" href="#kontakt">Order / Ask</a>
-            <a class="btn" href="#radovi">🎥 View work</a>
+            <a class="btn primary" href="#contact">Order / Ask</a>
+            <a class="btn" href="#work">🎥 View work</a>
             <a class="btn" href="tel:+381691508197">📞 Call</a>
 
             <a class="btn viber"
                href="viber://chat?number=%2B381691508197"
-               aria-label="Message on Viber"
+               aria-label="Send a message on Viber"
                onclick="return openViberChat(event);">
               <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
@@ -783,10 +754,10 @@
           </div>
 
           <p class="small-muted">
-            <b>AI ad pricing:</b> 120 RSD / second • 10s = 1,200 RSD • 15s = 1,800 RSD • 30s = 3,600 RSD
+            <b>AI ad pricing:</b> 1 € / second • 10s = 10 € • 15s = 15 € • 30s = 30 €
           </p>
           <p class="small-muted" style="margin-top:6px;">
-            <b>On-site filming:</b> fixed <b>3,500 RSD</b> • <b>Landing page:</b> <b>6,000 RSD</b>
+            <b>On-site filming:</b> fixed <b>30 €</b> • <b>Landing page:</b> <b>50 €</b>
           </p>
         </div>
 
@@ -798,41 +769,41 @@
           </div>
 
           <h2 style="margin:10px 0 10px; font-size:28px; letter-spacing:-.2px;">
-            Short ad clips are extremely effective on social media.
+            Short ad clips work extremely well on social platforms.
           </h2>
 
           <p class="lead">
-            Even a single photo of your shop or product (optional) is enough to create a clean, informative,
-            motivating ad that gets people to message or call.
+            Even a single photo of your store or product (optional) can be enough for me to create an effective,
+            informative, and motivating promo video for you.
           </p>
 
           <p class="lead" style="margin-top:-6px;">
             If you don’t want AI, we can do <b>editing from your footage</b> or <b>on-site filming</b> (real shots).
-            If you want “ready for 2026,” we also build a <b>landing page / website</b> that turns visits into calls and messages.
+            If you want something fully “ready for 2026”, we also build a <b>landing page / website</b> that turns visits into calls and messages.
           </p>
 
           <div class="mini" style="margin-top:8px;">
             <span class="tag">✅ AI or real filming</span>
-            <span class="tag">✅ Ready for ads</span>
+            <span class="tag">✅ Ad-ready</span>
             <span class="tag">✅ Landing page (2026)</span>
           </div>
 
           <div class="hero-actions" style="margin-top:14px;">
-            <a class="btn primary" href="#ponuda">Pricing</a>
+            <a class="btn primary" href="#pricing">Pricing</a>
             <a class="btn" href="tel:+381691508197">📞 Call</a>
             <a class="btn viber"
                href="viber://chat?number=%2B381691508197"
-               aria-label="Message on Viber"
+               aria-label="Send a message on Viber"
                onclick="return openViberChat(event);">
               <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6.9-1.3.9-2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
               </svg>
               <span class="viber-text">Viber</span>
             </a>
           </div>
 
           <p class="small-muted">
-            <b>AI:</b> 120 RSD / second • <b>Filming:</b> 3,500 RSD • <b>Landing page:</b> 6,000 RSD
+            <b>AI:</b> 1 € / second • <b>Filming:</b> 30 € • <b>Landing page:</b> 50 €
           </p>
         </div>
 
@@ -852,26 +823,26 @@
       <div class="grid-4">
         <div class="feature">
           <div class="icon">🤖</div>
-          <h3>AI “Hook” Ads</h3>
-          <p>Short clips (8–15s) that grab attention and drive messages or calls.</p>
+          <h3>AI “Hook” ads</h3>
+          <p>Short clips (8–15s) designed to grab attention and drive messages/calls.</p>
         </div>
 
         <div class="feature">
           <div class="icon">✂️</div>
           <h3>Editing from your footage</h3>
-          <p>You film on your phone — we turn it into a fast, branded ad with captions and effects.</p>
+          <p>You film with your phone, we create an ad with pacing, effects, captions, and branding.</p>
         </div>
 
         <div class="feature">
           <div class="icon">🎥</div>
           <h3>On-site filming</h3>
-          <p>We come, film real footage (no AI). <b>1 hour</b> filming + 3 formats (<b>ad</b>, <b>feed</b>, <b>docu</b>). <b>Fixed: 3,500 RSD</b>.</p>
+          <p>We come and film real footage (no AI). <b>1 hour</b> filming + 3 formats (<b>ad</b>, <b>feed</b>, <b>docu</b>). <b>Fixed: 30 €</b>.</p>
         </div>
 
         <div class="feature">
           <div class="icon">🌐</div>
           <h3>Landing page / Website</h3>
-          <p>A modern 2026-ready page: mobile-first, fast, clear offer and CTA. <b>6,000 RSD</b>.</p>
+          <p>Modern page ready for 2026: mobile-first, fast, clear offer + CTA. <b>50 €</b>.</p>
         </div>
       </div>
 
@@ -881,165 +852,170 @@
     </div>
   </section>
 
-  <section id="paketi">
+  <!-- ===================== REBUILT A/B SECTION HERE ===================== -->
+  <section id="details">
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>Services and how we do it</h2>
+          <h2>Services and how it works</h2>
           <p>Simple: choose a service, tell us the goal, we deliver the result.</p>
         </div>
       </div>
 
       <div class="ab-grid">
+        <!-- A -->
         <div class="ab-card">
           <div class="ab-head">
             <div class="ab-badge">A</div>
             <div class="ab-title">
-              <b>Ads from your footage (editing)</b>
-              <span>You film on your phone. We create a social-ready ad.</span>
+              <b>Ad from your footage (editing)</b>
+              <span>You film with your phone. We deliver a finished social-ready ad.</span>
             </div>
           </div>
 
           <div class="ab-lines">
-            <div class="ab-line"><strong>What you send:</strong> 10–40 short clips (space, product, work, details). Raw camera footage is fine.</div>
-            <div class="ab-line"><strong>What you get:</strong> finished video (usually 9:16) with pacing, captions, effects, logo, and CTA.</div>
-            <div class="ab-line"><strong>Best for:</strong> Reels / Ads / TikTok, message or call campaigns.</div>
+            <div class="ab-line"><strong>What you send:</strong> 10–40 short clips (space, product, work, details). Raw gallery clips are fine.</div>
+            <div class="ab-line"><strong>What you get:</strong> a finished video (usually 9:16) with pacing, captions, effects, logo and CTA.</div>
+            <div class="ab-line"><strong>Ideal for:</strong> Reels / Ads / TikTok, campaigns for messages or calls.</div>
           </div>
         </div>
 
+        <!-- B -->
         <div class="ab-card">
           <div class="ab-head">
             <div class="ab-badge">B</div>
             <div class="ab-title">
-              <b>On-site filming</b>
-              <span>We come, film real footage (no AI), and deliver 3 finished formats.</span>
+              <b>On-site filming (at your location)</b>
+              <span>We come, film real footage (no AI), and deliver 3 ready formats.</span>
             </div>
           </div>
 
           <div class="ab-lines">
-            <div class="ab-line"><strong>Filming duration:</strong> around <strong>1 hour</strong> on location.</div>
-            <div class="ab-line"><strong>What we film:</strong> space, products, work, details, team, vibe (shots for Reels/Ads).</div>
-            <div class="ab-line"><strong>What you get:</strong> 3 finished clips: <strong>ad (Reels)</strong>, <strong>feed</strong>, <strong>docu-style</strong> + variations if needed.</div>
+            <div class="ab-line"><strong>Filming time:</strong> about <strong>1 hour</strong> on location.</div>
+            <div class="ab-line"><strong>What we film:</strong> space, products, work, details, team, atmosphere (shots for Reels/Ads).</div>
+            <div class="ab-line"><strong>What you get:</strong> 3 finished clips: <strong>ad (Reels)</strong>, <strong>feed</strong>, <strong>docu</strong> + variants if needed.</div>
           </div>
 
-          <div class="ab-price">Price: fixed <b>3,500 RSD</b></div>
+          <div class="ab-price">Price: fixed <b>30 €</b></div>
         </div>
       </div>
 
+      <!-- C (kept as original timeline style) -->
       <div class="timeline" style="margin-top:14px;">
         <div class="step">
           <div class="num">C</div>
           <div>
             <b>Landing page / Website (2026)</b>
-            <span>Modern landing page: clear offer, CTA (call/Viber), mobile-first, fast. <b>Price: 6,000 RSD.</b></span>
+            <span>Super modern landing page: clear offer, CTA (Call/Viber), mobile-first, fast. <b>Price: 50 €.</b></span>
           </div>
         </div>
         <div class="step">
           <div class="num">1</div>
           <div>
             <b>What you send</b>
-            <span>Business name, services/products, contact, city, links (FB/IG), logo (if you have it), images (optional).</span>
+            <span>Business name, services/products, contact, city, links (FB/IG), logo (if you have), images (optional).</span>
           </div>
         </div>
         <div class="step">
           <div class="num">2</div>
           <div>
             <b>What you get</b>
-            <span>A landing page ready to share and run ads, with a clear “call / Viber / inquiry” button.</span>
+            <span>A landing page ready for sharing and ads, with clear “Call / Viber / Inquiry” buttons.</span>
           </div>
         </div>
       </div>
 
       <div class="note">
-        <b>Tip:</b> If you’re not sure what’s best — send your profile link + goal (more messages, more calls, more visits) and I’ll recommend a format.
+        <b>Tip:</b> If you’re not sure what’s best, send your profile link + goal (more messages, more calls, more visits) and I’ll suggest the best format.
       </div>
     </div>
   </section>
+  <!-- ===================== END REBUILT A/B ===================== -->
 
-  <section id="ponuda">
+  <section id="pricing">
     <div class="container">
       <div class="section-title">
         <div>
           <h2>Pricing (clear)</h2>
-          <p>AI ads: 120 RSD/sec. Filming: 3,500 RSD fixed. Landing page: 6,000 RSD. Editing: depends on scope.</p>
+          <p>AI ads: 1 €/second. Filming: 30 € fixed. Landing page: 50 €. Editing: depends on scope.</p>
         </div>
       </div>
 
       <div class="pricing">
         <div class="plan popular">
-          <div class="badge">120 RSD / second</div>
+          <div class="badge">1 € / second</div>
           <h3>AI video ad (custom)</h3>
-          <p class="price">120 RSD</p>
+          <p class="price">1 €</p>
           <p class="per">per second of final video</p>
 
           <ul class="ul">
-            <li><span class="check">✓</span><span>Ad-ready format for Reels/Ads (9:16)</span></li>
+            <li><span class="check">✓</span><span>Ready for Reels/Ads (9:16)</span></li>
             <li><span class="check">✓</span><span>Hook + clear sales message</span></li>
-            <li><span class="check">✓</span><span>Modern rhythm + clean premium look</span></li>
+            <li><span class="check">✓</span><span>Modern pacing + clean visual look</span></li>
             <li><span class="check">✓</span><span>Brand alignment (logo/colors/style)</span></li>
           </ul>
 
           <div class="cta">
-            <a class="btn primary" href="#kontakt">Order</a>
-            <a class="btn" href="#radovi">🎥 View work</a>
+            <a class="btn primary" href="#contact">Order</a>
+            <a class="btn" href="#work">🎥 View work</a>
             <a class="btn" href="tel:+381691508197">📞 Call</a>
           </div>
 
           <div class="note">
-            <b>Example:</b> 10 seconds = <b>1,200 RSD</b> • 15 seconds = <b>1,800 RSD</b> • 30 seconds = <b>3,600 RSD</b>
+            <b>Example:</b> 10 seconds = <b>10 €</b> • 15 seconds = <b>15 €</b> • 30 seconds = <b>30 €</b>
           </div>
         </div>
 
         <div class="plan">
-          <div class="badge">Fixed: 3,500 RSD</div>
+          <div class="badge">Fixed: 30 €</div>
           <h3>On-site filming</h3>
-          <p class="price">3,500 RSD</p>
-          <p class="per">1 hour filming + 3 video formats</p>
+          <p class="price">30 €</p>
+          <p class="per">1 hour filming + 3 clip formats</p>
 
           <ul class="ul">
             <li><span class="check">✓</span><span><b>1 hour</b> real filming (no AI)</span></li>
             <li><span class="check">✓</span><span>3 formats: <b>ad (Reels)</b>, <b>feed</b>, <b>docu</b></span></li>
             <li><span class="check">✓</span><span>Ready for Instagram/Facebook/TikTok</span></li>
-            <li><span class="check">✓</span><span>Extra variations if needed</span></li>
+            <li><span class="check">✓</span><span>Additional variants as agreed</span></li>
           </ul>
 
           <div class="cta">
-            <a class="btn primary" href="#kontakt">Order</a>
+            <a class="btn primary" href="#contact">Order</a>
             <a class="btn" href="tel:+381691508197">📞 Call</a>
           </div>
         </div>
 
         <div class="plan">
-          <div class="badge">6,000 RSD</div>
+          <div class="badge">50 €</div>
           <h3>Landing page / Website (2026)</h3>
-          <p class="price">6,000 RSD</p>
+          <p class="price">50 €</p>
           <p class="per"></p>
 
           <ul class="ul">
-            <li><span class="check">✓</span><span>Modern, complete, up-to-date page</span></li>
-            <li><span class="check">✓</span><span>Mobile-first + fast load</span></li>
-            <li><span class="check">✓</span><span>Clear offer + CTA (call/Viber/form)</span></li>
+            <li><span class="check">✓</span><span>Super modern, fully up-to-date page</span></li>
+            <li><span class="check">✓</span><span>Mobile-first + fast loading</span></li>
+            <li><span class="check">✓</span><span>Clear offer + CTA (Call/Viber/Form)</span></li>
             <li><span class="check">✓</span><span>Brand alignment (logo/colors/style)</span></li>
           </ul>
 
           <div class="cta">
-            <a class="btn primary" href="#kontakt">Order</a>
+            <a class="btn primary" href="#contact">Order</a>
             <a class="btn" href="tel:+381691508197">📞 Call</a>
           </div>
 
           <p class="small-muted" style="margin-top:12px;">
-            Editing from your footage: price depends on scope (amount of clips, number of final videos, complexity).
+            Editing from your footage: price depends on scope (amount of footage, number of clips, complexity).
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="kako-radi">
+  <section id="process">
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>Production process</h2>
+          <h2>Process</h2>
           <p>4 short steps. Fast and clear.</p>
         </div>
       </div>
@@ -1050,27 +1026,27 @@
             <div class="num">1</div>
             <div>
               <b>Choose the service</b>
-              <span>AI, editing, on-site filming, or landing page. You tell us the niche + goal.</span>
+              <span>AI, editing, on-site filming, or landing page. You tell the industry + goal.</span>
             </div>
           </div>
           <div class="step">
             <div class="num">2</div>
             <div>
-              <b>Materials</b>
-              <span>AI: info + optional photo. Editing: your clips. Filming: we come. Landing: text + contact + logo (if you have it).</span>
+              <b>Send material</b>
+              <span>AI: info + (optional) photo/description. Editing: clips. Filming: we come. Landing: text + contact + logo (if available).</span>
             </div>
           </div>
           <div class="step">
             <div class="num">3</div>
             <div>
               <b>Production</b>
-              <span>We create the ad or page, aligned with your brand and goal.</span>
+              <span>We create the ad or page aligned with your brand and goal.</span>
             </div>
           </div>
           <div class="step">
             <div class="num">4</div>
             <div>
-              <b>Delivery + publishing</b>
+              <b>Delivery + posting</b>
               <span>You get a final file ready to post/advertise (or a live link for the landing page).</span>
             </div>
           </div>
@@ -1080,19 +1056,19 @@
           <div class="pill"><span class="dot"></span> Quick style check</div>
           <h3 style="margin:12px 0 8px; font-size:20px;">More examples</h3>
           <p class="lead" style="margin:0;">
-            View the clips above or search <b>Emil Eros</b> on Google for more examples.
+            See the work above or search <b>Emil Eros</b> on Google for more examples.
           </p>
 
           <div class="divider"></div>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#radovi">🎥 Open work</a>
+            <a class="btn" href="#work">🎥 Open work</a>
             <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
             <a class="btn primary" href="tel:+381691508197">Call: +381 69 150 8197</a>
           </div>
 
           <p class="small-muted" style="margin-top:10px;">
-            If you only have an idea — just tell me what you sell and the goal (messages/calls/visits).
+            If you only have an idea, just write what you sell and the goal (messages/calls/visits).
           </p>
         </div>
       </div>
@@ -1111,79 +1087,79 @@
       <div class="faq">
         <details>
           <summary>Do I need a photo?</summary>
-          <p>No. If you have one photo of your shop/product — great. If not, we can do it without (depending on the concept).</p>
+          <p>No. If you have one photo of your store/product, great. If not, we can do it without (depending on the concept).</p>
         </details>
 
         <details>
           <summary>What format do I get?</summary>
-          <p>Usually 9:16 (Reels/Ads). If needed we also deliver 1:1 or 16:9.</p>
+          <p>Most often 9:16 (Reels/Ads). If needed we also do 1:1 or 16:9.</p>
         </details>
 
         <details>
-          <summary>Can I get an ad from my own footage?</summary>
+          <summary>Can you make an ad from my footage?</summary>
           <p>Yes. You send phone clips, we edit the ad (pacing, captions, effects, branding).</p>
         </details>
 
         <details>
           <summary>What is “on-site filming”?</summary>
-          <p>We come to your location and film real material (no AI) that we turn into clips ready to post and advertise.</p>
+          <p>We come to your location and film real footage (no AI) used for social-ready ads and clips.</p>
         </details>
 
         <details>
           <summary>How much is on-site filming?</summary>
-          <p>Fixed <b>3,500 RSD</b> (about 1 hour filming + 3 formats: ad, feed and docu-style).</p>
+          <p>Fixed <b>30 €</b> (about 1 hour filming + 3 formats: ad, feed, docu).</p>
         </details>
 
         <details>
           <summary>How much is a landing page?</summary>
-          <p><b>6,000 RSD</b> per landing page (modern, mobile-first, 2026-ready).</p>
+          <p><b>50 €</b> per landing page (modern, mobile-first, ready for 2026).</p>
         </details>
 
         <details>
           <summary>How is AI pricing calculated?</summary>
-          <p>120 RSD per second of final video. Example: 15 seconds = 1,800 RSD.</p>
+          <p>1 € per second of final video. Example: 15 seconds = 15 €.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <section id="kontakt">
+  <section id="contact">
     <div class="container">
       <div class="section-title">
         <div>
           <h2>Contact</h2>
-          <p>Send: niche + city + goal + service (AI / editing / filming / landing page) + materials (if you have them).</p>
+          <p>Send: industry + city + goal + service (AI / editing / filming / landing page) + material (if you have it).</p>
         </div>
       </div>
 
       <div class="contact">
         <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Quick order</h3>
+          <h3 style="margin:0 0 10px;">Quick setup</h3>
           <p class="lead" style="margin:0 0 14px;">
             Send a message with:<br/>
             <b>1)</b> what you sell + goal (messages/calls/visits)<br/>
             <b>2)</b> city + contact<br/>
             <b>3)</b> service: AI / editing / filming / landing page<br/>
-            <b>4)</b> video length (or “recommend”)
+            <b>4)</b> length (for video) or “suggest”
           </p>
 
           <div class="divider"></div>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#radovi">🎥 Work</a>
+            <a class="btn" href="#work">🎥 Work</a>
             <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
             <a class="btn primary" href="tel:+381691508197">Call: +381 69 150 8197</a>
           </div>
 
           <p class="small-muted" style="margin-top:10px;">
-            Fastest: click “Call” and tell me the niche + goal + service you want.
+            Fastest: click “Call” and tell the industry + goal + what service you want.
           </p>
         </div>
 
         <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Inquiry form</h3>
+          <h3 style="margin:0 0 10px;">Contact form</h3>
           <p class="tiny" style="margin:0 0 14px;">
-            The form uses your email app (mailto). Easiest for a static website.
+            This form opens your email app (mailto). Simple and reliable for a static site.
           </p>
 
           <form id="leadForm">
@@ -1194,7 +1170,7 @@
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="e.g. +381..." required />
+                <input id="phone" name="phone" type="tel" placeholder="e.g. +381 6x xxx xxxx" required />
               </div>
             </div>
 
@@ -1206,11 +1182,11 @@
               <div>
                 <label for="package">Service</label>
                 <select id="package" name="package">
-                  <option value="AI Hook ad (120 RSD/sec)">AI Hook ad (120 RSD/sec)</option>
+                  <option value="AI Hook ad (1 €/second)">AI Hook ad (1 €/second)</option>
                   <option value="Editing an ad from your footage">Editing an ad from your footage</option>
-                  <option value="On-site filming (3,500 RSD)">On-site filming (3,500 RSD)</option>
-                  <option value="Landing page / Website (6,000 RSD)">Landing page / Website (6,000 RSD)</option>
-                  <option value="Not sure — recommend">Not sure — recommend</option>
+                  <option value="On-site filming (30 €)">On-site filming (30 €)</option>
+                  <option value="Landing page / Website (50 €)">Landing page / Website (50 €)</option>
+                  <option value="Not sure — suggest">Not sure — suggest</option>
                 </select>
               </div>
             </div>
@@ -1221,7 +1197,7 @@
             </div>
 
             <div>
-              <label for="message">Message (goal + service + materials + desired length)</label>
+              <label for="message">Message (goal + service + material + desired length)</label>
               <textarea id="message" name="message" placeholder="e.g. I need a landing page for a car wash in Novi Sad. Goal: more calls. I have a logo and FB/IG."></textarea>
             </div>
 
@@ -1240,20 +1216,20 @@
           <span class="logo" aria-hidden="true"></span>
           <div>
             <div style="font-weight:950;">Silverado.pro</div>
-            <div class="tiny">Video ads • On-site filming • Landing pages • Ready for ads</div>
+            <div class="tiny">Video ads • On-site filming • Landing pages • Ad-ready</div>
             <div class="tiny">© <span id="year"></span> All rights reserved.</div>
           </div>
         </div>
 
         <div class="tiny">
           <b>Quick links</b><br/>
-          <a href="#usluge">Services</a> •
-          <a href="#radovi">Work</a> •
-          <a href="#paketi">Details</a> •
-          <a href="#ponuda">Pricing</a> •
-          <a href="#kako-radi">Process</a> •
+          <a href="#services">Services</a> •
+          <a href="#work">Work</a> •
+          <a href="#details">Details</a> •
+          <a href="#pricing">Pricing</a> •
+          <a href="#process">Process</a> •
           <a href="#faq">FAQ</a> •
-          <a href="#kontakt">Contact</a>
+          <a href="#contact">Contact</a>
         </div>
 
         <div class="tiny">
