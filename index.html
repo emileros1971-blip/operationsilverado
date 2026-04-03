@@ -61,28 +61,62 @@
       min-height:100vh;
     }
 
-    /* ===== HEAD BANNER ===== */
-    .head-banner{
+    /* ===== WELCOME STRIP ===== */
+    .welcome-strip{
       width:100%;
+      background: linear-gradient(135deg, rgba(11,31,22,.98), rgba(7,20,15,.95));
+      border-bottom: 1px solid rgba(34,197,94,.20);
+      box-shadow: 0 4px 24px rgba(0,0,0,.30);
+    }
+    .welcome-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:16px 18px;
+    }
+    .welcome-greeting{
+      font-size:13px;
+      color:var(--green2);
+      font-weight:700;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      margin-bottom:12px;
       display:flex;
-      justify-content:center;
       align-items:center;
-      line-height:0;
-      background:#07140f;
-      padding:8px 18px;
+      gap:8px;
     }
-    .head-banner img{
-      width:100%;
-      max-width:1000px;
-      height:auto;
-      display:block;
-      border-radius:12px;
-      box-shadow: 0 6px 24px rgba(0,0,0,.40);
+    .welcome-items{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
-    @media(max-width:600px){
-      .head-banner img{ border-radius:8px; }
+    .welcome-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 16px;
+      border-radius:14px;
+      border:1px solid rgba(34,197,94,.22);
+      background: rgba(34,197,94,.07);
+      font-size:14px;
+      font-weight:700;
+      color:var(--text);
+      flex:1 1 200px;
     }
-    /* ====================== */
+    .welcome-item .wi-icon{
+      font-size:20px;
+      line-height:1;
+      flex:0 0 auto;
+    }
+    .welcome-item .wi-label{ color:var(--muted); font-weight:600; }
+    .welcome-item .wi-price{
+      color:var(--green2);
+      font-weight:900;
+      font-size:15px;
+    }
+    @media(max-width:520px){
+      .welcome-items{ flex-direction:column; }
+    }
+    /* ========================= */
 
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 18px}
@@ -570,18 +604,39 @@
 <body>
   <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-13-REORDER-VIDEOS-FIRST -->
 
-  <!-- ===== HEAD BANNER — loads immediately, before nav ===== -->
-  <div class="head-banner">
-    <img
-      src="assets/banner_cropped.png"
-      alt="Silverado.pro — Video reklame, snimanje i landing page"
-      width="1417" height="400"
-      width="1200"
-      fetchpriority="high"
-      decoding="async"
-    />
+  <!-- ===== WELCOME STRIP ===== -->
+  <div class="welcome-strip">
+    <div class="welcome-inner">
+      <div class="welcome-greeting">
+        <span class="dot"></span>
+        Dobrodošli — evo šta radimo
+      </div>
+      <div class="welcome-items">
+        <div class="welcome-item">
+          <span class="wi-icon">▶️</span>
+          <span>
+            <span class="wi-label">Video reklame za firme — </span>
+            <span class="wi-price">120 din/sec</span>
+          </span>
+        </div>
+        <div class="welcome-item">
+          <span class="wi-icon">📱</span>
+          <span>
+            <span class="wi-label">Upravljanje društvenim mrežama — </span>
+            <span class="wi-price">3.000 din/mesec</span>
+          </span>
+        </div>
+        <div class="welcome-item">
+          <span class="wi-icon">🌐</span>
+          <span>
+            <span class="wi-label">Izrada Web sajtova — od </span>
+            <span class="wi-price">5.000 din</span>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- ========================================================= -->
+  <!-- ============================ -->
 
   <div class="nav">
     <div class="container">
