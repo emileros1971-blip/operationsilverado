@@ -64,15 +64,20 @@
     /* ===== HEAD BANNER ===== */
     .head-banner{
       width:100%;
-      display:block;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       line-height:0;
       background:#07140f;
+      padding:10px 18px;
     }
     .head-banner img{
       width:100%;
+      max-width:900px;
       height:auto;
       display:block;
-      object-fit:cover;
+      border-radius:14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.45);
     }
     /* ====================== */
 
@@ -565,7 +570,7 @@
   <!-- ===== HEAD BANNER — loads immediately, before nav ===== -->
   <div class="head-banner">
     <img
-      src="assets/a2090d04-3f77-4d77-be48-9726164a0227.png"
+      src="assets/0d7f9fd5-9102-46d5-bea6-48020e9ea2aa.png"
       alt="Silverado.pro — Video reklame, snimanje i landing page"
       width="1200"
       fetchpriority="high"
@@ -1199,14 +1204,14 @@
         </div>
         <div class="tiny">
           <b>Kontakt</b><br/>
-          Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a><br/>
+          Email: <a href="/cdn-cgi/l/email-protection#3451595d5851465b47050d0305745359555d581a575b59"><span class="__cf_email__" data-cfemail="4421292d2821362b37757d7375042329252d286a272b29">[email&#160;protected]</span></a><br/>
           Telefon: <a href="tel:+381691508197">+381 69 150 8197</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
     function openViberChat(e){
@@ -1235,12 +1240,4 @@
         "IME: " + name + "\n" +
         "TELEFON: " + phone + "\n" +
         "GRAD: " + (city || "-") + "\n" +
-        "USLUGA: " + pkg + "\n" +
-        "LINK (opciono): " + (profile || "-") + "\n\n" +
-        "PORUKA:\n" + (message || "-")
-      );
-      window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + body;
-    });
-  </script>
-</body>
-</html>
+        "USLUGA: "
