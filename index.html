@@ -61,6 +61,21 @@
       min-height:100vh;
     }
 
+    /* ===== HEAD BANNER ===== */
+    .head-banner{
+      width:100%;
+      display:block;
+      line-height:0;
+      background:#07140f;
+    }
+    .head-banner img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+    }
+    /* ====================== */
+
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 18px}
     .nav{
@@ -148,7 +163,7 @@
         0 0 0 4px rgba(207,215,227,.06);
     }
 
-    /* ===== VIBER BUTTON (INLINE SVG ICON — NO EXTERNAL FILES) ===== */
+    /* ===== VIBER BUTTON ===== */
     .btn.viber{
       border-color: rgba(139,92,246,.55);
       background: linear-gradient(135deg, var(--viber), var(--viber2));
@@ -182,7 +197,6 @@
       font-size:14px;
       line-height:1;
     }
-    /* ============================================================= */
 
     header.hero{padding:54px 0 22px;}
 
@@ -369,7 +383,6 @@
     .step b{display:block; margin-bottom:4px}
     .step span{color:var(--muted); font-size:14px; line-height:1.5}
 
-    /* ========= NEW A/B REBUILD (no lists, no bullets, no floating dots) ========= */
     .ab-grid{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -425,7 +438,6 @@
       font-weight:900;
       line-height:1.4;
     }
-    /* ========================================================================== */
 
     details{
       border:1px solid rgba(255,255,255,.10);
@@ -481,7 +493,6 @@
     .footer-inner{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
     .tiny{font-size:13px; line-height:1.55}
 
-    /* ========= VIDEO GRID ========= */
     .video-grid{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -507,7 +518,6 @@
       border:0;
     }
 
-    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
     .hero-stack{
       display:grid;
       gap:16px;
@@ -551,10 +561,22 @@
 
 <body>
   <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-13-REORDER-VIDEOS-FIRST -->
+
+  <!-- ===== HEAD BANNER — loads immediately, before nav ===== -->
+  <div class="head-banner">
+    <img
+      src="assets/a2090d04-3f77-4d77-be48-9726164a0227.png"
+      alt="Silverado.pro — Video reklame, snimanje i landing page"
+      width="1200"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+  <!-- ========================================================= -->
+
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
-        <!-- Language switch (Serbian -> English). If your English is /en/ -->
         <a href="en/" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">English</a>
 
         <a class="brand" href="#top" aria-label="Silverado.pro">
@@ -597,61 +619,42 @@
           </div>
 
           <div class="video-grid" style="margin-top:12px;">
-            <!-- 1 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1"
                 title="Silverado video 1 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 10 moved here to be 2nd on mobile -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1"
                 title="Silverado video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 2 (UPDATED) -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1"
                 title="Silverado video 2 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 3 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1"
                 title="Silverado video 3 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 4 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1"
                 title="Silverado video 4 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 5 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1"
                 title="Silverado video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 6 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
                 title="Silverado video 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 7 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1"
                 title="Silverado video 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 8 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1"
                 title="Silverado video 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div></div>
-
-            <!-- 9 -->
             <div class="video-cell"><div class="video-wrap">
               <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1"
                 title="Silverado video 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -667,7 +670,7 @@
           </div>
         </div>
 
-        <!-- 2) AFTER CLIPS: 4 OFFERS (this was previously on top) -->
+        <!-- 2) AFTER CLIPS: 4 OFFERS -->
         <div class="card hero-block" id="usluge">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
@@ -684,9 +687,9 @@
           <div class="offers-grid">
             <div class="offer">
               <div class="icon">🤖</div>
-              <h3>1) AI “Hook” reklame</h3>
+              <h3>1) AI "Hook" reklame</h3>
               <p>
-                Kratki, “scroll-stopping” klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija (nije obavezno),
+                Kratki, "scroll-stopping" klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija (nije obavezno),
                 a možete poslati i kratak opis proizvoda ili usluge.
               </p>
               <div class="mini" style="margin-top:10px;">
@@ -761,7 +764,7 @@
           </p>
         </div>
 
-        <!-- 3) TEXT BLOCK (unchanged) -->
+        <!-- 3) TEXT BLOCK -->
         <div class="card hero-block">
           <div class="pill" style="margin-bottom:12px;">
             <span class="dot"></span>
@@ -779,7 +782,7 @@
 
           <p class="lead" style="margin-top:-6px;">
             Ako ne želite AI, možemo uraditi <b>montažu od vašeg materijala</b> ili <b>snimanje kod vas na lokaciji</b> (realni kadrovi).
-            Ako hoćete kompletno “spremno za 2026”, radimo i <b>landing page / web stranicu</b> koja pretvara posete u pozive i poruke.
+            Ako hoćete kompletno "spremno za 2026", radimo i <b>landing page / web stranicu</b> koja pretvara posete u pozive i poruke.
           </p>
 
           <div class="mini" style="margin-top:8px;">
@@ -823,22 +826,19 @@
       <div class="grid-4">
         <div class="feature">
           <div class="icon">🤖</div>
-          <h3>AI “Hook” reklame</h3>
-          <p>Kratki klipovi (8–15s) koji “hvataju” pažnju i vode ka poruci/pozivu.</p>
+          <h3>AI "Hook" reklame</h3>
+          <p>Kratki klipovi (8–15s) koji "hvataju" pažnju i vode ka poruci/pozivu.</p>
         </div>
-
         <div class="feature">
           <div class="icon">✂️</div>
           <h3>Montaža od vaših snimaka</h3>
           <p>Vi snimite telefonom — mi napravimo reklamu sa tempom, efektima, titlovima i brendingom.</p>
         </div>
-
         <div class="feature">
           <div class="icon">🎥</div>
           <h3>Snimanje na lokaciji</h3>
           <p>Dolazimo, snimamo realan materijal (bez AI). <b>1 sat</b> snimanja + 3 formata (<b>reklamni</b>, <b>feed</b>, <b>doku</b>). <b>Fiksno: 3.500 din</b>.</p>
         </div>
-
         <div class="feature">
           <div class="icon">🌐</div>
           <h3>Landing page / Web stranica</h3>
@@ -847,12 +847,11 @@
       </div>
 
       <div class="note">
-        <b>Bonus (uključeno):</b> Usklađivanje sa vašim brendom (logo/boje/stil) da sve izgleda “premium”.
+        <b>Bonus (uključeno):</b> Usklađivanje sa vašim brendom (logo/boje/stil) da sve izgleda "premium".
       </div>
     </div>
   </section>
 
-  <!-- ===================== REBUILT A/B SECTION HERE ===================== -->
   <section id="paketi">
     <div class="container">
       <div class="section-title">
@@ -863,7 +862,6 @@
       </div>
 
       <div class="ab-grid">
-        <!-- A -->
         <div class="ab-card">
           <div class="ab-head">
             <div class="ab-badge">A</div>
@@ -872,15 +870,13 @@
               <span>Vi snimite telefonom. Mi napravimo reklamu spremnu za mreže.</span>
             </div>
           </div>
-
           <div class="ab-lines">
-            <div class="ab-line"><strong>Šta šaljete:</strong> 10–40 kratkih klipova (prostor, proizvod, rad, detalji). Može i “raw” iz galerije.</div>
+            <div class="ab-line"><strong>Šta šaljete:</strong> 10–40 kratkih klipova (prostor, proizvod, rad, detalji). Može i "raw" iz galerije.</div>
             <div class="ab-line"><strong>Šta dobijate:</strong> gotov video (najčešće 9:16) sa tempom, titlovima, efektima, logom i CTA.</div>
             <div class="ab-line"><strong>Idealno za:</strong> Reels / Ads / TikTok, kampanje za poruke ili pozive.</div>
           </div>
         </div>
 
-        <!-- B -->
         <div class="ab-card">
           <div class="ab-head">
             <div class="ab-badge">B</div>
@@ -889,18 +885,15 @@
               <span>Dolazimo, snimamo realan materijal (bez AI), i isporučimo 3 gotova formata.</span>
             </div>
           </div>
-
           <div class="ab-lines">
             <div class="ab-line"><strong>Trajanje snimanja:</strong> oko <strong>1 sat</strong> na lokaciji.</div>
             <div class="ab-line"><strong>Šta snimamo:</strong> prostor, proizvode, rad, detalje, tim, atmosferu (kadrovi za Reels/Ads).</div>
             <div class="ab-line"><strong>Šta dobijate:</strong> 3 gotova klipa: <strong>reklamni (Reels)</strong>, <strong>feed</strong>, <strong>doku</strong> + po dogovoru varijante.</div>
           </div>
-
           <div class="ab-price">Cena: fiksno <b>3.500 din</b></div>
         </div>
       </div>
 
-      <!-- C (kept as original timeline style, because it wasn't breaking) -->
       <div class="timeline" style="margin-top:14px;">
         <div class="step">
           <div class="num">C</div>
@@ -920,7 +913,7 @@
           <div class="num">2</div>
           <div>
             <b>Šta dobijate</b>
-            <span>Landing stranicu spremnu za deljenje i oglase, sa jasnim “pozovi / Viber / upit” dugmetom.</span>
+            <span>Landing stranicu spremnu za deljenje i oglase, sa jasnim "pozovi / Viber / upit" dugmetom.</span>
           </div>
         </div>
       </div>
@@ -930,7 +923,6 @@
       </div>
     </div>
   </section>
-  <!-- ===================== END REBUILT A/B ===================== -->
 
   <section id="ponuda">
     <div class="container">
@@ -947,20 +939,17 @@
           <h3>AI video reklama (po meri)</h3>
           <p class="price">120 din</p>
           <p class="per">po sekundi finalnog videa</p>
-
           <ul class="ul">
             <li><span class="check">✓</span><span>Format spreman za Reels/Ads (9:16)</span></li>
             <li><span class="check">✓</span><span>Hook + jasna prodajna poruka</span></li>
             <li><span class="check">✓</span><span>Moderna dinamika + čist vizuelni utisak</span></li>
             <li><span class="check">✓</span><span>Usklađivanje sa brendom (logo/boje/stil)</span></li>
           </ul>
-
           <div class="cta">
             <a class="btn primary" href="#kontakt">Poruči</a>
             <a class="btn" href="#radovi">🎥 Pogledaj radove</a>
             <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
           </div>
-
           <div class="note">
             <b>Primer:</b> 10 sekundi = <b>1.200 din</b> • 15 sekundi = <b>1.800 din</b> • 30 sekundi = <b>3.600 din</b>
           </div>
@@ -971,14 +960,12 @@
           <h3>Video snimanje na lokaciji</h3>
           <p class="price">3.500 din</p>
           <p class="per">1 sat snimanja + 3 formata klipova</p>
-
           <ul class="ul">
             <li><span class="check">✓</span><span><b>1 sat</b> realnog snimanja (bez AI)</span></li>
             <li><span class="check">✓</span><span>3 formata: <b>reklamni (Reels)</b>, <b>feed</b>, <b>doku</b></span></li>
             <li><span class="check">✓</span><span>Spremno za Instagram/Facebook/TikTok</span></li>
             <li><span class="check">✓</span><span>Po dogovoru dodatne varijante</span></li>
           </ul>
-
           <div class="cta">
             <a class="btn primary" href="#kontakt">Poruči</a>
             <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
@@ -990,19 +977,16 @@
           <h3>Landing page / Web stranica (2026)</h3>
           <p class="price">6.000 din</p>
           <p class="per"></p>
-
           <ul class="ul">
             <li><span class="check">✓</span><span>Super moderna, kompletna up-to-date stranica</span></li>
             <li><span class="check">✓</span><span>Mobile-first + brzo učitavanje</span></li>
             <li><span class="check">✓</span><span>Jasna ponuda + CTA (poziv/Viber/forma)</span></li>
             <li><span class="check">✓</span><span>Usklađivanje sa brendom (logo/boje/stil)</span></li>
           </ul>
-
           <div class="cta">
             <a class="btn primary" href="#kontakt">Poruči</a>
             <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
           </div>
-
           <p class="small-muted" style="margin-top:12px;">
             Montaža od vašeg materijala: cena zavisi od obima (količina snimaka, broj klipova, kompleksnost).
           </p>
@@ -1058,15 +1042,12 @@
           <p class="lead" style="margin:0;">
             Pogledajte radove iznad ili ukucajte <b>Emil Eros</b> na Google-u za dodatne primere.
           </p>
-
           <div class="divider"></div>
-
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn" href="#radovi">🎥 Otvori radove</a>
             <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
             <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
           </div>
-
           <p class="small-muted" style="margin-top:10px;">
             Ako imate samo ideju — dovoljno je da napišete šta prodajete i koji je cilj (poruke/pozivi/posete).
           </p>
@@ -1089,32 +1070,26 @@
           <summary>Da li mora fotografija?</summary>
           <p>Ne mora. Ako imate jednu fotku prodavnice/proizvoda — super. Ako nemate, može i bez toga (po dogovoru).</p>
         </details>
-
         <details>
           <summary>Koji format dobijam?</summary>
           <p>Najčešće 9:16 (Reels/Ads). Po potrebi radimo i 1:1 ili 16:9.</p>
         </details>
-
         <details>
           <summary>Da li mogu reklamu od svojih snimaka?</summary>
           <p>Da. Pošaljete snimke telefonom, mi montiramo reklamu (tempo, titlovi, efekti, brending).</p>
         </details>
-
         <details>
-          <summary>Šta je “snimanje na lokaciji”?</summary>
+          <summary>Šta je "snimanje na lokaciji"?</summary>
           <p>Dolazimo kod vas i snimamo realan materijal (bez AI) koji koristimo za reklame i klipove spremne za objavu.</p>
         </details>
-
         <details>
           <summary>Koliko košta snimanje na lokaciji?</summary>
           <p>Fiksno <b>3.500 din</b> (oko 1 sat snimanja + 3 formata: reklamni, feed i doku).</p>
         </details>
-
         <details>
           <summary>Koliko košta landing page?</summary>
           <p><b>6.000 din</b> po landing stranici (moderna, mobilna, spremna za 2026).</p>
         </details>
-
         <details>
           <summary>Kako se računa cena AI reklama?</summary>
           <p>120 din po sekundi finalnog videa. Primer: 15 sekundi = 1.800 din.</p>
@@ -1140,19 +1115,16 @@
             <b>1)</b> šta prodaješ + cilj (poruke/pozivi/posete)<br/>
             <b>2)</b> grad + kontakt<br/>
             <b>3)</b> usluga: AI / montaža / snimanje / landing page<br/>
-            <b>4)</b> dužina (za video) ili “predloži”
+            <b>4)</b> dužina (za video) ili "predloži"
           </p>
-
           <div class="divider"></div>
-
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn" href="#radovi">🎥 Radovi</a>
             <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
             <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
           </div>
-
           <p class="small-muted" style="margin-top:10px;">
-            Najbrže: klikni “Pozovi” i reci delatnost + cilj + uslugu koju želiš.
+            Najbrže: klikni "Pozovi" i reci delatnost + cilj + uslugu koju želiš.
           </p>
         </div>
 
@@ -1161,7 +1133,6 @@
           <p class="tiny" style="margin:0 0 14px;">
             Forma radi preko e-mail aplikacije (mailto). Najjednostavnije za statičan sajt.
           </p>
-
           <form id="leadForm">
             <div class="form-row">
               <div>
@@ -1173,7 +1144,6 @@
                 <input id="phone" name="phone" type="tel" placeholder="npr. 06x xxx xxxx" required />
               </div>
             </div>
-
             <div class="form-row">
               <div>
                 <label for="city">Grad</label>
@@ -1190,19 +1160,16 @@
                 </select>
               </div>
             </div>
-
             <div>
               <label for="profile">Link (opciono: sajt / IG / FB / proizvod)</label>
               <input id="profile" name="profile" type="url" placeholder="https://..." />
             </div>
-
             <div>
               <label for="message">Poruka (cilj + usluga + materijal + željena dužina)</label>
               <textarea id="message" name="message" placeholder="npr. Treba mi landing page za auto-perionicu u Novom Sadu. Cilj: više poziva. Imam logo i FB/IG."></textarea>
             </div>
-
             <button class="btn primary" type="submit">Pošalji upit</button>
-            <div class="tiny">Klikom na “Pošalji” otvara se tvoja e-mail aplikacija sa pripremljenom porukom.</div>
+            <div class="tiny">Klikom na "Pošalji" otvara se tvoja e-mail aplikacija sa pripremljenom porukom.</div>
           </form>
         </div>
       </div>
@@ -1220,7 +1187,6 @@
             <div class="tiny">© <span id="year"></span> Sva prava zadržana.</div>
           </div>
         </div>
-
         <div class="tiny">
           <b>Brzi linkovi</b><br/>
           <a href="#usluge">Usluge</a> •
@@ -1231,7 +1197,6 @@
           <a href="#faq">FAQ</a> •
           <a href="#kontakt">Kontakt</a>
         </div>
-
         <div class="tiny">
           <b>Kontakt</b><br/>
           Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a><br/>
@@ -1258,14 +1223,12 @@
     const form = document.getElementById("leadForm");
     form.addEventListener("submit", function(e){
       e.preventDefault();
-
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const city = document.getElementById("city").value.trim();
       const pkg = document.getElementById("package").value;
       const profile = document.getElementById("profile").value.trim();
       const message = document.getElementById("message").value.trim();
-
       const toEmail = "emileros1971@gmail.com";
       const subject = encodeURIComponent("Upit — Silverado.pro (AI / montaža / snimanje / landing page)");
       const body = encodeURIComponent(
@@ -1276,7 +1239,6 @@
         "LINK (opciono): " + (profile || "-") + "\n\n" +
         "PORUKA:\n" + (message || "-")
       );
-
       window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + body;
     });
   </script>
