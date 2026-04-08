@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q7W1SB4F5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,1291 +11,1056 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Silverado.pro — Video reklame, snimanje na lokaciji i moderne landing page stranice. Brzo, moderno, spremno za oglase." />
-  <meta name="theme-color" content="#07140f" />
-  <title>Silverado.pro — Video reklame + Landing Page (2026)</title>
+  <meta name="description" content="Silverado.pro — Video reklame, snimanje na lokaciji i moderne landing page stranice." />
+  <meta name="theme-color" content="#f7f2ea" />
+  <title>Silverado.pro — Video Reklame + Landing Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#07140f;
-      --bg2:#06110d;
-      --panel:#0b1f16;
-      --panel2:#0a1a13;
-      --text:#eafff3;
-      --muted:#bde7d1;
-      --line:rgba(255,255,255,.09);
-      --green:#22c55e;
-      --green2:#34d399;
-
-      /* ===== VIBER PURPLE ===== */
-      --viber:#7360f2;
-      --viber2:#8b5cf6;
-      --viberDark:#5b46f0;
-      /* ======================= */
-
-      /* ===== SILVER ACCENT ===== */
-      --silver:#cfd7e3;
-      --silverSoft: rgba(207,215,227,.12);
-      --silverGlow: rgba(207,215,227,.18);
-      --silverLine: rgba(207,215,227,.16);
-      /* ========================= */
-
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius:18px;
-      --radius2:26px;
-      --max: 1120px;
+    :root {
+      --ivory:    #f7f2ea;
+      --cream:    #eee8d8;
+      --parch:    #e5dcc8;
+      --ink:      #18140d;
+      --ink2:     #2a2318;
+      --smoke:    #6b6358;
+      --amber:    #b87830;
+      --amber2:   #d4923e;
+      --wheat:    #e8c97a;
+      --rust:     #9b4a1e;
+      --line:     rgba(24,20,13,0.1);
+      --line2:    rgba(24,20,13,0.16);
+      --viber:    #7360f2;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      color:var(--text);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: var(--ivory);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* subtle paper texture */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 998;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ═══ NAV ═══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 18px 52px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(247,242,234,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 900;
+      color: var(--ink); letter-spacing: 0.06em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--amber);
+      animation: pulse 2.5s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 6px rgba(184,120,48,0.4); }
+      50%      { box-shadow: 0 0 16px rgba(184,120,48,0.8); }
+    }
+
+    .nav-links { display: flex; gap: 26px; list-style: none; }
+    .nav-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--smoke); transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    .btn-nav {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: #fff; background: var(--amber);
+      padding: 10px 24px; border: none; cursor: pointer;
+      transition: background 0.3s; text-decoration: none;
+    }
+    .btn-nav:hover { background: var(--rust); }
+
+    /* ═══ HERO ═══ */
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-texture {
+      position: absolute; inset: 0; z-index: 0;
       background:
-        radial-gradient(1100px 760px at 18% 8%, rgba(34,197,94,.18), transparent 60%),
-        radial-gradient(900px 700px at 85% 0%, rgba(52,211,153,.14), transparent 55%),
-        radial-gradient(1200px 820px at 55% 10%, var(--silverSoft), transparent 62%),
-        linear-gradient(180deg, #030a07, var(--bg) 35%, #030a07);
-      min-height:100vh;
+        radial-gradient(ellipse 65% 60% at 70% 50%, rgba(184,120,48,0.09) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 8% 20%, rgba(24,20,13,0.04) 0%, transparent 55%),
+        repeating-linear-gradient(
+          88deg,
+          transparent 0px, transparent 48px,
+          rgba(24,20,13,0.018) 48px, rgba(24,20,13,0.018) 49px
+        ),
+        repeating-linear-gradient(
+          178deg,
+          transparent 0px, transparent 72px,
+          rgba(24,20,13,0.012) 72px, rgba(24,20,13,0.012) 73px
+        );
     }
 
-    /* ===== WELCOME STRIP ===== */
-    .welcome-strip{
-      width:100%;
-      background: linear-gradient(135deg, rgba(11,31,22,.98), rgba(7,20,15,.95));
-      border-bottom: 1px solid rgba(34,197,94,.20);
-      box-shadow: 0 4px 24px rgba(0,0,0,.30);
-    }
-    .welcome-inner{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:16px 18px;
-    }
-    .welcome-greeting{
-      font-size:13px;
-      color:var(--green2);
-      font-weight:700;
-      letter-spacing:.4px;
-      text-transform:uppercase;
-      margin-bottom:12px;
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    .welcome-items{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .welcome-item{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 16px;
-      border-radius:14px;
-      border:1px solid rgba(34,197,94,.22);
-      background: rgba(34,197,94,.07);
-      font-size:14px;
-      font-weight:700;
-      color:var(--text);
-      flex:1 1 200px;
-    }
-    .welcome-item .wi-icon{
-      font-size:20px;
-      line-height:1;
-      flex:0 0 auto;
-    }
-    .welcome-item .wi-label{ color:var(--muted); font-weight:600; }
-    .welcome-item .wi-price{
-      color:var(--green2);
-      font-weight:900;
-      font-size:15px;
-    }
-    @media(max-width:520px){
-      .welcome-items{ flex-direction:column; }
-    }
-    /* ========================= */
-
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background:rgba(3,10,7,.55);
-      border-bottom:1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-    .logo{
-      width:40px; height:40px; border-radius:14px;
-      background: linear-gradient(135deg, var(--green), var(--green2));
-      box-shadow:
-        0 14px 40px rgba(34,197,94,.25),
-        0 10px 30px var(--silverGlow);
-      position:relative;
-      overflow:hidden;
-    }
-    .logo:after{
-      content:"";
-      position:absolute; inset:-30%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 50%),
-        radial-gradient(circle at 70% 70%, var(--silverGlow), transparent 55%);
-      transform: rotate(25deg);
-    }
-    .brand small{
-      display:block;
-      font-weight:700;
-      color:var(--muted);
-      letter-spacing:0;
-      margin-top:2px;
-    }
-    .nav-links{
-      display:flex; gap:10px; flex-wrap:wrap;
-      align-items:center; justify-content:flex-end;
-    }
-    .nav-links a{
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid transparent;
-      font-size:14px;
-    }
-    .nav-links a:hover{
-      color:var(--text);
-      border-color:rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.06);
+    .hero-wm {
+      position: absolute; right: -60px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(12rem, 20vw, 18rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04);
+      line-height: 1; pointer-events: none; z-index: 1;
+      user-select: none; white-space: nowrap;
     }
 
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-weight:800;
-      transition:.18s ease;
-      cursor:pointer;
-      box-shadow: 0 0 0 0 rgba(207,215,227,.0);
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      background:rgba(255,255,255,.05);
-      border-color: rgba(207,215,227,.18);
-      box-shadow: 0 0 0 4px rgba(207,215,227,.06);
-    }
-    .btn.primary{
-      border-color: rgba(34,197,94,.35);
-      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(52,211,153,.75));
-      box-shadow:
-        0 18px 45px rgba(34,197,94,.18),
-        0 0 0 4px rgba(207,215,227,.06);
+    .hero-content {
+      position: relative; z-index: 3;
+      padding: 120px 80px 80px;
+      max-width: 800px;
+      animation: riseIn 1.2s cubic-bezier(0.16,1,0.3,1) both;
     }
 
-    /* ===== VIBER BUTTON ===== */
-    .btn.viber{
-      border-color: rgba(139,92,246,.55);
-      background: linear-gradient(135deg, var(--viber), var(--viber2));
-      color:#ffffff;
-      box-shadow:
-        0 18px 45px rgba(139,92,246,.18),
-        0 0 0 4px rgba(207,215,227,.05);
-      padding:10px 14px;
-      min-width: 56px;
-    }
-    .btn.viber:hover{
-      background: linear-gradient(135deg, var(--viberDark), var(--viber2));
-      border-color: rgba(139,92,246,.70);
-      box-shadow:
-        0 18px 45px rgba(139,92,246,.22),
-        0 0 0 4px rgba(115,96,242,.12);
-    }
-    .btn.viber:active{ transform: translateY(0px); }
-
-    .viber-icon{
-      width:22px;
-      height:22px;
-      display:block;
-      color:#fff;
-      filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
-      flex: 0 0 auto;
-    }
-    .viber-text{
-      font-weight:900;
-      letter-spacing:.2px;
-      font-size:14px;
-      line-height:1;
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(44px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    header.hero{padding:54px 0 22px;}
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.52em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 14px;
+      animation: riseIn 1.2s 0.07s both;
+    }
+    .hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--amber); }
 
-    .card{
-      border:1px solid rgba(255,255,255,.09);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border-radius:var(--radius2);
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+      font-weight: 900; line-height: 0.95;
+      color: var(--ink); margin-bottom: 8px;
+      animation: riseIn 1.2s 0.13s both;
     }
-    .card:after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 40% 30%, rgba(207,215,227,.10), transparent 55%);
-      transform: rotate(14deg);
-      pointer-events:none;
-    }
-    .card > *{position:relative}
+    .hero-title em { font-style: italic; color: var(--amber); display: block; }
 
-    .pill{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:10px 14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      border-radius:999px;
-      color:var(--muted);
-      font-size:14px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 1.9vw, 1.45rem);
+      font-weight: 300; color: var(--smoke);
+      line-height: 1.68; max-width: 540px;
+      margin: 26px 0 44px;
+      animation: riseIn 1.2s 0.19s both;
     }
-    .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,var(--green),var(--green2))}
-    h1{
-      margin:14px 0 10px;
-      font-size: 44px;
-      line-height:1.05;
-      letter-spacing:-.6px;
+    .hero-sub strong { color: var(--ink); font-weight: 400; }
+
+    .hero-prices {
+      display: flex; flex-wrap: wrap; gap: 3px;
+      margin-bottom: 40px;
+      animation: riseIn 1.2s 0.25s both;
     }
-    .lead{
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.6;
-      max-width: 70ch;
-      margin:0 0 16px;
+    .hp-pill {
+      background: #fff;
+      border: 1px solid var(--line2);
+      padding: 11px 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; color: var(--smoke);
     }
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
-    .mini{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:14px;}
-    .tag{
-      border:1px solid rgba(255,255,255,.10);
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.02);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    .hp-pill strong { color: var(--amber); font-family: 'Playfair Display', serif; }
+
+    .hero-ctas {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      animation: riseIn 1.2s 0.31s both;
     }
 
-    .stat{
-      padding:16px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.85), rgba(10,26,19,.60));
-      position:relative;
-      overflow:hidden;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 15px 34px; border: none; cursor: pointer;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+      transition: background 0.3s, letter-spacing 0.3s;
+      text-decoration: none;
     }
-    .stat:after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 40% 30%, var(--silverSoft), transparent 55%);
-      transform: rotate(18deg);
-      pointer-events:none;
-    }
-    .stat > *{position:relative}
-    .stat b{display:block; font-size:22px; margin-bottom:0}
+    .btn-primary:hover { background: var(--rust); letter-spacing: 0.28em; }
 
-    section{padding:38px 0}
-    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px;}
-    .section-title h2{margin:0; font-size:28px; letter-spacing:-.2px;}
-    .section-title p{margin:0; color:var(--muted); max-width: 60ch; line-height:1.5; font-size:14px;}
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 9px;
+      border: 1px solid var(--line2);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 14px 32px; transition: border-color 0.3s, background 0.3s;
+      text-decoration: none; background: transparent;
+    }
+    .btn-outline:hover { border-color: var(--amber); background: rgba(184,120,48,0.05); }
 
-    .grid-4{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px;}
-    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px;}
+    .btn-viber {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--viber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 14px 26px; transition: background 0.3s;
+      text-decoration: none;
+    }
+    .btn-viber:hover { background: #5b46f0; }
 
-    .feature{
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.75), rgba(10,26,19,.55));
-      min-height: 130px;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    .hero-scroll {
+      position: absolute; bottom: 44px; right: 60px; z-index: 3;
+      writing-mode: vertical-rl;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.64rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: rgba(24,20,13,0.28);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
     }
-    .feature h3{margin:0 0 6px; font-size:16px}
-    .feature p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
-    .icon{
-      width:38px; height:38px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      display:flex; align-items:center; justify-content:center;
-      background:rgba(255,255,255,.02);
-      margin-bottom:10px;
-      font-weight:900;
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
+    .hero-scroll::after {
+      content: ''; width: 1px; height: 52px;
+      background: linear-gradient(to bottom, var(--amber), transparent);
+      animation: scrollPulse 2.2s ease infinite;
     }
-
-    .pricing{display:grid; grid-template-columns: 1fr; gap:14px; align-items:stretch;}
-    .plan{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      position:relative;
-      overflow:hidden;
-      box-shadow:
-        0 20px 60px rgba(0,0,0,.30),
-        0 0 0 4px rgba(207,215,227,.05);
-    }
-    .plan.popular{
-      border-color: rgba(34,197,94,.35);
-      box-shadow:
-        0 20px 60px rgba(34,197,94,.12),
-        0 0 0 4px rgba(207,215,227,.06);
-    }
-    .plan .badge{
-      position:absolute; top:14px; right:14px;
-      font-size:12px; font-weight:900;
-      padding:6px 10px;
-      border-radius:999px;
-      background: rgba(34,197,94,.16);
-      border: 1px solid rgba(34,197,94,.35);
-      color: var(--text);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
-    }
-    .plan h3{margin:2px 0 8px; font-size:18px}
-    .price{font-size:34px; font-weight:950; margin:0 0 6px;}
-    .per{color:var(--muted); font-size:13px; margin:0 0 10px}
-    .ul{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--muted); font-size:14px; line-height:1.4;}
-    .ul li{display:flex; gap:10px; align-items:flex-start; border-top:1px dashed rgba(255,255,255,.10); padding-top:10px;}
-    .check{
-      width:20px; height:20px; border-radius:8px;
-      display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(34,197,94,.35);
-      background: rgba(34,197,94,.10);
-      color: var(--green2);
-      font-weight:950;
-      flex:0 0 20px;
-      margin-top:1px;
-    }
-    .plan .cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
-    .note{
-      margin-top:14px;
-      padding:14px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .small-muted{color:var(--muted); font-size:13px; line-height:1.5; margin:8px 0 0;}
-
-    .timeline{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--radius2);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      padding:18px;
-      display:grid;
-      gap:10px;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .step{
-      display:flex; gap:12px;
-      padding:12px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.06);
-      background:rgba(255,255,255,.02);
-    }
-    .num{
-      width:34px; height:34px; border-radius:14px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(34,197,94,.16);
-      border:1px solid rgba(34,197,94,.35);
-      font-weight:950;
-      flex:0 0 34px;
-    }
-    .step b{display:block; margin-bottom:4px}
-    .step span{color:var(--muted); font-size:14px; line-height:1.5}
-
-    .ab-grid{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:14px;
-      align-items:stretch;
-    }
-    .ab-card{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-      overflow:hidden;
-    }
-    .ab-head{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      margin-bottom:10px;
-    }
-    .ab-badge{
-      width:34px;
-      height:34px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: rgba(34,197,94,.16);
-      border:1px solid rgba(34,197,94,.35);
-      font-weight:950;
-      flex:0 0 34px;
-    }
-    .ab-title b{display:block; margin-bottom:4px}
-    .ab-title span{color:var(--muted); font-size:14px; line-height:1.5}
-    .ab-lines{margin-top:10px; display:grid; gap:8px;}
-    .ab-line{
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-    }
-    .ab-line strong{color:var(--text)}
-    .ab-price{
-      margin-top:10px;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(34,197,94,.30);
-      background: rgba(34,197,94,.10);
-      color: var(--text);
-      font-weight:900;
-      line-height:1.4;
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50%      { opacity: 0.8; transform: scaleY(1.3); }
     }
 
-    details{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--radius);
-      padding:14px 14px;
-      background:rgba(255,255,255,.02);
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
+    /* ═══ AMBER STRIP ═══ */
+    .amber-strip {
+      background: var(--amber);
+      display: flex; flex-wrap: wrap;
     }
-    details + details{margin-top:10px}
-    summary{cursor:pointer; font-weight:900; list-style:none;}
-    summary::-webkit-details-marker{display:none}
-    .faq p{color:var(--muted); margin:10px 0 0; line-height:1.55; font-size:14px}
+    .as-item {
+      flex: 1; min-width: 180px; padding: 18px 30px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; gap: 11px;
+      transition: background 0.3s;
+    }
+    .as-item:last-child { border-right: none; }
+    .as-item:hover { background: var(--amber2); }
+    .as-icon { font-size: 1.3rem; }
+    .as-lbl { font-family: 'Cormorant Garamond', serif; font-size: 0.84rem; color: rgba(255,255,255,0.75); }
+    .as-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; }
 
-    .contact{
-      display:grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .contact-card{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    form{display:grid; gap:10px;}
-    label{font-size:13px; color:var(--muted)}
-    input, textarea, select{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      color: var(--text);
-      outline:none;
-      box-shadow: 0 0 0 3px rgba(207,215,227,.04);
-    }
-    textarea{min-height:120px; resize:vertical}
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(34,197,94,.45);
-      box-shadow: 0 0 0 4px rgba(34,197,94,.14), 0 0 0 7px rgba(207,215,227,.06);
-    }
-    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
-    .divider{height:1px; background:var(--line); margin:18px 0;}
+    /* ═══ SHARED ═══ */
+    .sec { padding: 100px 60px; }
+    .sec-inner { max-width: 1200px; margin: 0 auto; }
 
-    footer{
-      padding:26px 0 40px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-      margin-top:30px;
+    .sec-lbl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.74rem; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 12px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .footer-inner{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
-    .tiny{font-size:13px; line-height:1.55}
+    .sec-lbl::before { content: ''; width: 30px; height: 1px; background: var(--amber); opacity: 0.7; }
 
-    .video-grid{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:12px;
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-weight: 700; color: var(--ink); margin-bottom: 12px;
     }
-    .video-cell{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.02);
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .video-wrap{
-      position:relative;
-      padding-top:56.25%;
-      background: rgba(0,0,0,.28);
-    }
-    .video-wrap iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
+    .sec-title em { font-style: italic; color: var(--amber); }
+
+    .sec-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.16rem; font-weight: 300;
+      color: var(--smoke); line-height: 1.75;
+      max-width: 540px; margin-bottom: 52px;
     }
 
-    .hero-stack{
-      display:grid;
-      gap:16px;
-    }
-    .hero-block{padding:22px;}
+    .divider { width: 48px; height: 2px; background: var(--amber); margin: 16px 0 28px; }
 
-    .offers-grid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:14px;
-      margin-top:14px;
+    /* ═══ VIDEOS ═══ */
+    .videos-sec {
+      background: var(--ink);
+      padding: 100px 60px;
+      position: relative; overflow: hidden;
     }
-    .offer{
-      padding:16px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.78), rgba(10,26,19,.55));
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-      min-height: 160px;
-    }
-    .offer h3{margin:0 0 6px; font-size:16px}
-    .offer p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
-    .offer .icon{margin-bottom:10px;}
+    .videos-sec .sec-title { color: #f5efe4; }
+    .videos-sec .sec-body { color: rgba(245,239,228,0.5); }
 
-    @media (max-width: 980px){
-      h1{font-size:38px;}
-      .grid-4{grid-template-columns:1fr;}
-      .grid-2{grid-template-columns:1fr;}
-      .contact{grid-template-columns:1fr;}
-      .offers-grid{grid-template-columns:1fr;}
-      .ab-grid{grid-template-columns:1fr;}
+    .videos-sec::after {
+      content: 'RADOVI';
+      position: absolute; right: -40px; bottom: -50px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(9rem, 16vw, 14rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(245,239,228,0.03);
+      line-height: 1; pointer-events: none; white-space: nowrap;
     }
-    @media (max-width: 520px){
-      h1{font-size:34px;}
-      .form-row{grid-template-columns: 1fr;}
-      .nav-links{display:none;}
-      .video-grid{grid-template-columns: 1fr;}
+
+    .video-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;
+    }
+    .video-cell {
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden; transition: border-color 0.3s;
+    }
+    .video-cell:hover { border-color: var(--amber); }
+    .video-wrap { position: relative; padding-top: 56.25%; background: rgba(255,255,255,0.02); }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    /* ═══ SERVICES ═══ */
+    .services-sec { background: var(--ivory); padding: 100px 60px; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+
+    .svc-card {
+      background: var(--cream);
+      padding: 38px 28px;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      transition: border-top-color 0.3s, background 0.3s, transform 0.3s;
+    }
+    .svc-card:hover { border-top-color: var(--amber); background: #fff; transform: translateY(-4px); }
+    .svc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-style: italic;
+      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 14px;
+    }
+    .svc-icon { font-size: 1.9rem; margin-bottom: 12px; display: block; }
+    .svc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; color: var(--ink); margin-bottom: 8px;
+    }
+    .svc-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem; color: var(--smoke); line-height: 1.65;
+    }
+    .svc-price {
+      margin-top: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem; font-weight: 700; color: var(--amber);
+      border-top: 1px solid var(--line); padding-top: 12px;
+    }
+
+    /* ═══ PRICING ═══ */
+    .pricing-sec {
+      background: var(--parch);
+      padding: 100px 60px;
+      position: relative; overflow: hidden;
+    }
+    .pricing-sec::before {
+      content: 'CENA';
+      position: absolute; left: -20px; top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      font-family: 'Playfair Display', serif;
+      font-size: 18vw; font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04); white-space: nowrap;
+      pointer-events: none; line-height: 1;
+    }
+
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+      position: relative; z-index: 1;
+    }
+
+    .plan-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 42px 34px;
+      position: relative;
+      border-top: 3px solid transparent;
+      transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .plan-card:hover {
+      border-top-color: var(--amber);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(24,20,13,0.1);
+    }
+    .plan-card.featured { border-top-color: var(--amber); }
+
+    .plan-badge {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: #fff; background: var(--amber);
+      padding: 4px 12px; margin-bottom: 16px;
+    }
+
+    .plan-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.38em; text-transform: uppercase;
+      color: var(--smoke); margin-bottom: 10px;
+    }
+    .plan-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900; color: var(--ink);
+      line-height: 1; margin-bottom: 4px;
+    }
+    .plan-per {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; color: var(--smoke); margin-bottom: 26px;
+    }
+
+    .plan-feats { list-style: none; display: flex; flex-direction: column; }
+    .plan-feats li {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 13px 0; border-bottom: 1px solid var(--line);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem; color: var(--smoke); line-height: 1.5;
+    }
+    .plan-feats li:last-child { border-bottom: none; }
+    .pf-chk {
+      width: 20px; height: 20px; flex-shrink: 0;
+      border: 1px solid rgba(184,120,48,0.45);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--amber); font-size: 0.76rem; margin-top: 2px;
+    }
+
+    .plan-cta { margin-top: 26px; display: flex; flex-direction: column; gap: 9px; }
+
+    /* ═══ PROCESS ═══ */
+    .process-sec { background: var(--cream); padding: 100px 60px; }
+
+    .process-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;
+    }
+    .step-card {
+      background: var(--ivory);
+      padding: 38px 26px;
+      border-left: 3px solid transparent;
+      transition: border-left-color 0.3s, background 0.3s;
+    }
+    .step-card:hover { border-left-color: var(--amber); background: #fff; }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem; font-style: italic; font-weight: 900;
+      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 18px;
+    }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--ink); margin-bottom: 8px;
+    }
+    .step-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem; color: var(--smoke); line-height: 1.65;
+    }
+
+    /* ═══ FAQ ═══ */
+    .faq-sec { background: var(--ivory); padding: 100px 60px; }
+
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+
+    .faq-item {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 28px 26px;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-bottom: 2px solid transparent;
+    }
+    .faq-item:hover { background: #fff; }
+    .faq-item.open { background: #fff; border-bottom-color: var(--amber); }
+
+    .faq-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--ink);
+      display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    }
+    .faq-arrow { font-size: 1.1rem; color: var(--amber); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+
+    .faq-a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem; color: var(--smoke); line-height: 1.7;
+      margin-top: 12px; display: none;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ═══ CONTACT ═══ */
+    .contact-sec {
+      background: var(--parch);
+      padding: 100px 60px;
+      position: relative; overflow: hidden;
+    }
+    .contact-sec::after {
+      content: 'KONTAKT';
+      position: absolute; right: -30px; bottom: -40px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(7rem, 12vw, 10rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04);
+      line-height: 1; pointer-events: none; white-space: nowrap;
+    }
+
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+      position: relative; z-index: 1;
+    }
+
+    .ci-row {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 18px 0; border-bottom: 1px solid var(--line);
+    }
+    .ci-row:last-child { border-bottom: none; }
+    .ci-icon {
+      width: 38px; height: 38px;
+      background: rgba(184,120,48,0.1);
+      border: 1px solid rgba(184,120,48,0.22);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .ci-lbl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--amber); display: block; margin-bottom: 3px;
+    }
+    .ci-val {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem; color: var(--ink);
+    }
+    .ci-val a { color: inherit; }
+    .ci-val a:hover { color: var(--amber); }
+
+    .contact-form {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 44px 40px;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem; color: var(--ink); margin-bottom: 6px;
+    }
+    .form-title em { font-style: italic; color: var(--amber); }
+    .form-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.97rem; color: var(--smoke); margin-bottom: 28px; line-height: 1.6;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .form-full { margin-bottom: 12px; }
+
+    label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--amber); display: block; margin-bottom: 6px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: var(--ivory);
+      border: 1px solid var(--line2);
+      color: var(--ink);
+      font-family: 'Crimson Pro', serif; font-size: 1rem;
+      padding: 11px 14px;
+      outline: none; transition: border-color 0.3s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--amber); background: #fff; }
+    select option { background: #fff; color: var(--ink); }
+    textarea { min-height: 110px; resize: vertical; }
+
+    .btn-submit {
+      display: block; width: 100%;
+      background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+      padding: 16px 28px; border: none; cursor: pointer;
+      transition: background 0.3s; text-align: center;
+    }
+    .btn-submit:hover { background: var(--rust); }
+
+    .form-note {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center;
+      font-style: italic;
+    }
+
+    /* ═══ FOOTER ═══ */
+    footer {
+      background: var(--ink);
+      padding: 36px 52px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 14px;
+    }
+    .f-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 900;
+      color: rgba(245,239,228,0.35); letter-spacing: 0.1em;
+    }
+    .f-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .f-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(245,239,228,0.35); transition: color 0.3s;
+    }
+    .f-links a:hover { color: var(--wheat); }
+    .f-copy {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem; color: rgba(245,239,228,0.28);
+    }
+
+    /* lang toggle */
+    .lang-toggle {
+      position: fixed; top: 18px; right: 18px; z-index: 9999;
+      padding: 7px 14px;
+      background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 700; text-decoration: none;
+      transition: background 0.3s;
+    }
+    .lang-toggle:hover { background: var(--rust); }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1000px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 100px 28px 60px; }
+      .sec, .videos-sec, .services-sec, .pricing-sec,
+      .process-sec, .faq-sec, .contact-sec { padding-left: 28px; padding-right: 28px; }
+      .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid, .contact-inner { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.8rem; }
+      .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-ctas, .hero-prices { flex-direction: column; }
+      .amber-strip { flex-direction: column; }
     }
   </style>
 </head>
-
 <body>
-  <!-- DEPLOY MARKER: SR-FULL-FIX-2026-02-13-REORDER-VIDEOS-FIRST -->
 
-  <!-- ===== WELCOME STRIP ===== -->
-  <div class="welcome-strip">
-    <div class="welcome-inner">
-      <div class="welcome-greeting">
-        <span class="dot"></span>
-        Dobrodošli — evo šta radimo
+<a href="en/" class="lang-toggle">English</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">
+    <span class="logo-dot"></span>
+    Silverado.pro
+  </a>
+  <ul class="nav-links">
+    <li><a href="#radovi">Radovi</a></li>
+    <li><a href="#usluge">Usluge</a></li>
+    <li><a href="#ponuda">Cena</a></li>
+    <li><a href="#kako-radi">Proces</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="btn-nav">Poruči →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-texture"></div>
+  <div class="hero-wm">SILVERADO</div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Video · Snimanje · Landing Page · 2026</p>
+    <h1 class="hero-title">
+      Reklame koje
+      <em>zaustavljaju scroll.</em>
+    </h1>
+    <p class="hero-sub">
+      AI klipovi, montaža od vaših snimaka, snimanje na lokaciji i moderne web stranice.
+      <strong>Brzo. Moderno. Spremno za Meta i Instagram oglase.</strong>
+    </p>
+
+    <div class="hero-prices">
+      <div class="hp-pill">AI reklama — <strong>120 din/sek</strong></div>
+      <div class="hp-pill">Snimanje na lokaciji — <strong>3.500 din</strong></div>
+      <div class="hp-pill">Landing page — <strong>6.000 din</strong></div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="tel:+381691508197" class="btn-primary">📞 Pozovi: 069 1508 197</a>
+      <a href="#radovi" class="btn-outline">Pogledaj radove →</a>
+      <a href="viber://chat?number=%2B381691508197" class="btn-viber" onclick="return openViberChat(event);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+        </svg>
+        Viber
+      </a>
+    </div>
+  </div>
+
+  <span class="hero-scroll">Skroluj</span>
+</section>
+
+<!-- AMBER STRIP -->
+<div class="amber-strip">
+  <div class="as-item"><span class="as-icon">🤖</span><div><div class="as-lbl">AI Hook reklama</div><div class="as-price">120 din / sekundi</div></div></div>
+  <div class="as-item"><span class="as-icon">✂️</span><div><div class="as-lbl">Montaža od vaših snimaka</div><div class="as-price">Cena po dogovoru</div></div></div>
+  <div class="as-item"><span class="as-icon">🎥</span><div><div class="as-lbl">Snimanje na lokaciji</div><div class="as-price">3.500 din fiksno</div></div></div>
+  <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Landing page / Web stranica</div><div class="as-price">6.000 din</div></div></div>
+</div>
+
+<!-- VIDEOS -->
+<section class="videos-sec" id="radovi">
+  <div class="sec-inner">
+    <p class="sec-lbl" style="color:var(--wheat);">Primeri Radova</p>
+    <h2 class="sec-title" style="color:#f5efe4;">Pogledajte <em style="color:var(--wheat);">šta radimo</em></h2>
+    <div class="divider"></div>
+    <p class="sec-body">10 klipova — različiti stilovi za različite delatnosti i proizvode.</p>
+
+    <div class="video-grid">
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1" title="Silverado video 1" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1" title="Silverado video 2" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1" title="Silverado video 3" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1" title="Silverado video 4" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1" title="Silverado video 5" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1" title="Silverado video 6" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1" title="Silverado video 7" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1" title="Silverado video 8" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1" title="Silverado video 9" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1" title="Silverado video 10" allowfullscreen></iframe>
+      </div></div>
+    </div>
+
+    <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener" class="btn-outline" style="color:#f5efe4; border-color:rgba(245,239,228,0.25);">🔎 Google: Emil Eros</a>
+      <a href="tel:+381691508197" class="btn-primary">📞 Pozovi: 069 1508 197</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-sec" id="usluge">
+  <div class="sec-inner">
+    <p class="sec-lbl">Naše Usluge</p>
+    <h2 class="sec-title">Četiri načina da <em>rastete</em></h2>
+    <div class="divider"></div>
+
+    <div class="services-grid">
+      <div class="svc-card">
+        <p class="svc-num">01</p>
+        <span class="svc-icon">🤖</span>
+        <p class="svc-name">AI "Hook" Reklame</p>
+        <p class="svc-desc">Kratki, scroll-stopping klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija ili kratak opis — nije obavezno.</p>
+        <p class="svc-price">120 din / sekundi</p>
       </div>
-      <div class="welcome-items">
-        <div class="welcome-item">
-          <span class="wi-icon">▶️</span>
-          <span>
-            <span class="wi-label">Video reklame za firme — </span>
-            <span class="wi-price">120 din/sec</span>
-          </span>
+      <div class="svc-card">
+        <p class="svc-num">02</p>
+        <span class="svc-icon">✂️</span>
+        <p class="svc-name">Montaža od Vašeg Materijala</p>
+        <p class="svc-desc">Pošaljete snimke telefonom — mi montiramo dinamičnu reklamu sa efektima, titlovima i tempom za mreže.</p>
+        <p class="svc-price">Cena po dogovoru</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">03</p>
+        <span class="svc-icon">🎥</span>
+        <p class="svc-name">Snimanje na Lokaciji</p>
+        <p class="svc-desc">Dolazimo u vaš lokal i snimamo realan materijal. Oko 1 sat snimanja + 3 gotova formata: reklamni, feed i doku klip.</p>
+        <p class="svc-price">3.500 din fiksno</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">04</p>
+        <span class="svc-icon">🌐</span>
+        <p class="svc-name">Landing Page / Web Stranica</p>
+        <p class="svc-desc">Moderna landing stranica spremna za biznis u 2026. Brza, čista, mobilna, sa jasnim pozivom na akciju.</p>
+        <p class="svc-price">6.000 din</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-sec" id="ponuda">
+  <div class="sec-inner">
+    <p class="sec-lbl">Cenovnik</p>
+    <h2 class="sec-title">Jasne cene, <em>bez iznenađenja</em></h2>
+    <div class="divider"></div>
+
+    <div class="pricing-grid">
+      <div class="plan-card featured">
+        <span class="plan-badge">Najpopularnije</span>
+        <p class="plan-name">AI Video Reklama</p>
+        <div class="plan-price">120 din</div>
+        <p class="plan-per">po sekundi finalnog videa</p>
+        <ul class="plan-feats">
+          <li><span class="pf-chk">✓</span><span>10s = <strong>1.200 din</strong> · 15s = <strong>1.800 din</strong> · 30s = <strong>3.600 din</strong></span></li>
+          <li><span class="pf-chk">✓</span><span>Format 9:16 spreman za Reels i Meta Ads</span></li>
+          <li><span class="pf-chk">✓</span><span>Hook + jasna prodajna poruka</span></li>
+          <li><span class="pf-chk">✓</span><span>Usklađivanje sa brendom (logo, boje, stil)</span></li>
+          <li><span class="pf-chk">✓</span><span>Dovoljna je 1 fotka ili opis — nije obavezno</span></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#kontakt" class="btn-primary">Poruči</a>
+          <a href="#radovi" class="btn-outline">Pogledaj radove</a>
         </div>
-        <div class="welcome-item">
-          <span class="wi-icon">📱</span>
-          <span>
-            <span class="wi-label">Upravljanje društvenim mrežama — </span>
-            <span class="wi-price">3.000 din/mesec</span>
-          </span>
+      </div>
+
+      <div class="plan-card">
+        <span class="plan-badge">Fiksno</span>
+        <p class="plan-name">Snimanje na Lokaciji</p>
+        <div class="plan-price">3.500</div>
+        <p class="plan-per">din · fiksna cena</p>
+        <ul class="plan-feats">
+          <li><span class="pf-chk">✓</span><span>~1 sat realnog snimanja (bez AI)</span></li>
+          <li><span class="pf-chk">✓</span><span>3 formata: <strong>reklamni</strong>, <strong>feed</strong>, <strong>doku</strong></span></li>
+          <li><span class="pf-chk">✓</span><span>Spremno za Instagram, Facebook, TikTok</span></li>
+          <li><span class="pf-chk">✓</span><span>Po dogovoru dodatne varijante</span></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#kontakt" class="btn-primary">Poruči</a>
+          <a href="tel:+381691508197" class="btn-outline">📞 Pozovi</a>
         </div>
-        <div class="welcome-item">
-          <span class="wi-icon">🌐</span>
-          <span>
-            <span class="wi-label">Izrada Web sajtova — od </span>
-            <span class="wi-price">5.000 din</span>
-          </span>
+      </div>
+
+      <div class="plan-card">
+        <span class="plan-badge">Web</span>
+        <p class="plan-name">Landing Page / Web Stranica</p>
+        <div class="plan-price">6.000</div>
+        <p class="plan-per">din · kompletna stranica</p>
+        <ul class="plan-feats">
+          <li><span class="pf-chk">✓</span><span>Moderna, up-to-date stranica za 2026</span></li>
+          <li><span class="pf-chk">✓</span><span>Mobile-first + brzo učitavanje</span></li>
+          <li><span class="pf-chk">✓</span><span>Jasna ponuda + CTA (poziv / Viber / forma)</span></li>
+          <li><span class="pf-chk">✓</span><span>Usklađivanje sa brendom</span></li>
+          <li><span class="pf-chk">✓</span><span>Montaža od materijala: cena po obimu</span></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#kontakt" class="btn-primary">Poruči</a>
+          <a href="tel:+381691508197" class="btn-outline">📞 Pozovi</a>
         </div>
       </div>
     </div>
   </div>
-  <!-- ============================ -->
+</section>
 
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="en/" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">English</a>
+<!-- PROCESS -->
+<section class="process-sec" id="kako-radi">
+  <div class="sec-inner">
+    <p class="sec-lbl">Proces Izrade</p>
+    <h2 class="sec-title">4 koraka do <em>gotove reklame</em></h2>
+    <div class="divider"></div>
 
-        <a class="brand" href="#top" aria-label="Silverado.pro">
-          <span class="logo" aria-hidden="true"></span>
-          <span>
-            Silverado.pro
-            <small>Video reklame • Snimanje • Landing page • Spremno za oglase</small>
-          </span>
-        </a>
-
-        <div class="nav-links" aria-label="Navigacija">
-          <a href="#usluge">Usluge</a>
-          <a href="#radovi">Radovi</a>
-          <a href="#paketi">Detalji</a>
-          <a href="#ponuda">Cena</a>
-          <a href="#kako-radi">Proces</a>
-          <a href="#faq">FAQ</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
-
-        <a class="btn primary" href="#kontakt">Poruči</a>
+    <div class="process-grid">
+      <div class="step-card">
+        <p class="step-num">01</p>
+        <p class="step-title">Dogovor Usluge</p>
+        <p class="step-desc">AI, montaža, snimanje na lokaciji ili landing page. Kažete delatnost + cilj (više poruka, poziva, poseta).</p>
+      </div>
+      <div class="step-card">
+        <p class="step-num">02</p>
+        <p class="step-title">Materijal</p>
+        <p class="step-desc">AI: info + opciono fotka. Montaža: vaši snimci. Snimanje: dolazimo mi. Landing: tekst + kontakt + logo.</p>
+      </div>
+      <div class="step-card">
+        <p class="step-num">03</p>
+        <p class="step-title">Izrada</p>
+        <p class="step-desc">Pravimo reklamu ili stranicu, usklađeno sa vašim brendom, ciljem i platformom za objavu.</p>
+      </div>
+      <div class="step-card">
+        <p class="step-num">04</p>
+        <p class="step-title">Predaja i Objava</p>
+        <p class="step-desc">Dobijate final spreman za objavu i Meta/IG oglase — ili live link za landing stranicu.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <header class="hero" id="top">
-    <div class="container">
-      <div class="hero-stack">
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="sec-inner">
+    <p class="sec-lbl">Česta Pitanja</p>
+    <h2 class="sec-title">Kratko i <em>jasno</em></h2>
+    <div class="divider"></div>
 
-        <!-- 1) FIRST: RADOVI + THANK YOU + CLIPS -->
-        <div class="card hero-block" id="radovi">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            Radovi (primeri) • Hvala što ste svratili
-          </div>
-
-          <div class="stat">
-            <b>Radovi (primeri) — 10 klipova</b>
-            <div class="small-muted">Različiti stilovi za različite delatnosti i proizvode.</div>
-          </div>
-
-          <div class="video-grid" style="margin-top:12px;">
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1"
-                title="Silverado video 1 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1"
-                title="Silverado video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1"
-                title="Silverado video 2 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1"
-                title="Silverado video 3 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1"
-                title="Silverado video 4 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1"
-                title="Silverado video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
-                title="Silverado video 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1"
-                title="Silverado video 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1"
-                title="Silverado video 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1"
-                title="Silverado video 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-          </div>
-
-          <div class="stat" style="margin-top:12px;">
-            <b>Radim video i dizajn za bilo koju delatnost.</b>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-              <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">Google: Emil Eros</a>
-              <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2) AFTER CLIPS: 4 OFFERS -->
-        <div class="card hero-block" id="usluge">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            4 usluge • Brzo • Spremno za 2026
-          </div>
-
-          <h1 style="margin-top:10px;">Pravimo reklame koje zaustavljaju scroll.</h1>
-
-          <p class="lead" style="margin-top:8px;">
-            Na početku — prvo radovi. Sada — jasno šta radimo. Izaberite uslugu: AI, montaža od vaših snimaka, snimanje kod vas na lokaciji,
-            ili izrada moderne landing stranice za vaš biznis.
-          </p>
-
-          <div class="offers-grid">
-            <div class="offer">
-              <div class="icon">🤖</div>
-              <h3>1) AI "Hook" reklame</h3>
-              <p>
-                Kratki, "scroll-stopping" klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija (nije obavezno),
-                a možete poslati i kratak opis proizvoda ili usluge.
-              </p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">9:16</span>
-                <span class="tag">Hook</span>
-                <span class="tag">Brend</span>
-              </div>
-            </div>
-
-            <div class="offer">
-              <div class="icon">✂️</div>
-              <h3>2) Reklama od vašeg materijala</h3>
-              <p>Pošaljete snimke telefonom — mi montiramo dinamičnu reklamu sa efektima, titlovima i tempom za mreže.</p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">Montaža</span>
-                <span class="tag">Titl</span>
-                <span class="tag">Efekti</span>
-              </div>
-            </div>
-
-            <div class="offer">
-              <div class="icon">🎥</div>
-              <h3>3) Video snimanje kod vas (na lokaciji)</h3>
-              <p>
-                Dolazimo u vaš lokal/prostor i snimamo realan materijal (bez AI). Snimanje traje oko <b>1 sat</b>.
-                Od tog materijala pravimo 3 različita formata za Instagram/Facebook/TikTok:
-                <b>reklamni (Reels)</b>, <b>feed</b> i <b>doku</b> klip.
-              </p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">Realno snimanje</span>
-                <span class="tag">3 formata</span>
-                <span class="tag"><b>3.500 din</b></span>
-              </div>
-            </div>
-
-            <div class="offer">
-              <div class="icon">🌐</div>
-              <h3>4) Web stranica / Landing page dizajn</h3>
-              <p>
-                Super moderna, <b>kompletna up-to-date</b> landing stranica spremna za biznis u 2026.
-                Brza, čista, mobilna, sa jasnim pozivom na akciju.
-              </p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">Mobile-first</span>
-                <span class="tag">2026 izgled</span>
-                <span class="tag"><b>6.000 din</b></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-actions" style="margin-top:16px;">
-            <a class="btn primary" href="#kontakt">Poruči / Pitaj</a>
-            <a class="btn" href="#radovi">🎥 Pogledaj radove</a>
-            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-
-            <a class="btn viber"
-               href="viber://chat?number=%2B381691508197"
-               aria-label="Pošalji poruku na Viber"
-               onclick="return openViberChat(event);">
-              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
-              </svg>
-              <span class="viber-text">Viber</span>
-            </a>
-          </div>
-
-          <p class="small-muted">
-            <b>Cena AI reklama:</b> 120 din / sekundi • 10s = 1.200 din • 15s = 1.800 din • 30s = 3.600 din
-          </p>
-          <p class="small-muted" style="margin-top:6px;">
-            <b>Snimanje na lokaciji:</b> fiksno <b>3.500 din</b> • <b>Landing page:</b> <b>6.000 din</b>
-          </p>
-        </div>
-
-        <!-- 3) TEXT BLOCK -->
-        <div class="card hero-block">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            Brzo • Moderno • Spremno za Meta/IG oglase
-          </div>
-
-          <h2 style="margin:10px 0 10px; font-size:28px; letter-spacing:-.2px;">
-            Reklamni klipovi su extra efektivni na mrežama.
-          </h2>
-
-          <p class="lead">
-            Dovoljna je čak i samo jedna fotografija prodavnice ili proizvoda (ali nije obavezno) da napravim efektan,
-            informativan i motivišući reklamni spot za tebe.
-          </p>
-
-          <p class="lead" style="margin-top:-6px;">
-            Ako ne želite AI, možemo uraditi <b>montažu od vašeg materijala</b> ili <b>snimanje kod vas na lokaciji</b> (realni kadrovi).
-            Ako hoćete kompletno "spremno za 2026", radimo i <b>landing page / web stranicu</b> koja pretvara posete u pozive i poruke.
-          </p>
-
-          <div class="mini" style="margin-top:8px;">
-            <span class="tag">✅ AI ili realno snimanje</span>
-            <span class="tag">✅ Spremno za oglase</span>
-            <span class="tag">✅ Landing stranica (2026)</span>
-          </div>
-
-          <div class="hero-actions" style="margin-top:14px;">
-            <a class="btn primary" href="#ponuda">Cena</a>
-            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-            <a class="btn viber"
-               href="viber://chat?number=%2B381691508197"
-               aria-label="Pošalji poruku na Viber"
-               onclick="return openViberChat(event);">
-              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6.9-1.3.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
-              </svg>
-              <span class="viber-text">Viber</span>
-            </a>
-          </div>
-
-          <p class="small-muted">
-            <b>AI:</b> 120 din / sekundi • <b>Snimanje:</b> 3.500 din • <b>Landing page:</b> 6.000 din
-          </p>
-        </div>
-
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Da li mora fotografija?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Ne mora. Ako imate jednu fotku prodavnice ili proizvoda — super. Ako nemate, može i bez toga po dogovoru.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Koji format dobijam?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Najčešće 9:16 (Reels/Ads). Po potrebi radimo i 1:1 ili 16:9.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Mogu li reklamu od svojih snimaka?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Da. Pošaljete snimke telefonom, mi montiramo reklamu sa tempom, titlovima, efektima i brendingom.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Šta je snimanje na lokaciji?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Dolazimo kod vas i snimamo realan materijal (bez AI) koji koristimo za reklame i klipove.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Koliko košta snimanje na lokaciji?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Fiksno <strong>3.500 din</strong> — oko 1 sat snimanja + 3 formata: reklamni, feed i doku klip.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Koliko košta landing page?<span class="faq-arrow">+</span></p>
+        <p class="faq-a"><strong>6.000 din</strong> po landing stranici — moderna, mobilna, spremna za 2026.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Kako se računa cena AI reklama?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">120 din po sekundi finalnog videa. Primer: 15 sekundi = 1.800 din · 30 sekundi = 3.600 din.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Nisam siguran šta mi treba?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Pošaljite link profila + cilj (više poruka, poziva ili poseta) i predložiću format koji je najefektniji za vas.</p>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Šta radimo (kratko)</h2>
-          <p>Četiri jasne usluge: AI reklame, reklame od vašeg materijala, snimanje na lokaciji i landing stranice.</p>
-        </div>
-      </div>
+<!-- CONTACT -->
+<section class="contact-sec" id="kontakt">
+  <div class="sec-inner">
+    <p class="sec-lbl">Kontakt</p>
+    <h2 class="sec-title">Razgovaramo <em>danas</em></h2>
+    <div class="divider"></div>
 
-      <div class="grid-4">
-        <div class="feature">
-          <div class="icon">🤖</div>
-          <h3>AI "Hook" reklame</h3>
-          <p>Kratki klipovi (8–15s) koji "hvataju" pažnju i vode ka poruci/pozivu.</p>
+    <div class="contact-inner">
+      <div>
+        <div class="ci-row">
+          <div class="ci-icon">📞</div>
+          <div><span class="ci-lbl">Telefon</span><span class="ci-val"><a href="tel:+381691508197">+381 69 150 8197</a></span></div>
         </div>
-        <div class="feature">
-          <div class="icon">✂️</div>
-          <h3>Montaža od vaših snimaka</h3>
-          <p>Vi snimite telefonom — mi napravimo reklamu sa tempom, efektima, titlovima i brendingom.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🎥</div>
-          <h3>Snimanje na lokaciji</h3>
-          <p>Dolazimo, snimamo realan materijal (bez AI). <b>1 sat</b> snimanja + 3 formata (<b>reklamni</b>, <b>feed</b>, <b>doku</b>). <b>Fiksno: 3.500 din</b>.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🌐</div>
-          <h3>Landing page / Web stranica</h3>
-          <p>Moderna stranica spremna za 2026: mobilna, brza, jasna ponuda i CTA. <b>6.000 din</b>.</p>
-        </div>
-      </div>
-
-      <div class="note">
-        <b>Bonus (uključeno):</b> Usklađivanje sa vašim brendom (logo/boje/stil) da sve izgleda "premium".
-      </div>
-    </div>
-  </section>
-
-  <section id="paketi">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Usluge i kako to radimo</h2>
-          <p>Jednostavno: izaberete uslugu, kažete cilj, i mi isporučimo rezultat.</p>
-        </div>
-      </div>
-
-      <div class="ab-grid">
-        <div class="ab-card">
-          <div class="ab-head">
-            <div class="ab-badge">A</div>
-            <div class="ab-title">
-              <b>Reklama od vašeg materijala (montaža)</b>
-              <span>Vi snimite telefonom. Mi napravimo reklamu spremnu za mreže.</span>
-            </div>
-          </div>
-          <div class="ab-lines">
-            <div class="ab-line"><strong>Šta šaljete:</strong> 10–40 kratkih klipova (prostor, proizvod, rad, detalji). Može i "raw" iz galerije.</div>
-            <div class="ab-line"><strong>Šta dobijate:</strong> gotov video (najčešće 9:16) sa tempom, titlovima, efektima, logom i CTA.</div>
-            <div class="ab-line"><strong>Idealno za:</strong> Reels / Ads / TikTok, kampanje za poruke ili pozive.</div>
-          </div>
-        </div>
-
-        <div class="ab-card">
-          <div class="ab-head">
-            <div class="ab-badge">B</div>
-            <div class="ab-title">
-              <b>Video snimanje kod vas (na lokaciji)</b>
-              <span>Dolazimo, snimamo realan materijal (bez AI), i isporučimo 3 gotova formata.</span>
-            </div>
-          </div>
-          <div class="ab-lines">
-            <div class="ab-line"><strong>Trajanje snimanja:</strong> oko <strong>1 sat</strong> na lokaciji.</div>
-            <div class="ab-line"><strong>Šta snimamo:</strong> prostor, proizvode, rad, detalje, tim, atmosferu (kadrovi za Reels/Ads).</div>
-            <div class="ab-line"><strong>Šta dobijate:</strong> 3 gotova klipa: <strong>reklamni (Reels)</strong>, <strong>feed</strong>, <strong>doku</strong> + po dogovoru varijante.</div>
-          </div>
-          <div class="ab-price">Cena: fiksno <b>3.500 din</b></div>
-        </div>
-      </div>
-
-      <div class="timeline" style="margin-top:14px;">
-        <div class="step">
-          <div class="num">C</div>
+        <div class="ci-row">
+          <div class="ci-icon">📲</div>
           <div>
-            <b>Landing page / Web stranica (2026)</b>
-            <span>Super moderna landing stranica: jasna ponuda, CTA (poziv/Viber), mobilna, brza. <b>Cena: 6.000 din.</b></span>
+            <span class="ci-lbl">Viber</span>
+            <span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span>
           </div>
         </div>
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <b>Šta šaljete</b>
-            <span>Ime biznisa, usluge/proizvodi, kontakt, grad, linkovi (FB/IG), logo (ako imate), slike (opciono).</span>
-          </div>
+        <div class="ci-row">
+          <div class="ci-icon">✉️</div>
+          <div><span class="ci-lbl">Email</span><span class="ci-val"><a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a></span></div>
         </div>
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <b>Šta dobijate</b>
-            <span>Landing stranicu spremnu za deljenje i oglase, sa jasnim "pozovi / Viber / upit" dugmetom.</span>
-          </div>
+        <div class="ci-row">
+          <div class="ci-icon">🔎</div>
+          <div><span class="ci-lbl">Google</span><span class="ci-val"><a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank">Ukucajte: Emil Eros video</a></span></div>
+        </div>
+
+        <div style="margin-top:28px; display:flex; flex-direction:column; gap:9px;">
+          <a href="tel:+381691508197" class="btn-primary" style="justify-content:center;">📞 Pozovite: 069 1508 197</a>
+          <a href="viber://chat?number=%2B381691508197" class="btn-viber" style="justify-content:center;" onclick="return openViberChat(event);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+            </svg>
+            Pišite na Viber
+          </a>
         </div>
       </div>
 
-      <div class="note">
-        <b>Savet:</b> Ako niste sigurni šta je najbolje — pošaljite link profila + cilj (više poruka, više poziva, više poseta) i predložiću format.
+      <div class="contact-form">
+        <h3 class="form-title">Pošaljite <em>upit</em></h3>
+        <p class="form-sub">Delatnost + grad + cilj + usluga (AI / montaža / snimanje / landing page)</p>
+
+        <form id="leadForm">
+          <div class="form-row">
+            <div><label for="name">Ime i Prezime</label><input id="name" name="name" type="text" placeholder="npr. Emil" required /></div>
+            <div><label for="phone">Telefon</label><input id="phone" name="phone" type="tel" placeholder="06x xxx xxxx" required /></div>
+          </div>
+          <div class="form-row">
+            <div><label for="city">Grad</label><input id="city" name="city" type="text" placeholder="npr. Subotica" /></div>
+            <div>
+              <label for="package">Usluga</label>
+              <select id="package" name="package">
+                <option value="AI Hook reklama (120 din/sek)">AI Hook reklama (120 din/sek)</option>
+                <option value="Montaža od materijala">Montaža od materijala</option>
+                <option value="Snimanje na lokaciji (3.500 din)">Snimanje na lokaciji (3.500 din)</option>
+                <option value="Landing page (6.000 din)">Landing page (6.000 din)</option>
+                <option value="Nisam siguran — predloži">Nisam siguran — predloži</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-full"><label for="profile">Link (opciono: sajt / IG / FB)</label><input id="profile" name="profile" type="url" placeholder="https://..." /></div>
+          <div class="form-full"><label for="message">Poruka (cilj + usluga + materijal)</label><textarea id="message" name="message" placeholder="npr. Treba mi landing page za auto-perionicu u Novom Sadu. Cilj: više poziva."></textarea></div>
+          <button class="btn-submit" type="submit">Pošalji Upit →</button>
+          <p class="form-note">Klikom otvara se vaša e-mail aplikacija sa pripremljenom porukom.</p>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="ponuda">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Cena (jasno)</h2>
-          <p>AI reklame: 120 din/sek. Snimanje: 3.500 din fiksno. Landing page: 6.000 din. Montaža: dogovor po obimu.</p>
-        </div>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <p class="f-logo">SILVERADO.PRO</p>
+  <div class="f-links">
+    <a href="#radovi">Radovi</a>
+    <a href="#usluge">Usluge</a>
+    <a href="#ponuda">Cena</a>
+    <a href="#kako-radi">Proces</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+  <p class="f-copy">© <span id="year"></span> Silverado.pro · +381 69 150 8197</p>
+</footer>
 
-      <div class="pricing">
-        <div class="plan popular">
-          <div class="badge">120 din / sekundi</div>
-          <h3>AI video reklama (po meri)</h3>
-          <p class="price">120 din</p>
-          <p class="per">po sekundi finalnog videa</p>
-          <ul class="ul">
-            <li><span class="check">✓</span><span>Format spreman za Reels/Ads (9:16)</span></li>
-            <li><span class="check">✓</span><span>Hook + jasna prodajna poruka</span></li>
-            <li><span class="check">✓</span><span>Moderna dinamika + čist vizuelni utisak</span></li>
-            <li><span class="check">✓</span><span>Usklađivanje sa brendom (logo/boje/stil)</span></li>
-          </ul>
-          <div class="cta">
-            <a class="btn primary" href="#kontakt">Poruči</a>
-            <a class="btn" href="#radovi">🎥 Pogledaj radove</a>
-            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-          </div>
-          <div class="note">
-            <b>Primer:</b> 10 sekundi = <b>1.200 din</b> • 15 sekundi = <b>1.800 din</b> • 30 sekundi = <b>3.600 din</b>
-          </div>
-        </div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-        <div class="plan">
-          <div class="badge">Fiksno: 3.500 din</div>
-          <h3>Video snimanje na lokaciji</h3>
-          <p class="price">3.500 din</p>
-          <p class="per">1 sat snimanja + 3 formata klipova</p>
-          <ul class="ul">
-            <li><span class="check">✓</span><span><b>1 sat</b> realnog snimanja (bez AI)</span></li>
-            <li><span class="check">✓</span><span>3 formata: <b>reklamni (Reels)</b>, <b>feed</b>, <b>doku</b></span></li>
-            <li><span class="check">✓</span><span>Spremno za Instagram/Facebook/TikTok</span></li>
-            <li><span class="check">✓</span><span>Po dogovoru dodatne varijante</span></li>
-          </ul>
-          <div class="cta">
-            <a class="btn primary" href="#kontakt">Poruči</a>
-            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-          </div>
-        </div>
+  function toggleFaq(el) { el.classList.toggle('open'); }
 
-        <div class="plan">
-          <div class="badge">6.000 din</div>
-          <h3>Landing page / Web stranica (2026)</h3>
-          <p class="price">6.000 din</p>
-          <p class="per"></p>
-          <ul class="ul">
-            <li><span class="check">✓</span><span>Super moderna, kompletna up-to-date stranica</span></li>
-            <li><span class="check">✓</span><span>Mobile-first + brzo učitavanje</span></li>
-            <li><span class="check">✓</span><span>Jasna ponuda + CTA (poziv/Viber/forma)</span></li>
-            <li><span class="check">✓</span><span>Usklađivanje sa brendom (logo/boje/stil)</span></li>
-          </ul>
-          <div class="cta">
-            <a class="btn primary" href="#kontakt">Poruči</a>
-            <a class="btn" href="tel:+381691508197">📞 Pozovi</a>
-          </div>
-          <p class="small-muted" style="margin-top:12px;">
-            Montaža od vašeg materijala: cena zavisi od obima (količina snimaka, broj klipova, kompleksnost).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  function openViberChat(e) {
+    try { e.preventDefault(); } catch(_) {}
+    window.location.href = "viber://chat?number=%2B381691508197";
+    setTimeout(function() {
+      if (!document.hidden) window.location.href = "https://viber.me/+381691508197";
+    }, 900);
+    return false;
+  }
 
-  <section id="kako-radi">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Proces izrade</h2>
-          <p>4 kratka koraka. Brzo i jasno.</p>
-        </div>
-      </div>
+  document.getElementById("leadForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name    = document.getElementById("name").value.trim();
+    const phone   = document.getElementById("phone").value.trim();
+    const city    = document.getElementById("city").value.trim();
+    const pkg     = document.getElementById("package").value;
+    const profile = document.getElementById("profile").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const subject = encodeURIComponent("Upit — Silverado.pro");
+    const body = encodeURIComponent(
+      "IME: " + name + "\nTELEFON: " + phone + "\nGRAD: " + (city || "-") +
+      "\nUSLUGA: " + pkg + "\nLINK: " + (profile || "-") + "\n\nPORUKA:\n" + (message || "-")
+    );
+    window.location.href = "mailto:emileros1971@gmail.com?subject=" + subject + "&body=" + body;
+  });
 
-      <div class="grid-2">
-        <div class="timeline">
-          <div class="step">
-            <div class="num">1</div>
-            <div>
-              <b>Dogovor usluge</b>
-              <span>AI, montaža, snimanje na lokaciji ili landing page. Kažete delatnost + cilj.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div>
-              <b>Materijal</b>
-              <span>AI: info + (opciono) fotka/opis. Montaža: snimci. Snimanje: dolazimo mi. Landing: tekst + kontakt + logo (ako imate).</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div>
-              <b>Izrada</b>
-              <span>Pravimo reklamu ili stranicu, usklađeno sa brendom i ciljem.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">4</div>
-            <div>
-              <b>Predaja + objava</b>
-              <span>Dobijate final spreman za objavu/oglase (ili live link za landing).</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card hero-block">
-          <div class="pill"><span class="dot"></span> Brzo proverite stil</div>
-          <h3 style="margin:12px 0 8px; font-size:20px;">Još primera</h3>
-          <p class="lead" style="margin:0;">
-            Pogledajte radove iznad ili ukucajte <b>Emil Eros</b> na Google-u za dodatne primere.
-          </p>
-          <div class="divider"></div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#radovi">🎥 Otvori radove</a>
-            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
-            <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
-          </div>
-          <p class="small-muted" style="margin-top:10px;">
-            Ako imate samo ideju — dovoljno je da napišete šta prodajete i koji je cilj (poruke/pozivi/posete).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>FAQ — najčešća pitanja</h2>
-          <p>Kratko i jasno.</p>
-        </div>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Da li mora fotografija?</summary>
-          <p>Ne mora. Ako imate jednu fotku prodavnice/proizvoda — super. Ako nemate, može i bez toga (po dogovoru).</p>
-        </details>
-        <details>
-          <summary>Koji format dobijam?</summary>
-          <p>Najčešće 9:16 (Reels/Ads). Po potrebi radimo i 1:1 ili 16:9.</p>
-        </details>
-        <details>
-          <summary>Da li mogu reklamu od svojih snimaka?</summary>
-          <p>Da. Pošaljete snimke telefonom, mi montiramo reklamu (tempo, titlovi, efekti, brending).</p>
-        </details>
-        <details>
-          <summary>Šta je "snimanje na lokaciji"?</summary>
-          <p>Dolazimo kod vas i snimamo realan materijal (bez AI) koji koristimo za reklame i klipove spremne za objavu.</p>
-        </details>
-        <details>
-          <summary>Koliko košta snimanje na lokaciji?</summary>
-          <p>Fiksno <b>3.500 din</b> (oko 1 sat snimanja + 3 formata: reklamni, feed i doku).</p>
-        </details>
-        <details>
-          <summary>Koliko košta landing page?</summary>
-          <p><b>6.000 din</b> po landing stranici (moderna, mobilna, spremna za 2026).</p>
-        </details>
-        <details>
-          <summary>Kako se računa cena AI reklama?</summary>
-          <p>120 din po sekundi finalnog videa. Primer: 15 sekundi = 1.800 din.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Kontakt</h2>
-          <p>Pošalji: delatnost + grad + cilj + usluga (AI / montaža / snimanje / landing page) + materijal (ako imaš).</p>
-        </div>
-      </div>
-
-      <div class="contact">
-        <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Brz dogovor</h3>
-          <p class="lead" style="margin:0 0 14px;">
-            Pošalji poruku sa:<br/>
-            <b>1)</b> šta prodaješ + cilj (poruke/pozivi/posete)<br/>
-            <b>2)</b> grad + kontakt<br/>
-            <b>3)</b> usluga: AI / montaža / snimanje / landing page<br/>
-            <b>4)</b> dužina (za video) ili "predloži"
-          </p>
-          <div class="divider"></div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#radovi">🎥 Radovi</a>
-            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
-            <a class="btn primary" href="tel:+381691508197">Pozovi: 069 1508 197</a>
-          </div>
-          <p class="small-muted" style="margin-top:10px;">
-            Najbrže: klikni "Pozovi" i reci delatnost + cilj + uslugu koju želiš.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Kontakt forma</h3>
-          <p class="tiny" style="margin:0 0 14px;">
-            Forma radi preko e-mail aplikacije (mailto). Najjednostavnije za statičan sajt.
-          </p>
-          <form id="leadForm">
-            <div class="form-row">
-              <div>
-                <label for="name">Ime i prezime</label>
-                <input id="name" name="name" type="text" placeholder="npr. Emil" required />
-              </div>
-              <div>
-                <label for="phone">Telefon</label>
-                <input id="phone" name="phone" type="tel" placeholder="npr. 06x xxx xxxx" required />
-              </div>
-            </div>
-            <div class="form-row">
-              <div>
-                <label for="city">Grad</label>
-                <input id="city" name="city" type="text" placeholder="npr. Subotica" />
-              </div>
-              <div>
-                <label for="package">Usluga</label>
-                <select id="package" name="package">
-                  <option value="AI Hook reklama (120 din/sek)">AI Hook reklama (120 din/sek)</option>
-                  <option value="Montaža reklame od vašeg materijala">Montaža reklame od vašeg materijala</option>
-                  <option value="Video snimanje na lokaciji (3.500 din)">Video snimanje na lokaciji (3.500 din)</option>
-                  <option value="Landing page / Web stranica (6.000 din)">Landing page / Web stranica (6.000 din)</option>
-                  <option value="Nisam siguran — predloži">Nisam siguran — predloži</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label for="profile">Link (opciono: sajt / IG / FB / proizvod)</label>
-              <input id="profile" name="profile" type="url" placeholder="https://..." />
-            </div>
-            <div>
-              <label for="message">Poruka (cilj + usluga + materijal + željena dužina)</label>
-              <textarea id="message" name="message" placeholder="npr. Treba mi landing page za auto-perionicu u Novom Sadu. Cilj: više poziva. Imam logo i FB/IG."></textarea>
-            </div>
-            <button class="btn primary" type="submit">Pošalji upit</button>
-            <div class="tiny">Klikom na "Pošalji" otvara se tvoja e-mail aplikacija sa pripremljenom porukom.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div style="display:flex; gap:12px; align-items:flex-start;">
-          <span class="logo" aria-hidden="true"></span>
-          <div>
-            <div style="font-weight:950;">Silverado.pro</div>
-            <div class="tiny">Video reklame • Snimanje • Landing page • Spremno za oglase</div>
-            <div class="tiny">© <span id="year"></span> Sva prava zadržana.</div>
-          </div>
-        </div>
-        <div class="tiny">
-          <b>Brzi linkovi</b><br/>
-          <a href="#usluge">Usluge</a> •
-          <a href="#radovi">Radovi</a> •
-          <a href="#paketi">Detalji</a> •
-          <a href="#ponuda">Cena</a> •
-          <a href="#kako-radi">Proces</a> •
-          <a href="#faq">FAQ</a> •
-          <a href="#kontakt">Kontakt</a>
-        </div>
-        <div class="tiny">
-          <b>Kontakt</b><br/>
-          Email: <a href="/cdn-cgi/l/email-protection#3451595d5851465b47050d0305745359555d581a575b59"><span class="__cf_email__" data-cfemail="4421292d2821362b37757d7375042329252d286a272b29">[email&#160;protected]</span></a><br/>
-          Telefon: <a href="tel:+381691508197">+381 69 150 8197</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function openViberChat(e){
-      try{ e.preventDefault(); }catch(_){}
-      const deepLink = "viber://chat?number=%2B381691508197";
-      const fallbackWeb = "https://viber.me/+381691508197";
-      window.location.href = deepLink;
-      setTimeout(function(){
-        if (!document.hidden) window.location.href = fallbackWeb;
-      }, 900);
-      return false;
-    }
-
-    const form = document.getElementById("leadForm");
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const city = document.getElementById("city").value.trim();
-      const pkg = document.getElementById("package").value;
-      const profile = document.getElementById("profile").value.trim();
-      const message = document.getElementById("message").value.trim();
-      const toEmail = "emileros1971@gmail.com";
-      const subject = encodeURIComponent("Upit — Silverado.pro (AI / montaža / snimanje / landing page)");
-      const body = encodeURIComponent(
-        "IME: " + name + "\n" +
-        "TELEFON: " + phone + "\n" +
-        "GRAD: " + (city || "-") + "\n" +
-        "USLUGA: "
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
