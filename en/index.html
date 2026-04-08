@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q7W1SB4F5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,1273 +11,929 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Silverado.pro — Video ads, on-site filming, and modern landing pages. Fast, modern, ad-ready." />
-  <meta name="theme-color" content="#07140f" />
-  <title>Silverado.pro — Video Ads + Landing Page (2026)</title>
+  <meta name="description" content="Silverado.pro — Video ads, on-location filming and modern landing pages. Fast, modern, ready for Meta and Instagram ads." />
+  <meta name="theme-color" content="#f7f2ea" />
+  <title>Silverado.pro — Video Ads + Landing Pages</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#07140f;
-      --bg2:#06110d;
-      --panel:#0b1f16;
-      --panel2:#0a1a13;
-      --text:#eafff3;
-      --muted:#bde7d1;
-      --line:rgba(255,255,255,.09);
-      --green:#22c55e;
-      --green2:#34d399;
-
-      /* ===== VIBER PURPLE ===== */
-      --viber:#7360f2;
-      --viber2:#8b5cf6;
-      --viberDark:#5b46f0;
-      /* ======================= */
-
-      /* ===== SILVER ACCENT ===== */
-      --silver:#cfd7e3;
-      --silverSoft: rgba(207,215,227,.12);
-      --silverGlow: rgba(207,215,227,.18);
-      --silverLine: rgba(207,215,227,.16);
-      /* ========================= */
-
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius:18px;
-      --radius2:26px;
-      --max: 1120px;
+    :root {
+      --ivory:    #f7f2ea;
+      --cream:    #eee8d8;
+      --parch:    #e5dcc8;
+      --ink:      #18140d;
+      --ink2:     #2a2318;
+      --smoke:    #6b6358;
+      --amber:    #b87830;
+      --amber2:   #d4923e;
+      --wheat:    #e8c97a;
+      --rust:     #9b4a1e;
+      --line:     rgba(24,20,13,0.1);
+      --line2:    rgba(24,20,13,0.16);
+      --viber:    #7360f2;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      color:var(--text);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: var(--ivory);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 998;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 18px 52px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(247,242,234,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 900;
+      color: var(--ink); letter-spacing: 0.06em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--amber);
+      animation: pulse 2.5s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 6px rgba(184,120,48,0.4); }
+      50%      { box-shadow: 0 0 16px rgba(184,120,48,0.8); }
+    }
+    .nav-links { display: flex; gap: 26px; list-style: none; }
+    .nav-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--smoke); transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .btn-nav {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: #fff; background: var(--amber);
+      padding: 10px 24px; border: none; cursor: pointer;
+      transition: background 0.3s; text-decoration: none;
+    }
+    .btn-nav:hover { background: var(--rust); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-texture {
+      position: absolute; inset: 0; z-index: 0;
       background:
-        radial-gradient(1100px 760px at 18% 8%, rgba(34,197,94,.18), transparent 60%),
-        radial-gradient(900px 700px at 85% 0%, rgba(52,211,153,.14), transparent 55%),
-        radial-gradient(1200px 820px at 55% 10%, var(--silverSoft), transparent 62%),
-        linear-gradient(180deg, #030a07, var(--bg) 35%, #030a07);
-      min-height:100vh;
+        radial-gradient(ellipse 65% 60% at 70% 50%, rgba(184,120,48,0.09) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 8% 20%, rgba(24,20,13,0.04) 0%, transparent 55%),
+        repeating-linear-gradient(88deg, transparent 0px, transparent 48px, rgba(24,20,13,0.018) 48px, rgba(24,20,13,0.018) 49px),
+        repeating-linear-gradient(178deg, transparent 0px, transparent 72px, rgba(24,20,13,0.012) 72px, rgba(24,20,13,0.012) 73px);
+    }
+    .hero-wm {
+      position: absolute; right: -60px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(12rem, 20vw, 18rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04);
+      line-height: 1; pointer-events: none; z-index: 1;
+      user-select: none; white-space: nowrap;
+    }
+    .hero-content {
+      position: relative; z-index: 3;
+      padding: 120px 80px 80px;
+      max-width: 800px;
+      animation: riseIn 1.2s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(44px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.52em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 14px;
+      animation: riseIn 1.2s 0.07s both;
+    }
+    .hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--amber); }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+      font-weight: 900; line-height: 0.95;
+      color: var(--ink); margin-bottom: 8px;
+      animation: riseIn 1.2s 0.13s both;
+    }
+    .hero-title em { font-style: italic; color: var(--amber); display: block; }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 1.9vw, 1.45rem);
+      font-weight: 300; color: var(--smoke);
+      line-height: 1.68; max-width: 540px;
+      margin: 26px 0 44px;
+      animation: riseIn 1.2s 0.19s both;
+    }
+    .hero-sub strong { color: var(--ink); font-weight: 400; }
+    .hero-prices {
+      display: flex; flex-wrap: wrap; gap: 3px;
+      margin-bottom: 40px;
+      animation: riseIn 1.2s 0.25s both;
+    }
+    .hp-pill {
+      background: #fff; border: 1px solid var(--line2);
+      padding: 11px 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; color: var(--smoke);
+    }
+    .hp-pill strong { color: var(--amber); font-family: 'Playfair Display', serif; }
+    .hero-ctas {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      animation: riseIn 1.2s 0.31s both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 15px 34px; border: none; cursor: pointer;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+      transition: background 0.3s, letter-spacing 0.3s; text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--rust); letter-spacing: 0.28em; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 9px;
+      border: 1px solid var(--line2); color: var(--ink);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 14px 32px; transition: border-color 0.3s, background 0.3s;
+      text-decoration: none; background: transparent;
+    }
+    .btn-outline:hover { border-color: var(--amber); background: rgba(184,120,48,0.05); }
+    .btn-viber {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--viber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 14px 26px; transition: background 0.3s; text-decoration: none;
+    }
+    .btn-viber:hover { background: #5b46f0; }
+    .hero-scroll {
+      position: absolute; bottom: 44px; right: 60px; z-index: 3;
+      writing-mode: vertical-rl;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.64rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: rgba(24,20,13,0.28);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .hero-scroll::after {
+      content: ''; width: 1px; height: 52px;
+      background: linear-gradient(to bottom, var(--amber), transparent);
+      animation: scrollPulse 2.2s ease infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50%      { opacity: 0.8; transform: scaleY(1.3); }
     }
 
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background:rgba(3,10,7,.55);
-      border-bottom:1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    /* AMBER STRIP */
+    .amber-strip { background: var(--amber); display: flex; flex-wrap: wrap; }
+    .as-item {
+      flex: 1; min-width: 180px; padding: 18px 30px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; gap: 11px; transition: background 0.3s;
     }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:16px;
+    .as-item:last-child { border-right: none; }
+    .as-item:hover { background: var(--amber2); }
+    .as-icon { font-size: 1.3rem; }
+    .as-lbl { font-family: 'Cormorant Garamond', serif; font-size: 0.84rem; color: rgba(255,255,255,0.75); }
+    .as-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; }
+
+    /* SHARED */
+    .sec { padding: 100px 60px; }
+    .sec-inner { max-width: 1200px; margin: 0 auto; }
+    .sec-lbl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.74rem; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 12px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight:900;
-      letter-spacing:.2px;
+    .sec-lbl::before { content: ''; width: 30px; height: 1px; background: var(--amber); opacity: 0.7; }
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-weight: 700; color: var(--ink); margin-bottom: 12px;
     }
-    .logo{
-      width:40px; height:40px; border-radius:14px;
-      background: linear-gradient(135deg, var(--green), var(--green2));
-      box-shadow:
-        0 14px 40px rgba(34,197,94,.25),
-        0 10px 30px var(--silverGlow);
-      position:relative;
-      overflow:hidden;
+    .sec-title em { font-style: italic; color: var(--amber); }
+    .sec-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.16rem; font-weight: 300;
+      color: var(--smoke); line-height: 1.75;
+      max-width: 540px; margin-bottom: 52px;
     }
-    .logo:after{
-      content:"";
-      position:absolute; inset:-30%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 50%),
-        radial-gradient(circle at 70% 70%, var(--silverGlow), transparent 55%);
-      transform: rotate(25deg);
+    .divider { width: 48px; height: 2px; background: var(--amber); margin: 16px 0 28px; }
+
+    /* VIDEOS */
+    .videos-sec {
+      background: var(--ink); padding: 100px 60px;
+      position: relative; overflow: hidden;
     }
-    .brand small{
-      display:block;
-      font-weight:700;
-      color:var(--muted);
-      letter-spacing:0;
-      margin-top:2px;
+    .videos-sec .sec-title { color: #f5efe4; }
+    .videos-sec .sec-body { color: rgba(245,239,228,0.5); }
+    .videos-sec::after {
+      content: 'WORK';
+      position: absolute; right: -40px; bottom: -50px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(9rem, 16vw, 14rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(245,239,228,0.03);
+      line-height: 1; pointer-events: none; white-space: nowrap;
     }
-    .nav-links{
-      display:flex; gap:10px; flex-wrap:wrap;
-      align-items:center; justify-content:flex-end;
+    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
+    .video-cell { border: 1px solid rgba(255,255,255,0.06); overflow: hidden; transition: border-color 0.3s; }
+    .video-cell:hover { border-color: var(--amber); }
+    .video-wrap { position: relative; padding-top: 56.25%; background: rgba(255,255,255,0.02); }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    /* SERVICES */
+    .services-sec { background: var(--ivory); padding: 100px 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+    .svc-card {
+      background: var(--cream); padding: 38px 28px;
+      border-top: 3px solid transparent;
+      transition: border-top-color 0.3s, background 0.3s, transform 0.3s;
     }
-    .nav-links a{
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid transparent;
-      font-size:14px;
+    .svc-card:hover { border-top-color: var(--amber); background: #fff; transform: translateY(-4px); }
+    .svc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-style: italic;
+      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 14px;
     }
-    .nav-links a:hover{
-      color:var(--text);
-      border-color:rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.06);
+    .svc-icon { font-size: 1.9rem; margin-bottom: 12px; display: block; }
+    .svc-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 8px; }
+    .svc-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; color: var(--smoke); line-height: 1.65; }
+    .svc-price {
+      margin-top: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem; font-weight: 700; color: var(--amber);
+      border-top: 1px solid var(--line); padding-top: 12px;
     }
 
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-weight:800;
-      transition:.18s ease;
-      cursor:pointer;
-      box-shadow: 0 0 0 0 rgba(207,215,227,.0);
+    /* PRICING */
+    .pricing-sec {
+      background: var(--parch); padding: 100px 60px;
+      position: relative; overflow: hidden;
     }
-    .btn:hover{
-      transform:translateY(-1px);
-      background:rgba(255,255,255,.05);
-      border-color: rgba(207,215,227,.18);
-      box-shadow: 0 0 0 4px rgba(207,215,227,.06);
+    .pricing-sec::before {
+      content: 'PRICE';
+      position: absolute; left: -20px; top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      font-family: 'Playfair Display', serif;
+      font-size: 18vw; font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04); white-space: nowrap;
+      pointer-events: none; line-height: 1;
     }
-    .btn.primary{
-      border-color: rgba(34,197,94,.35);
-      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(52,211,153,.75));
-      box-shadow:
-        0 18px 45px rgba(34,197,94,.18),
-        0 0 0 4px rgba(207,215,227,.06);
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+      position: relative; z-index: 1;
+    }
+    .plan-card {
+      background: #fff; border: 1px solid var(--line);
+      padding: 42px 34px; position: relative;
+      border-top: 3px solid transparent;
+      transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .plan-card:hover { border-top-color: var(--amber); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(24,20,13,0.1); }
+    .plan-card.featured { border-top-color: var(--amber); }
+    .plan-badge {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: #fff; background: var(--amber);
+      padding: 4px 12px; margin-bottom: 16px;
+    }
+    .plan-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.38em; text-transform: uppercase;
+      color: var(--smoke); margin-bottom: 10px;
+    }
+    .plan-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900; color: var(--ink);
+      line-height: 1; margin-bottom: 4px;
+    }
+    .plan-per { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--smoke); margin-bottom: 26px; }
+    .plan-feats { list-style: none; display: flex; flex-direction: column; }
+    .plan-feats li {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 13px 0; border-bottom: 1px solid var(--line);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem; color: var(--smoke); line-height: 1.5;
+    }
+    .plan-feats li:last-child { border-bottom: none; }
+    .pf-chk {
+      width: 20px; height: 20px; flex-shrink: 0;
+      border: 1px solid rgba(184,120,48,0.45);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--amber); font-size: 0.76rem; margin-top: 2px;
+    }
+    .plan-cta { margin-top: 26px; display: flex; flex-direction: column; gap: 9px; }
+
+    /* PROCESS */
+    .process-sec { background: var(--cream); padding: 100px 60px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+    .step-card {
+      background: var(--ivory); padding: 38px 26px;
+      border-left: 3px solid transparent;
+      transition: border-left-color 0.3s, background 0.3s;
+    }
+    .step-card:hover { border-left-color: var(--amber); background: #fff; }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem; font-style: italic; font-weight: 900;
+      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 18px;
+    }
+    .step-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
+    .step-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; color: var(--smoke); line-height: 1.65; }
+
+    /* FAQ */
+    .faq-sec { background: var(--ivory); padding: 100px 60px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .faq-item {
+      background: var(--cream); border: 1px solid var(--line);
+      padding: 28px 26px; cursor: pointer; transition: background 0.3s;
+      border-bottom: 2px solid transparent;
+    }
+    .faq-item:hover { background: #fff; }
+    .faq-item.open { background: #fff; border-bottom-color: var(--amber); }
+    .faq-q {
+      font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink);
+      display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    }
+    .faq-arrow { font-size: 1.1rem; color: var(--amber); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+    .faq-a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem; color: var(--smoke); line-height: 1.7;
+      margin-top: 12px; display: none;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* CONTACT */
+    .contact-sec {
+      background: var(--parch); padding: 100px 60px;
+      position: relative; overflow: hidden;
+    }
+    .contact-sec::after {
+      content: 'CONTACT';
+      position: absolute; right: -30px; bottom: -40px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(7rem, 12vw, 10rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04);
+      line-height: 1; pointer-events: none; white-space: nowrap;
+    }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+      position: relative; z-index: 1;
+    }
+    .ci-row {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 18px 0; border-bottom: 1px solid var(--line);
+    }
+    .ci-row:last-child { border-bottom: none; }
+    .ci-icon {
+      width: 38px; height: 38px;
+      background: rgba(184,120,48,0.1); border: 1px solid rgba(184,120,48,0.22);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .ci-lbl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--amber); display: block; margin-bottom: 3px;
+    }
+    .ci-val { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--ink); }
+    .ci-val a { color: inherit; }
+    .ci-val a:hover { color: var(--amber); }
+    .contact-form { background: #fff; border: 1px solid var(--line); padding: 44px 40px; }
+    .form-title { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: var(--ink); margin-bottom: 6px; }
+    .form-title em { font-style: italic; color: var(--amber); }
+    .form-sub { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: var(--smoke); margin-bottom: 28px; line-height: 1.6; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .form-full { margin-bottom: 12px; }
+    label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--amber); display: block; margin-bottom: 6px;
+    }
+    input, textarea, select {
+      width: 100%; background: var(--ivory);
+      border: 1px solid var(--line2); color: var(--ink);
+      font-family: 'Crimson Pro', serif; font-size: 1rem;
+      padding: 11px 14px; outline: none; transition: border-color 0.3s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--amber); background: #fff; }
+    select option { background: #fff; color: var(--ink); }
+    textarea { min-height: 110px; resize: vertical; }
+    .btn-submit {
+      display: block; width: 100%;
+      background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+      padding: 16px 28px; border: none; cursor: pointer;
+      transition: background 0.3s; text-align: center;
+    }
+    .btn-submit:hover { background: var(--rust); }
+    .form-note {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center; font-style: italic;
     }
 
-    /* ===== VIBER BUTTON (INLINE SVG ICON — NO EXTERNAL FILES) ===== */
-    .btn.viber{
-      border-color: rgba(139,92,246,.55);
-      background: linear-gradient(135deg, var(--viber), var(--viber2));
-      color:#ffffff;
-      box-shadow:
-        0 18px 45px rgba(139,92,246,.18),
-        0 0 0 4px rgba(207,215,227,.05);
-      padding:10px 14px;
-      min-width: 56px;
+    /* FOOTER */
+    footer {
+      background: var(--ink); padding: 36px 52px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 14px;
     }
-    .btn.viber:hover{
-      background: linear-gradient(135deg, var(--viberDark), var(--viber2));
-      border-color: rgba(139,92,246,.70);
-      box-shadow:
-        0 18px 45px rgba(139,92,246,.22),
-        0 0 0 4px rgba(115,96,242,.12);
+    .f-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 900; color: rgba(245,239,228,0.35); letter-spacing: 0.1em; }
+    .f-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .f-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(245,239,228,0.35); transition: color 0.3s;
     }
-    .btn.viber:active{ transform: translateY(0px); }
+    .f-links a:hover { color: var(--wheat); }
+    .f-copy { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; color: rgba(245,239,228,0.28); }
 
-    .viber-icon{
-      width:22px;
-      height:22px;
-      display:block;
-      color:#fff;
-      filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
-      flex: 0 0 auto;
+    /* lang toggle */
+    .lang-toggle {
+      position: fixed; top: 18px; right: 18px; z-index: 9999;
+      padding: 7px 14px; background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 700; text-decoration: none; transition: background 0.3s;
     }
-    .viber-text{
-      font-weight:900;
-      letter-spacing:.2px;
-      font-size:14px;
-      line-height:1;
-    }
-    /* ============================================================= */
+    .lang-toggle:hover { background: var(--rust); }
 
-    header.hero{padding:54px 0 22px;}
-
-    .card{
-      border:1px solid rgba(255,255,255,.09);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border-radius:var(--radius2);
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
+    /* RESPONSIVE */
+    @media (max-width: 1000px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 100px 28px 60px; }
+      .sec, .videos-sec, .services-sec, .pricing-sec,
+      .process-sec, .faq-sec, .contact-sec { padding-left: 28px; padding-right: 28px; }
+      .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid, .contact-inner { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
     }
-    .card:after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 40% 30%, rgba(207,215,227,.10), transparent 55%);
-      transform: rotate(14deg);
-      pointer-events:none;
-    }
-    .card > *{position:relative}
-
-    .pill{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:10px 14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      border-radius:999px;
-      color:var(--muted);
-      font-size:14px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
-    }
-    .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,var(--green),var(--green2))}
-    h1{
-      margin:14px 0 10px;
-      font-size: 44px;
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
-    .lead{
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.6;
-      max-width: 70ch;
-      margin:0 0 16px;
-    }
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
-    .mini{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:14px;}
-    .tag{
-      border:1px solid rgba(255,255,255,.10);
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.02);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
-    }
-
-    .stat{
-      padding:16px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.85), rgba(10,26,19,.60));
-      position:relative;
-      overflow:hidden;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .stat:after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 40% 30%, var(--silverSoft), transparent 55%);
-      transform: rotate(18deg);
-      pointer-events:none;
-    }
-    .stat > *{position:relative}
-    .stat b{display:block; font-size:22px; margin-bottom:0}
-
-    section{padding:38px 0}
-    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px;}
-    .section-title h2{margin:0; font-size:28px; letter-spacing:-.2px;}
-    .section-title p{margin:0; color:var(--muted); max-width: 60ch; line-height:1.5; font-size:14px;}
-
-    .grid-4{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px;}
-    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px;}
-
-    .feature{
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.75), rgba(10,26,19,.55));
-      min-height: 130px;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .feature h3{margin:0 0 6px; font-size:16px}
-    .feature p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
-    .icon{
-      width:38px; height:38px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      display:flex; align-items:center; justify-content:center;
-      background:rgba(255,255,255,.02);
-      margin-bottom:10px;
-      font-weight:900;
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
-    }
-
-    .pricing{display:grid; grid-template-columns: 1fr; gap:14px; align-items:stretch;}
-    .plan{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      position:relative;
-      overflow:hidden;
-      box-shadow:
-        0 20px 60px rgba(0,0,0,.30),
-        0 0 0 4px rgba(207,215,227,.05);
-    }
-    .plan.popular{
-      border-color: rgba(34,197,94,.35);
-      box-shadow:
-        0 20px 60px rgba(34,197,94,.12),
-        0 0 0 4px rgba(207,215,227,.06);
-    }
-    .plan .badge{
-      position:absolute; top:14px; right:14px;
-      font-size:12px; font-weight:900;
-      padding:6px 10px;
-      border-radius:999px;
-      background: rgba(34,197,94,.16);
-      border: 1px solid rgba(34,197,94,.35);
-      color: var(--text);
-      box-shadow: 0 0 0 3px rgba(207,215,227,.05);
-    }
-    .plan h3{margin:2px 0 8px; font-size:18px}
-    .price{font-size:34px; font-weight:950; margin:0 0 6px;}
-    .per{color:var(--muted); font-size:13px; margin:0 0 10px}
-    .ul{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--muted); font-size:14px; line-height:1.4;}
-    .ul li{display:flex; gap:10px; align-items:flex-start; border-top:1px dashed rgba(255,255,255,.10); padding-top:10px;}
-    .check{
-      width:20px; height:20px; border-radius:8px;
-      display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(34,197,94,.35);
-      background: rgba(34,197,94,.10);
-      color: var(--green2);
-      font-weight:950;
-      flex:0 0 20px;
-      margin-top:1px;
-    }
-    .plan .cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
-    .note{
-      margin-top:14px;
-      padding:14px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .small-muted{color:var(--muted); font-size:13px; line-height:1.5; margin:8px 0 0;}
-
-    .timeline{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--radius2);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      padding:18px;
-      display:grid;
-      gap:10px;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .step{
-      display:flex; gap:12px;
-      padding:12px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.06);
-      background:rgba(255,255,255,.02);
-    }
-    .num{
-      width:34px; height:34px; border-radius:14px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(34,197,94,.16);
-      border:1px solid rgba(34,197,94,.35);
-      font-weight:950;
-      flex:0 0 34px;
-    }
-    .step b{display:block; margin-bottom:4px}
-    .step span{color:var(--muted); font-size:14px; line-height:1.5}
-
-    /* ========= NEW A/B REBUILD (no lists, no bullets, no floating dots) ========= */
-    .ab-grid{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:14px;
-      align-items:stretch;
-    }
-    .ab-card{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-      overflow:hidden;
-    }
-    .ab-head{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      margin-bottom:10px;
-    }
-    .ab-badge{
-      width:34px;
-      height:34px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: rgba(34,197,94,.16);
-      border:1px solid rgba(34,197,94,.35);
-      font-weight:950;
-      flex:0 0 34px;
-    }
-    .ab-title b{display:block; margin-bottom:4px}
-    .ab-title span{color:var(--muted); font-size:14px; line-height:1.5}
-    .ab-lines{margin-top:10px; display:grid; gap:8px;}
-    .ab-line{
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-    }
-    .ab-line strong{color:var(--text)}
-    .ab-price{
-      margin-top:10px;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(34,197,94,.30);
-      background: rgba(34,197,94,.10);
-      color: var(--text);
-      font-weight:900;
-      line-height:1.4;
-    }
-    /* ========================================================================== */
-
-    details{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--radius);
-      padding:14px 14px;
-      background:rgba(255,255,255,.02);
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    details + details{margin-top:10px}
-    summary{cursor:pointer; font-weight:900; list-style:none;}
-    summary::-webkit-details-marker{display:none}
-    .faq p{color:var(--muted); margin:10px 0 0; line-height:1.55; font-size:14px}
-
-    .contact{
-      display:grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .contact-card{
-      padding:18px;
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.80), rgba(10,26,19,.55));
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    form{display:grid; gap:10px;}
-    label{font-size:13px; color:var(--muted)}
-    input, textarea, select{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      color: var(--text);
-      outline:none;
-      box-shadow: 0 0 0 3px rgba(207,215,227,.04);
-    }
-    textarea{min-height:120px; resize:vertical}
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(34,197,94,.45);
-      box-shadow: 0 0 0 4px rgba(34,197,94,.14), 0 0 0 7px rgba(207,215,227,.06);
-    }
-    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
-    .divider{height:1px; background:var(--line); margin:18px 0;}
-
-    footer{
-      padding:26px 0 40px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-      margin-top:30px;
-    }
-    .footer-inner{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
-    .tiny{font-size:13px; line-height:1.55}
-
-    /* ========= VIDEO GRID ========= */
-    .video-grid{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:12px;
-    }
-    .video-cell{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.02);
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-    }
-    .video-wrap{
-      position:relative;
-      padding-top:56.25%;
-      background: rgba(0,0,0,.28);
-    }
-    .video-wrap iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
-    }
-
-    /* ===== HERO ORDER (top: offers, then videos, then text) ===== */
-    .hero-stack{
-      display:grid;
-      gap:16px;
-    }
-    .hero-block{padding:22px;}
-
-    .offers-grid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:14px;
-      margin-top:14px;
-    }
-    .offer{
-      padding:16px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(11,31,22,.78), rgba(10,26,19,.55));
-      box-shadow: 0 0 0 4px rgba(207,215,227,.05);
-      min-height: 160px;
-    }
-    .offer h3{margin:0 0 6px; font-size:16px}
-    .offer p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
-    .offer .icon{margin-bottom:10px;}
-
-    @media (max-width: 980px){
-      h1{font-size:38px;}
-      .grid-4{grid-template-columns:1fr;}
-      .grid-2{grid-template-columns:1fr;}
-      .contact{grid-template-columns:1fr;}
-      .offers-grid{grid-template-columns:1fr;}
-      .ab-grid{grid-template-columns:1fr;}
-    }
-    @media (max-width: 520px){
-      h1{font-size:34px;}
-      .form-row{grid-template-columns: 1fr;}
-      .nav-links{display:none;}
-      .video-grid{grid-template-columns: 1fr;}
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.8rem; }
+      .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-ctas, .hero-prices { flex-direction: column; }
+      .amber-strip { flex-direction: column; }
     }
   </style>
 </head>
-
 <body>
-  <!-- DEPLOY MARKER: EN-FULL-PRICES-2026-02-22 -->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <!-- Language switch (English -> Serbian). If your Serbian is / -->
-        <a href="../" style="position:fixed;top:18px;right:18px;z-index:9999;padding:8px 12px;background:#22c55e;color:#04130b;border-radius:999px;font-weight:800;text-decoration:none;">Srpski</a>
 
-        <a class="brand" href="#top" aria-label="Silverado.pro">
-          <span class="logo" aria-hidden="true"></span>
-          <span>
-            Silverado.pro
-            <small>Video ads • On-site filming • Landing pages • Ad-ready</small>
-          </span>
-        </a>
+<a href="../" class="lang-toggle">Srpski</a>
 
-        <div class="nav-links" aria-label="Navigation">
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="#details">Details</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#process">Process</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </div>
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">
+    <span class="logo-dot"></span>
+    Silverado.pro
+  </a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="btn-nav">Order →</a>
+</nav>
 
-        <a class="btn primary" href="#contact">Order</a>
-      </div>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-texture"></div>
+  <div class="hero-wm">SILVERADO</div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Video · Filming · Landing Pages · 2026</p>
+    <h1 class="hero-title">
+      Ads that
+      <em>stop the scroll.</em>
+    </h1>
+    <p class="hero-sub">
+      AI clips, editing from your footage, on-location filming and modern websites.
+      <strong>Fast. Modern. Ready for Meta and Instagram ads.</strong>
+    </p>
+
+    <div class="hero-prices">
+      <div class="hp-pill">AI ad — <strong>~€1/sec</strong></div>
+      <div class="hp-pill">On-location filming — <strong>~€30 flat</strong></div>
+      <div class="hp-pill">Landing page — <strong>~€50</strong></div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="tel:+381691508197" class="btn-primary">📞 Call: +381 69 150 8197</a>
+      <a href="#work" class="btn-outline">See our work →</a>
+      <a href="viber://chat?number=%2B381691508197" class="btn-viber" onclick="return openViberChat(event);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+        </svg>
+        Viber
+      </a>
     </div>
   </div>
 
-  <header class="hero" id="top">
-    <div class="container">
-      <div class="hero-stack">
+  <span class="hero-scroll">Scroll</span>
+</section>
 
-        <!-- 1) FIRST: WORK + THANK YOU + CLIPS -->
-        <div class="card hero-block" id="work">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            Work (examples) • Thanks for stopping by
-          </div>
+<!-- AMBER STRIP -->
+<div class="amber-strip">
+  <div class="as-item"><span class="as-icon">🤖</span><div><div class="as-lbl">AI Hook Ad</div><div class="as-price">~€1 / second</div></div></div>
+  <div class="as-item"><span class="as-icon">✂️</span><div><div class="as-lbl">Edit from your footage</div><div class="as-price">Price on request</div></div></div>
+  <div class="as-item"><span class="as-icon">🎥</span><div><div class="as-lbl">On-location filming</div><div class="as-price">~€30 flat rate</div></div></div>
+  <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Landing page / Website</div><div class="as-price">~€50</div></div></div>
+</div>
 
-          <div class="stat">
-            <b>Work (examples) — 10 clips</b>
-            <div class="small-muted">Different styles for different industries and products.</div>
-          </div>
+<!-- VIDEOS -->
+<section class="videos-sec" id="work">
+  <div class="sec-inner">
+    <p class="sec-lbl" style="color:var(--wheat);">Portfolio</p>
+    <h2 class="sec-title" style="color:#f5efe4;">See <em style="color:var(--wheat);">what we do</em></h2>
+    <div class="divider"></div>
+    <p class="sec-body">10 clips — different styles for different industries and products.</p>
 
-          <div class="video-grid" style="margin-top:12px;">
-            <!-- 1 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1"
-                title="Silverado video 1 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
+    <div class="video-grid">
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1" title="Silverado video 1" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1" title="Silverado video 2" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1" title="Silverado video 3" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1" title="Silverado video 4" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1" title="Silverado video 5" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1" title="Silverado video 6" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1" title="Silverado video 7" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1" title="Silverado video 8" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1" title="Silverado video 9" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-cell"><div class="video-wrap">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1" title="Silverado video 10" allowfullscreen></iframe>
+      </div></div>
+    </div>
 
-            <!-- 10 moved here to be 2nd on mobile -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1"
-                title="Silverado video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
+    <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener" class="btn-outline" style="color:#f5efe4; border-color:rgba(245,239,228,0.25);">🔎 Google: Emil Eros</a>
+      <a href="tel:+381691508197" class="btn-primary">📞 Call: +381 69 150 8197</a>
+    </div>
+  </div>
+</section>
 
-            <!-- 2 (UPDATED) -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1"
-                title="Silverado video 2 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
+<!-- SERVICES -->
+<section class="services-sec" id="services">
+  <div class="sec-inner">
+    <p class="sec-lbl">Our Services</p>
+    <h2 class="sec-title">Four ways to <em>grow</em></h2>
+    <div class="divider"></div>
 
-            <!-- 3 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1"
-                title="Silverado video 3 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-
-            <!-- 4 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1"
-                title="Silverado video 4 (NEW)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-
-            <!-- 5 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1"
-                title="Silverado video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-
-            <!-- 6 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1"
-                title="Silverado video 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-
-            <!-- 7 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1"
-                title="Silverado video 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-
-            <!-- 8 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1"
-                title="Silverado video 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-
-            <!-- 9 -->
-            <div class="video-cell"><div class="video-wrap">
-              <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1"
-                title="Silverado video 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div></div>
-          </div>
-
-          <div class="stat" style="margin-top:12px;">
-            <b>I do video and design for any industry.</b>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-              <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">Google: Emil Eros</a>
-              <a class="btn primary" href="tel:+381691508197">Call: +381 69 150 8197</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2) AFTER CLIPS: 4 OFFERS -->
-        <div class="card hero-block" id="services">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            4 services • Fast • Ready for 2026
-          </div>
-
-          <h1 style="margin-top:10px;">We make ads that stop the scroll.</h1>
-
-          <p class="lead" style="margin-top:8px;">
-            First you see the work. Now here’s what we do. Pick a service: AI ads, editing from your footage, on-site filming,
-            or a modern landing page for your business.
-          </p>
-
-          <div class="offers-grid">
-            <div class="offer">
-              <div class="icon">🤖</div>
-              <h3>1) AI “Hook” ads</h3>
-              <p>
-                Short “scroll-stopping” clips (8–15s) for ads and Reels. One photo can help (not required),
-                and you can also send a short description of your product or service.
-              </p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">9:16</span>
-                <span class="tag">Hook</span>
-                <span class="tag">Brand</span>
-              </div>
-            </div>
-
-            <div class="offer">
-              <div class="icon">✂️</div>
-              <h3>2) Ad made from your footage</h3>
-              <p>You send phone clips, we edit a dynamic ad with effects, captions, and pacing for social media.</p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">Editing</span>
-                <span class="tag">Captions</span>
-                <span class="tag">Effects</span>
-              </div>
-            </div>
-
-            <div class="offer">
-              <div class="icon">🎥</div>
-              <h3>3) On-site filming (at your location)</h3>
-              <p>
-                We come to your place and film real footage (no AI). Filming takes about <b>1 hour</b>.
-                From that material we deliver 3 formats for Instagram/Facebook/TikTok:
-                <b>ad (Reels)</b>, <b>feed</b>, and <b>docu</b> clip.
-              </p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">Real filming</span>
-                <span class="tag">3 formats</span>
-                <span class="tag"><b>30 €</b></span>
-              </div>
-            </div>
-
-            <div class="offer">
-              <div class="icon">🌐</div>
-              <h3>4) Website / Landing page design</h3>
-              <p>
-                A super modern, <b>fully up-to-date</b> landing page ready for business in 2026.
-                Fast, clean, mobile-first, with a clear call to action.
-              </p>
-              <div class="mini" style="margin-top:10px;">
-                <span class="tag">Mobile-first</span>
-                <span class="tag">2026 look</span>
-                <span class="tag"><b>50 €</b></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-actions" style="margin-top:16px;">
-            <a class="btn primary" href="#contact">Order / Ask</a>
-            <a class="btn" href="#work">🎥 View work</a>
-            <a class="btn" href="tel:+381691508197">📞 Call</a>
-
-            <a class="btn viber"
-               href="viber://chat?number=%2B381691508197"
-               aria-label="Send a message on Viber"
-               onclick="return openViberChat(event);">
-              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
-              </svg>
-              <span class="viber-text">Viber</span>
-            </a>
-          </div>
-
-          <p class="small-muted">
-            <b>AI ad pricing:</b> 1 € / second • 10s = 10 € • 15s = 15 € • 30s = 30 €
-          </p>
-          <p class="small-muted" style="margin-top:6px;">
-            <b>On-site filming:</b> fixed <b>30 €</b> • <b>Landing page:</b> <b>50 €</b>
-          </p>
-        </div>
-
-        <!-- 3) TEXT BLOCK -->
-        <div class="card hero-block">
-          <div class="pill" style="margin-bottom:12px;">
-            <span class="dot"></span>
-            Fast • Modern • Ready for Meta/IG ads
-          </div>
-
-          <h2 style="margin:10px 0 10px; font-size:28px; letter-spacing:-.2px;">
-            Short ad clips work extremely well on social platforms.
-          </h2>
-
-          <p class="lead">
-            Even a single photo of your store or product (optional) can be enough for me to create an effective,
-            informative, and motivating promo video for you.
-          </p>
-
-          <p class="lead" style="margin-top:-6px;">
-            If you don’t want AI, we can do <b>editing from your footage</b> or <b>on-site filming</b> (real shots).
-            If you want something fully “ready for 2026”, we also build a <b>landing page / website</b> that turns visits into calls and messages.
-          </p>
-
-          <div class="mini" style="margin-top:8px;">
-            <span class="tag">✅ AI or real filming</span>
-            <span class="tag">✅ Ad-ready</span>
-            <span class="tag">✅ Landing page (2026)</span>
-          </div>
-
-          <div class="hero-actions" style="margin-top:14px;">
-            <a class="btn primary" href="#pricing">Pricing</a>
-            <a class="btn" href="tel:+381691508197">📞 Call</a>
-            <a class="btn viber"
-               href="viber://chat?number=%2B381691508197"
-               aria-label="Send a message on Viber"
-               onclick="return openViberChat(event);">
-              <svg class="viber-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6.9-1.3.9-2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
-              </svg>
-              <span class="viber-text">Viber</span>
-            </a>
-          </div>
-
-          <p class="small-muted">
-            <b>AI:</b> 1 € / second • <b>Filming:</b> 30 € • <b>Landing page:</b> 50 €
-          </p>
-        </div>
-
+    <div class="services-grid">
+      <div class="svc-card">
+        <p class="svc-num">01</p>
+        <span class="svc-icon">🤖</span>
+        <p class="svc-name">AI "Hook" Ads</p>
+        <p class="svc-desc">Short, scroll-stopping clips (8–15s) for ads and Reels. One photo or a brief description is enough — not even required.</p>
+        <p class="svc-price">~€1 / second</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">02</p>
+        <span class="svc-icon">✂️</span>
+        <p class="svc-name">Editing from Your Footage</p>
+        <p class="svc-desc">You shoot with your phone — we edit a dynamic ad with effects, subtitles and pacing ready for social media.</p>
+        <p class="svc-price">Price on request</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">03</p>
+        <span class="svc-icon">🎥</span>
+        <p class="svc-name">On-Location Filming</p>
+        <p class="svc-desc">We come to your premises and shoot real footage (no AI). Around 1 hour of filming + 3 finished formats: ad, feed and documentary clip.</p>
+        <p class="svc-price">~€30 flat rate</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">04</p>
+        <span class="svc-icon">🌐</span>
+        <p class="svc-name">Landing Page / Website</p>
+        <p class="svc-desc">A modern landing page ready for business in 2026. Fast, clean, mobile-first, with a clear call to action.</p>
+        <p class="svc-price">~€50</p>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>What we do (short)</h2>
-          <p>Four clear services: AI ads, ads from your footage, on-site filming, and landing pages.</p>
+<!-- PRICING -->
+<section class="pricing-sec" id="pricing">
+  <div class="sec-inner">
+    <p class="sec-lbl">Pricing</p>
+    <h2 class="sec-title">Clear prices, <em>no surprises</em></h2>
+    <div class="divider"></div>
+
+    <div class="pricing-grid">
+      <div class="plan-card featured">
+        <span class="plan-badge">Most popular</span>
+        <p class="plan-name">AI Video Ad</p>
+        <div class="plan-price">~€1</div>
+        <p class="plan-per">per second of final video (120 RSD/sec)</p>
+        <ul class="plan-feats">
+          <li><span class="pf-chk">✓</span><span>10s = <strong>~€10</strong> · 15s = <strong>~€15</strong> · 30s = <strong>~€30</strong></span></li>
+          <li><span class="pf-chk">✓</span><span>9:16 format ready for Reels and Meta Ads</span></li>
+          <li><span class="pf-chk">✓</span><span>Hook + clear sales message</span></li>
+          <li><span class="pf-chk">✓</span><span>Brand alignment (logo, colours, style)</span></li>
+          <li><span class="pf-chk">✓</span><span>One photo or description is enough — not required</span></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#contact" class="btn-primary">Order</a>
+          <a href="#work" class="btn-outline">See the work</a>
         </div>
       </div>
 
-      <div class="grid-4">
-        <div class="feature">
-          <div class="icon">🤖</div>
-          <h3>AI “Hook” ads</h3>
-          <p>Short clips (8–15s) designed to grab attention and drive messages/calls.</p>
-        </div>
-
-        <div class="feature">
-          <div class="icon">✂️</div>
-          <h3>Editing from your footage</h3>
-          <p>You film with your phone, we create an ad with pacing, effects, captions, and branding.</p>
-        </div>
-
-        <div class="feature">
-          <div class="icon">🎥</div>
-          <h3>On-site filming</h3>
-          <p>We come and film real footage (no AI). <b>1 hour</b> filming + 3 formats (<b>ad</b>, <b>feed</b>, <b>docu</b>). <b>Fixed: 30 €</b>.</p>
-        </div>
-
-        <div class="feature">
-          <div class="icon">🌐</div>
-          <h3>Landing page / Website</h3>
-          <p>Modern page ready for 2026: mobile-first, fast, clear offer + CTA. <b>50 €</b>.</p>
+      <div class="plan-card">
+        <span class="plan-badge">Flat rate</span>
+        <p class="plan-name">On-Location Filming</p>
+        <div class="plan-price">~€30</div>
+        <p class="plan-per">flat rate (3,500 RSD)</p>
+        <ul class="plan-feats">
+          <li><span class="pf-chk">✓</span><span>~1 hour of real filming (no AI)</span></li>
+          <li><span class="pf-chk">✓</span><span>3 formats: <strong>ad</strong>, <strong>feed</strong>, <strong>documentary</strong></span></li>
+          <li><span class="pf-chk">✓</span><span>Ready for Instagram, Facebook, TikTok</span></li>
+          <li><span class="pf-chk">✓</span><span>Additional variants by agreement</span></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#contact" class="btn-primary">Order</a>
+          <a href="tel:+381691508197" class="btn-outline">📞 Call</a>
         </div>
       </div>
 
-      <div class="note">
-        <b>Bonus (included):</b> Brand alignment (logo/colors/style) so everything looks premium.
+      <div class="plan-card">
+        <span class="plan-badge">Web</span>
+        <p class="plan-name">Landing Page / Website</p>
+        <div class="plan-price">~€50</div>
+        <p class="plan-per">complete page (6,000 RSD)</p>
+        <ul class="plan-feats">
+          <li><span class="pf-chk">✓</span><span>Modern, up-to-date design for 2026</span></li>
+          <li><span class="pf-chk">✓</span><span>Mobile-first + fast loading</span></li>
+          <li><span class="pf-chk">✓</span><span>Clear offer + CTA (call / Viber / form)</span></li>
+          <li><span class="pf-chk">✓</span><span>Brand alignment included</span></li>
+          <li><span class="pf-chk">✓</span><span>Editing from footage: price by scope</span></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#contact" class="btn-primary">Order</a>
+          <a href="tel:+381691508197" class="btn-outline">📞 Call</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===================== REBUILT A/B SECTION HERE ===================== -->
-  <section id="details">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Services and how it works</h2>
-          <p>Simple: choose a service, tell us the goal, we deliver the result.</p>
-        </div>
+<!-- PROCESS -->
+<section class="process-sec" id="process">
+  <div class="sec-inner">
+    <p class="sec-lbl">How It Works</p>
+    <h2 class="sec-title">4 steps to a <em>finished ad</em></h2>
+    <div class="divider"></div>
+
+    <div class="process-grid">
+      <div class="step-card">
+        <p class="step-num">01</p>
+        <p class="step-title">Choose a Service</p>
+        <p class="step-desc">AI, editing, on-location filming or landing page. Tell us your industry and goal (more messages, calls, visits).</p>
       </div>
-
-      <div class="ab-grid">
-        <!-- A -->
-        <div class="ab-card">
-          <div class="ab-head">
-            <div class="ab-badge">A</div>
-            <div class="ab-title">
-              <b>Ad from your footage (editing)</b>
-              <span>You film with your phone. We deliver a finished social-ready ad.</span>
-            </div>
-          </div>
-
-          <div class="ab-lines">
-            <div class="ab-line"><strong>What you send:</strong> 10–40 short clips (space, product, work, details). Raw gallery clips are fine.</div>
-            <div class="ab-line"><strong>What you get:</strong> a finished video (usually 9:16) with pacing, captions, effects, logo and CTA.</div>
-            <div class="ab-line"><strong>Ideal for:</strong> Reels / Ads / TikTok, campaigns for messages or calls.</div>
-          </div>
-        </div>
-
-        <!-- B -->
-        <div class="ab-card">
-          <div class="ab-head">
-            <div class="ab-badge">B</div>
-            <div class="ab-title">
-              <b>On-site filming (at your location)</b>
-              <span>We come, film real footage (no AI), and deliver 3 ready formats.</span>
-            </div>
-          </div>
-
-          <div class="ab-lines">
-            <div class="ab-line"><strong>Filming time:</strong> about <strong>1 hour</strong> on location.</div>
-            <div class="ab-line"><strong>What we film:</strong> space, products, work, details, team, atmosphere (shots for Reels/Ads).</div>
-            <div class="ab-line"><strong>What you get:</strong> 3 finished clips: <strong>ad (Reels)</strong>, <strong>feed</strong>, <strong>docu</strong> + variants if needed.</div>
-          </div>
-
-          <div class="ab-price">Price: fixed <b>30 €</b></div>
-        </div>
+      <div class="step-card">
+        <p class="step-num">02</p>
+        <p class="step-title">Send Material</p>
+        <p class="step-desc">AI: info + optional photo. Editing: your clips. Filming: we come to you. Landing page: text + contact + logo.</p>
       </div>
+      <div class="step-card">
+        <p class="step-num">03</p>
+        <p class="step-title">We Create</p>
+        <p class="step-desc">We produce the ad or page, aligned with your brand, goal and the platform you'll publish on.</p>
+      </div>
+      <div class="step-card">
+        <p class="step-num">04</p>
+        <p class="step-title">Delivery & Publish</p>
+        <p class="step-desc">You receive a final ready for publishing and Meta/IG ads — or a live link for your landing page.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- C (kept as original timeline style) -->
-      <div class="timeline" style="margin-top:14px;">
-        <div class="step">
-          <div class="num">C</div>
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="sec-inner">
+    <p class="sec-lbl">FAQ</p>
+    <h2 class="sec-title">Short and <em>clear</em></h2>
+    <div class="divider"></div>
+
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Do I need to provide a photo?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Not required. If you have a photo of your shop or product — great. If not, we can work without one by arrangement.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">What format will I receive?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Usually 9:16 (Reels/Ads). We can also do 1:1 or 16:9 on request.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Can I get an ad made from my own clips?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Yes. You send your clips, we edit the ad with pacing, subtitles, effects and branding.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">What is on-location filming?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">We come to your location and shoot real footage (no AI) which we use to create ads and clips.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">How much does on-location filming cost?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">A flat rate of <strong>~€30</strong> — around 1 hour of filming + 3 formats: ad, feed and documentary clip.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">How much does a landing page cost?<span class="faq-arrow">+</span></p>
+        <p class="faq-a"><strong>~€50</strong> per landing page — modern, mobile-friendly and ready for 2026.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">How is the AI ad price calculated?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">~€1 per second of the final video. Example: 15 seconds = ~€15 · 30 seconds = ~€30.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <p class="faq-q">Not sure what I need?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Send your profile link + goal (more messages, calls or visits) and we'll suggest the most effective format for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="sec-inner">
+    <p class="sec-lbl">Contact</p>
+    <h2 class="sec-title">Let's talk <em>today</em></h2>
+    <div class="divider"></div>
+
+    <div class="contact-inner">
+      <div>
+        <div class="ci-row">
+          <div class="ci-icon">📞</div>
+          <div><span class="ci-lbl">Phone</span><span class="ci-val"><a href="tel:+381691508197">+381 69 150 8197</a></span></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon">📲</div>
           <div>
-            <b>Landing page / Website (2026)</b>
-            <span>Super modern landing page: clear offer, CTA (Call/Viber), mobile-first, fast. <b>Price: 50 €.</b></span>
+            <span class="ci-lbl">Viber</span>
+            <span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span>
           </div>
         </div>
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <b>What you send</b>
-            <span>Business name, services/products, contact, city, links (FB/IG), logo (if you have), images (optional).</span>
-          </div>
+        <div class="ci-row">
+          <div class="ci-icon">✉️</div>
+          <div><span class="ci-lbl">Email</span><span class="ci-val"><a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a></span></div>
         </div>
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <b>What you get</b>
-            <span>A landing page ready for sharing and ads, with clear “Call / Viber / Inquiry” buttons.</span>
-          </div>
+        <div class="ci-row">
+          <div class="ci-icon">🔎</div>
+          <div><span class="ci-lbl">Google</span><span class="ci-val"><a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank">Search: Emil Eros video</a></span></div>
+        </div>
+
+        <div style="margin-top:28px; display:flex; flex-direction:column; gap:9px;">
+          <a href="tel:+381691508197" class="btn-primary" style="justify-content:center;">📞 Call: +381 69 150 8197</a>
+          <a href="viber://chat?number=%2B381691508197" class="btn-viber" style="justify-content:center;" onclick="return openViberChat(event);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+            </svg>
+            Message on Viber
+          </a>
         </div>
       </div>
 
-      <div class="note">
-        <b>Tip:</b> If you’re not sure what’s best, send your profile link + goal (more messages, more calls, more visits) and I’ll suggest the best format.
+      <div class="contact-form">
+        <h3 class="form-title">Send an <em>enquiry</em></h3>
+        <p class="form-sub">Industry + city + goal + service (AI / editing / filming / landing page)</p>
+
+        <form id="leadForm">
+          <div class="form-row">
+            <div><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="e.g. Emil" required /></div>
+            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+381 6x xxx xxxx" required /></div>
+          </div>
+          <div class="form-row">
+            <div><label for="city">City</label><input id="city" name="city" type="text" placeholder="e.g. Subotica" /></div>
+            <div>
+              <label for="package">Service</label>
+              <select id="package" name="package">
+                <option value="AI Hook Ad (~€1/sec)">AI Hook Ad (~€1/sec)</option>
+                <option value="Editing from footage">Editing from footage</option>
+                <option value="On-location filming (~€30)">On-location filming (~€30)</option>
+                <option value="Landing page (~€50)">Landing page (~€50)</option>
+                <option value="Not sure — suggest one">Not sure — suggest one</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-full"><label for="profile">Link (optional: website / IG / FB)</label><input id="profile" name="profile" type="url" placeholder="https://..." /></div>
+          <div class="form-full"><label for="message">Message (goal + service + material)</label><textarea id="message" name="message" placeholder="e.g. I need a landing page for a car wash in Novi Sad. Goal: more calls. I have a logo and FB/IG."></textarea></div>
+          <button class="btn-submit" type="submit">Send Enquiry →</button>
+          <p class="form-note">Clicking opens your email app with a pre-filled message.</p>
+        </form>
       </div>
     </div>
-  </section>
-  <!-- ===================== END REBUILT A/B ===================== -->
+  </div>
+</section>
 
-  <section id="pricing">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Pricing (clear)</h2>
-          <p>AI ads: 1 €/second. Filming: 30 € fixed. Landing page: 50 €. Editing: depends on scope.</p>
-        </div>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <p class="f-logo">SILVERADO.PRO</p>
+  <div class="f-links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p class="f-copy">© <span id="year"></span> Silverado.pro · +381 69 150 8197</p>
+</footer>
 
-      <div class="pricing">
-        <div class="plan popular">
-          <div class="badge">1 € / second</div>
-          <h3>AI video ad (custom)</h3>
-          <p class="price">1 €</p>
-          <p class="per">per second of final video</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-          <ul class="ul">
-            <li><span class="check">✓</span><span>Ready for Reels/Ads (9:16)</span></li>
-            <li><span class="check">✓</span><span>Hook + clear sales message</span></li>
-            <li><span class="check">✓</span><span>Modern pacing + clean visual look</span></li>
-            <li><span class="check">✓</span><span>Brand alignment (logo/colors/style)</span></li>
-          </ul>
+  function toggleFaq(el) { el.classList.toggle('open'); }
 
-          <div class="cta">
-            <a class="btn primary" href="#contact">Order</a>
-            <a class="btn" href="#work">🎥 View work</a>
-            <a class="btn" href="tel:+381691508197">📞 Call</a>
-          </div>
+  function openViberChat(e) {
+    try { e.preventDefault(); } catch(_) {}
+    window.location.href = "viber://chat?number=%2B381691508197";
+    setTimeout(function() {
+      if (!document.hidden) window.location.href = "https://viber.me/+381691508197";
+    }, 900);
+    return false;
+  }
 
-          <div class="note">
-            <b>Example:</b> 10 seconds = <b>10 €</b> • 15 seconds = <b>15 €</b> • 30 seconds = <b>30 €</b>
-          </div>
-        </div>
+  document.getElementById("leadForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name    = document.getElementById("name").value.trim();
+    const phone   = document.getElementById("phone").value.trim();
+    const city    = document.getElementById("city").value.trim();
+    const pkg     = document.getElementById("package").value;
+    const profile = document.getElementById("profile").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const subject = encodeURIComponent("Enquiry — Silverado.pro");
+    const body = encodeURIComponent(
+      "NAME: " + name + "\nPHONE: " + phone + "\nCITY: " + (city || "-") +
+      "\nSERVICE: " + pkg + "\nLINK: " + (profile || "-") + "\n\nMESSAGE:\n" + (message || "-")
+    );
+    window.location.href = "mailto:emileros1971@gmail.com?subject=" + subject + "&body=" + body;
+  });
 
-        <div class="plan">
-          <div class="badge">Fixed: 30 €</div>
-          <h3>On-site filming</h3>
-          <p class="price">30 €</p>
-          <p class="per">1 hour filming + 3 clip formats</p>
-
-          <ul class="ul">
-            <li><span class="check">✓</span><span><b>1 hour</b> real filming (no AI)</span></li>
-            <li><span class="check">✓</span><span>3 formats: <b>ad (Reels)</b>, <b>feed</b>, <b>docu</b></span></li>
-            <li><span class="check">✓</span><span>Ready for Instagram/Facebook/TikTok</span></li>
-            <li><span class="check">✓</span><span>Additional variants as agreed</span></li>
-          </ul>
-
-          <div class="cta">
-            <a class="btn primary" href="#contact">Order</a>
-            <a class="btn" href="tel:+381691508197">📞 Call</a>
-          </div>
-        </div>
-
-        <div class="plan">
-          <div class="badge">50 €</div>
-          <h3>Landing page / Website (2026)</h3>
-          <p class="price">50 €</p>
-          <p class="per"></p>
-
-          <ul class="ul">
-            <li><span class="check">✓</span><span>Super modern, fully up-to-date page</span></li>
-            <li><span class="check">✓</span><span>Mobile-first + fast loading</span></li>
-            <li><span class="check">✓</span><span>Clear offer + CTA (Call/Viber/Form)</span></li>
-            <li><span class="check">✓</span><span>Brand alignment (logo/colors/style)</span></li>
-          </ul>
-
-          <div class="cta">
-            <a class="btn primary" href="#contact">Order</a>
-            <a class="btn" href="tel:+381691508197">📞 Call</a>
-          </div>
-
-          <p class="small-muted" style="margin-top:12px;">
-            Editing from your footage: price depends on scope (amount of footage, number of clips, complexity).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="process">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Process</h2>
-          <p>4 short steps. Fast and clear.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="timeline">
-          <div class="step">
-            <div class="num">1</div>
-            <div>
-              <b>Choose the service</b>
-              <span>AI, editing, on-site filming, or landing page. You tell the industry + goal.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div>
-              <b>Send material</b>
-              <span>AI: info + (optional) photo/description. Editing: clips. Filming: we come. Landing: text + contact + logo (if available).</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div>
-              <b>Production</b>
-              <span>We create the ad or page aligned with your brand and goal.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">4</div>
-            <div>
-              <b>Delivery + posting</b>
-              <span>You get a final file ready to post/advertise (or a live link for the landing page).</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card hero-block">
-          <div class="pill"><span class="dot"></span> Quick style check</div>
-          <h3 style="margin:12px 0 8px; font-size:20px;">More examples</h3>
-          <p class="lead" style="margin:0;">
-            See the work above or search <b>Emil Eros</b> on Google for more examples.
-          </p>
-
-          <div class="divider"></div>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#work">🎥 Open work</a>
-            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
-            <a class="btn primary" href="tel:+381691508197">Call: +381 69 150 8197</a>
-          </div>
-
-          <p class="small-muted" style="margin-top:10px;">
-            If you only have an idea, just write what you sell and the goal (messages/calls/visits).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>FAQ</h2>
-          <p>Short and clear.</p>
-        </div>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Do I need a photo?</summary>
-          <p>No. If you have one photo of your store/product, great. If not, we can do it without (depending on the concept).</p>
-        </details>
-
-        <details>
-          <summary>What format do I get?</summary>
-          <p>Most often 9:16 (Reels/Ads). If needed we also do 1:1 or 16:9.</p>
-        </details>
-
-        <details>
-          <summary>Can you make an ad from my footage?</summary>
-          <p>Yes. You send phone clips, we edit the ad (pacing, captions, effects, branding).</p>
-        </details>
-
-        <details>
-          <summary>What is “on-site filming”?</summary>
-          <p>We come to your location and film real footage (no AI) used for social-ready ads and clips.</p>
-        </details>
-
-        <details>
-          <summary>How much is on-site filming?</summary>
-          <p>Fixed <b>30 €</b> (about 1 hour filming + 3 formats: ad, feed, docu).</p>
-        </details>
-
-        <details>
-          <summary>How much is a landing page?</summary>
-          <p><b>50 €</b> per landing page (modern, mobile-first, ready for 2026).</p>
-        </details>
-
-        <details>
-          <summary>How is AI pricing calculated?</summary>
-          <p>1 € per second of final video. Example: 15 seconds = 15 €.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Contact</h2>
-          <p>Send: industry + city + goal + service (AI / editing / filming / landing page) + material (if you have it).</p>
-        </div>
-      </div>
-
-      <div class="contact">
-        <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Quick setup</h3>
-          <p class="lead" style="margin:0 0 14px;">
-            Send a message with:<br/>
-            <b>1)</b> what you sell + goal (messages/calls/visits)<br/>
-            <b>2)</b> city + contact<br/>
-            <b>3)</b> service: AI / editing / filming / landing page<br/>
-            <b>4)</b> length (for video) or “suggest”
-          </p>
-
-          <div class="divider"></div>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#work">🎥 Work</a>
-            <a class="btn" href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener">🔎 Google</a>
-            <a class="btn primary" href="tel:+381691508197">Call: +381 69 150 8197</a>
-          </div>
-
-          <p class="small-muted" style="margin-top:10px;">
-            Fastest: click “Call” and tell the industry + goal + what service you want.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <h3 style="margin:0 0 10px;">Contact form</h3>
-          <p class="tiny" style="margin:0 0 14px;">
-            This form opens your email app (mailto). Simple and reliable for a static site.
-          </p>
-
-          <form id="leadForm">
-            <div class="form-row">
-              <div>
-                <label for="name">Full name</label>
-                <input id="name" name="name" type="text" placeholder="e.g. Emil" required />
-              </div>
-              <div>
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="e.g. +381 6x xxx xxxx" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div>
-                <label for="city">City</label>
-                <input id="city" name="city" type="text" placeholder="e.g. Subotica" />
-              </div>
-              <div>
-                <label for="package">Service</label>
-                <select id="package" name="package">
-                  <option value="AI Hook ad (1 €/second)">AI Hook ad (1 €/second)</option>
-                  <option value="Editing an ad from your footage">Editing an ad from your footage</option>
-                  <option value="On-site filming (30 €)">On-site filming (30 €)</option>
-                  <option value="Landing page / Website (50 €)">Landing page / Website (50 €)</option>
-                  <option value="Not sure — suggest">Not sure — suggest</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="profile">Link (optional: website / IG / FB / product)</label>
-              <input id="profile" name="profile" type="url" placeholder="https://..." />
-            </div>
-
-            <div>
-              <label for="message">Message (goal + service + material + desired length)</label>
-              <textarea id="message" name="message" placeholder="e.g. I need a landing page for a car wash in Novi Sad. Goal: more calls. I have a logo and FB/IG."></textarea>
-            </div>
-
-            <button class="btn primary" type="submit">Send inquiry</button>
-            <div class="tiny">Clicking “Send inquiry” opens your email app with a prepared message.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div style="display:flex; gap:12px; align-items:flex-start;">
-          <span class="logo" aria-hidden="true"></span>
-          <div>
-            <div style="font-weight:950;">Silverado.pro</div>
-            <div class="tiny">Video ads • On-site filming • Landing pages • Ad-ready</div>
-            <div class="tiny">© <span id="year"></span> All rights reserved.</div>
-          </div>
-        </div>
-
-        <div class="tiny">
-          <b>Quick links</b><br/>
-          <a href="#services">Services</a> •
-          <a href="#work">Work</a> •
-          <a href="#details">Details</a> •
-          <a href="#pricing">Pricing</a> •
-          <a href="#process">Process</a> •
-          <a href="#faq">FAQ</a> •
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="tiny">
-          <b>Contact</b><br/>
-          Email: <a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a><br/>
-          Phone: <a href="tel:+381691508197">+381 69 150 8197</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function openViberChat(e){
-      try{ e.preventDefault(); }catch(_){}
-      const deepLink = "viber://chat?number=%2B381691508197";
-      const fallbackWeb = "https://viber.me/+381691508197";
-      window.location.href = deepLink;
-      setTimeout(function(){
-        if (!document.hidden) window.location.href = fallbackWeb;
-      }, 900);
-      return false;
-    }
-
-    const form = document.getElementById("leadForm");
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const city = document.getElementById("city").value.trim();
-      const pkg = document.getElementById("package").value;
-      const profile = document.getElementById("profile").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const toEmail = "emileros1971@gmail.com";
-      const subject = encodeURIComponent("Inquiry — Silverado.pro (AI / editing / filming / landing page)");
-      const body = encodeURIComponent(
-        "NAME: " + name + "\n" +
-        "PHONE: " + phone + "\n" +
-        "CITY: " + (city || "-") + "\n" +
-        "SERVICE: " + pkg + "\n" +
-        "LINK (optional): " + (profile || "-") + "\n\n" +
-        "MESSAGE:\n" + (message || "-")
-      );
-
-      window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + body;
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
