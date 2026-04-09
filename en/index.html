@@ -11,7 +11,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Silverado.pro — Video ads, on-location filming and modern landing pages. Fast, modern, ready for Meta and Instagram ads." />
+  <meta name="description" content="Silverado.pro — Video ads, on-location filming and modern landing page websites." />
   <meta name="theme-color" content="#f7f2ea" />
   <title>Silverado.pro — Video Ads + Landing Pages</title>
 
@@ -25,7 +25,7 @@
       --parch:    #e5dcc8;
       --ink:      #18140d;
       --ink2:     #2a2318;
-      --smoke:    #6b6358;
+      --smoke:    #3d3830;
       --amber:    #b87830;
       --amber2:   #d4923e;
       --wheat:    #e8c97a;
@@ -43,6 +43,8 @@
       background: var(--ivory);
       color: var(--ink);
       overflow-x: hidden;
+      font-size: 18px;
+      font-weight: 400;
     }
 
     body::before {
@@ -55,7 +57,7 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* NAV */
+    /* ═══ NAV ═══ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       padding: 18px 52px;
@@ -64,6 +66,7 @@
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
+
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem; font-weight: 900;
@@ -79,13 +82,15 @@
       0%,100% { box-shadow: 0 0 6px rgba(184,120,48,0.4); }
       50%      { box-shadow: 0 0 16px rgba(184,120,48,0.8); }
     }
+
     .nav-links { display: flex; gap: 26px; list-style: none; }
     .nav-links a {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--smoke); transition: color 0.3s;
+      font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink2); font-weight: 600; transition: color 0.3s;
     }
-    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover { color: var(--amber); }
+
     .btn-nav {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
@@ -95,7 +100,7 @@
     }
     .btn-nav:hover { background: var(--rust); }
 
-    /* HERO */
+    /* ═══ HERO ═══ */
     .hero {
       min-height: 100vh;
       background: var(--cream);
@@ -103,6 +108,7 @@
       display: flex; align-items: center;
       overflow: hidden;
     }
+
     .hero-texture {
       position: absolute; inset: 0; z-index: 0;
       background:
@@ -111,6 +117,7 @@
         repeating-linear-gradient(88deg, transparent 0px, transparent 48px, rgba(24,20,13,0.018) 48px, rgba(24,20,13,0.018) 49px),
         repeating-linear-gradient(178deg, transparent 0px, transparent 72px, rgba(24,20,13,0.012) 72px, rgba(24,20,13,0.012) 73px);
     }
+
     .hero-wm {
       position: absolute; right: -60px; top: 50%;
       transform: translateY(-50%);
@@ -121,16 +128,19 @@
       line-height: 1; pointer-events: none; z-index: 1;
       user-select: none; white-space: nowrap;
     }
+
     .hero-content {
       position: relative; z-index: 3;
       padding: 120px 80px 80px;
       max-width: 800px;
       animation: riseIn 1.2s cubic-bezier(0.16,1,0.3,1) both;
     }
+
     @keyframes riseIn {
       from { opacity: 0; transform: translateY(44px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
     .hero-eyebrow {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.76rem; letter-spacing: 0.52em; text-transform: uppercase;
@@ -139,6 +149,7 @@
       animation: riseIn 1.2s 0.07s both;
     }
     .hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--amber); }
+
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(3.2rem, 7.5vw, 6.8rem);
@@ -147,31 +158,36 @@
       animation: riseIn 1.2s 0.13s both;
     }
     .hero-title em { font-style: italic; color: var(--amber); display: block; }
+
     .hero-sub {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 1.9vw, 1.45rem);
-      font-weight: 300; color: var(--smoke);
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      font-weight: 500; color: var(--ink2);
       line-height: 1.68; max-width: 540px;
       margin: 26px 0 44px;
       animation: riseIn 1.2s 0.19s both;
     }
-    .hero-sub strong { color: var(--ink); font-weight: 400; }
+    .hero-sub strong { color: var(--ink); font-weight: 600; }
+
     .hero-prices {
       display: flex; flex-wrap: wrap; gap: 3px;
       margin-bottom: 40px;
       animation: riseIn 1.2s 0.25s both;
     }
     .hp-pill {
-      background: #fff; border: 1px solid var(--line2);
+      background: #fff;
+      border: 1px solid var(--line2);
       padding: 11px 20px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.9rem; color: var(--smoke);
     }
     .hp-pill strong { color: var(--amber); font-family: 'Playfair Display', serif; }
+
     .hero-ctas {
       display: flex; gap: 12px; flex-wrap: wrap;
       animation: riseIn 1.2s 0.31s both;
     }
+
     .btn-primary {
       display: inline-flex; align-items: center; gap: 9px;
       background: var(--amber); color: #fff;
@@ -179,26 +195,32 @@
       font-size: 0.9rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
       padding: 15px 34px; border: none; cursor: pointer;
       clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-      transition: background 0.3s, letter-spacing 0.3s; text-decoration: none;
+      transition: background 0.3s, letter-spacing 0.3s;
+      text-decoration: none;
     }
     .btn-primary:hover { background: var(--rust); letter-spacing: 0.28em; }
+
     .btn-outline {
       display: inline-flex; align-items: center; gap: 9px;
-      border: 1px solid var(--line2); color: var(--ink);
+      border: 1px solid var(--line2);
+      color: var(--ink);
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase;
       padding: 14px 32px; transition: border-color 0.3s, background 0.3s;
       text-decoration: none; background: transparent;
     }
     .btn-outline:hover { border-color: var(--amber); background: rgba(184,120,48,0.05); }
+
     .btn-viber {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--viber); color: #fff;
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 14px 26px; transition: background 0.3s; text-decoration: none;
+      padding: 14px 26px; transition: background 0.3s;
+      text-decoration: none;
     }
     .btn-viber:hover { background: #5b46f0; }
+
     .hero-scroll {
       position: absolute; bottom: 44px; right: 60px; z-index: 3;
       writing-mode: vertical-rl;
@@ -217,12 +239,13 @@
       50%      { opacity: 0.8; transform: scaleY(1.3); }
     }
 
-    /* AMBER STRIP */
+    /* ═══ AMBER STRIP ═══ */
     .amber-strip { background: var(--amber); display: flex; flex-wrap: wrap; }
     .as-item {
       flex: 1; min-width: 180px; padding: 18px 30px;
       border-right: 1px solid rgba(255,255,255,0.2);
-      display: flex; align-items: center; gap: 11px; transition: background 0.3s;
+      display: flex; align-items: center; gap: 11px;
+      transition: background 0.3s;
     }
     .as-item:last-child { border-right: none; }
     .as-item:hover { background: var(--amber2); }
@@ -230,9 +253,115 @@
     .as-lbl { font-family: 'Cormorant Garamond', serif; font-size: 0.84rem; color: rgba(255,255,255,0.75); }
     .as-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; }
 
-    /* SHARED */
+    /* ═══ PORTFOLIO SHOWCASE ═══ */
+    .portfolio-sec {
+      background: var(--ivory);
+      padding: 100px 60px;
+      position: relative; overflow: hidden;
+    }
+    .portfolio-sec::before {
+      content: 'WEBSITES';
+      position: absolute; right: -30px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(8rem, 14vw, 13rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04);
+      line-height: 1; pointer-events: none; white-space: nowrap; z-index: 0;
+    }
+
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 3px; position: relative; z-index: 1;
+    }
+
+    .site-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-top: 3px solid transparent;
+      transition: border-top-color 0.35s, transform 0.35s, box-shadow 0.35s;
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .site-card:hover { border-top-color: var(--amber); transform: translateY(-6px); box-shadow: 0 20px 52px rgba(24,20,13,0.12); }
+
+    .site-preview { position: relative; background: #2a2318; flex-shrink: 0; }
+
+    .browser-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 14px;
+      background: #1e1810;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .bb-dots { display: flex; gap: 5px; }
+    .bb-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .bb-dot.red { background: #ff5f57; }
+    .bb-dot.yel { background: #febc2e; }
+    .bb-dot.grn { background: #28c840; }
+    .bb-url {
+      flex: 1; background: rgba(255,255,255,0.08); border-radius: 3px;
+      padding: 4px 10px; font-family: 'Crimson Pro', serif;
+      font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.02em;
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+
+    .preview-frame {
+      position: relative; width: 100%; height: 0; padding-top: 62%;
+      overflow: hidden; background: var(--parch);
+    }
+    .preview-frame iframe {
+      position: absolute; top: 0; left: 0;
+      width: 200%; height: 200%;
+      transform: scale(0.5); transform-origin: top left;
+      border: none; pointer-events: none;
+    }
+
+    .preview-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(24,20,13,0); transition: background 0.35s;
+      z-index: 2; cursor: pointer; text-decoration: none;
+    }
+    .site-card:hover .preview-overlay { background: rgba(24,20,13,0.42); }
+    .overlay-cta {
+      opacity: 0; transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem; letter-spacing: 0.28em; text-transform: uppercase;
+      padding: 11px 22px; display: flex; align-items: center; gap: 8px;
+    }
+    .site-card:hover .overlay-cta { opacity: 1; transform: translateY(0); }
+
+    .site-body { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+    .site-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.66rem; letter-spacing: 0.36em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .site-tag::before { content: ''; width: 20px; height: 1px; background: var(--amber); opacity: 0.6; }
+    .site-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .site-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink2); line-height: 1.65; flex: 1; margin-bottom: 20px; }
+    .site-price {
+      display: inline-block; font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--amber);
+      border-top: 1px solid var(--line); padding-top: 12px; margin-top: 14px; width: 100%;
+    }
+    .site-visit {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ink); color: #f5efe4;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase;
+      padding: 12px 20px; border: 1px solid transparent;
+      transition: background 0.3s, color 0.3s; text-decoration: none; align-self: flex-start;
+    }
+    .site-visit:hover { background: var(--amber); color: #fff; }
+    .site-visit svg { flex-shrink: 0; }
+
+    /* ═══ SHARED ═══ */
     .sec { padding: 100px 60px; }
     .sec-inner { max-width: 1200px; margin: 0 auto; }
+
     .sec-lbl {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.74rem; letter-spacing: 0.5em; text-transform: uppercase;
@@ -240,27 +369,18 @@
       display: flex; align-items: center; gap: 12px;
     }
     .sec-lbl::before { content: ''; width: 30px; height: 1px; background: var(--amber); opacity: 0.7; }
-    .sec-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.9rem, 3.8vw, 3rem);
-      font-weight: 700; color: var(--ink); margin-bottom: 12px;
-    }
+
+    .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 3.8vw, 3rem); font-weight: 700; color: var(--ink); margin-bottom: 12px; }
     .sec-title em { font-style: italic; color: var(--amber); }
-    .sec-body {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.16rem; font-weight: 300;
-      color: var(--smoke); line-height: 1.75;
-      max-width: 540px; margin-bottom: 52px;
-    }
+
+    .sec-body { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--ink2); line-height: 1.75; max-width: 540px; margin-bottom: 52px; }
+
     .divider { width: 48px; height: 2px; background: var(--amber); margin: 16px 0 28px; }
 
-    /* VIDEOS */
-    .videos-sec {
-      background: var(--ink); padding: 100px 60px;
-      position: relative; overflow: hidden;
-    }
+    /* ═══ VIDEOS ═══ */
+    .videos-sec { background: var(--ink); padding: 100px 60px; position: relative; overflow: hidden; }
     .videos-sec .sec-title { color: #f5efe4; }
-    .videos-sec .sec-body { color: rgba(245,239,228,0.5); }
+    .videos-sec .sec-body { color: rgba(245,239,228,0.7); }
     .videos-sec::after {
       content: 'WORK';
       position: absolute; right: -40px; bottom: -50px;
@@ -270,141 +390,75 @@
       color: rgba(245,239,228,0.03);
       line-height: 1; pointer-events: none; white-space: nowrap;
     }
+
     .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
     .video-cell { border: 1px solid rgba(255,255,255,0.06); overflow: hidden; transition: border-color 0.3s; }
     .video-cell:hover { border-color: var(--amber); }
     .video-wrap { position: relative; padding-top: 56.25%; background: rgba(255,255,255,0.02); }
     .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-    /* SERVICES */
+    /* ═══ SERVICES ═══ */
     .services-sec { background: var(--ivory); padding: 100px 60px; }
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
-    .svc-card {
-      background: var(--cream); padding: 38px 28px;
-      border-top: 3px solid transparent;
-      transition: border-top-color 0.3s, background 0.3s, transform 0.3s;
-    }
+
+    .svc-card { background: var(--cream); padding: 38px 28px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; transition: border-top-color 0.3s, background 0.3s, transform 0.3s; }
     .svc-card:hover { border-top-color: var(--amber); background: #fff; transform: translateY(-4px); }
-    .svc-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem; font-style: italic;
-      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 14px;
-    }
+    .svc-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-style: italic; color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 14px; }
     .svc-icon { font-size: 1.9rem; margin-bottom: 12px; display: block; }
     .svc-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 8px; }
-    .svc-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; color: var(--smoke); line-height: 1.65; }
-    .svc-price {
-      margin-top: 14px;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.95rem; font-weight: 700; color: var(--amber);
-      border-top: 1px solid var(--line); padding-top: 12px;
-    }
+    .svc-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.65; }
+    .svc-price { margin-top: 14px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--amber); border-top: 1px solid var(--line); padding-top: 12px; }
 
-    /* PRICING */
-    .pricing-sec {
-      background: var(--parch); padding: 100px 60px;
-      position: relative; overflow: hidden;
-    }
+    /* ═══ PRICING ═══ */
+    .pricing-sec { background: var(--parch); padding: 100px 60px; position: relative; overflow: hidden; }
     .pricing-sec::before {
       content: 'PRICE';
       position: absolute; left: -20px; top: 50%;
       transform: translateY(-50%) rotate(-90deg);
       font-family: 'Playfair Display', serif;
       font-size: 18vw; font-weight: 900; font-style: italic;
-      color: rgba(24,20,13,0.04); white-space: nowrap;
-      pointer-events: none; line-height: 1;
+      color: rgba(24,20,13,0.04); white-space: nowrap; pointer-events: none; line-height: 1;
     }
-    .pricing-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
-      position: relative; z-index: 1;
-    }
-    .plan-card {
-      background: #fff; border: 1px solid var(--line);
-      padding: 42px 34px; position: relative;
-      border-top: 3px solid transparent;
-      transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; position: relative; z-index: 1; }
+
+    .plan-card { background: #fff; border: 1px solid var(--line); padding: 42px 34px; position: relative; border-top: 3px solid transparent; transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s; }
     .plan-card:hover { border-top-color: var(--amber); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(24,20,13,0.1); }
     .plan-card.featured { border-top-color: var(--amber); }
-    .plan-badge {
-      display: inline-block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: #fff; background: var(--amber);
-      padding: 4px 12px; margin-bottom: 16px;
-    }
-    .plan-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.76rem; letter-spacing: 0.38em; text-transform: uppercase;
-      color: var(--smoke); margin-bottom: 10px;
-    }
-    .plan-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem; font-weight: 900; color: var(--ink);
-      line-height: 1; margin-bottom: 4px;
-    }
-    .plan-per { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--smoke); margin-bottom: 26px; }
+    .plan-badge { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; background: var(--amber); padding: 4px 12px; margin-bottom: 16px; }
+    .plan-name { font-family: 'Cormorant Garamond', serif; font-size: 0.82rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink2); font-weight: 600; margin-bottom: 10px; }
+    .plan-price { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+    .plan-per { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: var(--ink2); margin-bottom: 26px; }
+
     .plan-feats { list-style: none; display: flex; flex-direction: column; }
-    .plan-feats li {
-      display: flex; gap: 12px; align-items: flex-start;
-      padding: 13px 0; border-bottom: 1px solid var(--line);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.98rem; color: var(--smoke); line-height: 1.5;
-    }
+    .plan-feats li { display: flex; gap: 12px; align-items: flex-start; padding: 13px 0; border-bottom: 1px solid var(--line); font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink2); line-height: 1.5; }
     .plan-feats li:last-child { border-bottom: none; }
-    .pf-chk {
-      width: 20px; height: 20px; flex-shrink: 0;
-      border: 1px solid rgba(184,120,48,0.45);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--amber); font-size: 0.76rem; margin-top: 2px;
-    }
+    .pf-chk { width: 20px; height: 20px; flex-shrink: 0; border: 1px solid rgba(184,120,48,0.45); display: flex; align-items: center; justify-content: center; color: var(--amber); font-size: 0.76rem; margin-top: 2px; }
     .plan-cta { margin-top: 26px; display: flex; flex-direction: column; gap: 9px; }
 
-    /* PROCESS */
+    /* ═══ PROCESS ═══ */
     .process-sec { background: var(--cream); padding: 100px 60px; }
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
-    .step-card {
-      background: var(--ivory); padding: 38px 26px;
-      border-left: 3px solid transparent;
-      transition: border-left-color 0.3s, background 0.3s;
-    }
+    .step-card { background: var(--ivory); padding: 38px 26px; border-left: 3px solid transparent; transition: border-left-color 0.3s, background 0.3s; }
     .step-card:hover { border-left-color: var(--amber); background: #fff; }
-    .step-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.8rem; font-style: italic; font-weight: 900;
-      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 18px;
-    }
+    .step-num { font-family: 'Playfair Display', serif; font-size: 3.8rem; font-style: italic; font-weight: 900; color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 18px; }
     .step-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
-    .step-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; color: var(--smoke); line-height: 1.65; }
+    .step-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.65; }
 
-    /* FAQ */
+    /* ═══ FAQ ═══ */
     .faq-sec { background: var(--ivory); padding: 100px 60px; }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
-    .faq-item {
-      background: var(--cream); border: 1px solid var(--line);
-      padding: 28px 26px; cursor: pointer; transition: background 0.3s;
-      border-bottom: 2px solid transparent;
-    }
+    .faq-item { background: var(--cream); border: 1px solid var(--line); padding: 28px 26px; cursor: pointer; transition: background 0.3s; border-bottom: 2px solid transparent; }
     .faq-item:hover { background: #fff; }
     .faq-item.open { background: #fff; border-bottom-color: var(--amber); }
-    .faq-q {
-      font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink);
-      display: flex; justify-content: space-between; align-items: center; gap: 14px;
-    }
+    .faq-q { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 14px; }
     .faq-arrow { font-size: 1.1rem; color: var(--amber); transition: transform 0.3s; flex-shrink: 0; }
     .faq-item.open .faq-arrow { transform: rotate(45deg); }
-    .faq-a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.98rem; color: var(--smoke); line-height: 1.7;
-      margin-top: 12px; display: none;
-    }
+    .faq-a { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.7; margin-top: 12px; display: none; }
     .faq-item.open .faq-a { display: block; }
 
-    /* CONTACT */
-    .contact-sec {
-      background: var(--parch); padding: 100px 60px;
-      position: relative; overflow: hidden;
-    }
+    /* ═══ CONTACT ═══ */
+    .contact-sec { background: var(--parch); padding: 100px 60px; position: relative; overflow: hidden; }
     .contact-sec::after {
       content: 'CONTACT';
       position: absolute; right: -30px; bottom: -40px;
@@ -414,104 +468,62 @@
       color: rgba(24,20,13,0.04);
       line-height: 1; pointer-events: none; white-space: nowrap;
     }
-    .contact-inner {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
-      position: relative; z-index: 1;
-    }
-    .ci-row {
-      display: flex; gap: 14px; align-items: flex-start;
-      padding: 18px 0; border-bottom: 1px solid var(--line);
-    }
+
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; position: relative; z-index: 1; }
+
+    .ci-row { display: flex; gap: 14px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line); }
     .ci-row:last-child { border-bottom: none; }
-    .ci-icon {
-      width: 38px; height: 38px;
-      background: rgba(184,120,48,0.1); border: 1px solid rgba(184,120,48,0.22);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
-    }
-    .ci-lbl {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--amber); display: block; margin-bottom: 3px;
-    }
+    .ci-icon { width: 38px; height: 38px; background: rgba(184,120,48,0.1); border: 1px solid rgba(184,120,48,0.22); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .ci-lbl { font-family: 'Cormorant Garamond', serif; font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 3px; }
     .ci-val { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--ink); }
     .ci-val a { color: inherit; }
     .ci-val a:hover { color: var(--amber); }
+
     .contact-form { background: #fff; border: 1px solid var(--line); padding: 44px 40px; }
     .form-title { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: var(--ink); margin-bottom: 6px; }
     .form-title em { font-style: italic; color: var(--amber); }
     .form-sub { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: var(--smoke); margin-bottom: 28px; line-height: 1.6; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
     .form-full { margin-bottom: 12px; }
-    label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--amber); display: block; margin-bottom: 6px;
-    }
-    input, textarea, select {
-      width: 100%; background: var(--ivory);
-      border: 1px solid var(--line2); color: var(--ink);
-      font-family: 'Crimson Pro', serif; font-size: 1rem;
-      padding: 11px 14px; outline: none; transition: border-color 0.3s;
-    }
+
+    label { font-family: 'Cormorant Garamond', serif; font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 6px; }
+    input, textarea, select { width: 100%; background: var(--ivory); border: 1px solid var(--line2); color: var(--ink); font-family: 'Crimson Pro', serif; font-size: 1rem; padding: 11px 14px; outline: none; transition: border-color 0.3s; }
     input:focus, textarea:focus, select:focus { border-color: var(--amber); background: #fff; }
     select option { background: #fff; color: var(--ink); }
     textarea { min-height: 110px; resize: vertical; }
-    .btn-submit {
-      display: block; width: 100%;
-      background: var(--amber); color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
-      padding: 16px 28px; border: none; cursor: pointer;
-      transition: background 0.3s; text-align: center;
-    }
-    .btn-submit:hover { background: var(--rust); }
-    .form-note {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center; font-style: italic;
-    }
 
-    /* FOOTER */
-    footer {
-      background: var(--ink); padding: 36px 52px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 14px;
-    }
+    .btn-submit { display: block; width: 100%; background: var(--amber); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; padding: 16px 28px; border: none; cursor: pointer; transition: background 0.3s; text-align: center; }
+    .btn-submit:hover { background: var(--rust); }
+    .form-note { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center; font-style: italic; }
+
+    /* ═══ FOOTER ═══ */
+    footer { background: var(--ink); padding: 36px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
     .f-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 900; color: rgba(245,239,228,0.35); letter-spacing: 0.1em; }
     .f-links { display: flex; gap: 18px; flex-wrap: wrap; }
-    .f-links a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: rgba(245,239,228,0.35); transition: color 0.3s;
-    }
+    .f-links a { font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,239,228,0.35); transition: color 0.3s; }
     .f-links a:hover { color: var(--wheat); }
     .f-copy { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; color: rgba(245,239,228,0.28); }
 
-    /* lang toggle */
-    .lang-toggle {
-      position: fixed; top: 18px; right: 18px; z-index: 9999;
-      padding: 7px 14px; background: var(--amber); color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase;
-      font-weight: 700; text-decoration: none; transition: background 0.3s;
-    }
+    .lang-toggle { position: fixed; top: 18px; right: 18px; z-index: 9999; padding: 7px 14px; background: var(--amber); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: background 0.3s; }
     .lang-toggle:hover { background: var(--rust); }
 
-    /* RESPONSIVE */
+    /* ═══ RESPONSIVE ═══ */
     @media (max-width: 1000px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
       .hero-content { padding: 100px 28px 60px; }
       .sec, .videos-sec, .services-sec, .pricing-sec,
-      .process-sec, .faq-sec, .contact-sec { padding-left: 28px; padding-right: 28px; }
+      .process-sec, .faq-sec, .contact-sec, .portfolio-sec { padding-left: 28px; padding-right: 28px; }
       .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr 1fr; }
       .faq-grid, .contact-inner { grid-template-columns: 1fr; }
       .video-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
       footer { flex-direction: column; text-align: center; }
     }
     @media (max-width: 600px) {
       .hero-title { font-size: 2.8rem; }
       .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .hero-ctas, .hero-prices { flex-direction: column; }
       .amber-strip { flex-direction: column; }
@@ -530,6 +542,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
+    <li><a href="#websites">Websites</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#process">Process</a></li>
@@ -556,9 +569,9 @@
     </p>
 
     <div class="hero-prices">
-      <div class="hp-pill">AI ad — <strong>~€1/sec</strong></div>
-      <div class="hp-pill">On-location filming — <strong>~€30 flat</strong></div>
-      <div class="hp-pill">Landing page — <strong>~€50</strong></div>
+      <div class="hp-pill">AI ad — <strong>$1.20/sec</strong></div>
+      <div class="hp-pill">On-location filming — <strong>$35</strong></div>
+      <div class="hp-pill">Landing page — <strong>from $60</strong></div>
     </div>
 
     <div class="hero-ctas">
@@ -578,55 +591,152 @@
 
 <!-- AMBER STRIP -->
 <div class="amber-strip">
-  <div class="as-item"><span class="as-icon">🤖</span><div><div class="as-lbl">AI Hook Ad</div><div class="as-price">~€1 / second</div></div></div>
-  <div class="as-item"><span class="as-icon">✂️</span><div><div class="as-lbl">Edit from your footage</div><div class="as-price">Price on request</div></div></div>
-  <div class="as-item"><span class="as-icon">🎥</span><div><div class="as-lbl">On-location filming</div><div class="as-price">~€30 flat rate</div></div></div>
-  <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Landing page / Website</div><div class="as-price">~€50</div></div></div>
+  <div class="as-item"><span class="as-icon">🤖</span><div><div class="as-lbl">AI Hook Ad</div><div class="as-price">$1.20 / second</div></div></div>
+  <div class="as-item"><span class="as-icon">✂️</span><div><div class="as-lbl">Editing from your footage</div><div class="as-price">Price on request</div></div></div>
+  <div class="as-item"><span class="as-icon">🎥</span><div><div class="as-lbl">On-location filming</div><div class="as-price">$35 flat</div></div></div>
+  <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Landing page / Website</div><div class="as-price">from $60</div></div></div>
 </div>
+
+<!-- PORTFOLIO / WEBSITES SHOWCASE -->
+<section class="portfolio-sec" id="websites">
+  <div class="sec-inner">
+    <p class="sec-lbl">Website Examples</p>
+    <h2 class="sec-title">Three types of website — <em>see them live</em></h2>
+    <div class="divider"></div>
+    <p class="sec-body" style="margin-bottom:44px;">From a simple landing page to a web shop and online ordering for hospitality — every site is built fast, modern and fully mobile-friendly.</p>
+
+    <div class="portfolio-grid">
+
+      <!-- Card 1: Simple landing -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">cistmiris.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://www.cistmiris.online" loading="lazy" scrolling="no" title="cistmiris.online preview"></iframe>
+            <a class="preview-overlay" href="https://www.cistmiris.online" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Simple Landing Page</p>
+          <p class="site-name">Čist Miris</p>
+          <p class="site-desc">A clean, modern site for presenting a service or brand. Perfect for local businesses that need a clear online presence with contact details and an offer.</p>
+          <p class="site-price">$60 <span style="font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-weight:400;color:var(--smoke);display:block;margin-top:3px;">✓ All inclusive — design + domain + hosting (1 year)</span></p>
+          <a class="site-visit" href="https://www.cistmiris.online" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit www.cistmiris.online
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Webshop -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">lipanamestaj.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://www.lipanamestaj.online" loading="lazy" scrolling="no" title="lipanamestaj.online preview"></iframe>
+            <a class="preview-overlay" href="https://www.lipanamestaj.online" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Web Shop · Product Showcase</p>
+          <p class="site-name">Lipa Nameštaj</p>
+          <p class="site-desc">A site with a full product and collection display — ideal for shops, craftsmen and brands that want to showcase their range and attract customers online.</p>
+          <p class="site-price">$150 <span style="font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-weight:400;color:var(--smoke);display:block;margin-top:3px;">✓ All inclusive — design + domain + hosting (1 year)</span></p>
+          <a class="site-visit" href="https://www.lipanamestaj.online" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit www.lipanamestaj.online
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: HoReCa online ordering -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">route66subotica.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://www.route66subotica.online" loading="lazy" scrolling="no" title="route66subotica.online preview"></iframe>
+            <a class="preview-overlay" href="https://www.route66subotica.online" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">HoReCa · Online Ordering</p>
+          <p class="site-name">Route 66 Subotica</p>
+          <p class="site-desc">A site for a café, restaurant or bar — guests order directly via phone and app, no hassle. Modern.</p>
+          <p class="site-price">$180 <span style="font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-weight:400;color:var(--smoke);display:block;margin-top:3px;">✓ All inclusive — design + domain + hosting (1 year)</span></p>
+          <a class="site-visit" href="https://www.route66subotica.online" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit www.route66subotica.online
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:36px; text-align:center;">
+      <a href="#contact" class="btn-primary" style="display:inline-flex;">Order your website — from $60 →</a>
+    </div>
+  </div>
+</section>
 
 <!-- VIDEOS -->
 <section class="videos-sec" id="work">
   <div class="sec-inner">
-    <p class="sec-lbl" style="color:var(--wheat);">Portfolio</p>
+    <p class="sec-lbl" style="color:var(--wheat);">Work Examples</p>
     <h2 class="sec-title" style="color:#f5efe4;">See <em style="color:var(--wheat);">what we do</em></h2>
     <div class="divider"></div>
     <p class="sec-body">10 clips — different styles for different industries and products.</p>
 
     <div class="video-grid">
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1" title="Silverado video 1" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1" title="Silverado video 2" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1" title="Silverado video 3" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1" title="Silverado video 4" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1" title="Silverado video 5" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1" title="Silverado video 6" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1" title="Silverado video 7" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1" title="Silverado video 8" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1" title="Silverado video 9" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1" title="Silverado video 10" allowfullscreen></iframe>
-      </div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1" title="Silverado video 1" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1" title="Silverado video 2" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1" title="Silverado video 3" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1" title="Silverado video 4" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1" title="Silverado video 5" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1" title="Silverado video 6" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1" title="Silverado video 7" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1" title="Silverado video 8" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1" title="Silverado video 9" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1" title="Silverado video 10" allowfullscreen></iframe></div></div>
     </div>
 
     <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
-      <a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener" class="btn-outline" style="color:#f5efe4; border-color:rgba(245,239,228,0.25);">🔎 Google: Emil Eros</a>
+      <a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener" class="btn-outline" style="color:#f5efe4; border-color:rgba(245,239,228,0.25);">🔎 Google: Emil Eros video</a>
       <a href="tel:+381691508197" class="btn-primary">📞 Call: +381 69 150 8197</a>
     </div>
   </div>
@@ -638,35 +748,30 @@
     <p class="sec-lbl">Our Services</p>
     <h2 class="sec-title">Four ways to <em>grow</em></h2>
     <div class="divider"></div>
-
     <div class="services-grid">
       <div class="svc-card">
-        <p class="svc-num">01</p>
-        <span class="svc-icon">🤖</span>
-        <p class="svc-name">AI "Hook" Ads</p>
-        <p class="svc-desc">Short, scroll-stopping clips (8–15s) for ads and Reels. One photo or a brief description is enough — not even required.</p>
-        <p class="svc-price">~€1 / second</p>
+        <p class="svc-num">01</p><span class="svc-icon">🤖</span>
+        <p class="svc-name">AI Hook Ads</p>
+        <p class="svc-desc">Short, scroll-stopping clips (8–15s) for ads and Reels. Just one photo or a brief description is enough — not required.</p>
+        <p class="svc-price">$1.20 / second</p>
       </div>
       <div class="svc-card">
-        <p class="svc-num">02</p>
-        <span class="svc-icon">✂️</span>
+        <p class="svc-num">02</p><span class="svc-icon">✂️</span>
         <p class="svc-name">Editing from Your Footage</p>
-        <p class="svc-desc">You shoot with your phone — we edit a dynamic ad with effects, subtitles and pacing ready for social media.</p>
+        <p class="svc-desc">Send clips from your phone — we edit a dynamic ad with effects, subtitles and the right pace for social media.</p>
         <p class="svc-price">Price on request</p>
       </div>
       <div class="svc-card">
-        <p class="svc-num">03</p>
-        <span class="svc-icon">🎥</span>
+        <p class="svc-num">03</p><span class="svc-icon">🎥</span>
         <p class="svc-name">On-Location Filming</p>
-        <p class="svc-desc">We come to your premises and shoot real footage (no AI). Around 1 hour of filming + 3 finished formats: ad, feed and documentary clip.</p>
-        <p class="svc-price">~€30 flat rate</p>
+        <p class="svc-desc">We come to your venue and film real footage. About 1 hour of shooting + 3 finished formats: ad, feed and documentary clip.</p>
+        <p class="svc-price">$35 flat</p>
       </div>
       <div class="svc-card">
-        <p class="svc-num">04</p>
-        <span class="svc-icon">🌐</span>
+        <p class="svc-num">04</p><span class="svc-icon">🌐</span>
         <p class="svc-name">Landing Page / Website</p>
-        <p class="svc-desc">A modern landing page ready for business in 2026. Fast, clean, mobile-first, with a clear call to action.</p>
-        <p class="svc-price">~€50</p>
+        <p class="svc-desc">A modern website ready for business in 2026. Fast, clean, mobile-first, with a clear call to action.</p>
+        <p class="svc-price">from $60</p>
       </div>
     </div>
   </div>
@@ -678,31 +783,30 @@
     <p class="sec-lbl">Pricing</p>
     <h2 class="sec-title">Clear prices, <em>no surprises</em></h2>
     <div class="divider"></div>
-
     <div class="pricing-grid">
       <div class="plan-card featured">
-        <span class="plan-badge">Most popular</span>
+        <span class="plan-badge">Most Popular</span>
         <p class="plan-name">AI Video Ad</p>
-        <div class="plan-price">~€1</div>
-        <p class="plan-per">per second of final video (120 RSD/sec)</p>
+        <div class="plan-price">$1.20</div>
+        <p class="plan-per">per second of finished video</p>
         <ul class="plan-feats">
-          <li><span class="pf-chk">✓</span><span>10s = <strong>~€10</strong> · 15s = <strong>~€15</strong> · 30s = <strong>~€30</strong></span></li>
+          <li><span class="pf-chk">✓</span><span>10s = <strong>$12</strong> · 15s = <strong>$18</strong> · 30s = <strong>$36</strong></span></li>
           <li><span class="pf-chk">✓</span><span>9:16 format ready for Reels and Meta Ads</span></li>
           <li><span class="pf-chk">✓</span><span>Hook + clear sales message</span></li>
-          <li><span class="pf-chk">✓</span><span>Brand alignment (logo, colours, style)</span></li>
+          <li><span class="pf-chk">✓</span><span>Brand alignment (logo, colors, style)</span></li>
           <li><span class="pf-chk">✓</span><span>One photo or description is enough — not required</span></li>
         </ul>
         <div class="plan-cta">
           <a href="#contact" class="btn-primary">Order</a>
-          <a href="#work" class="btn-outline">See the work</a>
+          <a href="#work" class="btn-outline">See examples</a>
         </div>
       </div>
 
       <div class="plan-card">
-        <span class="plan-badge">Flat rate</span>
+        <span class="plan-badge">Flat Rate</span>
         <p class="plan-name">On-Location Filming</p>
-        <div class="plan-price">~€30</div>
-        <p class="plan-per">flat rate (3,500 RSD)</p>
+        <div class="plan-price">$35</div>
+        <p class="plan-per">USD · fixed price</p>
         <ul class="plan-feats">
           <li><span class="pf-chk">✓</span><span>~1 hour of real filming (no AI)</span></li>
           <li><span class="pf-chk">✓</span><span>3 formats: <strong>ad</strong>, <strong>feed</strong>, <strong>documentary</strong></span></li>
@@ -718,14 +822,14 @@
       <div class="plan-card">
         <span class="plan-badge">Web</span>
         <p class="plan-name">Landing Page / Website</p>
-        <div class="plan-price">~€50</div>
-        <p class="plan-per">complete page (6,000 RSD)</p>
+        <div class="plan-price">from $60</div>
+        <p class="plan-per">USD · complete site</p>
         <ul class="plan-feats">
-          <li><span class="pf-chk">✓</span><span>Modern, up-to-date design for 2026</span></li>
+          <li><span class="pf-chk">✓</span><span>Modern, up-to-date site for 2026</span></li>
           <li><span class="pf-chk">✓</span><span>Mobile-first + fast loading</span></li>
           <li><span class="pf-chk">✓</span><span>Clear offer + CTA (call / Viber / form)</span></li>
           <li><span class="pf-chk">✓</span><span>Brand alignment included</span></li>
-          <li><span class="pf-chk">✓</span><span>Editing from footage: price by scope</span></li>
+          <li><span class="pf-chk">✓</span><span>Domain + hosting for 1 year included</span></li>
         </ul>
         <div class="plan-cta">
           <a href="#contact" class="btn-primary">Order</a>
@@ -742,26 +846,25 @@
     <p class="sec-lbl">How It Works</p>
     <h2 class="sec-title">4 steps to a <em>finished ad</em></h2>
     <div class="divider"></div>
-
     <div class="process-grid">
       <div class="step-card">
         <p class="step-num">01</p>
         <p class="step-title">Choose a Service</p>
-        <p class="step-desc">AI, editing, on-location filming or landing page. Tell us your industry and goal (more messages, calls, visits).</p>
+        <p class="step-desc">AI, editing, on-location filming or landing page. Tell us your industry + goal (more messages, calls or visits).</p>
       </div>
       <div class="step-card">
         <p class="step-num">02</p>
-        <p class="step-title">Send Material</p>
+        <p class="step-title">Provide Material</p>
         <p class="step-desc">AI: info + optional photo. Editing: your clips. Filming: we come to you. Landing page: text + contact + logo.</p>
       </div>
       <div class="step-card">
         <p class="step-num">03</p>
         <p class="step-title">We Create</p>
-        <p class="step-desc">We produce the ad or page, aligned with your brand, goal and the platform you'll publish on.</p>
+        <p class="step-desc">We build your ad or website, aligned with your brand, goal and the platform it's published on.</p>
       </div>
       <div class="step-card">
         <p class="step-num">04</p>
-        <p class="step-title">Delivery & Publish</p>
+        <p class="step-title">Delivery</p>
         <p class="step-desc">You receive a final ready for publishing and Meta/IG ads — or a live link for your landing page.</p>
       </div>
     </div>
@@ -771,41 +874,40 @@
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="sec-inner">
-    <p class="sec-lbl">FAQ</p>
+    <p class="sec-lbl">Frequently Asked Questions</p>
     <h2 class="sec-title">Short and <em>clear</em></h2>
     <div class="divider"></div>
-
     <div class="faq-grid">
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">Do I need to provide a photo?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Not required. If you have a photo of your shop or product — great. If not, we can work without one by arrangement.</p>
+        <p class="faq-q">Is a photo required?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Not at all. If you have one photo of your shop or product — great. If not, we can work without it by agreement.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">What format will I receive?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Usually 9:16 (Reels/Ads). We can also do 1:1 or 16:9 on request.</p>
+        <p class="faq-q">What format do I get?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Most commonly 9:16 (Reels/Ads). We also do 1:1 or 16:9 on request.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">Can I get an ad made from my own clips?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Yes. You send your clips, we edit the ad with pacing, subtitles, effects and branding.</p>
+        <p class="faq-q">Can I get an ad made from my own footage?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Yes. Send your clips from your phone and we'll edit an ad with pace, subtitles, effects and branding.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">What is on-location filming?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">We come to your location and shoot real footage (no AI) which we use to create ads and clips.</p>
+        <p class="faq-a">We come to your location and film real footage (no AI) which we use for ads and clips.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">How much does on-location filming cost?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">A flat rate of <strong>~€30</strong> — around 1 hour of filming + 3 formats: ad, feed and documentary clip.</p>
+        <p class="faq-a">A flat <strong>$35</strong> — about 1 hour of filming + 3 formats: ad, feed and documentary clip.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">How much does a landing page cost?<span class="faq-arrow">+</span></p>
-        <p class="faq-a"><strong>~€50</strong> per landing page — modern, mobile-friendly and ready for 2026.</p>
+        <p class="faq-a">Starting from <strong>$60</strong> — modern, mobile-ready, built for 2026. Domain and hosting for one year are included.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">How is the AI ad price calculated?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">~€1 per second of the final video. Example: 15 seconds = ~€15 · 30 seconds = ~€30.</p>
+        <p class="faq-a">$1.20 per second of the finished video. Example: 15 seconds = $18 · 30 seconds = $36.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">Not sure what I need?<span class="faq-arrow">+</span></p>
+        <p class="faq-q">Not sure what you need?<span class="faq-arrow">+</span></p>
         <p class="faq-a">Send your profile link + goal (more messages, calls or visits) and we'll suggest the most effective format for you.</p>
       </div>
     </div>
@@ -818,7 +920,6 @@
     <p class="sec-lbl">Contact</p>
     <h2 class="sec-title">Let's talk <em>today</em></h2>
     <div class="divider"></div>
-
     <div class="contact-inner">
       <div>
         <div class="ci-row">
@@ -827,10 +928,7 @@
         </div>
         <div class="ci-row">
           <div class="ci-icon">📲</div>
-          <div>
-            <span class="ci-lbl">Viber</span>
-            <span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span>
-          </div>
+          <div><span class="ci-lbl">Viber</span><span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span></div>
         </div>
         <div class="ci-row">
           <div class="ci-icon">✉️</div>
@@ -840,7 +938,6 @@
           <div class="ci-icon">🔎</div>
           <div><span class="ci-lbl">Google</span><span class="ci-val"><a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank">Search: Emil Eros video</a></span></div>
         </div>
-
         <div style="margin-top:28px; display:flex; flex-direction:column; gap:9px;">
           <a href="tel:+381691508197" class="btn-primary" style="justify-content:center;">📞 Call: +381 69 150 8197</a>
           <a href="viber://chat?number=%2B381691508197" class="btn-viber" style="justify-content:center;" onclick="return openViberChat(event);">
@@ -855,7 +952,6 @@
       <div class="contact-form">
         <h3 class="form-title">Send an <em>enquiry</em></h3>
         <p class="form-sub">Industry + city + goal + service (AI / editing / filming / landing page)</p>
-
         <form id="leadForm">
           <div class="form-row">
             <div><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="e.g. Emil" required /></div>
@@ -866,18 +962,18 @@
             <div>
               <label for="package">Service</label>
               <select id="package" name="package">
-                <option value="AI Hook Ad (~€1/sec)">AI Hook Ad (~€1/sec)</option>
+                <option value="AI Hook Ad ($1.20/sec)">AI Hook Ad ($1.20/sec)</option>
                 <option value="Editing from footage">Editing from footage</option>
-                <option value="On-location filming (~€30)">On-location filming (~€30)</option>
-                <option value="Landing page (~€50)">Landing page (~€50)</option>
-                <option value="Not sure — suggest one">Not sure — suggest one</option>
+                <option value="On-location filming ($35)">On-location filming ($35)</option>
+                <option value="Landing page (from $60)">Landing page (from $60)</option>
+                <option value="Not sure — suggest something">Not sure — suggest something</option>
               </select>
             </div>
           </div>
           <div class="form-full"><label for="profile">Link (optional: website / IG / FB)</label><input id="profile" name="profile" type="url" placeholder="https://..." /></div>
-          <div class="form-full"><label for="message">Message (goal + service + material)</label><textarea id="message" name="message" placeholder="e.g. I need a landing page for a car wash in Novi Sad. Goal: more calls. I have a logo and FB/IG."></textarea></div>
+          <div class="form-full"><label for="message">Message (goal + service + material)</label><textarea id="message" name="message" placeholder="e.g. I need a landing page for a car wash in Novi Sad. Goal: more calls."></textarea></div>
           <button class="btn-submit" type="submit">Send Enquiry →</button>
-          <p class="form-note">Clicking opens your email app with a pre-filled message.</p>
+          <p class="form-note">Clicking opens your email app with the message pre-filled.</p>
         </form>
       </div>
     </div>
@@ -889,6 +985,7 @@
   <p class="f-logo">SILVERADO.PRO</p>
   <div class="f-links">
     <a href="#work">Work</a>
+    <a href="#websites">Websites</a>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="#process">Process</a>
