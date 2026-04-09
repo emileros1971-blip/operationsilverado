@@ -25,7 +25,7 @@
       --parch:    #e5dcc8;
       --ink:      #18140d;
       --ink2:     #2a2318;
-      --smoke:    #6b6358;
+      --smoke:    #3d3830;
       --amber:    #b87830;
       --amber2:   #d4923e;
       --wheat:    #e8c97a;
@@ -43,9 +43,10 @@
       background: var(--ivory);
       color: var(--ink);
       overflow-x: hidden;
+      font-size: 18px;
+      font-weight: 400;
     }
 
-    /* subtle paper texture */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -85,8 +86,8 @@
     .nav-links { display: flex; gap: 26px; list-style: none; }
     .nav-links a {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--smoke); transition: color 0.3s;
+      font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink2); font-weight: 600; transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--ink); }
 
@@ -113,16 +114,8 @@
       background:
         radial-gradient(ellipse 65% 60% at 70% 50%, rgba(184,120,48,0.09) 0%, transparent 65%),
         radial-gradient(ellipse 40% 50% at 8% 20%, rgba(24,20,13,0.04) 0%, transparent 55%),
-        repeating-linear-gradient(
-          88deg,
-          transparent 0px, transparent 48px,
-          rgba(24,20,13,0.018) 48px, rgba(24,20,13,0.018) 49px
-        ),
-        repeating-linear-gradient(
-          178deg,
-          transparent 0px, transparent 72px,
-          rgba(24,20,13,0.012) 72px, rgba(24,20,13,0.012) 73px
-        );
+        repeating-linear-gradient(88deg, transparent 0px, transparent 48px, rgba(24,20,13,0.018) 48px, rgba(24,20,13,0.018) 49px),
+        repeating-linear-gradient(178deg, transparent 0px, transparent 72px, rgba(24,20,13,0.012) 72px, rgba(24,20,13,0.012) 73px);
     }
 
     .hero-wm {
@@ -168,8 +161,8 @@
 
     .hero-sub {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 1.9vw, 1.45rem);
-      font-weight: 300; color: var(--smoke);
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      font-weight: 500; color: var(--ink2);
       line-height: 1.68; max-width: 540px;
       margin: 26px 0 44px;
       animation: riseIn 1.2s 0.19s both;
@@ -263,6 +256,167 @@
     .as-lbl { font-family: 'Cormorant Garamond', serif; font-size: 0.84rem; color: rgba(255,255,255,0.75); }
     .as-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; }
 
+    /* ═══ PORTFOLIO SHOWCASE SECTION ═══ */
+    .portfolio-sec {
+      background: var(--ivory);
+      padding: 100px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-sec::before {
+      content: 'SAJTOVI';
+      position: absolute; right: -30px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(8rem, 14vw, 13rem);
+      font-weight: 900; font-style: italic;
+      color: rgba(24,20,13,0.04);
+      line-height: 1; pointer-events: none; white-space: nowrap;
+      z-index: 0;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      position: relative; z-index: 1;
+    }
+
+    .site-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-top: 3px solid transparent;
+      transition: border-top-color 0.35s, transform 0.35s, box-shadow 0.35s;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .site-card:hover {
+      border-top-color: var(--amber);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 52px rgba(24,20,13,0.12);
+    }
+
+    /* Preview window frame */
+    .site-preview {
+      position: relative;
+      background: #2a2318;
+      flex-shrink: 0;
+    }
+
+    /* Browser chrome bar */
+    .browser-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 14px;
+      background: #1e1810;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .bb-dots { display: flex; gap: 5px; }
+    .bb-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .bb-dot.red   { background: #ff5f57; }
+    .bb-dot.yel   { background: #febc2e; }
+    .bb-dot.grn   { background: #28c840; }
+    .bb-url {
+      flex: 1;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      padding: 4px 10px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.72rem; color: rgba(255,255,255,0.45);
+      letter-spacing: 0.02em;
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+
+    /* iframe preview container */
+    .preview-frame {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 62%;
+      overflow: hidden;
+      background: var(--parch);
+    }
+    .preview-frame iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      border: none;
+      pointer-events: none;
+    }
+
+    /* overlay: click to visit */
+    .preview-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(24,20,13,0);
+      transition: background 0.35s;
+      z-index: 2;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .site-card:hover .preview-overlay { background: rgba(24,20,13,0.42); }
+    .overlay-cta {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      background: var(--amber); color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem; letter-spacing: 0.28em; text-transform: uppercase;
+      padding: 11px 22px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .site-card:hover .overlay-cta { opacity: 1; transform: translateY(0); }
+
+    /* Card body */
+    .site-body {
+      padding: 26px 28px 28px;
+      display: flex; flex-direction: column; flex: 1;
+    }
+    .site-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.66rem; letter-spacing: 0.36em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .site-tag::before { content: ''; width: 20px; height: 1px; background: var(--amber); opacity: 0.6; }
+    .site-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .site-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 500; color: var(--ink2); line-height: 1.65;
+      flex: 1; margin-bottom: 20px;
+    }
+    .site-visit {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ink); color: #f5efe4;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+      text-decoration: none; align-self: flex-start;
+    }
+    .site-visit:hover { background: var(--amber); color: #fff; }
+    .site-visit svg { flex-shrink: 0; }
+
+    .site-price {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--amber);
+      border-top: 1px solid var(--line);
+      padding-top: 12px; margin-top: 14px;
+      width: 100%;
+    }
+
     /* ═══ SHARED ═══ */
     .sec { padding: 100px 60px; }
     .sec-inner { max-width: 1200px; margin: 0 auto; }
@@ -284,8 +438,8 @@
 
     .sec-body {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.16rem; font-weight: 300;
-      color: var(--smoke); line-height: 1.75;
+      font-size: 1.3rem; font-weight: 500;
+      color: var(--ink2); line-height: 1.75;
       max-width: 540px; margin-bottom: 52px;
     }
 
@@ -323,7 +477,6 @@
 
     /* ═══ SERVICES ═══ */
     .services-sec { background: var(--ivory); padding: 100px 60px; }
-
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
 
     .svc-card {
@@ -334,33 +487,14 @@
       transition: border-top-color 0.3s, background 0.3s, transform 0.3s;
     }
     .svc-card:hover { border-top-color: var(--amber); background: #fff; transform: translateY(-4px); }
-    .svc-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem; font-style: italic;
-      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 14px;
-    }
+    .svc-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-style: italic; color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 14px; }
     .svc-icon { font-size: 1.9rem; margin-bottom: 12px; display: block; }
-    .svc-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem; color: var(--ink); margin-bottom: 8px;
-    }
-    .svc-desc {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.98rem; color: var(--smoke); line-height: 1.65;
-    }
-    .svc-price {
-      margin-top: 14px;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.95rem; font-weight: 700; color: var(--amber);
-      border-top: 1px solid var(--line); padding-top: 12px;
-    }
+    .svc-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 8px; }
+    .svc-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.65; }
+    .svc-price { margin-top: 14px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--amber); border-top: 1px solid var(--line); padding-top: 12px; }
 
     /* ═══ PRICING ═══ */
-    .pricing-sec {
-      background: var(--parch);
-      padding: 100px 60px;
-      position: relative; overflow: hidden;
-    }
+    .pricing-sec { background: var(--parch); padding: 100px 60px; position: relative; overflow: hidden; }
     .pricing-sec::before {
       content: 'CENA';
       position: absolute; left: -20px; top: 50%;
@@ -371,130 +505,52 @@
       pointer-events: none; line-height: 1;
     }
 
-    .pricing-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
-      position: relative; z-index: 1;
-    }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; position: relative; z-index: 1; }
 
     .plan-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 42px 34px;
-      position: relative;
+      background: #fff; border: 1px solid var(--line);
+      padding: 42px 34px; position: relative;
       border-top: 3px solid transparent;
       transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-    .plan-card:hover {
-      border-top-color: var(--amber);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(24,20,13,0.1);
-    }
+    .plan-card:hover { border-top-color: var(--amber); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(24,20,13,0.1); }
     .plan-card.featured { border-top-color: var(--amber); }
 
-    .plan-badge {
-      display: inline-block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: #fff; background: var(--amber);
-      padding: 4px 12px; margin-bottom: 16px;
-    }
-
-    .plan-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.76rem; letter-spacing: 0.38em; text-transform: uppercase;
-      color: var(--smoke); margin-bottom: 10px;
-    }
-    .plan-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem; font-weight: 900; color: var(--ink);
-      line-height: 1; margin-bottom: 4px;
-    }
-    .plan-per {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem; color: var(--smoke); margin-bottom: 26px;
-    }
+    .plan-badge { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; background: var(--amber); padding: 4px 12px; margin-bottom: 16px; }
+    .plan-name { font-family: 'Cormorant Garamond', serif; font-size: 0.82rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink2); font-weight: 600; margin-bottom: 10px; }
+    .plan-price { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+    .plan-per { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: var(--ink2); margin-bottom: 26px; }
 
     .plan-feats { list-style: none; display: flex; flex-direction: column; }
-    .plan-feats li {
-      display: flex; gap: 12px; align-items: flex-start;
-      padding: 13px 0; border-bottom: 1px solid var(--line);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.98rem; color: var(--smoke); line-height: 1.5;
-    }
+    .plan-feats li { display: flex; gap: 12px; align-items: flex-start; padding: 13px 0; border-bottom: 1px solid var(--line); font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink2); line-height: 1.5; }
     .plan-feats li:last-child { border-bottom: none; }
-    .pf-chk {
-      width: 20px; height: 20px; flex-shrink: 0;
-      border: 1px solid rgba(184,120,48,0.45);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--amber); font-size: 0.76rem; margin-top: 2px;
-    }
+    .pf-chk { width: 20px; height: 20px; flex-shrink: 0; border: 1px solid rgba(184,120,48,0.45); display: flex; align-items: center; justify-content: center; color: var(--amber); font-size: 0.76rem; margin-top: 2px; }
 
     .plan-cta { margin-top: 26px; display: flex; flex-direction: column; gap: 9px; }
 
     /* ═══ PROCESS ═══ */
     .process-sec { background: var(--cream); padding: 100px 60px; }
-
-    .process-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;
-    }
-    .step-card {
-      background: var(--ivory);
-      padding: 38px 26px;
-      border-left: 3px solid transparent;
-      transition: border-left-color 0.3s, background 0.3s;
-    }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+    .step-card { background: var(--ivory); padding: 38px 26px; border-left: 3px solid transparent; transition: border-left-color 0.3s, background 0.3s; }
     .step-card:hover { border-left-color: var(--amber); background: #fff; }
-    .step-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.8rem; font-style: italic; font-weight: 900;
-      color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 18px;
-    }
-    .step-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; color: var(--ink); margin-bottom: 8px;
-    }
-    .step-desc {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.98rem; color: var(--smoke); line-height: 1.65;
-    }
+    .step-num { font-family: 'Playfair Display', serif; font-size: 3.8rem; font-style: italic; font-weight: 900; color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 18px; }
+    .step-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
+    .step-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.65; }
 
     /* ═══ FAQ ═══ */
     .faq-sec { background: var(--ivory); padding: 100px 60px; }
-
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
-
-    .faq-item {
-      background: var(--cream);
-      border: 1px solid var(--line);
-      padding: 28px 26px;
-      cursor: pointer;
-      transition: background 0.3s;
-      border-bottom: 2px solid transparent;
-    }
+    .faq-item { background: var(--cream); border: 1px solid var(--line); padding: 28px 26px; cursor: pointer; transition: background 0.3s; border-bottom: 2px solid transparent; }
     .faq-item:hover { background: #fff; }
     .faq-item.open { background: #fff; border-bottom-color: var(--amber); }
-
-    .faq-q {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; color: var(--ink);
-      display: flex; justify-content: space-between; align-items: center; gap: 14px;
-    }
+    .faq-q { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 14px; }
     .faq-arrow { font-size: 1.1rem; color: var(--amber); transition: transform 0.3s; flex-shrink: 0; }
     .faq-item.open .faq-arrow { transform: rotate(45deg); }
-
-    .faq-a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.98rem; color: var(--smoke); line-height: 1.7;
-      margin-top: 12px; display: none;
-    }
+    .faq-a { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.7; margin-top: 12px; display: none; }
     .faq-item.open .faq-a { display: block; }
 
     /* ═══ CONTACT ═══ */
-    .contact-sec {
-      background: var(--parch);
-      padding: 100px 60px;
-      position: relative; overflow: hidden;
-    }
+    .contact-sec { background: var(--parch); padding: 100px 60px; position: relative; overflow: hidden; }
     .contact-sec::after {
       content: 'KONTAKT';
       position: absolute; right: -30px; bottom: -40px;
@@ -505,123 +561,42 @@
       line-height: 1; pointer-events: none; white-space: nowrap;
     }
 
-    .contact-inner {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
-      position: relative; z-index: 1;
-    }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; position: relative; z-index: 1; }
 
-    .ci-row {
-      display: flex; gap: 14px; align-items: flex-start;
-      padding: 18px 0; border-bottom: 1px solid var(--line);
-    }
+    .ci-row { display: flex; gap: 14px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line); }
     .ci-row:last-child { border-bottom: none; }
-    .ci-icon {
-      width: 38px; height: 38px;
-      background: rgba(184,120,48,0.1);
-      border: 1px solid rgba(184,120,48,0.22);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
-    }
-    .ci-lbl {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--amber); display: block; margin-bottom: 3px;
-    }
-    .ci-val {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1rem; color: var(--ink);
-    }
+    .ci-icon { width: 38px; height: 38px; background: rgba(184,120,48,0.1); border: 1px solid rgba(184,120,48,0.22); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .ci-lbl { font-family: 'Cormorant Garamond', serif; font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 3px; }
+    .ci-val { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--ink); }
     .ci-val a { color: inherit; }
     .ci-val a:hover { color: var(--amber); }
 
-    .contact-form {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 44px 40px;
-    }
-
-    .form-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.55rem; color: var(--ink); margin-bottom: 6px;
-    }
+    .contact-form { background: #fff; border: 1px solid var(--line); padding: 44px 40px; }
+    .form-title { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: var(--ink); margin-bottom: 6px; }
     .form-title em { font-style: italic; color: var(--amber); }
-    .form-sub {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.97rem; color: var(--smoke); margin-bottom: 28px; line-height: 1.6;
-    }
-
+    .form-sub { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: var(--smoke); margin-bottom: 28px; line-height: 1.6; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
     .form-full { margin-bottom: 12px; }
 
-    label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--amber); display: block; margin-bottom: 6px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      background: var(--ivory);
-      border: 1px solid var(--line2);
-      color: var(--ink);
-      font-family: 'Crimson Pro', serif; font-size: 1rem;
-      padding: 11px 14px;
-      outline: none; transition: border-color 0.3s;
-    }
+    label { font-family: 'Cormorant Garamond', serif; font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 6px; }
+    input, textarea, select { width: 100%; background: var(--ivory); border: 1px solid var(--line2); color: var(--ink); font-family: 'Crimson Pro', serif; font-size: 1rem; padding: 11px 14px; outline: none; transition: border-color 0.3s; }
     input:focus, textarea:focus, select:focus { border-color: var(--amber); background: #fff; }
     select option { background: #fff; color: var(--ink); }
     textarea { min-height: 110px; resize: vertical; }
 
-    .btn-submit {
-      display: block; width: 100%;
-      background: var(--amber); color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
-      padding: 16px 28px; border: none; cursor: pointer;
-      transition: background 0.3s; text-align: center;
-    }
+    .btn-submit { display: block; width: 100%; background: var(--amber); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; padding: 16px 28px; border: none; cursor: pointer; transition: background 0.3s; text-align: center; }
     .btn-submit:hover { background: var(--rust); }
-
-    .form-note {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center;
-      font-style: italic;
-    }
+    .form-note { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center; font-style: italic; }
 
     /* ═══ FOOTER ═══ */
-    footer {
-      background: var(--ink);
-      padding: 36px 52px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 14px;
-    }
-    .f-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; font-weight: 900;
-      color: rgba(245,239,228,0.35); letter-spacing: 0.1em;
-    }
+    footer { background: var(--ink); padding: 36px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+    .f-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 900; color: rgba(245,239,228,0.35); letter-spacing: 0.1em; }
     .f-links { display: flex; gap: 18px; flex-wrap: wrap; }
-    .f-links a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: rgba(245,239,228,0.35); transition: color 0.3s;
-    }
+    .f-links a { font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,239,228,0.35); transition: color 0.3s; }
     .f-links a:hover { color: var(--wheat); }
-    .f-copy {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.78rem; color: rgba(245,239,228,0.28);
-    }
+    .f-copy { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; color: rgba(245,239,228,0.28); }
 
-    /* lang toggle */
-    .lang-toggle {
-      position: fixed; top: 18px; right: 18px; z-index: 9999;
-      padding: 7px 14px;
-      background: var(--amber); color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase;
-      font-weight: 700; text-decoration: none;
-      transition: background 0.3s;
-    }
+    .lang-toggle { position: fixed; top: 18px; right: 18px; z-index: 9999; padding: 7px 14px; background: var(--amber); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: background 0.3s; }
     .lang-toggle:hover { background: var(--rust); }
 
     /* ═══ RESPONSIVE ═══ */
@@ -630,15 +605,17 @@
       .nav-links { display: none; }
       .hero-content { padding: 100px 28px 60px; }
       .sec, .videos-sec, .services-sec, .pricing-sec,
-      .process-sec, .faq-sec, .contact-sec { padding-left: 28px; padding-right: 28px; }
+      .process-sec, .faq-sec, .contact-sec, .portfolio-sec { padding-left: 28px; padding-right: 28px; }
       .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr 1fr; }
       .faq-grid, .contact-inner { grid-template-columns: 1fr; }
       .video-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
       footer { flex-direction: column; text-align: center; }
     }
     @media (max-width: 600px) {
       .hero-title { font-size: 2.8rem; }
       .services-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .hero-ctas, .hero-prices { flex-direction: column; }
       .amber-strip { flex-direction: column; }
@@ -657,6 +634,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#radovi">Radovi</a></li>
+    <li><a href="#sajtovi">Sajtovi</a></li>
     <li><a href="#usluge">Usluge</a></li>
     <li><a href="#ponuda">Cena</a></li>
     <li><a href="#kako-radi">Proces</a></li>
@@ -711,6 +689,123 @@
   <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Landing page / Web stranica</div><div class="as-price">6.000 din</div></div></div>
 </div>
 
+<!-- ═══ PORTFOLIO / WEBSITES SHOWCASE ═══ -->
+<section class="portfolio-sec" id="sajtovi">
+  <div class="sec-inner">
+    <p class="sec-lbl">Primeri Sajtova</p>
+    <h2 class="sec-title">Tri tipa web stranice — <em>pogledajte uživo</em></h2>
+    <div class="divider"></div>
+    <p class="sec-body" style="margin-bottom:44px;">Od jednostavnog landing page-a, preko web shopa, do online porudžbine za ugostitelje — svaki sajt je urađen brzo, moderno i prilagođen mobilnim uređajima.</p>
+
+    <div class="portfolio-grid">
+
+      <!-- Card 1: Simple landing -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">cistmiris.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://www.cistmiris.online" loading="lazy" scrolling="no" title="cistmiris.online preview"></iframe>
+            <a class="preview-overlay" href="https://www.cistmiris.online" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Poseti sajt
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Jednostavan Landing Page</p>
+          <p class="site-name">Čist Miris</p>
+          <p class="site-desc">Čist, moderan sajt za prezentaciju usluge ili brenda. Idealan za lokalne firme kojima treba jasan online nastup sa kontaktom i ponudom.</p>
+          <p class="site-price">6.000 din <span style="font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-weight:400;color:var(--smoke);display:block;margin-top:3px;">✓ Sve uključeno — izrada + domen + hosting (1 godina)</span></p>
+          <a class="site-visit" href="https://www.cistmiris.online" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Poseti www.cistmiris.online
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Webshop -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">lipanamestaj.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://www.lipanamestaj.online" loading="lazy" scrolling="no" title="lipanamestaj.online preview"></iframe>
+            <a class="preview-overlay" href="https://www.lipanamestaj.online" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Poseti sajt
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Web Shop · Prikaz Proizvoda</p>
+          <p class="site-name">Lipa Nameštaj</p>
+          <p class="site-desc">Sajt sa prikazom kolekcije i proizvoda — idealan za prodavnice, majstore i brendove koji žele da prezentuju asortiman i privuku kupce online.</p>
+          <p class="site-price">15.000 din <span style="font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-weight:400;color:var(--smoke);display:block;margin-top:3px;">✓ Sve uključeno — izrada + domen + hosting (1 godina)</span></p>
+          <a class="site-visit" href="https://www.lipanamestaj.online" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Poseti www.lipanamestaj.online
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: HoReCa online ordering -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">route66subotica.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://www.route66subotica.online" loading="lazy" scrolling="no" title="route66subotica.online preview"></iframe>
+            <a class="preview-overlay" href="https://www.route66subotica.online" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Poseti sajt
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">HoReCa · Online Narudžbina</p>
+          <p class="site-name">Route 66 Subotica</p>
+          <p class="site-desc">Sajt za kafić, restoran ili bar sa integrisanom formom za online porudžbinu. Gosti naručuju direktno — bez telefona, bez gužve.</p>
+          <p class="site-price">18.000 din <span style="font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-weight:400;color:var(--smoke);display:block;margin-top:3px;">✓ Sve uključeno — izrada + domen + hosting (1 godina)</span></p>
+          <a class="site-visit" href="https://www.route66subotica.online" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Poseti www.route66subotica.online
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:36px; text-align:center;">
+      <a href="#kontakt" class="btn-primary" style="display:inline-flex;">Naruči vaš sajt — 6.000 din →</a>
+    </div>
+  </div>
+</section>
+
 <!-- VIDEOS -->
 <section class="videos-sec" id="radovi">
   <div class="sec-inner">
@@ -720,36 +815,16 @@
     <p class="sec-body">10 klipova — različiti stilovi za različite delatnosti i proizvode.</p>
 
     <div class="video-grid">
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1" title="Silverado video 1" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1" title="Silverado video 2" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1" title="Silverado video 3" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1" title="Silverado video 4" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1" title="Silverado video 5" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1" title="Silverado video 6" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1" title="Silverado video 7" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1" title="Silverado video 8" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1" title="Silverado video 9" allowfullscreen></iframe>
-      </div></div>
-      <div class="video-cell"><div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1" title="Silverado video 10" allowfullscreen></iframe>
-      </div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1" title="Silverado video 1" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TEWzCWodxHk?rel=0&modestbranding=1" title="Silverado video 2" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wEWCQobqxy8?rel=0&modestbranding=1" title="Silverado video 3" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/CfXu0jnL8hI?rel=0&modestbranding=1" title="Silverado video 4" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l6nCJuj0cos?rel=0&modestbranding=1" title="Silverado video 5" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aKAWeFg6Aak?rel=0&modestbranding=1" title="Silverado video 6" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/aWpVg0zu-dA?rel=0&modestbranding=1" title="Silverado video 7" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DFukbb5NTb8?rel=0&modestbranding=1" title="Silverado video 8" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/k6yxSi8AGCE?rel=0&modestbranding=1" title="Silverado video 9" allowfullscreen></iframe></div></div>
+      <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7qXaS8un4do?rel=0&modestbranding=1" title="Silverado video 10" allowfullscreen></iframe></div></div>
     </div>
 
     <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -765,32 +840,27 @@
     <p class="sec-lbl">Naše Usluge</p>
     <h2 class="sec-title">Četiri načina da <em>rastete</em></h2>
     <div class="divider"></div>
-
     <div class="services-grid">
       <div class="svc-card">
-        <p class="svc-num">01</p>
-        <span class="svc-icon">🤖</span>
+        <p class="svc-num">01</p><span class="svc-icon">🤖</span>
         <p class="svc-name">AI "Hook" Reklame</p>
         <p class="svc-desc">Kratki, scroll-stopping klipovi (8–15s) za oglase i Reels. Dovoljna je i 1 fotografija ili kratak opis — nije obavezno.</p>
         <p class="svc-price">120 din / sekundi</p>
       </div>
       <div class="svc-card">
-        <p class="svc-num">02</p>
-        <span class="svc-icon">✂️</span>
+        <p class="svc-num">02</p><span class="svc-icon">✂️</span>
         <p class="svc-name">Montaža od Vašeg Materijala</p>
         <p class="svc-desc">Pošaljete snimke telefonom — mi montiramo dinamičnu reklamu sa efektima, titlovima i tempom za mreže.</p>
         <p class="svc-price">Cena po dogovoru</p>
       </div>
       <div class="svc-card">
-        <p class="svc-num">03</p>
-        <span class="svc-icon">🎥</span>
+        <p class="svc-num">03</p><span class="svc-icon">🎥</span>
         <p class="svc-name">Snimanje na Lokaciji</p>
         <p class="svc-desc">Dolazimo u vaš lokal i snimamo realan materijal. Oko 1 sat snimanja + 3 gotova formata: reklamni, feed i doku klip.</p>
         <p class="svc-price">3.500 din fiksno</p>
       </div>
       <div class="svc-card">
-        <p class="svc-num">04</p>
-        <span class="svc-icon">🌐</span>
+        <p class="svc-num">04</p><span class="svc-icon">🌐</span>
         <p class="svc-name">Landing Page / Web Stranica</p>
         <p class="svc-desc">Moderna landing stranica spremna za biznis u 2026. Brza, čista, mobilna, sa jasnim pozivom na akciju.</p>
         <p class="svc-price">6.000 din</p>
@@ -805,7 +875,6 @@
     <p class="sec-lbl">Cenovnik</p>
     <h2 class="sec-title">Jasne cene, <em>bez iznenađenja</em></h2>
     <div class="divider"></div>
-
     <div class="pricing-grid">
       <div class="plan-card featured">
         <span class="plan-badge">Najpopularnije</span>
@@ -824,7 +893,6 @@
           <a href="#radovi" class="btn-outline">Pogledaj radove</a>
         </div>
       </div>
-
       <div class="plan-card">
         <span class="plan-badge">Fiksno</span>
         <p class="plan-name">Snimanje na Lokaciji</p>
@@ -841,7 +909,6 @@
           <a href="tel:+381691508197" class="btn-outline">📞 Pozovi</a>
         </div>
       </div>
-
       <div class="plan-card">
         <span class="plan-badge">Web</span>
         <p class="plan-name">Landing Page / Web Stranica</p>
@@ -869,7 +936,6 @@
     <p class="sec-lbl">Proces Izrade</p>
     <h2 class="sec-title">4 koraka do <em>gotove reklame</em></h2>
     <div class="divider"></div>
-
     <div class="process-grid">
       <div class="step-card">
         <p class="step-num">01</p>
@@ -901,7 +967,6 @@
     <p class="sec-lbl">Česta Pitanja</p>
     <h2 class="sec-title">Kratko i <em>jasno</em></h2>
     <div class="divider"></div>
-
     <div class="faq-grid">
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">Da li mora fotografija?<span class="faq-arrow">+</span></p>
@@ -945,7 +1010,6 @@
     <p class="sec-lbl">Kontakt</p>
     <h2 class="sec-title">Razgovaramo <em>danas</em></h2>
     <div class="divider"></div>
-
     <div class="contact-inner">
       <div>
         <div class="ci-row">
@@ -954,10 +1018,7 @@
         </div>
         <div class="ci-row">
           <div class="ci-icon">📲</div>
-          <div>
-            <span class="ci-lbl">Viber</span>
-            <span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span>
-          </div>
+          <div><span class="ci-lbl">Viber</span><span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span></div>
         </div>
         <div class="ci-row">
           <div class="ci-icon">✉️</div>
@@ -967,7 +1028,6 @@
           <div class="ci-icon">🔎</div>
           <div><span class="ci-lbl">Google</span><span class="ci-val"><a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank">Ukucajte: Emil Eros video</a></span></div>
         </div>
-
         <div style="margin-top:28px; display:flex; flex-direction:column; gap:9px;">
           <a href="tel:+381691508197" class="btn-primary" style="justify-content:center;">📞 Pozovite: 069 1508 197</a>
           <a href="viber://chat?number=%2B381691508197" class="btn-viber" style="justify-content:center;" onclick="return openViberChat(event);">
@@ -982,7 +1042,6 @@
       <div class="contact-form">
         <h3 class="form-title">Pošaljite <em>upit</em></h3>
         <p class="form-sub">Delatnost + grad + cilj + usluga (AI / montaža / snimanje / landing page)</p>
-
         <form id="leadForm">
           <div class="form-row">
             <div><label for="name">Ime i Prezime</label><input id="name" name="name" type="text" placeholder="npr. Emil" required /></div>
@@ -1016,6 +1075,7 @@
   <p class="f-logo">SILVERADO.PRO</p>
   <div class="f-links">
     <a href="#radovi">Radovi</a>
+    <a href="#sajtovi">Sajtovi</a>
     <a href="#usluge">Usluge</a>
     <a href="#ponuda">Cena</a>
     <a href="#kako-radi">Proces</a>
