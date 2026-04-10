@@ -57,7 +57,7 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ═══ NAV ═══ */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       padding: 18px 52px;
@@ -100,7 +100,7 @@
     }
     .btn-nav:hover { background: var(--rust); }
 
-    /* ═══ HERO ═══ */
+    /* HERO */
     .hero {
       min-height: 100vh;
       background: var(--cream);
@@ -239,7 +239,7 @@
       50%      { opacity: 0.8; transform: scaleY(1.3); }
     }
 
-    /* ═══ AMBER STRIP ═══ */
+    /* AMBER STRIP */
     .amber-strip {
       background: var(--amber);
       display: flex; flex-wrap: wrap;
@@ -256,7 +256,7 @@
     .as-lbl { font-family: 'Cormorant Garamond', serif; font-size: 0.84rem; color: rgba(255,255,255,0.75); }
     .as-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; }
 
-    /* ═══ PORTFOLIO SHOWCASE SECTION ═══ */
+    /* PORTFOLIO */
     .portfolio-sec {
       background: var(--ivory);
       padding: 100px 60px;
@@ -296,14 +296,12 @@
       box-shadow: 0 20px 52px rgba(24,20,13,0.12);
     }
 
-    /* Preview window frame */
     .site-preview {
       position: relative;
       background: #2a2318;
       flex-shrink: 0;
     }
 
-    /* Browser chrome bar */
     .browser-bar {
       display: flex; align-items: center; gap: 8px;
       padding: 9px 14px;
@@ -311,9 +309,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.07);
     }
     .bb-dots { display: flex; gap: 5px; }
-    .bb-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-    }
+    .bb-dot { width: 8px; height: 8px; border-radius: 50%; }
     .bb-dot.red   { background: #ff5f57; }
     .bb-dot.yel   { background: #febc2e; }
     .bb-dot.grn   { background: #28c840; }
@@ -328,7 +324,6 @@
       overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
     }
 
-    /* iframe preview container */
     .preview-frame {
       position: relative;
       width: 100%;
@@ -348,7 +343,6 @@
       pointer-events: none;
     }
 
-    /* overlay: click to visit */
     .preview-overlay {
       position: absolute;
       inset: 0;
@@ -372,7 +366,6 @@
     }
     .site-card:hover .overlay-cta { opacity: 1; transform: translateY(0); }
 
-    /* Card body */
     .site-body {
       padding: 26px 28px 28px;
       display: flex; flex-direction: column; flex: 1;
@@ -417,7 +410,7 @@
       width: 100%;
     }
 
-    /* ═══ SHARED ═══ */
+    /* SHARED */
     .sec { padding: 100px 60px; }
     .sec-inner { max-width: 1200px; margin: 0 auto; }
 
@@ -445,7 +438,7 @@
 
     .divider { width: 48px; height: 2px; background: var(--amber); margin: 16px 0 28px; }
 
-    /* ═══ VIDEOS ═══ */
+    /* VIDEOS */
     .videos-sec {
       background: var(--ink);
       padding: 100px 60px;
@@ -475,7 +468,7 @@
     .video-wrap { position: relative; padding-top: 56.25%; background: rgba(255,255,255,0.02); }
     .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-    /* ═══ SERVICES ═══ */
+    /* SERVICES */
     .services-sec { background: var(--ivory); padding: 100px 60px; }
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
 
@@ -493,7 +486,7 @@
     .svc-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.65; }
     .svc-price { margin-top: 14px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--amber); border-top: 1px solid var(--line); padding-top: 12px; }
 
-    /* ═══ PRICING ═══ */
+    /* PRICING */
     .pricing-sec { background: var(--parch); padding: 100px 60px; position: relative; overflow: hidden; }
     .pricing-sec::before {
       content: 'CENA';
@@ -528,7 +521,7 @@
 
     .plan-cta { margin-top: 26px; display: flex; flex-direction: column; gap: 9px; }
 
-    /* ═══ PROCESS ═══ */
+    /* PROCESS */
     .process-sec { background: var(--cream); padding: 100px 60px; }
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
     .step-card { background: var(--ivory); padding: 38px 26px; border-left: 3px solid transparent; transition: border-left-color 0.3s, background 0.3s; }
@@ -537,7 +530,7 @@
     .step-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
     .step-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.65; }
 
-    /* ═══ FAQ ═══ */
+    /* FAQ */
     .faq-sec { background: var(--ivory); padding: 100px 60px; }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
     .faq-item { background: var(--cream); border: 1px solid var(--line); padding: 28px 26px; cursor: pointer; transition: background 0.3s; border-bottom: 2px solid transparent; }
@@ -549,7 +542,7 @@
     .faq-a { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 500; color: var(--ink2); line-height: 1.7; margin-top: 12px; display: none; }
     .faq-item.open .faq-a { display: block; }
 
-    /* ═══ CONTACT ═══ */
+    /* CONTACT */
     .contact-sec { background: var(--parch); padding: 100px 60px; position: relative; overflow: hidden; }
     .contact-sec::after {
       content: 'KONTAKT';
@@ -588,7 +581,7 @@
     .btn-submit:hover { background: var(--rust); }
     .form-note { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center; font-style: italic; }
 
-    /* ═══ FOOTER ═══ */
+    /* FOOTER */
     footer { background: var(--ink); padding: 36px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
     .f-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 900; color: rgba(245,239,228,0.35); letter-spacing: 0.1em; }
     .f-links { display: flex; gap: 18px; flex-wrap: wrap; }
@@ -599,7 +592,7 @@
     .lang-toggle { position: fixed; top: 18px; right: 18px; z-index: 9999; padding: 7px 14px; background: var(--amber); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: background 0.3s; }
     .lang-toggle:hover { background: var(--rust); }
 
-    /* ═══ RESPONSIVE ═══ */
+    /* RESPONSIVE */
     @media (max-width: 1000px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
@@ -689,7 +682,7 @@
   <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Landing page / Web stranica</div><div class="as-price">6.000 din</div></div></div>
 </div>
 
-<!-- ═══ PORTFOLIO / WEBSITES SHOWCASE ═══ -->
+<!-- PORTFOLIO / WEBSITES SHOWCASE -->
 <section class="portfolio-sec" id="sajtovi">
   <div class="sec-inner">
     <p class="sec-lbl">Primeri Sajtova</p>
@@ -699,7 +692,7 @@
 
     <div class="portfolio-grid">
 
-      <!-- Card 1: Simple landing -->
+      <!-- Card 1 -->
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
@@ -732,7 +725,7 @@
         </div>
       </div>
 
-      <!-- Card 2: Webshop -->
+      <!-- Card 2 -->
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
@@ -765,7 +758,7 @@
         </div>
       </div>
 
-      <!-- Card 3: HoReCa online ordering -->
+      <!-- Card 3 -->
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
@@ -1039,7 +1032,7 @@
         </div>
         <div class="ci-row">
           <div class="ci-icon">✉️</div>
-          <div><span class="ci-lbl">Email</span><span class="ci-val"><a href="/cdn-cgi/l/email-protection#5e3b3337323b2c312d6f67696f1e39333f3732703d3133"><span class="__cf_email__" data-cfemail="06636b6f6a63746975373f313746616b676f6a2865696b">[email&#160;protected]</span></a></span></div>
+          <div><span class="ci-lbl">Email</span><span class="ci-val"><a href="mailto:emileros1971@gmail.com">emileros1971@gmail.com</a></span></div>
         </div>
         <div class="ci-row">
           <div class="ci-icon">🔎</div>
@@ -1102,10 +1095,12 @@
   <p class="f-copy">© <span id="year"></span> Silverado.pro · +381 69 150 8197</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  function toggleFaq(el) { el.classList.toggle('open'); }
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+  }
 
   function openViberChat(e) {
     try { e.preventDefault(); } catch(_) {}
@@ -1118,18 +1113,20 @@
 
   document.getElementById("leadForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    const name    = document.getElementById("name").value.trim();
-    const phone   = document.getElementById("phone").value.trim();
-    const city    = document.getElementById("city").value.trim();
-    const pkg     = document.getElementById("package").value;
-    const profile = document.getElementById("profile").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const subject = encodeURIComponent("Upit — Silverado.pro");
-    const body = encodeURIComponent(
+    var name    = document.getElementById("name").value.trim();
+    var phone   = document.getElementById("phone").value.trim();
+    var city    = document.getElementById("city").value.trim();
+    var pkg     = document.getElementById("package").value;
+    var profile = document.getElementById("profile").value.trim();
+    var message = document.getElementById("message").value.trim();
+    var subject = encodeURIComponent("Upit — Silverado.pro");
+    var body = encodeURIComponent(
       "IME: " + name + "\nTELEFON: " + phone + "\nGRAD: " + (city || "-") +
       "\nUSLUGA: " + pkg + "\nLINK: " + (profile || "-") + "\n\nPORUKA:\n" + (message || "-")
     );
     window.location.href = "mailto:emileros1971@gmail.com?subject=" + subject + "&body=" + body;
   });
+</script>
 
-  document.querySelectorAll('a[h
+</body>
+</html>
