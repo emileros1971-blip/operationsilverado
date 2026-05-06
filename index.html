@@ -410,6 +410,107 @@
       width: 100%;
     }
 
+
+    /* === V3 ADDITIONS: pricing strip, per-site price, SMM card, trust band === */
+    .includes-strip {
+      background: var(--ink); color: #f5efe4;
+      padding: 28px 32px; margin: 0 0 44px;
+      display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: center;
+      border-left: 4px solid var(--amber);
+    }
+    .includes-strip h4 {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+      color: var(--wheat); margin: 0;
+    }
+    .includes-strip h4 em { color: var(--amber2); font-style: italic; }
+    .includes-strip ul {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 22px;
+    }
+    .includes-strip li {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.02rem;
+      color: rgba(245,239,228,0.9); display: flex; gap: 10px; align-items: flex-start;
+    }
+    .includes-strip li::before {
+      content: '✓'; color: var(--amber2); font-weight: 700; flex-shrink: 0;
+    }
+    @media (max-width: 760px) {
+      .includes-strip { grid-template-columns: 1fr; padding: 22px; }
+      .includes-strip ul { grid-template-columns: 1fr; }
+    }
+
+    .price-row {
+      display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 14px; margin-top: 14px;
+    }
+    .price-old {
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      color: var(--smoke); text-decoration: line-through; opacity: 0.7;
+    }
+    .price-new {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900;
+      color: var(--rust); line-height: 1;
+    }
+    .price-tag {
+      display: inline-block; font-family: 'Cormorant Garamond', serif;
+      font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+      background: var(--amber); color: #fff; padding: 3px 10px; font-weight: 700;
+    }
+    .price-incl {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.92rem;
+      color: var(--smoke); margin-top: 8px; font-style: italic;
+    }
+    .price-incl strong { color: var(--rust); font-style: normal; font-weight: 600; }
+
+    /* Personal-brand trust band */
+    .personal-band {
+      background: linear-gradient(to right, var(--cream), var(--parch));
+      padding: 48px 60px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .personal-band p.eyebrow {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.74rem;
+      letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 14px;
+    }
+    .personal-band h3 {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+      font-weight: 700; color: var(--ink); max-width: 820px; margin: 0 auto 14px;
+      line-height: 1.3;
+    }
+    .personal-band h3 em { color: var(--amber); font-style: italic; }
+    .personal-band p.lead {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+      color: var(--ink2); max-width: 720px; margin: 0 auto; line-height: 1.7;
+    }
+
+    /* SMM featured service card */
+    .services-grid { grid-template-columns: repeat(5, 1fr) !important; }
+    @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr !important; } }
+    .svc-card.svc-featured {
+      background: var(--ink); color: #f5efe4;
+      border-top-color: var(--amber);
+      position: relative;
+    }
+    .svc-card.svc-featured .svc-num { color: rgba(245,239,228,0.12); }
+    .svc-card.svc-featured .svc-name { color: var(--wheat); }
+    .svc-card.svc-featured .svc-desc { color: rgba(245,239,228,0.78); }
+    .svc-card.svc-featured .svc-price { color: var(--amber2); border-top-color: rgba(255,255,255,0.12); }
+    .svc-card.svc-featured:hover { background: #000; transform: translateY(-4px); }
+    .svc-flag {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--rust); color: #fff;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.6rem;
+      letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+      padding: 4px 10px;
+    }
+    .svc-callnote {
+      margin-top: 8px; font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem; color: var(--wheat); font-style: italic;
+    }
+
     /* SHARED */
     .sec { padding: 100px 60px; }
     .sec-inner { max-width: 1200px; margin: 0 auto; }
@@ -687,7 +788,25 @@
     <p class="sec-lbl">Primeri Sajtova</p>
     <h2 class="sec-title">Primeri web stranica — <em>pogledajte uživo</em></h2>
     <div class="divider"></div>
-    <p class="sec-body" style="margin-bottom:44px;">Od jednostavnog website-a, preko web shopa, do online porudžbine za ugostitelje — svaki sajt je urađen brzo, moderno i prilagođen mobilnim uređajima. <strong>Sve cene uključuju Google registraciju i SEO optimizaciju.</strong></p>
+    <p class="sec-body" style="margin-bottom:32px;">Od jednostavnog website-a, preko web shopa, do online porudžbine za ugostitelje — svaki sajt je urađen brzo, moderno i prilagođen mobilnim uređajima. <strong>Akcijske cene — sve uključeno.</strong></p>
+    <div class="includes-strip">
+      <h4>Šta dobijate uz <em>svaki sajt</em></h4>
+      <ul>
+        <li>Kompletan dizajn i izrada sajta</li>
+        <li>Google registracija i indeksiranje stranica</li>
+        <li>SEO optimizacija za pretragu</li>
+        <li>100% testiran, brz i mobilno prilagođen</li>
+        <li><strong>Hosting na godinu dana — gratis</strong></li>
+        <li><strong>Domen — gratis</strong></li>
+      </ul>
+    </div>
+
+    <div class="personal-band" style="margin: 0 0 44px; padding: 36px 32px;">
+      <p class="eyebrow">Lična briga · pre i posle isporuke</p>
+      <h3>Niste samo još jedan klijent — <em>vodim vas kroz sve</em>, i tu sam i posle lansiranja.</h3>
+      <p class="lead">Svaki sajt radim lično, od ideje do live verzije. Posle isporuke dobijate i podršku — izmene, saveti, brza pomoć kad zatreba. To je razlika koju primetite kasnije.</p>
+    </div>
+
 
     <div class="portfolio-grid">
 
@@ -716,6 +835,13 @@
           <p class="site-tag">Website</p>
           <p class="site-name">Čist Miris</p>
           <p class="site-desc">Čist, moderan sajt za prezentaciju usluge ili brenda. Idealan za lokalne firme kojima treba jasan online nastup sa kontaktom i ponudom.</p>
+          <div class="price-row">
+            <span class="price-tag">Akcija</span>
+            <span class="price-old">11.000 rsd</span>
+            <span class="price-new">6.000 rsd</span>
+          </div>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
           
           <a class="site-visit" href="https://www.cistmiris.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -749,6 +875,13 @@
           <p class="site-tag">Web Shop · Prikaz Proizvoda</p>
           <p class="site-name">Lipa Nameštaj</p>
           <p class="site-desc">Sajt sa prikazom kolekcije i proizvoda — idealan za prodavnice, majstore i brendove koji žele da prezentuju asortiman i privuku kupce online.</p>
+          <div class="price-row">
+            <span class="price-tag">Akcija</span>
+            <span class="price-old">24.000 rsd</span>
+            <span class="price-new">14.000 rsd</span>
+          </div>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
           
           <a class="site-visit" href="https://www.lipanamestaj.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -782,6 +915,13 @@
           <p class="site-tag">HoReCa · Online Narudžbina</p>
           <p class="site-name">Route 66 Subotica</p>
           <p class="site-desc">Sajt za kafić, restoran ili bar — gosti naručuju direktno preko telefona i aplikacije, bez gužve. Moderno.</p>
+          <div class="price-row">
+            <span class="price-tag">Akcija</span>
+            <span class="price-old">25.000 rsd</span>
+            <span class="price-new">14.000 rsd</span>
+          </div>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
           
           <a class="site-visit" href="https://www.route66subotica.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -815,6 +955,13 @@
           <p class="site-tag">Etno · Turizam · Salaš</p>
           <p class="site-name">Etno Salaš Palić</p>
           <p class="site-desc">Sajt za etno domaćinstvo, salaš ili agroturizam — prezentacija ambijenta, usluga i rezervacija. Idealno za turističke objekte koji žele goste iz celog regiona.</p>
+          <div class="price-row">
+            <span class="price-tag">Akcija</span>
+            <span class="price-old">30.000 rsd</span>
+            <span class="price-new">16.000 rsd</span>
+          </div>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
           
           <a class="site-visit" href="https://www.etnosalaspalic.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -848,6 +995,13 @@
           <p class="site-tag">Website · Prezentacija</p>
           <p class="site-name">Kasiopeja</p>
           <p class="site-desc">Moderan, profesionalan sajt urađen po meri — brz, prilagođen mobilnim uređajima i spreman za Google pretragu od prvog dana.</p>
+          <div class="price-row">
+            <span class="price-tag">Akcija</span>
+            <span class="price-old">15.000 rsd</span>
+            <span class="price-new">6.000 rsd</span>
+          </div>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
           
           <a class="site-visit" href="https://www.kasiopeja.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -881,6 +1035,13 @@
           <p class="site-tag">Pokloni · Online Prodavnica</p>
           <p class="site-name">Pokloni iz Srca RS</p>
           <p class="site-desc">Sajt za prodaju i prezentaciju poklona — moderan, pregledan i prilagođen mobilnim uređajima. Idealno za brendove koji žele da privuku kupce online.</p>
+          <div class="price-row">
+            <span class="price-tag">Akcija</span>
+            <span class="price-old">30.000 rsd</span>
+            <span class="price-new">15.000 rsd</span>
+          </div>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
           
           <a class="site-visit" href="https://poklonizsrcars.online/" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -946,7 +1107,7 @@
 <section class="services-sec" id="usluge">
   <div class="sec-inner">
     <p class="sec-lbl">Naše Usluge</p>
-    <h2 class="sec-title">Četiri načina da <em>rastete</em></h2>
+    <h2 class="sec-title">Pet načina da <em>rastete</em></h2>
     <div class="divider"></div>
     <div class="services-grid">
       <div class="svc-card">
@@ -972,6 +1133,14 @@
         <p class="svc-name">Website / Webshop</p>
         <p class="svc-desc">Moderan website ili webshop spreman za biznis u 2026. Brz, čist, mobilan, sa jasnim pozivom na akciju.</p>
         <p class="svc-price">Cena po dogovoru</p>
+      </div>
+      <div class="svc-card svc-featured">
+        <span class="svc-flag">Limitirano</span>
+        <p class="svc-num">05</p><span class="svc-icon">📱</span>
+        <p class="svc-name">Vođenje Društvenih Mreža</p>
+        <p class="svc-desc">Kompletno vođenje Facebook, Instagram, TikTok i Threads naloga — premium sadržaj, oglašavanje i optimizacija profila.</p>
+        <p class="svc-price">od 9.000 din / mesečno</p>
+        <p class="svc-callnote">⚠ Samo za odabrane klijente — pozovite prvo da proverimo da li imate uslov.</p>
       </div>
     </div>
   </div>
