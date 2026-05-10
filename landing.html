@@ -1,0 +1,465 @@
+<!doctype html><html lang="sr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Moderan sajt ili webshop već od 6000 din — Silverado.pro</title><meta name="description" content="Izrada modernog sajta ili webshopa već od 6000 din. Google registracija, SEO, hosting i domen gratis. Pozovite +381 69 1508197."/><meta name="theme-color" content="#ffffff"/><meta property="og:title" content="Moderan sajt ili webshop već od 6000 din"/><meta property="og:description" content="Profesionalna izrada sajta i webshopa. Google registracija, SEO, hosting i domen gratis."/><meta property="og:type" content="website"/><meta property="og:locale" content="sr_RS"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:wght@300;400;600&display=swap"/><style>html,body{margin:0;padding:0}
+.sajt-root {
+  --ivory:#ffffff; --cream:#f5f5f7; --parch:#ececef;
+  --ink:#0f1828; --ink2:#1f2937; --smoke:#4b5563;
+  --amber:#e11d2a; --amber2:#c81620; --wheat:#fca5af; --rust:#9b1219;
+  --line:rgba(15,24,40,0.10); --line2:rgba(15,24,40,0.18);
+  --viber:#7360f2; --wa:#25d366; --fb:#1877f2;
+  font-family:'Crimson Pro', Georgia, serif;
+  background:var(--ivory); color:var(--ink);
+  font-size:18px; line-height:1.5;
+  overflow-x:hidden;
+}
+.sajt-root *, .sajt-root *::before, .sajt-root *::after { box-sizing:border-box; margin:0; padding:0; }
+.sajt-root a { color:inherit; text-decoration:none; }
+
+/* NAV */
+.sajt-root nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  padding:14px 32px;
+  display:flex; justify-content:space-between; align-items:center;
+  background:rgba(247,242,234,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-logo {
+  font-family:'Playfair Display', serif;
+  font-size:1.1rem; font-weight:900;
+  letter-spacing:0.06em; text-transform:uppercase;
+  display:flex; align-items:center; gap:10px;
+}
+.logo-dot {
+  width:9px; height:9px; border-radius:50%;
+  background:var(--amber);
+  animation: pulseDot 2.5s ease infinite;
+}
+@keyframes pulseDot {
+  0%,100% { box-shadow:0 0 6px rgba(184,120,48,0.4); }
+  50% { box-shadow:0 0 16px rgba(184,120,48,0.8); }
+}
+.btn-nav {
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.85rem; letter-spacing:0.16em; text-transform:uppercase;
+  color:#fff; background:var(--amber);
+  padding:10px 20px; transition:background 0.3s; font-weight:700;
+}
+.btn-nav:hover { background:var(--rust); }
+
+/* HERO */
+.hero {
+  min-height:100vh;
+  background:var(--cream);
+  position:relative;
+  display:grid; grid-template-columns: 1.05fr 1fr;
+  align-items:center; gap:40px;
+  overflow:hidden;
+  padding:110px 60px 60px;
+}
+.hero-texture {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 65% 60% at 80% 50%, rgba(184,120,48,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 8% 20%, rgba(24,20,13,0.04) 0%, transparent 55%),
+    repeating-linear-gradient(88deg, transparent 0 48px, rgba(24,20,13,0.018) 48px 49px),
+    repeating-linear-gradient(178deg, transparent 0 72px, rgba(24,20,13,0.012) 72px 73px);
+}
+.hero-wm {
+  position:absolute; right:-50px; top:50%;
+  transform:translateY(-50%);
+  font-family:'Playfair Display', serif;
+  font-size:clamp(10rem,18vw,16rem);
+  font-weight:900; font-style:italic;
+  color:rgba(24,20,13,0.04);
+  line-height:1; pointer-events:none; z-index:1;
+  user-select:none; white-space:nowrap;
+}
+.hero-content { position:relative; z-index:3; max-width:640px; animation:riseIn 1s cubic-bezier(0.16,1,0.3,1) both; }
+@keyframes riseIn {
+  from { opacity:0; transform:translateY(28px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.hero-eyebrow {
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.78rem; letter-spacing:0.42em; text-transform:uppercase;
+  color:var(--amber); margin-bottom:18px;
+  display:flex; align-items:center; gap:14px;
+}
+.hero-eyebrow::before { content:''; width:36px; height:1px; background:var(--amber); }
+.hero-title {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2.4rem, 5.4vw, 4.6rem);
+  font-weight:900; line-height:1.02;
+  margin-bottom:14px;
+}
+.hero-title em { font-style:italic; color:var(--amber); display:inline-block; margin-left:0; }
+.hero-from {
+  display:block;
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic; font-weight:600;
+  color:var(--rust);
+  font-size:clamp(1.4rem, 2.6vw, 2rem);
+  margin-top:10px; letter-spacing:0.01em;
+}
+.hero-sub {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(1.1rem, 1.6vw, 1.4rem);
+  color:var(--ink2); line-height:1.6;
+  max-width:560px; margin:18px 0 28px;
+}
+.hero-sub strong { color:var(--ink); font-weight:700; }
+
+.hero-phone {
+  display:inline-flex; flex-direction:column;
+  background:#fff; border:1px solid var(--line2);
+  border-left:4px solid var(--amber);
+  padding:12px 22px; margin-bottom:24px;
+}
+.hp-lbl {
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase;
+  color:var(--smoke);
+}
+.hp-num {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight:900; color:var(--ink);
+  letter-spacing:0.02em;
+}
+
+.hero-ctas { display:flex; gap:10px; flex-wrap:wrap; }
+.btn-primary, .btn-viber, .btn-wa, .btn-fb {
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.92rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;
+  padding:14px 26px; cursor:pointer;
+  transition: background 0.3s, transform 0.2s;
+  color:#fff;
+}
+.btn-primary { background:var(--amber); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%); }
+.btn-primary:hover { background:var(--rust); }
+.btn-viber { background:var(--viber); }
+.btn-viber:hover { background:#5b46f0; }
+.btn-wa { background:var(--wa); }
+.btn-wa:hover { background:#1ebe5d; }
+.btn-fb { background:var(--fb); }
+.btn-fb:hover { background:#1463d1; }
+.big { padding:18px 32px; font-size:1rem; }
+
+/* HERO MOCKUP */
+.hero-mockup { position:relative; z-index:2; perspective:1400px; }
+.mock-window {
+  background:#1e1810;
+  border-radius:6px;
+  box-shadow: 0 30px 70px -20px rgba(24,20,13,0.45), 0 10px 30px rgba(24,20,13,0.18);
+  overflow:hidden;
+  transform: rotateY(-6deg) rotateX(2deg);
+  transition: transform 0.5s;
+}
+.mock-window:hover { transform: rotateY(-3deg) rotateX(1deg); }
+.browser-bar {
+  display:flex; align-items:center; gap:8px;
+  padding:9px 14px; background:#1e1810;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.bb-dots { display:flex; gap:5px; }
+.bb-dot { width:9px; height:9px; border-radius:50%; }
+.bb-dot.red{background:#ff5f57;} .bb-dot.yel{background:#febc2e;} .bb-dot.grn{background:#28c840;}
+.bb-url {
+  flex:1; background:rgba(255,255,255,0.08);
+  border-radius:3px; padding:5px 10px;
+  font-family:'Crimson Pro', serif;
+  font-size:0.74rem; color:rgba(255,255,255,0.55);
+  overflow:hidden; white-space:nowrap; text-overflow:ellipsis;
+}
+.mock-body { background:var(--ivory); padding:22px; min-height:340px; }
+.mock-nav {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-bottom:14px; border-bottom:1px solid var(--line);
+}
+.mock-logo {
+  font-family:'Playfair Display', serif;
+  font-size:0.85rem; font-weight:900; letter-spacing:0.1em;
+}
+.mock-links { display:flex; gap:8px; }
+.mock-links i { display:block; width:32px; height:6px; background:var(--line2); border-radius:2px; }
+.mock-hero { padding:24px 0 18px; }
+.mock-h1 { height:18px; width:75%; background:var(--ink); border-radius:2px; margin-bottom:10px; }
+.mock-h2 { height:9px; width:90%; background:var(--line2); border-radius:2px; margin-bottom:7px; }
+.mock-h2.short { width:60%; }
+.mock-btn {
+  display:inline-block; margin-top:14px;
+  background:var(--amber); color:#fff;
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;
+  padding:7px 14px;
+}
+.mock-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:18px; }
+.mock-card {
+  height:78px; background:var(--cream);
+  border:1px solid var(--line); border-top:2px solid var(--amber);
+}
+
+/* AMBER STRIP */
+.amber-strip { background:var(--amber); display:flex; flex-wrap:wrap; }
+.as-item {
+  flex:1; min-width:200px; padding:18px 26px;
+  border-right:1px solid rgba(255,255,255,0.2);
+  display:flex; align-items:center; gap:12px;
+  transition:background 0.3s;
+}
+.as-item:last-child { border-right:none; }
+.as-item:hover { background:var(--amber2); }
+.as-icon { font-size:1.5rem; }
+.as-lbl { font-family:'Cormorant Garamond', serif; font-size:0.82rem; color:rgba(255,255,255,0.78); letter-spacing:0.1em; text-transform:uppercase; }
+.as-price { font-family:'Playfair Display', serif; font-size:1.05rem; font-weight:700; color:#fff; }
+
+/* shared section bits */
+.eyebrow {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2rem, 4.4vw, 3.4rem);
+  font-weight:900; letter-spacing:0.04em; text-transform:uppercase;
+  color:var(--amber); margin-bottom:18px; line-height:1.05;
+}
+.eyebrow.center { text-align:center; }
+.eyebrow.light { color:var(--amber); }
+.sec-title {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(1.9rem, 4vw, 3rem);
+  font-weight:800; line-height:1.15;
+  color:var(--ink); margin-bottom:18px;
+}
+.sec-title em { font-style:italic; color:var(--amber); }
+.sec-title.center { text-align:center; max-width:880px; margin:0 auto 22px; }
+.sec-title.light { color:var(--ivory); }
+
+/* WHY */
+.why-sec { background:var(--ivory); padding:90px 60px; border-bottom:1px solid var(--line); }
+.why-inner { max-width:880px; }
+.why-lead {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(1.1rem, 1.5vw, 1.35rem);
+  color:var(--ink2); line-height:1.75; margin-top:14px;
+}
+.why-lead strong { color:var(--ink); font-weight:700; }
+
+/* FEATURES — hero-of-value section */
+.feat-sec { background:var(--cream); padding:110px 60px; border-top:6px solid var(--amber); border-bottom:6px solid var(--amber); }
+.feat-sec .eyebrow.center { font-size:clamp(2.4rem, 5vw, 4rem); letter-spacing:0.03em; color:var(--amber); margin-bottom:22px; }
+.sec-title.big-title { font-size:clamp(2.4rem, 5.6vw, 4.4rem); font-weight:900; max-width:1080px; }
+.feat-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;
+  margin-top:56px; max-width:1280px; margin-left:auto; margin-right:auto;
+}
+.feat-card {
+  background:#fff; padding:44px 36px;
+  border:1px solid var(--line);
+  border-top:4px solid transparent;
+  transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow:0 2px 0 rgba(15,24,40,0.03);
+}
+.feat-card:hover {
+  border-top-color:var(--amber);
+  transform:translateY(-6px);
+  box-shadow:0 22px 50px rgba(15,24,40,0.12);
+}
+.feat-icon { font-size:2.6rem; margin-bottom:18px; display:block; }
+.feat-title {
+  font-family:'Playfair Display', serif;
+  font-size:1.45rem; font-weight:800; color:var(--ink); margin-bottom:10px;
+}
+.feat-desc {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.18rem; color:var(--ink2); line-height:1.6;
+}
+
+/* PORTFOLIO */
+.portfolio-sec { background:var(--ivory); padding:90px 60px; position:relative; overflow:hidden; }
+.portfolio-sec::before {
+  content:'SAJTOVI'; position:absolute; right:-30px; top:46%;
+  transform:translateY(-50%);
+  font-family:'Playfair Display', serif;
+  font-size:clamp(7rem, 13vw, 12rem);
+  font-weight:900; font-style:italic;
+  color:rgba(24,20,13,0.04);
+  line-height:1; pointer-events:none; white-space:nowrap; z-index:0;
+}
+.port-head { position:relative; z-index:1; max-width:880px; margin-bottom:36px; }
+.portfolio-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:3px;
+  position:relative; z-index:1;
+}
+.site-card {
+  background:var(--cream);
+  border:1px solid var(--line);
+  border-top:3px solid transparent;
+  transition: border-top-color 0.35s, transform 0.35s, box-shadow 0.35s;
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+.site-card:hover { border-top-color:var(--amber); transform:translateY(-6px); box-shadow:0 20px 52px rgba(24,20,13,0.12); }
+.site-preview { background:#2a2318; }
+.preview-frame {
+  position:relative; width:100%; height:0; padding-top:62%;
+  overflow:hidden; background:var(--parch);
+}
+.preview-frame iframe {
+  position:absolute; top:0; left:0;
+  width:200%; height:200%;
+  transform:scale(0.5); transform-origin:top left;
+  border:none; pointer-events:none;
+}
+.preview-overlay {
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(24,20,13,0); transition:background 0.35s;
+  z-index:2;
+}
+.site-card:hover .preview-overlay { background:rgba(24,20,13,0.42); }
+.overlay-cta {
+  opacity:0; transform:translateY(10px);
+  transition:opacity 0.3s, transform 0.3s;
+  background:var(--amber); color:#fff;
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.82rem; letter-spacing:0.24em; text-transform:uppercase;
+  padding:11px 22px; font-weight:700;
+}
+.site-card:hover .overlay-cta { opacity:1; transform:translateY(0); }
+.site-body { padding:24px 26px 26px; display:flex; flex-direction:column; flex:1; }
+.site-tag {
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.66rem; letter-spacing:0.32em; text-transform:uppercase;
+  color:var(--amber); margin-bottom:8px;
+  display:flex; align-items:center; gap:8px;
+}
+.site-tag::before { content:''; width:20px; height:1px; background:var(--amber); opacity:0.6; }
+.site-name {
+  font-family:'Playfair Display', serif;
+  font-size:1.15rem; font-weight:700; color:var(--ink); margin-bottom:8px;
+}
+.site-desc {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.02rem; color:var(--ink2); line-height:1.6;
+  flex:1; margin-bottom:18px;
+}
+.site-visit {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--ink); color:#f5efe4;
+  font-family:'Cormorant Garamond', serif;
+  font-size:0.78rem; letter-spacing:0.22em; text-transform:uppercase;
+  padding:12px 20px; transition:background 0.3s, color 0.3s;
+  align-self:flex-start;
+}
+.site-visit:hover { background:var(--amber); color:#fff; }
+
+/* TRUST */
+.trust-sec {
+  background:var(--ink); color:#f5efe4;
+  padding:90px 60px;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 70% 30%, rgba(184,120,48,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(184,120,48,0.08) 0%, transparent 60%);
+}
+.trust-grid {
+  display:grid; grid-template-columns:repeat(5,1fr); gap:2px;
+  margin-top:40px;
+}
+.trust-card {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  padding:30px 24px;
+  transition:background 0.3s, border-color 0.3s;
+}
+.trust-card:hover { background:rgba(184,120,48,0.08); border-color:var(--amber); }
+.trust-check {
+  width:36px; height:36px; border-radius:50%;
+  background:var(--amber); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; margin-bottom:14px;
+}
+.trust-card h3 {
+  font-family:'Playfair Display', serif;
+  font-size:1.1rem; font-weight:700; color:var(--wheat); margin-bottom:8px;
+}
+.trust-card p {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1rem; color:rgba(245,239,228,0.75); line-height:1.55;
+}
+
+/* FINAL CTA */
+.cta-sec {
+  background:linear-gradient(135deg, var(--cream), var(--parch));
+  padding:100px 60px; position:relative; overflow:hidden;
+  border-top:4px solid var(--amber);
+}
+.cta-sec::before {
+  content:'KONTAKT'; position:absolute; left:-30px; bottom:-40px;
+  font-family:'Playfair Display', serif;
+  font-size:clamp(7rem,13vw,11rem); font-weight:900; font-style:italic;
+  color:rgba(24,20,13,0.05); line-height:1; pointer-events:none; white-space:nowrap;
+}
+.cta-inner { position:relative; z-index:1; max-width:900px; margin:0 auto; text-align:center; }
+.cta-title {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2.2rem, 5vw, 3.6rem);
+  font-weight:900; color:var(--ink); margin-bottom:14px;
+}
+.cta-title em { font-style:italic; color:var(--amber); }
+.cta-lead {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.2rem; color:var(--ink2); line-height:1.6;
+  max-width:620px; margin:0 auto 30px;
+}
+.cta-phone {
+  display:inline-block; margin-bottom:30px;
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2rem, 4.5vw, 3rem);
+  font-weight:900; color:var(--rust);
+  border-bottom:3px solid var(--amber);
+  padding-bottom:6px;
+}
+.cta-buttons { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+
+/* FOOTER */
+.foot {
+  background:var(--ink); color:rgba(245,239,228,0.7);
+  padding:24px 40px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  font-family:'Cormorant Garamond', serif; font-size:0.92rem;
+}
+.foot a { color:var(--wheat); font-weight:700; }
+
+/* Mobile sticky */
+.mob-call {
+  display:none;
+  position:fixed; bottom:0; left:0; right:0; z-index:300;
+  background:var(--amber); color:#fff;
+  text-align:center; padding:14px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:1rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+  box-shadow:0 -4px 18px rgba(0,0,0,0.18);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .feat-grid, .portfolio-grid { grid-template-columns:repeat(2,1fr); }
+  .trust-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 860px) {
+  .hero { grid-template-columns:1fr; padding:100px 24px 50px; min-height:auto; }
+  .hero-mockup { order:2; max-width:480px; margin:0 auto; }
+  .why-sec, .feat-sec, .portfolio-sec, .trust-sec, .cta-sec { padding:70px 24px; }
+  .sajt-root nav { padding:12px 18px; }
+  .nav-logo { font-size:0.95rem; }
+  .btn-nav { padding:8px 14px; font-size:0.72rem; letter-spacing:0.08em; }
+  .hero-content { padding-bottom:20px; }
+  .feat-grid, .portfolio-grid { grid-template-columns:1fr; }
+  .trust-grid { grid-template-columns:1fr; }
+  .as-item { min-width:50%; }
+  .mob-call { display:block; }
+  .foot { padding-bottom:80px; justify-content:center; text-align:center; }
+}
+@media (max-width: 480px) {
+  .hero-ctas .btn-primary, .hero-ctas .btn-viber, .hero-ctas .btn-wa { flex:1; justify-content:center; padding:14px 12px; font-size:0.82rem; letter-spacing:0.1em; }
+  .cta-buttons a { flex:1 1 45%; justify-content:center; padding:14px 10px; font-size:0.82rem; letter-spacing:0.08em; }
+}
+</style></head><body><div class="sajt-root"><nav><a href="/" class="nav-logo"><span class="logo-dot"></span>SILVERADO<span style="color:var(--amber)">.PRO</span></a><a href="tel:+381691508197" class="btn-nav">+381 69 1508197</a></nav><header class="hero"><div class="hero-texture"></div><div class="hero-wm">sajt</div><div class="hero-content"><div class="hero-eyebrow">Silverado.pro · Izrada sajtova</div><h1 class="hero-title">Moderan sajt ili <em>webshop</em><span class="hero-from">već od 6000 din</span></h1><p class="hero-sub"><strong>Google registracija</strong> • <strong>SEO optimizacija</strong> • <strong>Hosting i domen gratis</strong></p><a href="tel:+381691508197" class="hero-phone"><span class="hp-lbl">Pozovite odmah</span><span class="hp-num">+381 69 1508197</span></a><div class="hero-ctas"><a href="tel:+381691508197" class="btn-primary">📞 Pozovi odmah</a><a href="viber://chat?number=%2B381691508197" class="btn-viber">💬 Viber</a><a href="https://wa.me/381691508197" target="_blank" rel="noopener" class="btn-wa">🟢 WhatsApp</a></div></div><div class="hero-mockup" aria-hidden="true"><div class="mock-window"><div class="browser-bar"><div class="bb-dots"><span class="bb-dot red"></span><span class="bb-dot yel"></span><span class="bb-dot grn"></span></div><div class="bb-url">https://vasa-firma.rs</div></div><div class="mock-body"><div class="mock-nav"><span class="mock-logo">VAŠA FIRMA</span><span class="mock-links"><i></i><i></i><i></i><i></i></span></div><div class="mock-hero"><div class="mock-h1"></div><div class="mock-h2"></div><div class="mock-h2 short"></div><div class="mock-btn">Kontakt</div></div><div class="mock-grid"><div class="mock-card"></div><div class="mock-card"></div><div class="mock-card"></div></div></div></div></div></header><div class="amber-strip"><div class="as-item"><span class="as-icon">⚡</span><div><div class="as-lbl">Brza izrada</div><div class="as-price">7 — 14 dana</div></div></div><div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Domen + Hosting</div><div class="as-price">Gratis</div></div></div><div class="as-item"><span class="as-icon">🧾</span><div><div class="as-lbl">Registrovana firma</div><div class="as-price">Račun uvek</div></div></div><div class="as-item"><span class="as-icon">📞</span><div><div class="as-lbl">Direktna podrška</div><div class="as-price">+381 69 1508197</div></div></div></div><section class="feat-sec" id="sta-dobijate"><p class="eyebrow center">Šta dobijate</p><h2 class="sec-title center big-title">Sve što je potrebno za <em>ozbiljan</em> nastup online</h2><div class="feat-grid"><div class="feat-card"><div class="feat-icon">🎨</div><h3 class="feat-title">Kompletan dizajn i izrada</h3><p class="feat-desc">Sajt po meri — od ideje do objavljivanja.</p></div><div class="feat-card"><div class="feat-icon">🔍</div><h3 class="feat-title">Google registracija</h3><p class="feat-desc">Vaš sajt vidljiv na Google pretrazi.</p></div><div class="feat-card"><div class="feat-icon">📈</div><h3 class="feat-title">SEO optimizacija</h3><p class="feat-desc">Struktura i tekstovi optimizovani za pretragu.</p></div><div class="feat-card"><div class="feat-icon">📱</div><h3 class="feat-title">Mobilno prilagođen</h3><p class="feat-desc">Savršen prikaz na svakom telefonu.</p></div><div class="feat-card"><div class="feat-icon">☁️</div><h3 class="feat-title">Hosting gratis</h3><p class="feat-desc">Brz i siguran hosting uključen.</p></div><div class="feat-card"><div class="feat-icon">🌐</div><h3 class="feat-title">Domen gratis</h3><p class="feat-desc">Vaš .com / .rs / .online domen na poklon.</p></div><div class="feat-card"><div class="feat-icon">🛡️</div><h3 class="feat-title">Backup i garancija</h3><p class="feat-desc">Redovne kopije i sigurnost podataka.</p></div><div class="feat-card"><div class="feat-icon">🏢</div><h3 class="feat-title">Registrovana firma</h3><p class="feat-desc">Saradnja sa proverenim partnerom.</p></div><div class="feat-card"><div class="feat-icon">🧾</div><h3 class="feat-title">Račun za svaki posao</h3><p class="feat-desc">Zvanična faktura za vaše knjigovodstvo.</p></div></div></section><section class="why-sec"><div class="why-inner"><p class="eyebrow">Zašto sajt</p><h2 class="sec-title">Vaš biznis <em>postoji</em> tek kada ga ljudi <em>nađu</em> na Google-u.</h2><p class="why-lead">Više od 80% kupaca pre poziva proverava firmu online. Bez profesionalnog sajta i Google prisustva, posao odlazi konkurenciji. Moderan sajt gradi <strong>poverenje</strong>, donosi <strong>nove upite</strong> i radi za vas <strong>24 sata dnevno</strong> — i kada vi spavate.</p></div></section><section class="portfolio-sec"><div class="port-head"><p class="eyebrow">Naši radovi</p><h2 class="sec-title">Sajtovi koje <em>već koriste</em> firme iz Srbije</h2></div><div class="portfolio-grid"><div class="site-card"><div class="site-preview"><div class="browser-bar"><div class="bb-dots"><span class="bb-dot red"></span><span class="bb-dot yel"></span><span class="bb-dot grn"></span></div><div class="bb-url">www.cistmiris.online</div></div><div class="preview-frame"><iframe src="https://www.cistmiris.online" loading="lazy" scrolling="no" title="Čist Miris"></iframe><a class="preview-overlay" href="https://www.cistmiris.online" target="_blank" rel="noopener"><span class="overlay-cta">Otvori sajt →</span></a></div></div><div class="site-body"><p class="site-tag">Website</p><p class="site-name">Čist Miris</p><p class="site-desc">Čist, moderan sajt za prezentaciju usluge ili brenda. Idealno za lokalne firme kojima treba jasan online nastup.</p><a class="site-visit" href="https://www.cistmiris.online" target="_blank" rel="noopener">Poseti sajt →</a></div></div><div class="site-card"><div class="site-preview"><div class="browser-bar"><div class="bb-dots"><span class="bb-dot red"></span><span class="bb-dot yel"></span><span class="bb-dot grn"></span></div><div class="bb-url">www.lipanamestaj.online</div></div><div class="preview-frame"><iframe src="https://www.lipanamestaj.online" loading="lazy" scrolling="no" title="Lipa Nameštaj"></iframe><a class="preview-overlay" href="https://www.lipanamestaj.online" target="_blank" rel="noopener"><span class="overlay-cta">Otvori sajt →</span></a></div></div><div class="site-body"><p class="site-tag">Web Shop · Prikaz Proizvoda</p><p class="site-name">Lipa Nameštaj</p><p class="site-desc">Sajt sa prikazom kolekcije i proizvoda — idealno za prodavnice i brendove koji prezentuju asortiman online.</p><a class="site-visit" href="https://www.lipanamestaj.online" target="_blank" rel="noopener">Poseti sajt →</a></div></div><div class="site-card"><div class="site-preview"><div class="browser-bar"><div class="bb-dots"><span class="bb-dot red"></span><span class="bb-dot yel"></span><span class="bb-dot grn"></span></div><div class="bb-url">www.route66subotica.online</div></div><div class="preview-frame"><iframe src="https://www.route66subotica.online" loading="lazy" scrolling="no" title="Route 66 Subotica"></iframe><a class="preview-overlay" href="https://www.route66subotica.online" target="_blank" rel="noopener"><span class="overlay-cta">Otvori sajt →</span></a></div></div><div class="site-body"><p class="site-tag">HoReCa · Online Narudžbina</p><p class="site-name">Route 66 Subotica</p><p class="site-desc">Sajt za kafić, restoran ili bar — gosti naručuju direktno preko telefona, bez gužve.</p><a class="site-visit" href="https://www.route66subotica.online" target="_blank" rel="noopener">Poseti sajt →</a></div></div><div class="site-card"><div class="site-preview"><div class="browser-bar"><div class="bb-dots"><span class="bb-dot red"></span><span class="bb-dot yel"></span><span class="bb-dot grn"></span></div><div class="bb-url">www.etnosalaspalic.online</div></div><div class="preview-frame"><iframe src="https://www.etnosalaspalic.online" loading="lazy" scrolling="no" title="Etno Salaš Palić"></iframe><a class="preview-overlay" href="https://www.etnosalaspalic.online" target="_blank" rel="noopener"><span class="overlay-cta">Otvori sajt →</span></a></div></div><div class="site-body"><p class="site-tag">Etno · Turizam · Salaš</p><p class="site-name">Etno Salaš Palić</p><p class="site-desc">Sajt za etno domaćinstvo, salaš ili agroturizam — prezentacija ambijenta i rezervacija gostiju.</p><a class="site-visit" href="https://www.etnosalaspalic.online" target="_blank" rel="noopener">Poseti sajt →</a></div></div><div class="site-card"><div class="site-preview"><div class="browser-bar"><div class="bb-dots"><span class="bb-dot red"></span><span class="bb-dot yel"></span><span class="bb-dot grn"></span></div><div class="bb-url">www.kasiopeja.online</div></div><div class="preview-frame"><iframe src="https://www.kasiopeja.online" loading="lazy" scrolling="no" title="Kasiopeja"></iframe><a class="preview-overlay" href="https://www.kasiopeja.online" target="_blank" rel="noopener"><span class="overlay-cta">Otvori sajt →</span></a></div></div><div class="site-body"><p class="site-tag">Website · Prezentacija</p><p class="site-name">Kasiopeja</p><p class="site-desc">Moderan, profesionalan sajt po meri — brz, prilagođen mobilnim uređajima i spreman za Google pretragu.</p><a class="site-visit" href="https://www.kasiopeja.online" target="_blank" rel="noopener">Poseti sajt →</a></div></div><div class="site-card"><div class="site-preview"><div class="browser-bar"><div class="bb-dots"><span class="bb-dot red"></span><span class="bb-dot yel"></span><span class="bb-dot grn"></span></div><div class="bb-url">poklonizsrcars.online/</div></div><div class="preview-frame"><iframe src="https://poklonizsrcars.online/" loading="lazy" scrolling="no" title="Pokloni iz Srca RS"></iframe><a class="preview-overlay" href="https://poklonizsrcars.online/" target="_blank" rel="noopener"><span class="overlay-cta">Otvori sajt →</span></a></div></div><div class="site-body"><p class="site-tag">Pokloni · Online Prodavnica</p><p class="site-name">Pokloni iz Srca RS</p><p class="site-desc">Sajt za prodaju i prezentaciju poklona — moderan, pregledan i prilagođen mobilnim uređajima.</p><a class="site-visit" href="https://poklonizsrcars.online/" target="_blank" rel="noopener">Poseti sajt →</a></div></div></div></section><section class="trust-sec"><p class="eyebrow center light">Zašto Silverado.pro</p><h2 class="sec-title center light">Saradnja koja je <em>sigurna</em> i transparentna</h2><div class="trust-grid"><div class="trust-card"><div class="trust-check">✓</div><h3>Registrovana firma</h3><p>Posluje legalno i transparentno.</p></div><div class="trust-card"><div class="trust-check">✓</div><h3>Račun za svaki posao</h3><p>Faktura uz svaku saradnju.</p></div><div class="trust-card"><div class="trust-check">✓</div><h3>Direktna podrška</h3><p>Komunikacija sa osobom, ne sa botom.</p></div><div class="trust-card"><div class="trust-check">✓</div><h3>Siguran hosting</h3><p>Stabilna infrastruktura 24/7.</p></div><div class="trust-card"><div class="trust-check">✓</div><h3>Backup i garancija</h3><p>Vaši podaci uvek zaštićeni.</p></div></div></section><section class="cta-sec" id="kontakt"><div class="cta-inner"><p class="eyebrow">Kontakt</p><h2 class="cta-title">Pošaljite <em>upit</em> danas</h2><p class="cta-lead">Odgovaramo brzo. Bez obaveze, bez pritiska — samo konkretna ponuda za vaš biznis.</p><a href="tel:+381691508197" class="cta-phone">+381 69 1508197</a><div class="cta-buttons"><a href="tel:+381691508197" class="btn-primary big">📞 Pozovi odmah</a><a href="viber://chat?number=%2B381691508197" class="btn-viber big">💬 Viber</a><a href="https://wa.me/381691508197" target="_blank" rel="noopener" class="btn-wa big">🟢 WhatsApp</a><a href="https://www.facebook.com/" target="_blank" rel="noopener" class="btn-fb big">📘 Facebook</a></div></div></section><footer class="foot"><div>© 2026 Silverado.pro — Izrada sajtova i webshop rešenja</div><a href="tel:+381691508197">+381 69 1508197</a></footer><a href="tel:+381691508197" class="mob-call">📞 Pozovi: +381 69 1508197</a></div></body></html>
