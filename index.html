@@ -57,6 +57,72 @@
 
     a { color: inherit; text-decoration: none; }
 
+
+    /* TRUST SEAL */
+    .trust-seal {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: linear-gradient(135deg, rgba(184,120,48,0.08), rgba(232,201,122,0.12));
+      border: 1px solid rgba(184,120,48,0.35);
+      padding: 10px 18px; border-radius: 999px;
+      margin-bottom: 22px;
+      font-family: 'Crimson Pro', Georgia, serif;
+      box-shadow: 0 2px 10px rgba(184,120,48,0.08);
+    }
+    .trust-seal .ts-badge {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--amber); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .trust-seal .ts-text { font-size: 0.92rem; color: var(--ink2); line-height: 1.3; }
+    .trust-seal .ts-text strong { color: var(--ink); font-weight: 600; letter-spacing: 0.3px; }
+    .trust-seal .ts-text span { color: var(--smoke); font-size: 0.82rem; display: block; }
+    @media (max-width: 720px) {
+      .trust-seal { padding: 8px 14px; gap: 10px; }
+      .trust-seal .ts-text { font-size: 0.82rem; }
+      .trust-seal .ts-text span { font-size: 0.74rem; }
+    }
+
+    /* FLOATING CHAT BUTTONS */
+    .float-chat {
+      position: fixed; right: 22px; bottom: 24px; z-index: 950;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .float-chat a {
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .float-chat a:hover { transform: scale(1.08); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .float-chat .fc-wa { background: #25D366; }
+    .float-chat .fc-vb { background: var(--viber); }
+    .float-chat a::after {
+      content: attr(data-label);
+      position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+      background: var(--ink); color: var(--ivory);
+      padding: 6px 12px; border-radius: 6px; font-size: 0.78rem;
+      white-space: nowrap; opacity: 0; pointer-events: none;
+      transition: opacity 0.2s ease;
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+    .float-chat a:hover::after { opacity: 1; }
+    .float-chat .fc-pulse {
+      position: absolute; inset: 0; border-radius: 50%;
+      animation: fcPulse 2s ease-out infinite;
+    }
+    .float-chat .fc-wa .fc-pulse { background: #25D366; }
+    .float-chat .fc-vb .fc-pulse { background: var(--viber); }
+    @keyframes fcPulse {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    @media (max-width: 720px) {
+      .float-chat { right: 14px; bottom: 16px; gap: 10px; }
+      .float-chat a { width: 52px; height: 52px; }
+    }
+
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -744,6 +810,13 @@
   <div class="hero-wm">SILVERADO</div>
 
   <div class="hero-content">
+    <div class="trust-seal">
+      <div class="ts-badge">✓</div>
+      <div class="ts-text">
+        <strong>Registrovana firma · PIB 115382536</strong>
+        <span>Silverado Video, Palić 24413, Srbija — račun za svaki posao</span>
+      </div>
+    </div>
     <p class="hero-eyebrow">Video · Snimanje · Website / Webshop · 2026</p>
     <h1 class="hero-title">
       Reklame koje
@@ -1479,5 +1552,21 @@
   });
 </script>
 
+
+<!-- FLOATING CHAT BUTTONS -->
+<div class="float-chat" aria-label="Brzi kontakt">
+  <a href="https://wa.me/381691508197" target="_blank" rel="noopener" class="fc-wa" data-label="WhatsApp: 069 150 8197" aria-label="WhatsApp">
+    <span class="fc-pulse"></span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="position:relative;z-index:1;">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+  <a href="viber://chat?number=%2B381691508197" class="fc-vb" data-label="Viber: 069 150 8197" aria-label="Viber" onclick="return openViberChat(event);">
+    <span class="fc-pulse"></span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="position:relative;z-index:1;">
+      <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+    </svg>
+  </a>
+</div>
 </body>
 </html>
