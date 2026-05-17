@@ -267,7 +267,31 @@ src="https://www.facebook.com/tr?id=1217508533643465&ev=PageView&noscript=1"
       padding: 11px 20px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.9rem; color: var(--smoke);
+      text-decoration: none;
+      display: inline-flex; align-items: center;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s, transform 0.18s, box-shadow 0.18s;
+      position: relative;
     }
+    .hp-pill::after {
+      content: ' →';
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.22s, transform 0.22s;
+      color: var(--amber);
+      font-size: 0.85rem;
+    }
+    .hp-pill:hover {
+      border-color: var(--amber);
+      background: rgba(184,120,48,0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(184,120,48,0.12);
+    }
+    .hp-pill:hover::after {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+    .hp-pill:active { transform: translateY(0); }
     .hp-pill strong { color: var(--amber); font-family: 'Playfair Display', serif; }
 
     .hero-ctas {
@@ -851,11 +875,11 @@ src="https://www.facebook.com/tr?id=1217508533643465&ev=PageView&noscript=1"
     </p>
 
     <div class="hero-prices">
-      <div class="hp-pill">AI reklama — <strong>120 din/sek</strong></div>
-      <div class="hp-pill">Snimanje na lokaciji — <strong>3.500 din</strong></div>
-      <div class="hp-pill">Website / Webshop — <strong>od 6000 dinara</strong></div>
-      <div class="hp-pill">FB / IG / TikTok oglasi — <strong>15% budžeta</strong></div>
-      <div class="hp-pill">Mesečna pretplata · sve uključeno <strong>3 naloga · FB + IG + TikTok</strong></div>
+      <a href="#usluge" class="hp-pill">AI reklama — <strong>120 din/sek</strong></a>
+      <a href="#usluge" class="hp-pill">Snimanje na lokaciji — <strong>3.500 din</strong></a>
+      <a href="#sajtovi" class="hp-pill">Website / Webshop — <strong>od 6000 dinara</strong></a>
+      <a href="#usluge" class="hp-pill">FB / IG / TikTok oglasi — <strong>15% budžeta</strong></a>
+      <a href="#drustvene-mreze" class="hp-pill">Mesečna pretplata · sve uključeno <strong>3 naloga · FB + IG + TikTok</strong></a>
     </div>
 
     <div class="hero-ctas">
