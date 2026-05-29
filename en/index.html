@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1217508533643465');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1217508533643465&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q7W1SB4F5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,8 +28,11 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Silverado.pro — Video ads, on-location filming and modern websites & webshops. Fluent English. Call anytime." />
+  <meta name="description" content="Silverado.pro — Video ads, on-location filming, and modern website &amp; webshop pages." />
   <meta name="theme-color" content="#f7f2ea" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="shortcut icon" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="silverado_logo_500x500.png" />
   <title>Silverado.pro — Video Ads + Website / Webshop</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +76,72 @@
     }
 
     a { color: inherit; text-decoration: none; }
+
+
+    /* TRUST SEAL */
+    .trust-seal {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: linear-gradient(135deg, rgba(184,120,48,0.08), rgba(232,201,122,0.12));
+      border: 1px solid rgba(184,120,48,0.35);
+      padding: 10px 18px; border-radius: 999px;
+      margin-bottom: 22px;
+      font-family: 'Crimson Pro', Georgia, serif;
+      box-shadow: 0 2px 10px rgba(184,120,48,0.08);
+    }
+    .trust-seal .ts-badge {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--amber); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .trust-seal .ts-text { font-size: 0.92rem; color: var(--ink2); line-height: 1.3; }
+    .trust-seal .ts-text strong { color: var(--ink); font-weight: 600; letter-spacing: 0.3px; }
+    .trust-seal .ts-text span { color: var(--smoke); font-size: 0.82rem; display: block; }
+    @media (max-width: 720px) {
+      .trust-seal { padding: 8px 14px; gap: 10px; }
+      .trust-seal .ts-text { font-size: 0.82rem; }
+      .trust-seal .ts-text span { font-size: 0.74rem; }
+    }
+
+    /* FLOATING CHAT BUTTONS */
+    .float-chat {
+      position: fixed; right: 22px; bottom: 24px; z-index: 950;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .float-chat a {
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .float-chat a:hover { transform: scale(1.08); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .float-chat .fc-wa { background: #25D366; }
+    .float-chat .fc-vb { background: var(--viber); }
+    .float-chat a::after {
+      content: attr(data-label);
+      position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+      background: var(--ink); color: var(--ivory);
+      padding: 6px 12px; border-radius: 6px; font-size: 0.78rem;
+      white-space: nowrap; opacity: 0; pointer-events: none;
+      transition: opacity 0.2s ease;
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+    .float-chat a:hover::after { opacity: 1; }
+    .float-chat .fc-pulse {
+      position: absolute; inset: 0; border-radius: 50%;
+      animation: fcPulse 2s ease-out infinite;
+    }
+    .float-chat .fc-wa .fc-pulse { background: #25D366; }
+    .float-chat .fc-vb .fc-pulse { background: var(--viber); }
+    @keyframes fcPulse {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    @media (max-width: 720px) {
+      .float-chat { right: 14px; bottom: 16px; gap: 10px; }
+      .float-chat a { width: 52px; height: 52px; }
+    }
 
     /* NAV */
     nav {
@@ -143,7 +229,8 @@
 
     .hero-eyebrow {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.76rem; letter-spacing: 0.52em; text-transform: uppercase;
+      font-size: 0.82rem; letter-spacing: 0.42em; text-transform: uppercase;
+      font-weight: 600;
       color: var(--amber); margin-bottom: 20px;
       display: flex; align-items: center; gap: 14px;
       animation: riseIn 1.2s 0.07s both;
@@ -180,7 +267,31 @@
       padding: 11px 20px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.9rem; color: var(--smoke);
+      text-decoration: none;
+      display: inline-flex; align-items: center;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s, transform 0.18s, box-shadow 0.18s;
+      position: relative;
     }
+    .hp-pill::after {
+      content: ' →';
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.22s, transform 0.22s;
+      color: var(--amber);
+      font-size: 0.85rem;
+    }
+    .hp-pill:hover {
+      border-color: var(--amber);
+      background: rgba(184,120,48,0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(184,120,48,0.12);
+    }
+    .hp-pill:hover::after {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+    .hp-pill:active { transform: translateY(0); }
     .hp-pill strong { color: var(--amber); font-family: 'Playfair Display', serif; }
 
     .hero-ctas {
@@ -239,19 +350,6 @@
       50%      { opacity: 0.8; transform: scaleY(1.3); }
     }
 
-    /* English-speaker trust ribbon */
-    .english-ribbon {
-      background: var(--ink); color: #f5efe4;
-      padding: 14px 30px; text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem; letter-spacing: 0.05em;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 3px solid var(--amber);
-    }
-    .english-ribbon strong { color: var(--wheat); font-weight: 700; }
-    .english-ribbon a { color: var(--amber2); border-bottom: 1px dotted var(--amber2); }
-    .english-ribbon a:hover { color: var(--wheat); }
-
     /* AMBER STRIP */
     .amber-strip {
       background: var(--amber);
@@ -309,7 +407,11 @@
       box-shadow: 0 20px 52px rgba(24,20,13,0.12);
     }
 
-    .site-preview { position: relative; background: #2a2318; flex-shrink: 0; }
+    .site-preview {
+      position: relative;
+      background: #2a2318;
+      flex-shrink: 0;
+    }
 
     .browser-bar {
       display: flex; align-items: center; gap: 8px;
@@ -334,26 +436,38 @@
     }
 
     .preview-frame {
-      position: relative; width: 100%; height: 0;
-      padding-top: 62%; overflow: hidden; background: var(--parch);
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 62%;
+      overflow: hidden;
+      background: var(--parch);
     }
     .preview-frame iframe {
-      position: absolute; top: 0; left: 0;
-      width: 200%; height: 200%;
-      transform: scale(0.5); transform-origin: top left;
-      border: none; pointer-events: none;
+      position: absolute;
+      top: 0; left: 0;
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      border: none;
+      pointer-events: none;
     }
 
     .preview-overlay {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       display: flex; align-items: center; justify-content: center;
       background: rgba(24,20,13,0);
       transition: background 0.35s;
-      z-index: 2; cursor: pointer; text-decoration: none;
+      z-index: 2;
+      cursor: pointer;
+      text-decoration: none;
     }
     .site-card:hover .preview-overlay { background: rgba(24,20,13,0.42); }
     .overlay-cta {
-      opacity: 0; transform: translateY(10px);
+      opacity: 0;
+      transform: translateY(10px);
       transition: opacity 0.3s, transform 0.3s;
       background: var(--amber); color: #fff;
       font-family: 'Cormorant Garamond', serif;
@@ -363,7 +477,10 @@
     }
     .site-card:hover .overlay-cta { opacity: 1; transform: translateY(0); }
 
-    .site-body { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+    .site-body {
+      padding: 26px 28px 28px;
+      display: flex; flex-direction: column; flex: 1;
+    }
     .site-tag {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.66rem; letter-spacing: 0.36em; text-transform: uppercase;
@@ -371,89 +488,180 @@
       display: flex; align-items: center; gap: 8px;
     }
     .site-tag::before { content: ''; width: 20px; height: 1px; background: var(--amber); opacity: 0.6; }
-    .site-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-    .site-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink2); line-height: 1.65; flex: 1; margin-bottom: 20px; }
+    .site-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .site-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 500; color: var(--ink2); line-height: 1.65;
+      flex: 1; margin-bottom: 20px;
+    }
     .site-visit {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--ink); color: #f5efe4;
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase;
-      padding: 12px 20px; border: 1px solid transparent;
+      padding: 12px 20px;
+      border: 1px solid transparent;
       transition: background 0.3s, color 0.3s, border-color 0.3s;
       text-decoration: none; align-self: flex-start;
     }
     .site-visit:hover { background: var(--amber); color: #fff; }
     .site-visit svg { flex-shrink: 0; }
 
-    /* V3: pricing strip, per-site price, SMM card, trust band */
+    .site-price {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--amber);
+      border-top: 1px solid var(--line);
+      padding-top: 12px; margin-top: 14px;
+      width: 100%;
+    }
+
+
+    /* === V3 ADDITIONS: pricing strip, per-site price, SMM card, trust band === */
     .includes-strip {
       background: var(--ink); color: #f5efe4;
       padding: 28px 32px; margin: 0 0 44px;
       display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: center;
       border-left: 4px solid var(--amber);
     }
-    .includes-strip h4 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--wheat); margin: 0; }
+    .includes-strip h4 {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+      color: var(--wheat); margin: 0;
+    }
     .includes-strip h4 em { color: var(--amber2); font-style: italic; }
-    .includes-strip ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 22px; }
-    .includes-strip li { font-family: 'Cormorant Garamond', serif; font-size: 1.02rem; color: rgba(245,239,228,0.9); display: flex; gap: 10px; align-items: flex-start; }
-    .includes-strip li::before { content: '✓'; color: var(--amber2); font-weight: 700; flex-shrink: 0; }
-    @media (max-width: 760px) { .includes-strip { grid-template-columns: 1fr; padding: 22px; } .includes-strip ul { grid-template-columns: 1fr; } }
+    .includes-strip ul {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 22px;
+    }
+    .includes-strip li {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.02rem;
+      color: rgba(245,239,228,0.9); display: flex; gap: 10px; align-items: flex-start;
+    }
+    .includes-strip li::before {
+      content: '✓'; color: var(--amber2); font-weight: 700; flex-shrink: 0;
+    }
+    @media (max-width: 760px) {
+      .includes-strip { grid-template-columns: 1fr; padding: 22px; }
+      .includes-strip ul { grid-template-columns: 1fr; }
+    }
 
     .price-row {
       display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
-      border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px; margin-top: 14px;
     }
-    .price-old { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--smoke); text-decoration: line-through; opacity: 0.7; }
-    .price-new { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--rust); line-height: 1; }
-    .price-tag { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; background: var(--amber); color: #fff; padding: 3px 10px; font-weight: 700; }
-    .price-incl { font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; color: var(--smoke); margin-top: 8px; font-style: italic; }
+    .price-old {
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      color: var(--smoke); text-decoration: line-through; opacity: 0.7;
+    }
+    .price-new {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900;
+      color: var(--rust); line-height: 1;
+    }
+    .price-tag {
+      display: inline-block; font-family: 'Cormorant Garamond', serif;
+      font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+      background: var(--amber); color: #fff; padding: 3px 10px; font-weight: 700;
+    }
+    .price-incl {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.92rem;
+      color: var(--smoke); margin-top: 8px; font-style: italic;
+    }
     .price-incl strong { color: var(--rust); font-style: normal; font-weight: 600; }
 
+    /* Personal-brand trust band */
     .personal-band {
       background: linear-gradient(to right, var(--cream), var(--parch));
       padding: 48px 60px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
       text-align: center;
     }
-    .personal-band p.eyebrow { font-family: 'Cormorant Garamond', serif; font-size: 0.74rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
-    .personal-band h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.6vw, 2.1rem); font-weight: 700; color: var(--ink); max-width: 820px; margin: 0 auto 14px; line-height: 1.3; }
+    .personal-band p.eyebrow {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.74rem;
+      letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 14px;
+    }
+    .personal-band h3 {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+      font-weight: 700; color: var(--ink); max-width: 820px; margin: 0 auto 14px;
+      line-height: 1.3;
+    }
     .personal-band h3 em { color: var(--amber); font-style: italic; }
-    .personal-band p.lead { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ink2); max-width: 720px; margin: 0 auto; line-height: 1.7; }
+    .personal-band p.lead {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+      color: var(--ink2); max-width: 720px; margin: 0 auto; line-height: 1.7;
+    }
 
     /* SMM featured service card */
     .services-grid { grid-template-columns: repeat(5, 1fr) !important; }
     @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, 1fr) !important; } }
     @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr !important; } }
-    .svc-card.svc-featured { background: var(--ink); color: #f5efe4; border-top-color: var(--amber); position: relative; }
+    .svc-card.svc-featured {
+      background: var(--ink); color: #f5efe4;
+      border-top-color: var(--amber);
+      position: relative;
+    }
     .svc-card.svc-featured .svc-num { color: rgba(245,239,228,0.12); }
     .svc-card.svc-featured .svc-name { color: var(--wheat); }
     .svc-card.svc-featured .svc-desc { color: rgba(245,239,228,0.78); }
     .svc-card.svc-featured .svc-price { color: var(--amber2); border-top-color: rgba(255,255,255,0.12); }
     .svc-card.svc-featured:hover { background: #000; transform: translateY(-4px); }
-    .svc-flag { position: absolute; top: 14px; right: 14px; background: var(--rust); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; }
-    .svc-callnote { margin-top: 8px; font-family: 'Cormorant Garamond', serif; font-size: 0.88rem; color: var(--wheat); font-style: italic; }
+    .svc-flag {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--rust); color: #fff;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.6rem;
+      letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+      padding: 4px 10px;
+    }
+    .svc-callnote {
+      margin-top: 8px; font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem; color: var(--wheat); font-style: italic;
+    }
 
+    /* SHARED */
     .sec { padding: 100px 60px; }
     .sec-inner { max-width: 1200px; margin: 0 auto; }
 
     .sec-lbl {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.74rem; letter-spacing: 0.5em; text-transform: uppercase;
+      font-size: 0.8rem; letter-spacing: 0.42em; text-transform: uppercase;
+      font-weight: 600;
       color: var(--amber); margin-bottom: 12px;
       display: flex; align-items: center; gap: 12px;
     }
     .sec-lbl::before { content: ''; width: 30px; height: 1px; background: var(--amber); opacity: 0.7; }
 
-    .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 3.8vw, 3rem); font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-weight: 700; color: var(--ink); margin-bottom: 12px;
+    }
     .sec-title em { font-style: italic; color: var(--amber); }
-    .sec-body { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--ink2); line-height: 1.75; max-width: 540px; margin-bottom: 52px; }
+
+    .sec-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 500;
+      color: var(--ink2); line-height: 1.75;
+      max-width: 540px; margin-bottom: 52px;
+    }
+
     .divider { width: 48px; height: 2px; background: var(--amber); margin: 16px 0 28px; }
 
     /* VIDEOS */
-    .videos-sec { background: var(--ink); padding: 100px 60px; position: relative; overflow: hidden; }
+    .videos-sec {
+      background: var(--ink);
+      padding: 100px 60px;
+      position: relative; overflow: hidden;
+    }
     .videos-sec .sec-title { color: #f5efe4; }
     .videos-sec .sec-body { color: rgba(245,239,228,0.5); }
+
     .videos-sec::after {
-      content: 'REEL';
+      content: 'RADOVI';
       position: absolute; right: -40px; bottom: -50px;
       font-family: 'Playfair Display', serif;
       font-size: clamp(9rem, 16vw, 14rem);
@@ -461,8 +669,14 @@
       color: rgba(245,239,228,0.03);
       line-height: 1; pointer-events: none; white-space: nowrap;
     }
-    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
-    .video-cell { border: 1px solid rgba(255,255,255,0.06); overflow: hidden; transition: border-color 0.3s; }
+
+    .video-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;
+    }
+    .video-cell {
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden; transition: border-color 0.3s;
+    }
     .video-cell:hover { border-color: var(--amber); }
     .video-wrap { position: relative; padding-top: 56.25%; background: rgba(255,255,255,0.02); }
     .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -470,7 +684,14 @@
     /* SERVICES */
     .services-sec { background: var(--ivory); padding: 100px 60px; }
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
-    .svc-card { background: var(--cream); padding: 38px 28px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; transition: border-top-color 0.3s, background 0.3s, transform 0.3s; }
+
+    .svc-card {
+      background: var(--cream);
+      padding: 38px 28px;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      transition: border-top-color 0.3s, background 0.3s, transform 0.3s;
+    }
     .svc-card:hover { border-top-color: var(--amber); background: #fff; transform: translateY(-4px); }
     .svc-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-style: italic; color: rgba(24,20,13,0.1); line-height: 1; margin-bottom: 14px; }
     .svc-icon { font-size: 1.9rem; margin-bottom: 12px; display: block; }
@@ -481,7 +702,7 @@
     /* PRICING */
     .pricing-sec { background: var(--parch); padding: 100px 60px; position: relative; overflow: hidden; }
     .pricing-sec::before {
-      content: 'PRICE';
+      content: 'PRICING';
       position: absolute; left: -20px; top: 50%;
       transform: translateY(-50%) rotate(-90deg);
       font-family: 'Playfair Display', serif;
@@ -489,18 +710,28 @@
       color: rgba(24,20,13,0.04); white-space: nowrap;
       pointer-events: none; line-height: 1;
     }
+
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; position: relative; z-index: 1; }
-    .plan-card { background: #fff; border: 1px solid var(--line); padding: 42px 34px; position: relative; border-top: 3px solid transparent; transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s; }
+
+    .plan-card {
+      background: #fff; border: 1px solid var(--line);
+      padding: 42px 34px; position: relative;
+      border-top: 3px solid transparent;
+      transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
     .plan-card:hover { border-top-color: var(--amber); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(24,20,13,0.1); }
     .plan-card.featured { border-top-color: var(--amber); }
+
     .plan-badge { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; background: var(--amber); padding: 4px 12px; margin-bottom: 16px; }
     .plan-name { font-family: 'Cormorant Garamond', serif; font-size: 0.82rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink2); font-weight: 600; margin-bottom: 10px; }
     .plan-price { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--ink); line-height: 1; margin-bottom: 4px; }
     .plan-per { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: var(--ink2); margin-bottom: 26px; }
+
     .plan-feats { list-style: none; display: flex; flex-direction: column; }
     .plan-feats li { display: flex; gap: 12px; align-items: flex-start; padding: 13px 0; border-bottom: 1px solid var(--line); font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink2); line-height: 1.5; }
     .plan-feats li:last-child { border-bottom: none; }
     .pf-chk { width: 20px; height: 20px; flex-shrink: 0; border: 1px solid rgba(184,120,48,0.45); display: flex; align-items: center; justify-content: center; color: var(--amber); font-size: 0.76rem; margin-top: 2px; }
+
     .plan-cta { margin-top: 26px; display: flex; flex-direction: column; gap: 9px; }
 
     /* PROCESS */
@@ -535,7 +766,9 @@
       color: rgba(24,20,13,0.04);
       line-height: 1; pointer-events: none; white-space: nowrap;
     }
+
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; position: relative; z-index: 1; }
+
     .ci-row { display: flex; gap: 14px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line); }
     .ci-row:last-child { border-bottom: none; }
     .ci-icon { width: 38px; height: 38px; background: rgba(184,120,48,0.1); border: 1px solid rgba(184,120,48,0.22); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
@@ -550,11 +783,13 @@
     .form-sub { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: var(--smoke); margin-bottom: 28px; line-height: 1.6; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
     .form-full { margin-bottom: 12px; }
+
     label { font-family: 'Cormorant Garamond', serif; font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 6px; }
     input, textarea, select { width: 100%; background: var(--ivory); border: 1px solid var(--line2); color: var(--ink); font-family: 'Crimson Pro', serif; font-size: 1rem; padding: 11px 14px; outline: none; transition: border-color 0.3s; }
     input:focus, textarea:focus, select:focus { border-color: var(--amber); background: #fff; }
     select option { background: #fff; color: var(--ink); }
     textarea { min-height: 110px; resize: vertical; }
+
     .btn-submit { display: block; width: 100%; background: var(--amber); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; padding: 16px 28px; border: none; cursor: pointer; transition: background 0.3s; text-align: center; }
     .btn-submit:hover { background: var(--rust); }
     .form-note { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--smoke); margin-top: 10px; text-align: center; font-style: italic; }
@@ -570,6 +805,7 @@
     .lang-toggle { position: fixed; top: 18px; right: 18px; z-index: 9999; padding: 7px 14px; background: var(--amber); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: background 0.3s; }
     .lang-toggle:hover { background: var(--rust); }
 
+    /* RESPONSIVE */
     @media (max-width: 1000px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
@@ -594,110 +830,102 @@
 </head>
 <body>
 
-<a href="../" class="lang-toggle">Srpski</a>
+<a href="en/" class="lang-toggle">Serbian</a>
 
 <!-- NAV -->
 <nav>
   <a href="#top" class="nav-logo">
-    <span class="logo-dot"></span>
+    <img src="silverado_logo_500x500.png" alt="Silverado.pro" style="height:38px;width:38px;border-radius:50%;object-fit:cover;display:block;" />
+    <span class="logo-dot" style="display:none;"></span>
     Silverado.pro
   </a>
   <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#websites">Websites</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#process">Process</a></li>
+    <li><a href="#radovi">Work</a></li>
+    <li><a href="#sajtovi">Websites</a></li>
+    <li><a href="#usluge">Services</a></li>
+    <li><a href="#ponuda">Pricing</a></li>
+    <li><a href="#kako-radi">Process</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#kontakt">Contact</a></li>
   </ul>
-  <a href="#contact" class="btn-nav">Order →</a>
+  <a href="#kontakt" class="btn-nav">Order →</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-texture"></div>
-  <div class="hero-wm">SILVERADO</div>
-
-  <div class="hero-content">
-    <p class="hero-eyebrow">Video · Filming · Website / Webshop · 2026</p>
-    <h1 class="hero-title">
-      Ads that
-      <em>stop the scroll.</em>
-    </h1>
-    <p class="hero-sub">
-      AI clips, edits from your footage, on-location filming and modern websites.
-      <strong>Fast. Modern. Ready for Meta &amp; Instagram ads.</strong>
-    </p>
-
-    <div class="hero-prices">
-      <div class="hp-pill">AI ad — <strong>€1 / second</strong></div>
-      <div class="hp-pill">On-location filming — <strong>€29 flat</strong></div>
-    </div>
-
-    <div class="hero-ctas">
-      <a href="tel:+381691508197" class="btn-primary">📞 Call: +381 69 150 8197</a>
-      <a href="#work" class="btn-outline">See the work →</a>
-      <a href="viber://chat?number=%2B381691508197" class="btn-viber" onclick="return openViberChat(event);">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
-        </svg>
-        Viber
-      </a>
-    </div>
-  </div>
-
-  <span class="hero-scroll">Scroll</span>
-</section>
-
-<!-- ENGLISH SPEAKER RIBBON -->
-<div class="english-ribbon">
-  🇬🇧 <strong>Call me anytime — I speak fluent English.</strong>
-  Same time zone or not, day or night, I’m ready to do whatever it takes.
-  <a href="tel:+381691508197">+381 69 150 8197</a>
-</div>
-
-<!-- AMBER STRIP -->
-<div class="amber-strip">
-  <div class="as-item"><span class="as-icon">🤖</span><div><div class="as-lbl">AI Hook ad</div><div class="as-price">€1 / second</div></div></div>
-  <div class="as-item"><span class="as-icon">✂️</span><div><div class="as-lbl">Edit from your footage</div><div class="as-price">Custom quote</div></div></div>
-  <div class="as-item"><span class="as-icon">🎥</span><div><div class="as-lbl">On-location filming</div><div class="as-price">€29 flat</div></div></div>
-  <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Website / Webshop</div><div class="as-price">From €50</div></div></div>
-</div>
-
-<!-- PORTFOLIO -->
-<section class="portfolio-sec" id="websites">
+<!-- PORTFOLIO / WEBSITES SHOWCASE -->
+<section class="portfolio-sec" id="sajtovi">
   <div class="sec-inner">
     <p class="sec-lbl">Website Examples</p>
-    <h2 class="sec-title">Live websites — <em>see them in action</em></h2>
+    <h2 class="sec-title">Website examples — <em>see them live</em></h2>
     <div class="divider"></div>
-    <p class="sec-body" style="margin-bottom:32px;">From a simple presentation site, through a webshop, to online ordering for restaurants — every site is built fast, modern, and mobile-first. <strong>Promo prices — everything included.</strong></p>
-
+    <p class="sec-body" style="margin-bottom:32px;">From a simple website to a web shop to online ordering for hospitality businesses — every site is built fast, modern and mobile-friendly. <strong>Special prices — everything included.</strong></p>
     <div class="includes-strip">
-      <h4>What you get with <em>every website</em></h4>
+      <h4>What you get with <em>every site</em></h4>
       <ul>
-        <li>Complete design and build</li>
-        <li>Google registration &amp; page indexing</li>
+        <li>Complete design and development</li>
+        <li>Google registration and page indexing</li>
         <li>SEO optimization for search</li>
-        <li>100% tested, fast and mobile-ready</li>
-        <li><strong>Hosting for one full year — free</strong></li>
-        <li><strong>Domain name — free</strong></li>
+        <li>100% tested, fast and mobile-friendly</li>
+        <li><strong>One year hosting — free</strong></li>
+        <li><strong>Domain — free</strong></li>
       </ul>
     </div>
 
     <div class="personal-band" style="margin: 0 0 44px; padding: 36px 32px;">
-      <p class="eyebrow">Personal care · before &amp; after launch</p>
-      <h3>You’re not just another client — <em>I walk you through everything</em>, and I’m here long after launch.</h3>
-      <p class="lead">I build every site personally, from the first idea to the live version. After delivery you get ongoing support — edits, advice, quick fixes when you need them. That’s the difference you’ll feel later.</p>
+      <p class="eyebrow">Personal care · before and after delivery</p>
+      <h3>You're not just another client — <em>I guide you through everything</em>, and I'm here after launch too.</h3>
+      <p class="lead">I build every site personally, from concept to live version. After delivery you get ongoing support — edits, advice, quick help when needed. That's the difference you notice later.</p>
     </div>
 
+
     <div class="portfolio-grid">
+
+      <!-- Card 0 -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">mincaairsystem.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://mincaairsystem.online" loading="lazy" scrolling="no" title="mincaairsystem.online preview"></iframe>
+            <a class="preview-overlay" href="https://mincaairsystem.online" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Website</p>
+          <p class="site-name">Minca Air System</p>
+          <p class="site-desc">Clean, modern site for presenting a service or brand. Ideal for local businesses that need a clear online presence with contact info and offerings.</p>
+          <div class="price-row">
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€93.22</span>
+            <span class="price-new">€50.85</span>
+          </div>
+          <p class="price-incl">All included: design, SEO, Google indexing, <strong>one year hosting + free domain</strong>.</p>
+          <a class="site-visit" href="https://mincaairsystem.online" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit mincaairsystem.online
+          </a>
+        </div>
+      </div>
 
       <!-- Card 1 -->
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
-            <div class="bb-dots"><div class="bb-dot red"></div><div class="bb-dot yel"></div><div class="bb-dot grn"></div></div>
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
             <div class="bb-url">cistmiris.online</div>
           </div>
           <div class="preview-frame">
@@ -713,13 +941,15 @@
         <div class="site-body">
           <p class="site-tag">Website</p>
           <p class="site-name">Čist Miris</p>
-          <p class="site-desc">A clean, modern presentation site for a service or brand. Ideal for local businesses that need a clear online presence with contact and offer.</p>
+          <p class="site-desc">Clean, modern site for presenting a service or brand. Ideal for local businesses that need a clear online presence with contact info and offerings.</p>
           <div class="price-row">
-            <span class="price-tag">Promo</span>
-            <span class="price-old">€92</span>
-            <span class="price-new">€50</span>
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€93.22</span>
+            <span class="price-new">€50.85</span>
           </div>
-          <p class="price-incl">All included: design, SEO, Google indexing, <strong>1-year hosting + free domain</strong>.</p>
+          <p class="price-incl">All included: design, SEO, Google indexing, <strong>one year hosting + free domain</strong>.</p>
+          
+          
           <a class="site-visit" href="https://www.cistmiris.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Visit www.cistmiris.online
@@ -731,7 +961,11 @@
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
-            <div class="bb-dots"><div class="bb-dot red"></div><div class="bb-dot yel"></div><div class="bb-dot grn"></div></div>
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
             <div class="bb-url">lipanamestaj.online</div>
           </div>
           <div class="preview-frame">
@@ -745,18 +979,20 @@
           </div>
         </div>
         <div class="site-body">
-          <p class="site-tag">Web Shop · Product Showcase</p>
-          <p class="site-name">Lipa Furniture</p>
-          <p class="site-desc">A site with collection and product showcase — perfect for shops, makers, and brands that want to present their range and attract buyers online.</p>
+          <p class="site-tag">Web Shop · Product Display</p>
+          <p class="site-name">Lipa Nameštaj</p>
+          <p class="site-desc">Site with collection and product display — ideal for stores, craftsmen and brands that want to showcase their range and attract customers online.</p>
           <div class="price-row">
-            <span class="price-tag">Promo</span>
-            <span class="price-old">€200</span>
-            <span class="price-new">€117</span>
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€203.39</span>
+            <span class="price-new">€118.64</span>
           </div>
-          <p class="price-incl">All included: design, SEO, Google indexing, <strong>1-year hosting + free domain</strong>.</p>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
+          
           <a class="site-visit" href="https://www.lipanamestaj.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Visit www.lipanamestaj.online
+            Poseti www.lipanamestaj.online
           </a>
         </div>
       </div>
@@ -765,7 +1001,11 @@
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
-            <div class="bb-dots"><div class="bb-dot red"></div><div class="bb-dot yel"></div><div class="bb-dot grn"></div></div>
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
             <div class="bb-url">route66subotica.online</div>
           </div>
           <div class="preview-frame">
@@ -781,13 +1021,15 @@
         <div class="site-body">
           <p class="site-tag">HoReCa · Online Ordering</p>
           <p class="site-name">Route 66 Subotica</p>
-          <p class="site-desc">Site for a café, restaurant or bar — guests order directly from their phone, no waiting, no crowding. Modern and frictionless.</p>
+          <p class="site-desc">Site for a café, restaurant or bar — guests order directly via phone and app, without the hassle. Modern.</p>
           <div class="price-row">
-            <span class="price-tag">Promo</span>
-            <span class="price-old">€208</span>
-            <span class="price-new">€117</span>
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€211.86</span>
+            <span class="price-new">€118.64</span>
           </div>
-          <p class="price-incl">All included: design, SEO, Google indexing, <strong>1-year hosting + free domain</strong>.</p>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
+          
           <a class="site-visit" href="https://www.route66subotica.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Visit www.route66subotica.online
@@ -799,7 +1041,11 @@
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
-            <div class="bb-dots"><div class="bb-dot red"></div><div class="bb-dot yel"></div><div class="bb-dot grn"></div></div>
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
             <div class="bb-url">etnosalaspalic.online</div>
           </div>
           <div class="preview-frame">
@@ -813,15 +1059,17 @@
           </div>
         </div>
         <div class="site-body">
-          <p class="site-tag">Ethno · Tourism · Farmstay</p>
+          <p class="site-tag">Ethno · Tourism · Farmstead</p>
           <p class="site-name">Etno Salaš Palić</p>
-          <p class="site-desc">Site for an ethno household, farmstay or agritourism — showcase the atmosphere, services and reservations. Ideal for tourist properties wanting guests from the whole region.</p>
+          <p class="site-desc">Site for an ethno homestead, farmstead or agritourism — presenting the ambiance, services and reservations. Ideal for tourism properties looking to attract guests from the whole region.</p>
           <div class="price-row">
-            <span class="price-tag">Promo</span>
-            <span class="price-old">€250</span>
-            <span class="price-new">€134</span>
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€254.24</span>
+            <span class="price-new">€135.59</span>
           </div>
-          <p class="price-incl">All included: design, SEO, Google indexing, <strong>1-year hosting + free domain</strong>.</p>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
+          
           <a class="site-visit" href="https://www.etnosalaspalic.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Visit www.etnosalaspalic.online
@@ -833,7 +1081,11 @@
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
-            <div class="bb-dots"><div class="bb-dot red"></div><div class="bb-dot yel"></div><div class="bb-dot grn"></div></div>
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
             <div class="bb-url">kasiopeja.online</div>
           </div>
           <div class="preview-frame">
@@ -849,13 +1101,15 @@
         <div class="site-body">
           <p class="site-tag">Website · Presentation</p>
           <p class="site-name">Kasiopeja</p>
-          <p class="site-desc">A modern, professional custom-built website — fast, mobile-friendly and ready for Google search from day one.</p>
+          <p class="site-desc">A modern, professional custom-built site — fast, mobile-friendly and Google-ready from day one.</p>
           <div class="price-row">
-            <span class="price-tag">Promo</span>
-            <span class="price-old">€125</span>
-            <span class="price-new">€50</span>
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€127.12</span>
+            <span class="price-new">€50.85</span>
           </div>
-          <p class="price-incl">All included: design, SEO, Google indexing, <strong>1-year hosting + free domain</strong>.</p>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
+          
           <a class="site-visit" href="https://www.kasiopeja.online" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Visit www.kasiopeja.online
@@ -867,7 +1121,11 @@
       <div class="site-card">
         <div class="site-preview">
           <div class="browser-bar">
-            <div class="bb-dots"><div class="bb-dot red"></div><div class="bb-dot yel"></div><div class="bb-dot grn"></div></div>
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
             <div class="bb-url">poklonizsrcars.online</div>
           </div>
           <div class="preview-frame">
@@ -881,18 +1139,207 @@
           </div>
         </div>
         <div class="site-body">
-          <p class="site-tag">Gifts · Online Shop</p>
-          <p class="site-name">Gifts From the Heart</p>
-          <p class="site-desc">A site for selling and presenting gifts — modern, clear, and mobile-ready. Perfect for brands that want to attract buyers online.</p>
+          <p class="site-tag">Gifts · Online Store</p>
+          <p class="site-name">Pokloni iz Srca RS</p>
+          <p class="site-desc">Site for selling and presenting gifts — modern, clear and mobile-friendly. Ideal for brands looking to attract customers online.</p>
           <div class="price-row">
-            <span class="price-tag">Promo</span>
-            <span class="price-old">€250</span>
-            <span class="price-new">€125</span>
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€254.24</span>
+            <span class="price-new">€127.12</span>
           </div>
-          <p class="price-incl">All included: design, SEO, Google indexing, <strong>1-year hosting + free domain</strong>.</p>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          
+          
           <a class="site-visit" href="https://poklonizsrcars.online/" target="_blank" rel="noopener">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Visit www.poklonizsrcars.online
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 7 — Alatshop -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">alatshop.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://alatshop.online/" loading="lazy" scrolling="no" title="alatshop.online preview"></iframe>
+            <a class="preview-overlay" href="https://alatshop.online/" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Webshop · Tools</p>
+          <p class="site-name">Alat Shop</p>
+          <p class="site-desc">Online tool store — clear catalogue, fast search and modern design tailored for mobile devices.</p>
+          <div class="price-row">
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€254.24</span>
+            <span class="price-new">€127.12</span>
+          </div>
+          <p class="price-incl">All included: design, SEO, Google indexing, <strong>one year hosting + free domain</strong>.</p>
+          <a class="site-visit" href="https://alatshop.online/" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit www.alatshop.online
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 8 — Auto Kosmos -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">autokosmos.online</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://autokosmos.online/" loading="lazy" scrolling="no" title="autokosmos.online preview"></iframe>
+            <a class="preview-overlay" href="https://autokosmos.online/" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Webshop · Auto Parts</p>
+          <p class="site-name">Auto Kosmos</p>
+          <p class="site-desc">Online store for auto parts and equipment — modern webshop with product overview and easy ordering.</p>
+          <div class="price-row">
+            <span class="price-tag">Sale</span>
+            <span class="price-old">€254.24</span>
+            <span class="price-new">€50.85</span>
+          </div>
+          <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+          <a class="site-visit" href="https://autokosmos.online/" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit www.autokosmos.online
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 9 — Investment Solution Team -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">investment-solution-team.eu</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://investment-solution-team.eu/" loading="lazy" scrolling="no" title="investment-solution-team.eu preview"></iframe>
+            <a class="preview-overlay" href="https://investment-solution-team.eu/" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Website · Presentation</p>
+          <p class="site-name">Investment Solution Team</p>
+          <p class="site-desc">A modern, professional custom-built site — fast, mobile-friendly and Google-ready from day one.</p>
+          <div class="price-row">
+            <span class="price-tag">Sale</span>
+            <span class="price-new">€127.12</span>
+          </div>
+          <p class="price-incl">All included: design, SEO, Google indexing, <strong>one year hosting + free domain</strong>.</p>
+          <a class="site-visit" href="https://investment-solution-team.eu/" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit investment-solution-team.eu
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 10 — Auto Laki -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">autolaki.rs</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://autolaki.rs/" loading="lazy" scrolling="no" title="autolaki.rs preview"></iframe>
+            <a class="preview-overlay" href="https://autolaki.rs/" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Website · Auto Equipment</p>
+          <p class="site-name">Auto Laki</p>
+          <p class="site-desc">A modern, professional custom-built site — fast, mobile-friendly and Google-ready from day one.</p>
+          <div class="price-row">
+            <span class="price-tag">Sale</span>
+            <span class="price-new">€63.56</span>
+          </div>
+          <p class="price-incl">All included: design, SEO, Google indexing, <strong>one year hosting + free domain</strong>.</p>
+          <a class="site-visit" href="https://autolaki.rs/" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit www.autolaki.rs
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 11 — Klas024 -->
+      <div class="site-card">
+        <div class="site-preview">
+          <div class="browser-bar">
+            <div class="bb-dots">
+              <div class="bb-dot red"></div>
+              <div class="bb-dot yel"></div>
+              <div class="bb-dot grn"></div>
+            </div>
+            <div class="bb-url">klas024.rs</div>
+          </div>
+          <div class="preview-frame">
+            <iframe src="https://klas024.rs/" loading="lazy" scrolling="no" title="klas024.rs preview"></iframe>
+            <a class="preview-overlay" href="https://klas024.rs/" target="_blank" rel="noopener">
+              <span class="overlay-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Visit site
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="site-body">
+          <p class="site-tag">Website · Presentation</p>
+          <p class="site-name">Klas024</p>
+          <p class="site-desc">A modern, professional custom-built site — fast, mobile-friendly and Google-ready from day one.</p>
+          <div class="price-row">
+            <span class="price-tag">Sale</span>
+            <span class="price-new">€169.49</span>
+          </div>
+          <p class="price-incl">All included: design, SEO, Google indexing, <strong>one year hosting + free domain</strong>.</p>
+          <a class="site-visit" href="https://klas024.rs/" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visit www.klas024.rs
           </a>
         </div>
       </div>
@@ -907,28 +1354,84 @@
         No limits. No exceptions.
       </p>
       <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:900;color:#f5efe4;line-height:1.1;margin-bottom:20px;">
-        Don’t see what you’re looking for?<br>
+        Don't see what you need?<br>
         <em style="color:var(--amber);font-style:italic;">I can build it.</em>
       </h3>
       <p style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:rgba(245,239,228,0.82);line-height:1.7;max-width:680px;margin-bottom:32px;">
-        Restaurant menu, booking system, real-estate listings, portfolio, service catalog, event page, membership site, online store — <strong style="color:#f5efe4;">whatever you can imagine, I can design and build it.</strong> No template limits. No “we don’t do that.” Just tell me what you need.
+        Restaurant menu, booking system, property listings, portfolio, service catalogue, event page, membership site, online store — <strong style="color:#f5efe4;">whatever you can imagine, I can design and build it.</strong> No template restrictions. No "we don't do that." Just tell me what you need.
       </p>
-      <a href="#contact" class="btn-primary">Tell me what you need →</a>
+      <a href="#kontakt" class="btn-primary">Tell me what you need →</a>
     </div>
 
     <div style="margin-top:3px; text-align:center;">
-      <a href="#contact" class="btn-primary" style="display:inline-flex;">Order your site →</a>
+      <a href="#kontakt" class="btn-primary" style="display:inline-flex;">Order your site →</a>
     </div>
   </div>
 </section>
 
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-texture"></div>
+  <div class="hero-wm">SILVERADO</div>
+
+  <div class="hero-content">
+    <div class="trust-seal">
+      <div class="ts-badge">✓</div>
+      <div class="ts-text">
+        <strong>Registered company · Tax ID 115382536</strong>
+        <span>Silverado Video, Palić 24413, Serbia — invoice for every job</span>
+      </div>
+    </div>
+    <p class="hero-eyebrow">Video · Filming · Website / Webshop · 2026</p>
+    <h1 class="hero-title">
+      Ads that
+      <em>stop the scroll.</em>
+    </h1>
+    <p class="hero-sub">
+      AI clips, editing from your footage, on-location filming and modern web pages.
+      <strong>Fast. Modern. Ready for Meta and Instagram ads.</strong>
+    </p>
+
+    <div class="hero-prices">
+      <a href="#usluge" class="hp-pill">AI ad — <strong>€1.02/sec</strong></a>
+      <a href="#usluge" class="hp-pill">On-location filming — <strong>€29.66</strong></a>
+      <a href="#sajtovi" class="hp-pill">Website / Webshop — <strong>from €50.85</strong></a>
+      <a href="#usluge" class="hp-pill">FB / IG / TikTok ads — <strong>15% of budget</strong></a>
+      <a href="#drustvene-mreze" class="hp-pill">Monthly subscription · all included <strong>3 accounts · FB + IG + TikTok</strong></a>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="tel:+381691508197" class="btn-primary">📞 Call: +381 69 1508 197</a>
+      <a href="#radovi" class="btn-outline">View our work →</a>
+
+    </div>
+  </div>
+
+<style>
+.hero-portrait{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:clamp(260px,30vw,420px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;z-index:2;box-shadow:0 30px 60px -20px rgba(24,20,13,0.45),0 0 0 6px var(--ivory),0 0 0 7px rgba(184,120,48,0.35);}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.92) contrast(1.02);}
+.hero-portrait::after{content:'© SILVERADO.PRO';position:absolute;left:0;right:0;bottom:8%;text-align:center;font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(10px,1vw,13px);letter-spacing:0.32em;color:rgba(255,255,255,0.78);text-shadow:0 1px 4px rgba(0,0,0,0.55);pointer-events:none;mix-blend-mode:overlay;}
+@media(max-width:980px){.hero-portrait{position:relative;right:auto;top:auto;transform:none;margin:30px auto 0;width:200px;}}
+</style>
+<div class="hero-portrait"><img src="me3.png" alt="Silverado"></div>
+  <span class="hero-scroll">Scroll</span>
+</section>
+
+<!-- AMBER STRIP -->
+<div class="amber-strip">
+  <div class="as-item"><span class="as-icon">🤖</span><div><div class="as-lbl">AI Hook ad</div><div class="as-price">€1.02 / second</div></div></div>
+  <div class="as-item"><span class="as-icon">✂️</span><div><div class="as-lbl">Edit from your footage</div><div class="as-price">Price on request</div></div></div>
+  <div class="as-item"><span class="as-icon">🎥</span><div><div class="as-lbl">On-location filming</div><div class="as-price">€29.66 flat rate</div></div></div>
+  <div class="as-item"><span class="as-icon">🌐</span><div><div class="as-lbl">Website / Webshop</div><div class="as-price">Price on request</div></div></div>
+</div>
+
 <!-- VIDEOS -->
-<section class="videos-sec" id="work">
+<section class="videos-sec" id="radovi">
   <div class="sec-inner">
-    <p class="sec-lbl" style="color:var(--wheat);">Sample Work</p>
+    <p class="sec-lbl" style="color:var(--wheat);">Work Examples</p>
     <h2 class="sec-title" style="color:#f5efe4;">See <em style="color:var(--wheat);">what we do</em></h2>
     <div class="divider"></div>
-    <p class="sec-body">10 clips — different styles for different industries and products.</p>
+    <p class="sec-body">10 klipova — različiti stilovi za različite delatnosti i proizvode.</p>
 
     <div class="video-grid">
       <div class="video-cell"><div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/BJFQIm9FP-4?rel=0&modestbranding=1" title="Silverado video 1" allowfullscreen></iframe></div></div>
@@ -945,56 +1448,160 @@
 
     <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
       <a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank" rel="noopener" class="btn-outline" style="color:#f5efe4; border-color:rgba(245,239,228,0.25);">🔎 Google: Emil Eros</a>
-      <a href="tel:+381691508197" class="btn-primary">📞 Call: +381 69 150 8197</a>
+      <a href="tel:+381691508197" class="btn-primary">📞 Call: +381 69 1508 197</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA MANAGEMENT -->
+<style>
+  .social-sec { padding: 110px 52px 90px; background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 24px; }
+  .social-card { position: relative; background: var(--ivory); border: 1px solid var(--line); border-radius: 12px; padding: 24px 22px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; transition: border-color .25s, transform .25s, box-shadow .25s; overflow: hidden; }
+  .social-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 70px; background: linear-gradient(135deg, var(--parch) 0%, var(--cream) 100%); z-index: 0; }
+  .social-card:hover { border-color: var(--amber); transform: translateY(-3px); box-shadow: 0 12px 28px -16px rgba(24,20,13,0.25); }
+  .sc-avatar { position: relative; z-index: 1; width: 88px; height: 88px; border-radius: 50%; margin-top: 22px; background: var(--cream); border: 3px solid var(--ivory); box-shadow: 0 4px 14px -4px rgba(24,20,13,0.25); object-fit: cover; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 34px; color: var(--rust); overflow: hidden; }
+  .sc-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .sc-net-badge { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 6px; font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rust); padding: 4px 10px; border: 1px solid var(--line2); border-radius: 100px; background: var(--ivory); margin-top: 6px; }
+  .sc-net-badge svg { width: 11px; height: 11px; }
+  .social-card .sc-name { position: relative; z-index: 1; font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-top: 2px; }
+  .social-card .sc-loc { position: relative; z-index: 1; font-size: 13px; color: var(--smoke); font-style: italic; margin-top: -4px; }
+  .social-card .sc-cta { position: relative; z-index: 1; margin-top: 8px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 12px; width: 100%; justify-content: center; transition: color .2s; }
+  .social-card:hover .sc-cta { color: var(--rust); }
+  .social-price-band { margin-top: 40px; background: var(--ink); color: var(--ivory); border-radius: 12px; padding: 36px 32px; text-align: center; }
+  .social-price-band .spb-eyebrow { font-family: 'Playfair Display', serif; letter-spacing: 3px; text-transform: uppercase; font-size: 11px; color: var(--wheat); margin-bottom: 10px; }
+  .social-price-band h3 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; line-height: 1.25; margin-bottom: 14px; }
+  .social-price-band h3 em { color: var(--wheat); font-style: italic; }
+  .social-price-band .spb-price { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 700; color: var(--wheat); margin: 12px 0 6px; }
+  .social-price-band .spb-sub { color: rgba(245,239,228,0.65); font-size: 16px; max-width: 620px; margin: 0 auto 22px; }
+  .social-price-band .spb-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 28px; margin-bottom: 24px; color: rgba(245,239,228,0.85); font-size: 15px; }
+  .social-price-band .spb-list span::before { content: '✓ '; color: var(--wheat); margin-right: 4px; }
+  @media (max-width: 720px) {
+    .social-sec { padding: 80px 22px 70px; }
+    .social-price-band h3 { font-size: 24px; }
+    .social-price-band .spb-price { font-size: 36px; }
+  }
+</style>
+<section class="social-sec" id="drustvene-mreze">
+  <div class="sec-inner">
+    <p class="sec-lbl">Društvene Mreže</p>
+    <h2 class="sec-title">Vodimo vaše naloge — <em>ključ u ruke</em></h2>
+    <div class="divider"></div>
+    <p class="sec-body" style="margin-bottom:10px;">Kompletno upravljanje društvenim mrežama za vašu firmu. Mi smišljamo, snimamo, montiramo i objavljujemo sadržaj — vi se bavite poslom.</p>
+
+    <div class="social-price-band">
+      <p class="spb-eyebrow">Mesečna pretplata · sve uključeno</p>
+      <h3>3 naloga · <em>Facebook + Instagram + TikTok</em></h3>
+      <div class="spb-price">€76.27 / month</div>
+      <p class="spb-sub">Jedna firma — tri mreže — jedna fiksna cena. Bez skrivenih troškova.</p>
+      <div class="spb-list">
+        <span>Kreiranje sadržaja</span>
+        <span>Redovne objave</span>
+        <span>Priče i reels</span>
+        <span>Praćenje naloga</span>
+      </div>
+      <a href="#kontakt" class="btn-primary" style="display:inline-flex;">Pokreni svoje naloge →</a>
+    </div>
+
+    <p class="sec-body" style="margin: 44px 0 0; text-align:center;">Primeri naloga koje vodimo:</p>
+    <div class="social-grid">
+      <a class="social-card" href="https://www.facebook.com/profile.php?id=61587430382169" target="_blank" rel="noopener">
+        <span class="sc-avatar"><img src="data:image/jpeg;base64,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" alt="Pub Old Palić"></span>
+        <span class="sc-net-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Facebook</span>
+        <span class="sc-name">Pub Old Palić</span>
+        <span class="sc-loc">Palić</span>
+        <span class="sc-cta">View profile →</span>
+      </a>
+      <a class="social-card" href="https://www.facebook.com/profile.php?id=61585587726010" target="_blank" rel="noopener">
+        <span class="sc-avatar"><img src="data:image/jpeg;base64,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" alt="Silverado Video"></span>
+        <span class="sc-net-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Facebook</span>
+        <span class="sc-name">Silverado Video</span>
+        <span class="sc-loc">Subotica</span>
+        <span class="sc-cta">View profile →</span>
+      </a>
+      <a class="social-card" href="https://www.facebook.com/prikolice.co.srb" target="_blank" rel="noopener">
+        <span class="sc-avatar"><img src="data:image/jpeg;base64,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" alt="Prikolice.Co SRB"></span>
+        <span class="sc-net-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Facebook</span>
+        <span class="sc-name">Prikolice.Co SRB</span>
+        <span class="sc-loc">Subotica</span>
+        <span class="sc-cta">Pogledaj stranicu →</span>
+      </a>
+      <a class="social-card" href="https://www.facebook.com/profile.php?id=100028835929783" target="_blank" rel="noopener">
+        <span class="sc-avatar"><img src="data:image/jpeg;base64,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" alt="Rent A Car Subotica"></span>
+        <span class="sc-net-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Facebook</span>
+        <span class="sc-name">Rent A Car Subotica</span>
+        <span class="sc-loc">Subotica</span>
+        <span class="sc-cta">View profile →</span>
+      </a>
+      <a class="social-card" href="https://www.facebook.com/alatshop.online/" target="_blank" rel="noopener">
+        <span class="sc-avatar"><img src="data:image/jpeg;base64,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" alt="Alat Shop"></span>
+        <span class="sc-net-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Facebook</span>
+        <span class="sc-name">Alat Shop</span>
+        <span class="sc-loc">Subotica</span>
+        <span class="sc-cta">View profile →</span>
+      </a>
+      <a class="social-card" href="https://www.facebook.com/profile.php?id=61588108394645" target="_blank" rel="noopener">
+        <span class="sc-avatar"><img src="https://scontent-vie1-1.xx.fbcdn.net/v/t39.30808-1/640939510_122102415195270279_2066387598449146765_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=109&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=H81pJNO9gdoQ7kNvwGoJHyz&_nc_oc=Adpx5nk5xzyqwtHKjOGYksYQjkm5eEIN79IrN7CUWvHdH4zb8ZnIK-U9nY3lYuOVdGk&_nc_zt=24&_nc_ht=scontent-vie1-1.xx&_nc_gid=0Um_TgRHKEFejuj9wF42Iw&_nc_ss=7b2a8&oh=00_Af7IK31_Mm0uQtJKnuEBaMV4kO1CPFysMe1dcii9TreBpg&oe=6A14CF57" alt="Ultraspeed"></span>
+        <span class="sc-net-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Facebook</span>
+        <span class="sc-name">Ultraspeed</span>
+        <span class="sc-loc"></span>
+        <span class="sc-cta">View profile →</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services-sec" id="services">
+<section class="services-sec" id="usluge">
   <div class="sec-inner">
     <p class="sec-lbl">Our Services</p>
-    <h2 class="sec-title">Five ways to <em>grow</em></h2>
+    <h2 class="sec-title">Six ways to <em>grow</em></h2>
     <div class="divider"></div>
     <div class="services-grid">
       <div class="svc-card">
         <p class="svc-num">01</p><span class="svc-icon">🤖</span>
-        <p class="svc-name">AI “Hook” Ads</p>
-        <p class="svc-desc">Short, scroll-stopping clips (8–15s) for ads and Reels. Just one photo or a short brief is enough — not even required.</p>
-        <p class="svc-price">€1 / second</p>
+        <p class="svc-name">AI "Hook" Ads</p>
+        <p class="svc-desc">Short, scroll-stopping clips (8–15s) for ads and Reels. Just 1 photo or a brief description is enough — not required.</p>
+        <p class="svc-price">€1.02 / second</p>
       </div>
       <div class="svc-card">
         <p class="svc-num">02</p><span class="svc-icon">✂️</span>
-        <p class="svc-name">Edit From Your Footage</p>
-        <p class="svc-desc">Send phone clips — I cut a dynamic ad with effects, captions and the right pace for social.</p>
-        <p class="svc-price">Custom quote</p>
+        <p class="svc-name">Edit from Your Footage</p>
+        <p class="svc-desc">Send us your phone footage — we edit a dynamic ad with effects, subtitles and pace for social media.</p>
+        <p class="svc-price">Price on request</p>
       </div>
       <div class="svc-card">
         <p class="svc-num">03</p><span class="svc-icon">🎥</span>
         <p class="svc-name">On-Location Filming</p>
-        <p class="svc-desc">I come to your location and film real footage. ~1 hour shoot + 3 finished formats: ad, feed and docu clip.</p>
-        <p class="svc-price">€29 flat</p>
+        <p class="svc-desc">We come to your location and shoot real footage. About 1 hour of filming + 3 ready formats: ad, feed and documentary clip.</p>
+        <p class="svc-price">€29.66 flat rate</p>
       </div>
       <div class="svc-card">
         <p class="svc-num">04</p><span class="svc-icon">🌐</span>
         <p class="svc-name">Website / Webshop</p>
-        <p class="svc-desc">Modern website or webshop ready for business in 2026. Fast, clean, mobile, with a clear call to action.</p>
-        <p class="svc-price">From €50</p>
+        <p class="svc-desc">Modern website or webshop ready for business in 2026. Fast, clean, mobile-friendly, with a clear call to action.</p>
+        <p class="svc-price">Price on request</p>
       </div>
       <div class="svc-card svc-featured">
         <span class="svc-flag">Limited</span>
         <p class="svc-num">05</p><span class="svc-icon">📱</span>
         <p class="svc-name">Social Media Management</p>
-        <p class="svc-desc">Full management of Facebook, Instagram, TikTok and Threads — premium content, paid ads and profile optimization.</p>
-        <p class="svc-price">from €75 / month</p>
-        <p class="svc-callnote">⚠ Limited to qualifying clients — call first to see if you qualify.</p>
+        <p class="svc-desc">Full management of Facebook, Instagram, TikTok and Threads accounts — premium content, advertising and profile optimization.</p>
+        <p class="svc-price">from €76.27 / month</p>
+        <p class="svc-callnote">⚠ For selected clients only — call first to check if you qualify.</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">06</p><span class="svc-icon">📣</span>
+        <p class="svc-name">Facebook, Instagram &amp; TikTok Ads</p>
+        <p class="svc-desc">Paid campaigns for local businesses — we set up the ad, target the audience, track results and optimise the budget.</p>
+        <p class="svc-price">15% of advertising budget</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="pricing-sec" id="pricing">
+<section class="pricing-sec" id="ponuda">
   <div class="sec-inner">
     <p class="sec-lbl">Pricing</p>
     <h2 class="sec-title">Clear prices, <em>no surprises</em></h2>
@@ -1003,50 +1610,67 @@
       <div class="plan-card featured">
         <span class="plan-badge">Most popular</span>
         <p class="plan-name">AI Video Ad</p>
-        <div class="plan-price">€1</div>
-        <p class="plan-per">per second of finished video</p>
+        <div class="plan-price">€1.02</div>
+        <p class="plan-per">per second of final video</p>
         <ul class="plan-feats">
-          <li><span class="pf-chk">✓</span><span>10s = <strong>€10</strong> · 15s = <strong>€15</strong> · 30s = <strong>€30</strong></span></li>
-          <li><span class="pf-chk">✓</span><span>9:16 format ready for Reels &amp; Meta Ads</span></li>
+          <li><span class="pf-chk">✓</span><span>10s = <strong>€10.17</strong> · 15s = <strong>€15.25</strong> · 30s = <strong>€30.51</strong></span></li>
+          <li><span class="pf-chk">✓</span><span>9:16 format ready for Reels and Meta Ads</span></li>
           <li><span class="pf-chk">✓</span><span>Hook + clear sales message</span></li>
-          <li><span class="pf-chk">✓</span><span>Brand-aligned (logo, colors, style)</span></li>
-          <li><span class="pf-chk">✓</span><span>One photo or brief is enough — not required</span></li>
+          <li><span class="pf-chk">✓</span><span>Brand alignment (logo, colours, style)</span></li>
+          <li><span class="pf-chk">✓</span><span>Just 1 photo or description — not required</span></li>
         </ul>
         <div class="plan-cta">
-          <a href="#contact" class="btn-primary">Order</a>
-          <a href="#work" class="btn-outline">See work</a>
+          <a href="#kontakt" class="btn-primary">Order</a>
+          <a href="#radovi" class="btn-outline">View our work</a>
         </div>
       </div>
       <div class="plan-card">
-        <span class="plan-badge">Flat rate</span>
+        <span class="plan-badge">Fixed</span>
         <p class="plan-name">On-Location Filming</p>
-        <div class="plan-price">€29</div>
-        <p class="plan-per">flat fee</p>
+        <div class="plan-price">€29.66</div>
+        <p class="plan-per">flat rate</p>
         <ul class="plan-feats">
-          <li><span class="pf-chk">✓</span><span>~1 hour real filming (no AI)</span></li>
-          <li><span class="pf-chk">✓</span><span>3 formats: <strong>ad</strong>, <strong>feed</strong>, <strong>docu</strong></span></li>
+          <li><span class="pf-chk">✓</span><span>~1 hour of real filming (no AI)</span></li>
+          <li><span class="pf-chk">✓</span><span>3 formats: <strong>ad</strong>, <strong>feed</strong>, <strong>documentary</strong></span></li>
           <li><span class="pf-chk">✓</span><span>Ready for Instagram, Facebook, TikTok</span></li>
-          <li><span class="pf-chk">✓</span><span>Extra variants on request</span></li>
+          <li><span class="pf-chk">✓</span><span>Additional variants by arrangement</span></li>
         </ul>
         <div class="plan-cta">
-          <a href="#contact" class="btn-primary">Order</a>
+          <a href="#kontakt" class="btn-primary">Order</a>
           <a href="tel:+381691508197" class="btn-outline">📞 Call</a>
         </div>
       </div>
       <div class="plan-card">
         <span class="plan-badge">Web</span>
         <p class="plan-name">Website / Webshop</p>
-        <div class="plan-price" style="font-size:1.6rem;">From €50</div>
-        <p class="plan-per">based on scope &amp; features</p>
+        <div class="plan-price" style="font-size:1.6rem;">On request</div>
+        <p class="plan-per">based on scope and features</p>
         <ul class="plan-feats">
           <li><span class="pf-chk">✓</span><span>Modern website or webshop for 2026</span></li>
           <li><span class="pf-chk">✓</span><span>Mobile-first + fast loading</span></li>
           <li><span class="pf-chk">✓</span><span>Clear offer + CTA (call / Viber / form)</span></li>
-          <li><span class="pf-chk">✓</span><span>Brand-aligned design</span></li>
-          <li><span class="pf-chk">✓</span><span>1-year hosting + domain — free</span></li>
+          <li><span class="pf-chk">✓</span><span>Brand alignment</span></li>
+          <li><span class="pf-chk">✓</span><span>Editing from footage: price by scope</span></li>
         </ul>
         <div class="plan-cta">
-          <a href="#contact" class="btn-primary">Order</a>
+          <a href="#kontakt" class="btn-primary">Order</a>
+          <a href="tel:+381691508197" class="btn-outline">📞 Call</a>
+        </div>
+      </div>
+      <div class="plan-card">
+        <span class="plan-badge">Ads</span>
+        <p class="plan-name">FB / IG / TikTok Ads</p>
+        <div class="plan-price">15%</div>
+        <p class="plan-per">of advertising budget</p>
+        <ul class="plan-feats">
+          <li><span class="pf-chk">✓</span><span>Meta campaign setup (FB + IG)</span></li>
+          <li><span class="pf-chk">✓</span><span>TikTok campaigns for local businesses</span></li>
+          <li><span class="pf-chk">✓</span><span>Audience targeting + budget control</span></li>
+          <li><span class="pf-chk">✓</span><span>Monthly optimisation and report</span></li>
+          <li><span class="pf-chk">✓</span><span>Ad budget is separate and fully controlled by the client</span></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#ads" class="btn-primary">Launch ads</a>
           <a href="tel:+381691508197" class="btn-outline">📞 Call</a>
         </div>
       </div>
@@ -1054,32 +1678,113 @@
   </div>
 </section>
 
+<!-- ADS SECTION: Facebook · Instagram · TikTok -->
+<style>
+  .ads-sec{background:var(--parch);color:var(--ink);padding:110px 60px;position:relative;overflow:hidden;}
+  .ads-sec::before{content:'ADS';position:absolute;left:-30px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:clamp(8rem,14vw,13rem);font-weight:900;font-style:italic;color:rgba(24,20,13,0.05);line-height:1;pointer-events:none;white-space:nowrap;}
+  .ads-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;text-align:center;}
+  .ads-logos{display:flex;justify-content:center;align-items:center;gap:38px;margin-bottom:34px;flex-wrap:wrap;}
+  .ads-logo{width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 10px 30px rgba(24,20,13,0.18);transition:transform .3s;}
+  .ads-logo:hover{transform:translateY(-4px);}
+  .ads-logo.fb{background:#1877F2;}
+  .ads-logo.ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);}
+  .ads-logo.tt{background:#18140d;}
+  .ads-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.82rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--amber);margin-bottom:18px;font-weight:600;}
+  .ads-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4.2rem);font-weight:900;line-height:1.05;margin-bottom:14px;color:var(--ink);}
+  .ads-title em{font-style:italic;color:var(--amber);}
+  .ads-sub-small{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:34px;}
+  .ads-lead{font-family:'Cormorant Garamond',serif;font-size:1.35rem;line-height:1.6;color:var(--ink2);max-width:760px;margin:0 auto 28px;}
+  .ads-body{font-family:'Crimson Pro',serif;font-size:1.08rem;line-height:1.75;color:var(--smoke);max-width:760px;margin:0 auto 30px;}
+  .ads-perfect{max-width:760px;margin:0 auto 30px;text-align:left;background:rgba(255,255,255,0.55);border:1px solid var(--line2);padding:24px 30px;border-radius:6px;}
+  .ads-perfect h4{font-family:'Cormorant Garamond',serif;font-size:0.78rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;font-weight:600;}
+  .ads-perfect ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px 18px;padding:0;}
+  .ads-perfect li{font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink2);}
+  .ads-perfect li::before{content:'•';color:var(--amber);margin-right:8px;}
+  .ads-tell{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--smoke);max-width:680px;margin:0 auto 14px;font-style:italic;}
+  .ads-tell strong{color:var(--ink);font-style:normal;font-weight:600;}
+  .ads-handle{font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:var(--smoke);max-width:760px;margin:0 auto 36px;letter-spacing:0.06em;}
+  .ads-handle span{color:var(--amber);}
+  .ads-fee{display:inline-block;background:linear-gradient(135deg,rgba(184,120,48,0.12),rgba(232,201,122,0.08));border:1px solid rgba(184,120,48,0.4);padding:22px 32px;border-radius:8px;margin-bottom:14px;}
+  .ads-fee-big{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--ink);display:block;line-height:1.1;}
+  .ads-fee-sub{font-family:'Cormorant Garamond',serif;font-size:0.86rem;color:var(--smoke);margin-top:6px;letter-spacing:0.08em;}
+  .ads-note{font-family:'Crimson Pro',serif;font-size:0.95rem;color:var(--smoke);max-width:560px;margin:0 auto 36px;font-style:italic;}
+  .ads-cta{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:#fff;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;padding:18px 42px;border:none;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 100%,12px 100%);transition:background .3s,letter-spacing .3s;text-decoration:none;}
+  .ads-cta:hover{background:var(--rust);letter-spacing:0.3em;}
+  @media(max-width:720px){.ads-sec{padding:80px 24px;}.ads-logo{width:54px;height:54px;}.ads-logos{gap:22px;}.ads-perfect{padding:20px;}}
+</style>
+<section class="ads-sec" id="ads">
+  <div class="ads-inner">
+    <div class="ads-logos">
+      <div class="ads-logo fb" aria-label="Facebook">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </div>
+      <div class="ads-logo ig" aria-label="Instagram">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </div>
+      <div class="ads-logo tt" aria-label="TikTok">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43V8.66a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.09z"/></svg>
+      </div>
+    </div>
+
+    <p class="ads-eyebrow">Paid Social Media Advertising</p>
+    <h2 class="ads-title">Facebook, Instagram <em>&amp; TikTok Ads</em></h2>
+    <p class="ads-sub-small">Includes Meta campaign setup</p>
+
+    <p class="ads-lead">Paid advertising campaigns for local businesses — simple, affordable and fully managed by us.</p>
+
+    <p class="ads-body">We prepare the ad, set up the campaign, target the right people, track results and adjust the budget so your money isn't wasted.</p>
+
+    <div class="ads-perfect">
+      <h4>Perfect for</h4>
+      <ul>
+        <li>restaurants</li>
+        <li>shops</li>
+        <li>salons</li>
+        <li>services</li>
+        <li>local businesses</li>
+      </ul>
+    </div>
+
+    <p class="ads-tell">Just tell us what you want:<br/><strong>more calls, more messages, more visits or more sales.</strong></p>
+
+    <p class="ads-handle">We handle: <span>Facebook ads · Instagram ads · TikTok ads · Meta campaign setup · audience targeting · budget control · ad creatives · monthly optimisation</span></p>
+
+    <div class="ads-fee">
+      <span class="ads-fee-big">Campaign management fee: 15%</span>
+      <div class="ads-fee-sub">of advertising budget</div>
+    </div>
+    <p class="ads-note">The ad budget is separate and fully controlled by the client.</p>
+
+    <div><a href="#kontakt" class="ads-cta">Launch ads &rarr;</a></div>
+  </div>
+</section>
+
 <!-- PROCESS -->
-<section class="process-sec" id="process">
+<section class="process-sec" id="kako-radi">
   <div class="sec-inner">
-    <p class="sec-lbl">Process</p>
+    <p class="sec-lbl">Our Process</p>
     <h2 class="sec-title">4 steps to a <em>finished ad</em></h2>
     <div class="divider"></div>
     <div class="process-grid">
       <div class="step-card">
         <p class="step-num">01</p>
-        <p class="step-title">Pick the Service</p>
-        <p class="step-desc">AI, edit, on-location filming, or website/webshop. Tell me your industry + goal (more messages, calls, visits).</p>
+        <p class="step-title">Service Agreement</p>
+        <p class="step-desc">AI, editing, on-location filming or website/webshop. You tell us your business type + goal (more messages, calls, visits).</p>
       </div>
       <div class="step-card">
         <p class="step-num">02</p>
         <p class="step-title">Material</p>
-        <p class="step-desc">AI: brief + optional photo. Edit: your clips. Filming: I come to you. Website: text + contact + logo.</p>
+        <p class="step-desc">AI: info + optional photo. Editing: your footage. Filming: we come to you. Website/Webshop: text + contact + logo.</p>
       </div>
       <div class="step-card">
         <p class="step-num">03</p>
         <p class="step-title">Production</p>
-        <p class="step-desc">I build the ad or page, aligned with your brand, goal and the platform you’ll publish on.</p>
+        <p class="step-desc">We create the ad or page, aligned with your brand, goal and publishing platform.</p>
       </div>
       <div class="step-card">
         <p class="step-num">04</p>
-        <p class="step-title">Delivery &amp; Launch</p>
-        <p class="step-desc">You get the final ready to publish and run as Meta/IG ads — or a live link for your website/webshop.</p>
+        <p class="step-title">Delivery &amp; Publishing</p>
+        <p class="step-desc">You receive the final ready for publishing and Meta/IG ads — or a live link for the website/webshop.</p>
       </div>
     </div>
   </div>
@@ -1093,48 +1798,47 @@
     <div class="divider"></div>
     <div class="faq-grid">
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">Do I need to send a photo?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Not required. If you have one shot of your shop or product — great. If not, we can still work it out.</p>
+        <p class="faq-q">Is a photo required?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Not required. If you have one photo of your shop or product — great. If not, we can work without it by arrangement.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">What format do I get?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Most often 9:16 (Reels/Ads). 1:1 or 16:9 also available on request.</p>
+        <p class="faq-a">Most often 9:16 (Reels/Ads). We also do 1:1 or 16:9 if needed.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">Can you edit an ad from my own clips?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Yes. Send phone clips and I cut an ad with pace, captions, effects and your branding.</p>
+        <p class="faq-q">Can I get an ad made from my own footage?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Yes. Send us your phone clips and we edit an ad with pace, subtitles, effects and branding.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">What is on-location filming?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">I come to your place and shoot real footage (no AI) used for ads and clips.</p>
+        <p class="faq-a">We come to you and shoot real footage (no AI) that we use for ads and clips.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">How much does on-location filming cost?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Flat <strong>€29</strong> — about 1 hour of filming + 3 formats: ad, feed and docu clip.</p>
+        <p class="faq-a">Fixed rate <strong>€29.66</strong> — about 1 hour of filming + 3 formats: ad, feed and documentary clip.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <p class="faq-q">How much does a website or webshop cost?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">From <strong>€50</strong>, based on scope and features — call for a personalized quote. Hosting and domain are included free for the first year.</p>
+        <p class="faq-a">The price is agreed based on scope and features — contact us for a personalised quote.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">How is the AI ad price calculated?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">€1 per second of finished video. Example: 15 seconds = €15 · 30 seconds = €30.</p>
+        <p class="faq-q">How is the price of AI ads calculated?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">€1.02 per second of the final video. Example: 15 seconds = €15.25 · 30 seconds = €30.51.</p>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <p class="faq-q">Do you speak English?<span class="faq-arrow">+</span></p>
-        <p class="faq-a">Yes — fluent English. Call, Viber, WhatsApp or email anytime. Different time zone is no problem.</p>
+        <p class="faq-q">Not sure what I need?<span class="faq-arrow">+</span></p>
+        <p class="faq-a">Send your profile link + goal (more messages, calls or visits) and I'll suggest the most effective format for you.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact-sec" id="contact">
+<section class="contact-sec" id="kontakt">
   <div class="sec-inner">
     <p class="sec-lbl">Contact</p>
-    <h2 class="sec-title">Let’s talk <em>today</em></h2>
+    <h2 class="sec-title">Let's talk <em>today</em></h2>
     <div class="divider"></div>
-    <p class="sec-body" style="margin-bottom:32px;">📞 <strong>Call me anytime — I speak fluent English</strong> and I’m ready to do whatever it takes to get your project done right.</p>
     <div class="contact-inner">
       <div>
         <div class="ci-row">
@@ -1143,7 +1847,7 @@
         </div>
         <div class="ci-row">
           <div class="ci-icon">📲</div>
-          <div><span class="ci-lbl">Viber / WhatsApp</span><span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span></div>
+          <div><span class="ci-lbl">Viber</span><span class="ci-val"><a href="viber://chat?number=%2B381691508197" onclick="return openViberChat(event);">+381 69 150 8197</a></span></div>
         </div>
         <div class="ci-row">
           <div class="ci-icon">✉️</div>
@@ -1154,7 +1858,7 @@
           <div><span class="ci-lbl">Google</span><span class="ci-val"><a href="https://www.google.com/search?q=Emil+Eros+video" target="_blank">Search: Emil Eros video</a></span></div>
         </div>
         <div style="margin-top:28px; display:flex; flex-direction:column; gap:9px;">
-          <a href="tel:+381691508197" class="btn-primary" style="justify-content:center;">📞 Call: +381 69 150 8197</a>
+          <a href="tel:+381691508197" class="btn-primary" style="justify-content:center;">📞 Call: +381 69 1508 197</a>
           <a href="viber://chat?number=%2B381691508197" class="btn-viber" style="justify-content:center;" onclick="return openViberChat(event);">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
               <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
@@ -1165,31 +1869,30 @@
       </div>
 
       <div class="contact-form">
-        <h3 class="form-title">Send an <em>inquiry</em></h3>
-        <p class="form-sub">Industry + city + goal + service (AI / edit / filming / website / webshop)</p>
+        <h3 class="form-title">Send an <em>enquiry</em></h3>
+        <p class="form-sub">Business type + city + goal + service (AI / editing / filming / website / webshop)</p>
         <form id="leadForm">
           <div class="form-row">
-            <div><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="e.g. John Smith" required /></div>
-            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+1 555 123 4567" required /></div>
+            <div><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="e.g. John" required /></div>
+            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+381 xx xxx xxxx" required /></div>
           </div>
           <div class="form-row">
-            <div><label for="city">City</label><input id="city" name="city" type="text" placeholder="e.g. London" /></div>
+            <div><label for="city">City</label><input id="city" name="city" type="text" placeholder="e.g. Subotica" /></div>
             <div>
               <label for="package">Service</label>
               <select id="package" name="package">
-                <option value="AI Hook ad (€1/sec)">AI Hook ad (€1/sec)</option>
-                <option value="Edit from your footage">Edit from your footage</option>
-                <option value="On-location filming (€29)">On-location filming (€29)</option>
+                <option value="AI Hook ad (€1.02/sec)">AI Hook ad (€1.02/sec)</option>
+                <option value="Editing from footage">Editing from footage</option>
+                <option value="On-location filming (€29.66)">On-location filming (€29.66)</option>
                 <option value="Website / Webshop">Website / Webshop</option>
-                <option value="Social Media Management">Social Media Management</option>
-                <option value="Not sure — recommend">Not sure — recommend</option>
+                <option value="Not sure — suggest">Not sure — suggest</option>
               </select>
             </div>
           </div>
-          <div class="form-full"><label for="profile">Link (optional: site / IG / FB)</label><input id="profile" name="profile" type="url" placeholder="https://..." /></div>
-          <div class="form-full"><label for="message">Message (goal + service + material)</label><textarea id="message" name="message" placeholder="e.g. I need a website for my car wash. Goal: more calls."></textarea></div>
-          <button class="btn-submit" type="submit">Send Inquiry →</button>
-          <p class="form-note">This will open your email app with a pre-filled message.</p>
+          <div class="form-full"><label for="profile">Link (optional: website / IG / FB)</label><input id="profile" name="profile" type="url" placeholder="https://..." /></div>
+          <div class="form-full"><label for="message">Message (goal + service + material)</label><textarea id="message" name="message" placeholder="e.g. I need a website for a car wash in Subotica. Goal: more calls."></textarea></div>
+          <button class="btn-submit" type="submit">Send Enquiry →</button>
+          <p class="form-note">Clicking opens your email app with a pre-filled message.</p>
         </form>
       </div>
     </div>
@@ -1200,28 +1903,27 @@
 <footer>
   <p class="f-logo">SILVERADO.PRO</p>
   <div class="f-links">
-    <a href="#work">Work</a>
-    <a href="#websites">Websites</a>
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#process">Process</a>
+    <a href="#radovi">Work</a>
+    <a href="#sajtovi">Websites</a>
+    <a href="#usluge">Services</a>
+    <a href="#ponuda">Pricing</a>
+    <a href="#kako-radi">Process</a>
     <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
+    <a href="#kontakt">Contact</a>
   </div>
-  <p class="f-copy">© <span id="year"></span> Silverado.pro · +381 69 150 8197 · English spoken</p>
+  <p class="f-copy">© <span id="year"></span> Silverado.pro · +381 69 150 8197</p>
 </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  function toggleFaq(el) { el.classList.toggle('open'); }
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+  }
 
   function openViberChat(e) {
     try { e.preventDefault(); } catch(_) {}
     window.location.href = "viber://chat?number=%2B381691508197";
-    setTimeout(function() {
-      if (!document.hidden) window.location.href = "https://viber.me/+381691508197";
-    }, 900);
     return false;
   }
 
@@ -1233,7 +1935,7 @@
     var pkg     = document.getElementById("package").value;
     var profile = document.getElementById("profile").value.trim();
     var message = document.getElementById("message").value.trim();
-    var subject = encodeURIComponent("Inquiry — Silverado.pro");
+    var subject = encodeURIComponent("Enquiry — Silverado.pro");
     var body = encodeURIComponent(
       "NAME: " + name + "\nPHONE: " + phone + "\nCITY: " + (city || "-") +
       "\nSERVICE: " + pkg + "\nLINK: " + (profile || "-") + "\n\nMESSAGE:\n" + (message || "-")
@@ -1242,5 +1944,21 @@
   });
 </script>
 
+
+<!-- FLOATING CHAT BUTTONS -->
+<div class="float-chat" aria-label="Quick contact">
+  <a href="https://wa.me/381691508197" target="_blank" rel="noopener" class="fc-wa" data-label="WhatsApp: +381 69 150 8197" aria-label="WhatsApp">
+    <span class="fc-pulse"></span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="position:relative;z-index:1;">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+  <a href="viber://chat?number=%2B381691508197" class="fc-vb" data-label="Viber: +381 69 150 8197" aria-label="Viber" onclick="return openViberChat(event);">
+    <span class="fc-pulse"></span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="position:relative;z-index:1;">
+      <path d="M21 16.5c0 .9-.3 1.6-.9 2.2-.6.6-1.3.9-2.2.9H9.2L5 22v-2.4c-.8-.2-1.5-.6-2-1.2C2.3 17.8 2 17.1 2 16.3V6.5c0-.9.3-1.6.9-2.2.6-.6 1.3-.9 2.2-.9h12.8c.9 0 1.6.3 2.2.9.6.6.9 1.3.9 2.2v10zM7.6 7.7c-.2.2-.3.5-.2.8.2 1 1 2.3 2.2 3.6 1.3 1.3 2.6 2 3.6 2.2.3.1.6 0 .8-.2l.9-.9c.2-.2.5-.2.7-.1l1.8.9c.3.2.4.5.3.8-.2.6-.6 1.1-1.1 1.5-.4.3-.9.4-1.4.3-1.4-.3-3.1-1.3-4.9-3.1-1.8-1.8-2.8-3.5-3.1-4.9-.1-.5 0-1 .3-1.4.4-.5.9-.9 1.5-1.1.3-.1.6 0 .8.3l.9 1.8c.1.2.1.5-.1.7l-.9.9z"/>
+    </svg>
+  </a>
+</div>
 </body>
 </html>
