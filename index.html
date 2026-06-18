@@ -31,7 +31,7 @@ a{color:inherit;text-decoration:none}
 .header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0;gap:20px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--dark)}
-.logo .logo-badge{width:46px;height:46px;flex-shrink:0;border-radius:8px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;letter-spacing:.5px}
+.logo .logo-img{width:46px;height:46px;flex-shrink:0}
 .logo span b{color:var(--red)}
 .menu{display:flex;list-style:none;gap:26px;align-items:center}
 .menu a{font-weight:500;color:var(--dark);transition:color .2s}
@@ -179,7 +179,7 @@ footer p,footer a{color:#cbd5e1;font-size:14px;line-height:1.9}
 <header class="header">
   <div class="container nav">
     <a href="#" class="logo">
-      <div class="logo-badge" aria-hidden="true">BG</div>
+      <div class="img-ph logo-img" data-name="logo"><img src="logo-gradnja-vuk.png" alt="Basic Gradnja logo" onerror="this.style.display='none'"></div>
       <span>Basic <b>Gradnja</b></span>
     </a>
     <ul class="menu" id="menu">
