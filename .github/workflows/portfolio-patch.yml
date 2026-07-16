@@ -1,0 +1,24 @@
+name: Portfolio patch
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  patch-index:
+    if: github.event.issue.title == 'RUN PORTFOLIO PATCH 2026-07-16'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Insert leak detection website as first sample
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index
