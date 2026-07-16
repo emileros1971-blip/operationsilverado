@@ -1,0 +1,24 @@
+name: Add leak detection portfolio sample
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-leak-detection-sample.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Insert new first portfolio sample
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-
