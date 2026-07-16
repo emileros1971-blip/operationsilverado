@@ -1,0 +1,69 @@
+name: Update portfolio
+on:
+  push:
+    paths: ['.github/workflows/update-portfolio.yml']
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add first portfolio card
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          domain = 'detekcijacurenjevode.online'
+          if domain not in s:
+              marker = '    <div class="portfolio-grid">\n\n'
+              card = '''      <!-- Card 0 — Detekcija Curenja Vode -->
+              <div class="site-card">
+                <div class="site-preview">
+                  <div class="browser-bar">
+                    <div class="bb-dots">
+                      <div class="bb-dot red"></div>
+                      <div class="bb-dot yel"></div>
+                      <div class="bb-dot grn"></div>
+                    </div>
+                    <div class="bb-url">detekcijacurenjevode.online</div>
+                  </div>
+                  <div class="preview-frame">
+                    <iframe src="https://detekcijacurenjevode.online/" loading="lazy" scrolling="no" title="detekcijacurenjevode.online preview"></iframe>
+                    <a class="preview-overlay" href="https://detekcijacurenjevode.online/" target="_blank" rel="noopener">
+                      <span class="overlay-cta">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Poseti sajt
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="site-body">
+                  <p class="site-tag">Website · Vodoinstalaterske Usluge</p>
+                  <p class="site-name">Detekcija Curenja Vode</p>
+                  <p class="site-desc">Profesionalan sajt za detekciju curenja vode i vodoinstalaterske usluge — jasan prikaz usluga, brz kontakt i moderan nastup prilagođen mobilnim uređajima.</p>
+                  <div class="price-row">
+                    <span class="price-tag">Akcija</span>
+                    <span class="price-old">11.000 rsd</span>
+                    <span class="price-new">6.000 rsd</span>
+                  </div>
+                  <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+                  <a class="site-visit" href="https://detekcijacurenjevode.online/" target="_blank" rel="noopener">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Poseti detekcijacurenjevode.online
+                  </a>
+                </div>
+              </div>
+
+'''
+              if marker not in s:
+                  raise SystemExit('Portfolio marker not found')
+              p.write_text(s.replace(marker, marker + card, 1), encoding='utf-8')
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Add leak detection website to portfolio"
+          git push
