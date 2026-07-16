@@ -1,0 +1,102 @@
+name: Build modified index
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  build-modified-index:
+    if: github.event.issue.title == 'BUILD MODIFIED INDEX 2026-07-16'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Generate modified index file
+        shell: bash
+        run: |
+          python <<'PY'
+          from pathlib import Path
+
+          source_path = Path('index.html')
+          output_path = Path('index-modified.html')
+          source = source_path.read_text(encoding='utf-8')
+
+          domain = 'detekcijacurenjevode.online'
+          anchor = '    <div class="portfolio-grid">\n\n'
+
+          card = '''      <!-- Card 0 — Detekcija Curenja Vode -->
+          <div class="site-card">
+            <div class="site-preview">
+              <div class="browser-bar">
+                <div class="bb-dots">
+                  <div class="bb-dot red"></div>
+                  <div class="bb-dot yel"></div>
+                  <div class="bb-dot grn"></div>
+                </div>
+                <div class="bb-url">detekcijacurenjevode.online</div>
+              </div>
+              <div class="preview-frame">
+                <iframe src="https://detekcijacurenjevode.online/" loading="lazy" scrolling="no" title="detekcijacurenjevode.online preview"></iframe>
+                <a class="preview-overlay" href="https://detekcijacurenjevode.online/" target="_blank" rel="noopener">
+                  <span class="overlay-cta">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Poseti sajt
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="site-body">
+              <p class="site-tag">Website · Vodoinstalaterske Usluge</p>
+              <p class="site-name">Detekcija Curenja Vode</p>
+              <p class="site-desc">Profesionalan sajt za detekciju curenja vode i vodoinstalaterske usluge — jasan prikaz usluga, brz kontakt i moderan nastup prilagođen mobilnim uređajima.</p>
+              <div class="price-row">
+                <span class="price-tag">Akcija</span>
+                <span class="price-old">11.000 rsd</span>
+                <span class="price-new">6.000 rsd</span>
+              </div>
+              <p class="price-incl">Sve uključeno: dizajn, SEO, Google indeksiranje, <strong>hosting godinu dana + domen gratis</strong>.</p>
+              <a class="site-visit" href="https://detekcijacurenjevode.online/" target="_blank" rel="noopener">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Poseti detekcijacurenjevode.online
+              </a>
+            </div>
+          </div>
+
+'''
+
+          if domain in source:
+              modified = source
+          else:
+              if anchor not in source:
+                  raise SystemExit('Portfolio grid anchor was not found.')
+              modified = source.replace(anchor, anchor + card, 1)
+
+          output_path.write_text(modified, encoding='utf-8')
+          print(f'Created {output_path} with {len(modified)} characters.')
+          PY
+
+      - name: Commit generated file
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index-modified.html
+          if git diff --cached --quiet; then
+            echo "No file changes to commit."
+          else
+            git commit -m "Generate modified index with leak detection sample"
+            git push
+          fi
+
+      - name: Mark issue complete
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "MODIFIED INDEX READY"
+          gh issue close "${{ github.event.issue.number }}"
