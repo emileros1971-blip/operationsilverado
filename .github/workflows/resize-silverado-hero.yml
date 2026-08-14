@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   resize-hero:
-    if: github.event.issue.title == 'RESIZE SILVERADO HERO PHOTO 2026-08-14'
+    if: github.event.issue.title == 'RESIZE SILVERADO HERO PHOTO 2026-08-14 RUN2'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -21,17 +21,7 @@ jobs:
         run: |
           python <<'PY'
           from pathlib import Path
-
-          override = '''
-    /* Hero portrait balance adjustment — 2026-08-14 */
-    .hero-card{min-height:490px!important;max-width:420px!important;margin-left:auto!important}
-    .portrait-wrap{height:245px!important}
-    @media(max-width:800px){
-      .hero-card{min-height:0!important;max-width:500px!important;margin-left:auto!important}
-      .portrait-wrap{height:280px!important}
-    }
-          '''
-
+          override = "\n    /* Hero portrait balance adjustment — 2026-08-14 */\n    .hero-card{min-height:490px!important;max-width:420px!important;margin-left:auto!important}\n    .portrait-wrap{height:245px!important}\n    @media(max-width:800px){.hero-card{min-height:0!important;max-width:500px!important;margin-left:auto!important}.portrait-wrap{height:280px!important}}\n"
           for name in ('index.html', 'en/index.html'):
               path = Path(name)
               text = path.read_text(encoding='utf-8')
@@ -41,8 +31,7 @@ jobs:
                   continue
               if '</style>' not in text:
                   raise SystemExit(f'{name}: closing style tag not found')
-              text = text.replace('</style>', override + '\n</style>', 1)
-              path.write_text(text, encoding='utf-8')
+              path.write_text(text.replace('</style>', override + '</style>', 1), encoding='utf-8')
               print(f'{name}: hero sizing override added')
           PY
 
