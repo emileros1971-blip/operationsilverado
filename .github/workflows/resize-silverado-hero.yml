@@ -1,0 +1,68 @@
+name: Resize Silverado hero photo
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  resize-hero:
+    if: github.event.issue.title == 'RESIZE SILVERADO HERO PHOTO 2026-08-14'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Apply hero photo sizing override
+        shell: bash
+        run: |
+          python <<'PY'
+          from pathlib import Path
+
+          override = '''
+    /* Hero portrait balance adjustment — 2026-08-14 */
+    .hero-card{min-height:490px!important;max-width:420px!important;margin-left:auto!important}
+    .portrait-wrap{height:245px!important}
+    @media(max-width:800px){
+      .hero-card{min-height:0!important;max-width:500px!important;margin-left:auto!important}
+      .portrait-wrap{height:280px!important}
+    }
+          '''
+
+          for name in ('index.html', 'en/index.html'):
+              path = Path(name)
+              text = path.read_text(encoding='utf-8')
+              marker = 'Hero portrait balance adjustment — 2026-08-14'
+              if marker in text:
+                  print(f'{name}: override already present')
+                  continue
+              if '</style>' not in text:
+                  raise SystemExit(f'{name}: closing style tag not found')
+              text = text.replace('</style>', override + '\n</style>', 1)
+              path.write_text(text, encoding='utf-8')
+              print(f'{name}: hero sizing override added')
+          PY
+
+      - name: Commit homepage changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- index.html en/index.html
+          if git diff --cached --quiet; then
+            echo "No homepage changes to commit."
+          else
+            git commit -m "Reduce Silverado hero portrait size"
+            git push
+          fi
+
+      - name: Mark issue complete
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "Hero photo resized on Serbian and English homepages."
+          gh issue close "${{ github.event.issue.number }}"
