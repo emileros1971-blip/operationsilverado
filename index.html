@@ -120,7 +120,12 @@
     @media(max-width:1080px){.main-nav{display:none}.hamburger{display:inline-flex}.phone-link{display:none}.hero-grid{grid-template-columns:1fr .9fr;gap:2rem}.services-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:800px){.header-inner{min-height:68px}.brand img{width:40px;height:40px}.brand-tag{display:none}.header-actions .btn{display:none}.hero{padding-top:2.6rem}.hero-grid,.social-layout,.ads-panel,.web-cross,.contact-grid,.footer-grid{grid-template-columns:1fr}.hero-card{min-height:0;max-width:560px}.portrait-wrap{height:300px}.trust-grid{grid-template-columns:repeat(2,1fr)}.video-grid{grid-template-columns:1fr}.social-side{grid-template-columns:repeat(2,1fr)}.web-actions{align-items:flex-start}.footer-links{justify-content:flex-start}}
     @media(max-width:560px){.container{padding-left:1rem;padding-right:1rem}h1{font-size:clamp(2.35rem,13vw,3.4rem)}.hero-ctas{display:grid}.hero-ctas .btn{width:100%}.hero-services span{font-size:.72rem}.quick-stats{grid-template-columns:1fr}.trust-grid,.services-grid,.social-side,.process-grid,.faq-grid,.form-grid{grid-template-columns:1fr}.check-list{grid-template-columns:1fr}.field.full{grid-column:auto}.contact-form,.contact-info{padding:1.45rem}.site-footer{padding-bottom:5rem}}
-  </style>
+  
+    /* Hero portrait balance adjustment — 2026-08-14 */
+    .hero-card{min-height:490px!important;max-width:420px!important;margin-left:auto!important}
+    .portrait-wrap{height:245px!important}
+    @media(max-width:800px){.hero-card{min-height:0!important;max-width:500px!important;margin-left:auto!important}.portrait-wrap{height:280px!important}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Preskoči na sadržaj</a>
